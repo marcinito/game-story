@@ -1,0 +1,8 @@
+{
+    "greeting":["siema","elo","hej","czesc","cze","yo","elo","hejo",
+        "heja","witam","wita","dziendobry"],
+    "answerForGreeting":["Hello , my Friend ! :)"
+        ,"Witaj drogi uzytkowniku :)","No sieeeeema :)","Witam witam :)"],
+    "answerForGreeting2":["Trafiłes na strone pełną rozrywki","Gotowy na gre?",
+        "Jeżeli jakaś gra Ci sie spodobała to możesz zaprosić znajomych"]
+}
