@@ -28,7 +28,7 @@ setTimeout(()=>{
       </div>
       </div>
       <div className={s.startDiv}>
-        <div className={s.btnLink}><Link href="/game-platform">Start Game</Link>
+        <div className={s.btnLink}><Link href="/create-character">Start Game</Link>
         <span className={s.span1}></span>
         <span className={s.span2}></span>
         <span className={s.span3}></span>
