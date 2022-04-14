@@ -1,8 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+
 const initialState = {
   name:"",
-  proffesion:"",
+  profession:"./druid.png",
+  outfit:""
 
 }
 
@@ -11,9 +13,10 @@ export const setFacada = createSlice({
   initialState,
   reducers: {
     change: (state,action) => {
- 
+
+
       state.name = action.payload.name
-      state.proffesion=action.payload.proffesion
+      state.profession=action.payload.profession
     },
 
  

@@ -1,0 +1,173 @@
+.container {
+  width: 100%;
+  height: 100%;
+  border: 5px solid yellow;
+  border-image-source: url("../../public/ramka-sklep.jpg");
+  border-image-slice: 30 30 30 30;
+  border-image-repeat: stretch;
+  border-image-width: 15px 15px 15px 15px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[10];
+      grid-template-rows: repeat(10, 1fr);
+  overflow-y: scroll;
+}
+
+.container .shopSlot {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 5px solid;
+  border-image-source: url("../../public/ramka-sklep.jpg");
+  border-image-slice: 30 30 30 30;
+  border-image-repeat: stretch;
+  border-image-width: 3px 3px 3px 3px;
+}
+
+.container .shopSlot .imgSlot {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.container::-webkit-scrollbar {
+  width: 0px;
+}
+
+.panelBuy {
+  position: absolute;
+  border: 5px solid yellow;
+  border-image-source: url("../../public/ramka-sklep.jpg");
+  border-image-slice: 30 30 30 30;
+  border-image-repeat: stretch;
+  border-image-width: 15px 15px 15px 15px;
+  border-image-outset: 2;
+  background-color: #d3d365;
+  width: 200%;
+  height: 70%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+  left: -240%;
+}
+
+.panelBuy .imgItems {
+  width: 100%;
+  height: 100%;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3/4;
+}
+
+.panelBuy .describe {
+  width: 100%;
+  height: 100%;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-column: 2/5;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2/4;
+  font-size: 1.3rem;
+}
+
+.panelBuy .describe .h1Name {
+  text-align: center;
+  font-family: 'Grape Nuts', cursive;
+  font-size: 2rem;
+  color: brown;
+}
+
+.panelBuy .describe .wallet {
+  border: 15px solid yellow;
+  border-image-source: url("../../public/ramka-sklep.jpg");
+  border-image-slice: 30 30 30 30;
+  border-image-repeat: stretch;
+  border-image-width: 5px 5px 5px 5px;
+  color: gold;
+  background-color: black;
+  margin-top: 5%;
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.panelBuy .describe .wallet .imgGold {
+  width: 15%;
+  margin-top: 4%;
+}
+
+.panelBuy .pakBtn {
+  width: 100%;
+  height: 100%;
+  border: 5px solid yellow;
+  border-image-source: url("../../public/ramka-sklep.jpg");
+  border-image-slice: 30 30 30 30;
+  border-image-repeat: stretch;
+  border-image-width: 1px 1px 1px 1px;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-column: 1/6;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  grid-row: 4/5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #6F4242;
+}
+
+.panelBuy .pakBtn button:nth-child(1) {
+  background-color: #eaeab4;
+  width: 30%;
+  margin: 1%;
+  font-size: 2.5rem;
+  border: 5px solid yellow;
+  border-image-source: url("../../public/ramka-sklep.jpg");
+  border-image-slice: 30 30 30 30;
+  border-image-repeat: stretch;
+  border-image-width: 5px 5px 5px 5px;
+}
+
+.panelBuy .pakBtn button:nth-child(1):hover {
+  background-color: #dede8d;
+  border-image-width: 10px 10px 10px 10px;
+}
+
+.panelBuy .pakBtn button:nth-child(1):active {
+  background-color: #c8c83d;
+}
+
+.panelBuy .pakBtn button:nth-child(2) {
+  background-color: #eaeab4;
+  width: 30%;
+  margin: 1%;
+  font-size: 2.5rem;
+  border: 5px solid yellow;
+  border-image-source: url("../../public/ramka-sklep.jpg");
+  border-image-slice: 30 30 30 30;
+  border-image-repeat: stretch;
+  border-image-width: 5px 5px 5px 5px;
+}
+
+.panelBuy .pakBtn button:nth-child(2):hover {
+  background-color: #dede8d;
+  border-image-width: 10px 10px 10px 10px;
+}
+/*# sourceMappingURL=Shop.module.css.map */

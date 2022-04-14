@@ -1,0 +1,159 @@
+.container{
+    width:100%;
+    height:77%;
+    border:20px solid yellow;
+border-image-source: url("../../public/ramka-drut-kolczasty.png");
+border-image-slice:30;
+border-image-outset: 0.5;
+border-image-width: 40px;
+border-image-repeat: repeat;
+
+    box-sizing: border-box;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+  
+}
+.arena{
+
+    width:100%;
+    position:relative;
+    border:20px solid yellow;
+    border-image-source: url("../../public/ramka-drut-kolczasty.png");
+    border-image-slice:20;
+    border-image-outset: 0.5;
+    border-image-width: 10px;
+    border-image-repeat: repeat;
+    height:90%;
+    display:grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows:repeat(2,1fr)
+}
+.player{
+position:absolute;
+    width:100%;
+    height:100%;
+grid-column: 1/2;
+grid-row: 1/3;
+
+}
+.fightArea{
+    width:100%;
+    height:100%;
+    position:absolute;
+    border:3px solid orange;
+    grid-column:2/3;
+    grid-row:1/3;
+    .windowAfterWin{
+        width:100%;
+        height:100%;
+        position:absolute;
+        background-color: grey;
+        z-index:0;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(7,1fr);
+        .h1{
+            font-family: 'Babylonica', cursive;
+            width:100%;
+            text-align: center;
+            font-size:3rem;
+            grid-column:1/4;
+            grid-row: 1/2;
+        }
+        .h1Two{
+        width:100%;
+        text-align: center;
+        grid-column:1/4;
+        grid-row: 2/3;
+        }
+        .fancyText{
+            -webkit-text-stroke:0.1px lighten(red,20%);
+            font-weight:bold;
+        }
+        .lootItem{
+        width:100%;
+         height:100%;
+         position:relative;
+        display:flex;
+        justify-content: center;
+        grid-column: 1/4;
+        grid-row:3/6;
+
+     
+        .gold{
+        width:20%;
+        height:100%;
+     
+        display:flex;
+        justify-content: center;
+        position:relative;
+        .imgGold{
+        width:50%;
+        height:80%;
+                }
+                .amountGoldFromMonster{
+                    font-size:2rem;
+                    -webkit-text-stroke:1px red;
+                    font-weight:bold;
+                    position:absolute;
+                    color:gold;
+                }
+        }
+        .item{
+        position:relative;
+        width:20%;
+        height:100%;
+    
+        display:flex;
+        justify-content: center;
+        .imgItem{
+        width:50%;
+        height:80%;
+            }
+                }
+        }
+       .pakBtn{
+           margin-top:10%;
+           width:100%;
+           height:100%;
+           grid-column:1/4;
+           grid-row:5/7;
+        
+           .btn{
+            width:50%;
+            height:100%;
+            font-size:3rem;
+        }
+       }
+    }
+}
+.monster{
+    
+    position:absolute;
+    width:100%;
+    height:100%;
+grid-column: 3/4;
+grid-row: 1/3;
+
+}
+.atak{
+    position:absolute;
+
+    width:200px;
+    height:200px;
+    font-size:3rem;
+    left:37%;
+    background-color: skyblue;
+    border:20px solid green;
+    border-radius:15%;
+}
+.atak:hover{
+    background-color: green;
+}
+.back{
+    width:20%;
+    height:5%;
+    grid-row:2/3;
+    
+}

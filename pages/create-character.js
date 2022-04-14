@@ -5,11 +5,11 @@ import { change } from '../redux/Slice/FacadeCharacter'
 import {useState,useRef} from 'react'
 import {useRouter} from 'next/router'
 const CreateCharacter = () => {
-const [dataFacade,setDataFacade]=useState({name:"",proffesion:"Druid"})
+const [dataFacade,setDataFacade]=useState({name:"",profession:"./druid.png"})
 const nameRef=useRef()
  const dane=useSelector((state)=>state.setFacada)
     const dispatch=useDispatch()
-    console.info(dane)
+ 
 const nav=useRouter()
 const startGame=()=>{
     if(dataFacade.name.length<3){
@@ -21,15 +21,15 @@ const startGame=()=>{
     },1000)
     return
     }
-    dispatch(change({name:dataFacade.name,proffesion:dataFacade.proffesion}))
-    nav.push('/city-center')
+    dispatch(change({name:dataFacade.name,profession:dataFacade.profession}))
+    nav.push('/player-panel')
 }
 
     return ( 
         <div className={s.container}>
 <div className={s.windowInput}>
     <img className={s.blackBird} src={"./kruk.png"}></img>
-    <img className={s.druid} src={"./druid.png"}></img>
+    <img className={s.profession} src={dataFacade.profession}></img>
     <div className={s.inputPak}>
         <h1 className={s.h1}>Create Character</h1>
     <input
@@ -41,12 +41,12 @@ const startGame=()=>{
       ></input>
    <select
   
-   onChange={(e)=>setDataFacade({...dataFacade,proffesion:e.target.value})}
+   onChange={(e)=>setDataFacade({...dataFacade,profession:e.target.value})}
     name="proffesion"
      >
        <option className={s.option}  value="Czarodziej" disabled>Czarodziej</option>
-       <option className={s.option}  value="Druid">Druid</option>
-       <option className={s.option}  value="Rycerz" disabled>Rycerz</option>
+       <option className={s.option}  value="./druid.png">Druid</option>
+       <option className={s.option}  value="./rycerz.png" >Rycerz</option>
        <option className={s.option}  value="Palladyn" disabled>Palladyn</option>
    </select>
    <button

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,qBAAqB,CAAA;EACjB,KAAK,EAAC,IAAI;EACV,MAAM,EAAC,GAAG;EACV,MAAM,EAAC,aAAa;EACpB,OAAO,EAAC,IAAI;EACZ,qBAAqB,EAAE,cAAa;EACpC,eAAe,EAAC,GAAG;CACtB",
+    "sources": [
+        "../PlayerPanel.module.scss"
+    ],
+    "names": [],
+    "file": "PlayerPanel.module.css"
+}

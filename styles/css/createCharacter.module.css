@@ -126,10 +126,12 @@
   top: -10%;
 }
 
-.druid {
+.profession {
   position: relative;
   width: 25%;
   top: 43%;
   left: 5%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 /*# sourceMappingURL=createCharacter.module.css.map */

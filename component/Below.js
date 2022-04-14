@@ -62,7 +62,7 @@ const answerForPropQuestion=(question)=>{
 setArrayDialog([...arrayDialog,answerRobot(question)])
 }
 
-console.info(arrayDialog)
+
     return ( 
         <div className={s.below}>
               <div className={s.information} ref={windowRef}>
@@ -71,7 +71,7 @@ console.info(arrayDialog)
        </div>
        <div className={s.talking} ref={talkingRef}>
            {arrayDialog.map((el,i,arr)=>{
-                 console.info(el)
+            
               return( <div
             
               key={Math.random()*123123123}>

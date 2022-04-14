@@ -1,0 +1,11 @@
+.containerPlayerPanel {
+  width: 100%;
+  height: 75%;
+  border: 5px solid red;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10%;
+}
+/*# sourceMappingURL=PlayerPanel.module.css.map */

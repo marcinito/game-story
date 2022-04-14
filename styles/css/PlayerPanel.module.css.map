@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,qBAAqB,CAAA;EACjB,KAAK,EAAC,IAAI;EACV,MAAM,EAAC,GAAG;EACV,MAAM,EAAC,UAAU;EACjB,mBAAmB,EAAE,0BAA0B;EAC/C,kBAAkB,EAAE,WAAW;EAC/B,mBAAmB,EAAC,MAAM;EAC1B,kBAAkB,EAAE,mBAAmB;EACvC,OAAO,EAAC,IAAI;EACZ,qBAAqB,EAAE,cAAa;EACpC,UAAU,EAAE,UAAU;EACtB,eAAe,EAAC,EAAE;CACrB",
+    "sources": [
+        "../PlayerPanel.module.scss"
+    ],
+    "names": [],
+    "file": "PlayerPanel.module.css"
+}
