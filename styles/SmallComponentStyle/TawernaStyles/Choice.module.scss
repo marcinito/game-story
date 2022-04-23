@@ -1,0 +1,135 @@
+.container{
+    width:100%;
+    height:100%;
+ 
+}
+.choice{
+    width:100%;
+    height:80%;
+  
+   
+   
+    
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows:repeat(5,1fr);
+    grid-gap:5%;
+
+    .cubic{
+        width:100%;
+        height:100%;
+        background-color: white;
+        grid-column:1/2;
+        grid-row:2/6;
+        border:5px solid;
+    border-image-source: url("../../../public/ramka.jpg");
+    border-image-slice: 30;
+    border-image-repeat:repeat;
+    border-image-width: 5px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Grape Nuts', cursive;
+    font-weight:bold;
+    font-size:1.3rem;
+    text-align: center;
+    background: url("../../../public/wypalona-kartka-papieru.png");
+        .img{
+            width:80%;
+            height:50%;
+        }
+        p{
+            display:block;
+            height:50%;
+            font-size:1.2rem;
+            -webkit-text-stroke:0.5px darkblue;
+      
+        
+          
+            
+            
+        }
+    }
+    .oneHandBandit{
+        position:relative;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        grid-column:2/3;
+        grid-row:2/6;
+        width:100%;
+        height:100%;
+        background-color: white;
+        border:1px solid red;
+      
+        font-family: 'Grape Nuts', cursive;
+        font-weight:bold;
+        font-size:1rem;
+        text-align: center;
+        border:5px solid;
+    border-image-source: url("../../../public/ramka.jpg");
+    border-image-slice: 30;
+    border-image-repeat:repeat;
+    border-image-width: 5px;
+    background: url("../../../public/wypalona-kartka-papieru.png");
+        .img{
+            width:100%;
+            height:50%;
+            position:absolute;
+        }
+        .p{ 
+            display:block;
+            height:50%;
+            font-size:1.2rem;
+            -webkit-text-stroke:0.5px darkblue;
+       
+          
+            position:absolute;
+            top:50%;
+        }
+    }
+    .thirdGame{
+        position: relative;
+        grid-column:3/4;
+        width:100%;
+        height:100%;
+        background-color: white;
+        border:1px solid red;
+        grid-row:2/6;
+        border:5px solid;
+    border-image-source: url("../../../public/ramka.jpg");
+    border-image-slice: 30;
+    border-image-repeat:repeat;
+    border-image-width: 5px;
+    background: url("../../../public/wypalona-kartka-papieru.png");
+    .img{
+        width:100%;
+        height:100%;
+        filter:grayscale(100%) blur(2px) saturate(100%);
+     
+
+    }
+    
+    }
+    .thirdGame::before{
+        content:"15 level";
+        position:absolute;
+        z-index:2;
+        font-size:4rem;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+  text-align: center;
+  font-family: 'Babylonica', cursiv;
+  font-weight:bold;
+    }
+    .thirdGame:hover{
+        filter: blur(1px);
+
+    }
+    .thirdGame:hover::before{
+        color:red;
+        font-size:5rem;
+      
+    }
+}

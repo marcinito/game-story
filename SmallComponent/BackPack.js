@@ -2,12 +2,16 @@ import s from '../styles/SmallComponentStyle/BackPack.module.scss'
 import { useSelector,useDispatch } from 'react-redux'
 import { dressUp } from '../redux/Slice/WearItems'
 import {useState} from 'react'
+import { setNewValueHp } from '../redux/Slice/Levels'
 const BackPack = () => {
 const dispatch=useDispatch()
+const skills=useSelector(state=>state.skills)
 const wearItem=(el)=>{
-    console.log(el)
-
-    dispatch(dressUp(el))
+    if(el.id==="potion"){
+        dispatch(setNewValueHp(skills.hpTotal))
+        return
+    }
+    dispatch(dressUp(el)) 
 }
 
     const ownedItems=useSelector((state)=>state.ownItems)

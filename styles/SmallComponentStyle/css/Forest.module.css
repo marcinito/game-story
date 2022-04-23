@@ -185,6 +185,47 @@
   font-size: 3rem;
 }
 
+.fightArea .windowAfterLost {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: grey;
+  z-index: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[7];
+      grid-template-rows: repeat(7, 1fr);
+}
+
+.fightArea .windowAfterLost .h1 {
+  font-family: 'Grape Nuts', cursive;
+  text-align: center;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  font-size: 3rem;
+}
+
+.fightArea .windowAfterLost .pakBtn {
+  margin-top: 10%;
+  width: 100%;
+  height: 100%;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 2;
+  grid-row: 5/7;
+}
+
+.fightArea .windowAfterLost .pakBtn .btn {
+  width: 100%;
+  height: 100%;
+  font-size: 3rem;
+}
+
 .monster {
   position: absolute;
   width: 100%;
@@ -218,5 +259,86 @@
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
+}
+
+.showHitFromMonster {
+  width: 25%;
+  height: 100px;
+  border: 1px solid transparent;
+  position: absolute;
+  z-index: 10;
+  left: 8%;
+  top: 20%;
+  opacity: 0;
+  font-size: 3rem;
+  text-align: center;
+  z-index: 20;
+  color: white;
+  overflow: hidden;
+}
+
+.showHitFromMonster .sprite {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(2500px / 5);
+  height: 100px;
+  background: url("../../public/sprite-fire.png");
+  background-size: cover;
+  -webkit-animation: fires 5s  infinite linear;
+          animation: fires 5s  infinite linear;
+}
+
+@-webkit-keyframes fires {
+  0% {
+    background-position: 30px;
+  }
+  100% {
+    background-position: 2500px;
+  }
+}
+
+@keyframes fires {
+  0% {
+    background-position: 30px;
+  }
+  100% {
+    background-position: 2500px;
+  }
+}
+
+.showHitFromPlayer {
+  width: 30%;
+  height: 100px;
+  color: white;
+  position: absolute;
+  z-index: 10;
+  left: 8%;
+  top: 20%;
+  opacity: 0;
+  text-align: center;
+  font-size: 3rem;
+  overflow: hidden;
+}
+
+.showHitFromPlayer .sprite {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(2500px / 5);
+  height: 100px;
+  background: url("../../public/sprite-fire.png");
+  background-size: cover;
+  -webkit-animation: fires 5s  infinite linear;
+          animation: fires 5s  infinite linear;
+}
+
+@keyframes fires {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 2500px;
+  }
 }
 /*# sourceMappingURL=Forest.module.css.map */

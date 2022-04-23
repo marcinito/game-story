@@ -4,3 +4,15 @@
   box-sizing: border-box;
 }
 
+.InfoAboutItemPlayerComponent{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  color:white;
+  -webkit-text-stroke:.4px yellow;
+ img{ width:50%;
+  height:20%;
+
+
+ }
+}

@@ -5,19 +5,39 @@ const initialState = [
 {
         name:"Vampire",
         img:"./monster/Vampire.png",
-        hp:200,
+        hpLevel:200,
+        hpTotal:200,
         item:allItems[12],
         gold:10,
+        info:"Vampire is dark character living near soul betrayed people",
+        atak:30+Math.floor(Math.random()*10),
+        experience:100,
 
 },
 {
     name:"Ghoul",
     img:"./monster/Ghoul.png",
-    hp:0.110,
+    hpLevel:110,
+    hpTotal:110,
     item:allItems[11],
     gold:12,
+    atak:10+Math.floor(Math.random()*20),
+    experience:100,
+},
+{
+  name:"Minotaur",
+  img:"./monster/Minotaur.png",
+  hpLevel:300,
+  hpTotal:300,
+  item:allItems[1],
+  gold:52,
+  atak:70,
+  experience:100,
+
+
 
 }
+
 ]
      
 
@@ -26,13 +46,15 @@ const monstersSlice = createSlice({
   initialState,
   reducers: {
     monsterGetAtak(state,action) {
-        console.log(action.payload)
-      state[0].hp-=action.payload
+   
+    state[0].hpLevel-=action.payload
+
+  
     },
 
     deleteDefeatedMonster(state) {
       state.shift()
-      console.log(initialState)
+   
     },
 
   },

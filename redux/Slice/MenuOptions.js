@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = { 
-    option:"default"
+    option:"default",
+    optionTawerna:"choice"
  }
 
 const menuOptions = createSlice({
@@ -11,9 +12,11 @@ const menuOptions = createSlice({
     changeOption(state,action) {
       state.option=action.payload
     },
-
+    changeOptionTawerna(state,action) {
+      state.optionTawerna=action.payload
+    },
   },
 })
 
-export const { changeOption } = menuOptions.actions
+export const { changeOption,changeOptionTawerna } = menuOptions.actions
 export default menuOptions.reducer

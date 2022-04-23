@@ -1,20 +1,28 @@
 import s from '../styles/SmallComponentStyle/Monster.module.scss'
 import {useRef,useEffect} from 'react'
 import {useSelector,useDispatch} from 'react-redux'
+import { monsterGetAtak } from '../redux/Slice/Monsters'
+import { setRateMonsterHp } from '../redux/Slice/OverallSlice'
 const Monster = () => {
 const monsters=useSelector((state)=>state.monsters)
 const wear=useSelector((state)=>state.wear)
-console.info(monsters)
+const overall=useSelector((state)=>state.overall)
+const skills=useSelector((state)=>state.skills)
+const dispatch=useDispatch()
 
     const hpRef=useRef()
     let procent=100
-    let hp=monsters[0].hp
-    console.info(hp)
+ 
 
-useEffect(()=>{
 
-hpRef.current.style.width=monsters[0].hp+"%"
-})
+
+
+useEffect(()=>{ 
+    console.info(monsters[0].hpLevel)
+    console.info("----------------------")
+hpRef.current.style.width=overall.rateHpMonster+"%"
+
+},[overall.rateHpMonster])
     return ( <div className={s.container}>
     
         <img className={s.imgMonster} src={monsters[0].img}></img>
@@ -30,7 +38,7 @@ hpRef.current.style.width=monsters[0].hp+"%"
         </div>
         <div className={s.skills}>
             <div className={s.hp} >
-                <span className={s.stageHp} ref={hpRef}></span>
+                <span className={s.stageHp} ref={hpRef}>{monsters[0].hpLevel}</span>
             </div>
         
         </div>

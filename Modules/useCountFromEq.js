@@ -2,11 +2,13 @@ import { useEffect } from "react"
 import { useSelector,useDispatch } from "react-redux"
 import { countDefFromArmor ,countAtakFromArmor} from "../redux/Slice/Levels"
 export const useCountFromEq=(whatCount)=>{
-    const wear=useSelector((state)=>state.wear)
+    const wear=useSelector((state)=>state.wearItems)
+    const skills=useSelector((state)=>state.skills)
     const dispatch=useDispatch()
     useEffect(()=>{
         const {helmet,armor,weapon,shield,legs,shoe} = wear
         let arrayCount=[helmet,armor,weapon,shield,legs,shoe]
+  
         
         let score=arrayCount.map((el,i,arr)=>{
           
@@ -27,13 +29,14 @@ export const useCountFromEq=(whatCount)=>{
             total+=sum
             return total
         })
-        console.log(score)
+        console.info("-----------xxxxxxxxxxxxxxxxxxxxxxxxx---------------")
+      console.info(score)
         if(whatCount==="def"){
         dispatch(countDefFromArmor(score))
         }
         if(whatCount==="atak"){
             dispatch(countAtakFromArmor(score))
         }
-        console.log()
+      
         },[wear])
 }

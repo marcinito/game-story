@@ -1,96 +1,176 @@
 import s from '../styles/SmallComponentStyle/Player.module.scss'
 import { useDispatch,useSelector } from 'react-redux';
-import { useState,useRef,useEffect } from 'react';
+import { useState,useRef,useEffect,useCallback } from 'react';
 import React from 'react';
-import { countDefFromArmor } from '../redux/Slice/Levels';
+import { countDefFromArmor, setNewValueHp } from '../redux/Slice/Levels';
 import { useCountFromEq } from '../Modules/useCountFromEq';
+import { takeOffLostItem } from '../redux/Slice/WearItems';
+import { createDataAttribute } from '../Modules/createDataAttribute';
+import { subRateHp,setRateHp, setRateDef } from '../redux/Slice/OverallSlice';
+import { handleHp } from '../Modules/handleHp';
+
 const Player = () => {
-    
+   console.info("REFRESH")
     const skills=useSelector((state)=>state.skills)
-    const wear=useSelector((state)=>state.wear)
+    const overall=useSelector((state)=>state.overall)
+    const wear=useSelector((state)=>state.wearItems)
+    const ownItems=useSelector((state)=>state.ownItems)
     const facadeCharacter=useSelector((state)=>state.setFacada)
-    const items=useSelector((state)=>state.items)
-    const ownedItems=useSelector((state)=>state.ownItems)
-  console.info(wear)
+ const menuOption=useSelector((state)=>state.menuOption.option)
+console.info(ownItems)
+console.info(wear)
     const hpRef=useRef(null)
     const levelRef=useRef(null)
     const defFromArmor=useRef(null)
+    const infoAboutItemRef=useRef(null)
+    const img1Ref=useRef()
+    const img2Ref=useRef()
+    const img3Ref=useRef()
+    const img4Ref=useRef()
+    const img5Ref=useRef()
+    const img6Ref=useRef()
+    const containerRef=useRef()
 
-    
+
     const dispatch=useDispatch()
 
 useCountFromEq("def")
+useCountFromEq("atak")
 
 useEffect(()=>{
-    hpRef.current.style.width=skills.hp+"%"
+if(menuOption==="tawerna"){
+containerRef.current.style.gridColumn="2/3"
+
+}
+ else if(menuOption==="shop"){
+    containerRef.current.style.gridColumn="2/3"
+    
+    }
+else{
+    containerRef.current.style.gridColumn="2/4"
+}
+},[menuOption])
+
+
+useEffect(()=>{
+    dispatch(setRateDef(handleHp(skills.defArmorTotal,skills.defArmor)))
+dispatch(setRateHp(handleHp(skills.hpTotal,skills.hpLevel)))
     levelRef.current.style.width=skills.level.lvl+"%"
-    defFromArmor.current.style.width=skills.defFromArmor+"%"
+    defFromArmor.current.style.width=overall.rateDefArmor+"%"
+  hpRef.current.style.width=overall.rateHp+"%"
+
+
+},[skills.hpTotal,skills.hpLevel,overall.rateHp,skills.defArmor,overall.rateDefArmor,wear])
+
+
+let empty ="/stara-kartka-papieru.png"
+
+useEffect(()=>{
+    createDataAttribute(img1Ref.current,wear.helmet)   
+    createDataAttribute(img2Ref.current,wear.armor)   
+    createDataAttribute(img3Ref.current,wear.weapon)   
+    createDataAttribute(img4Ref.current,wear.shield)   
+    createDataAttribute(img5Ref.current,wear.legs)   
+    createDataAttribute(img6Ref.current,wear.shoe) 
+   
 })
-  useEffect(()=>{
-      console.log("zmiana")
-  },[wear])
+useEffect(()=>{
+    const infoAboutItem=document.createElement("div")
+    infoAboutItemRef.current=infoAboutItem
+    infoAboutItem.className=s.infoAboutItem
+    document.body.appendChild(infoAboutItem)
+},[])
 const showDetail=(e)=>{
-console.info(e.target)
+
+    
+ if(e.target.src){
+infoAboutItemRef.current.style.left=e.target.x +"px"
+infoAboutItemRef.current.style.top=e.target.y +"px"
+infoAboutItemRef.current.style.opacity=1
+infoAboutItemRef.current.style.transform=`scale(1)`
+infoAboutItemRef.current.innerHTML=`<div class="InfoAboutItemPlayerComponent">
+<h5>${e.target.dataset.name}</h5>
+<img  src=${e.target.dataset.img}/>
+<h6>Def:${e.target.dataset.def}</h6>
+<h6>Atak:${e.target.dataset.atak}</h6>
+</div>`
+
+ }
+
+ setTimeout(()=>{
+    infoAboutItemRef.current.style.transform=`scale(0)`
+    return
+ },2000)
 }
 
 
 
-    
-
-    return ( <div className={s.container}>
+    return ( <div className={s.container} ref={containerRef}>
 <img className={s.imgCharacter} src={facadeCharacter.profession}></img>
-<div className={s.eq}>
+<div className={s.eq}  >
     <h1 className={s.name}>{facadeCharacter.name}</h1>
+
     <div className={s.helmet}>
-    <img 
-    className={s.itemsRatio}
-        src={wear.helmet!==null?wear.helmet.dataItem.grafika:null}
-     />
+    <img className={s.itemsRatio}
+    onMouseEnter={showDetail}
+    style={wear.helmet!==null?{opacity:"1"}:{opacity:"0",border:"10px solid red"}}
+    src={wear.helmet!==null?wear.helmet.dataItem.grafika:null}
+    ref={img1Ref}
+    />
     </div>
-    <div className={s.armor}>
-    <img 
-    className={s.itemsRatio}
-        src={wear.armor!==null?wear.armor.dataItem.grafika:null}
+    <div className={s.armor} onMouseOver={showDetail}>  
+    <img className={s.itemsRatio}
+        style={wear.armor!==null?{opacity:"1"}:{opacity:"0",border:"10px solid red"}}
+    src={wear.armor!==null?wear.armor.dataItem.grafika:null}
+    ref={img2Ref}
      />
     </div>
     
     <div className={s.weapon} onMouseOver={showDetail}>
-        <img 
-    className={s.itemsRatio}
+        <img className={s.itemsRatio}
+            style={wear.weapon!==null?{opacity:"1"}:{opacity:"0",border:"10px solid red"}}
         src={wear.weapon!==null?wear.weapon.dataItem.grafika:null}
+        ref={img3Ref}
      />
      </div>
-    <div className={s.shield}>
-    <img 
-    className={s.itemsRatio}
+    <div className={s.shield}  onMouseOver={showDetail}>
+    <img className={s.itemsRatio}
+        style={wear.shield!==null?{opacity:"1"}:{opacity:"0",border:"10px solid red"}}
         src={wear.shield!==null?wear.shield.dataItem.grafika:null}
+        ref={img4Ref}
      />
     </div>
-    <div className={s.legs}>
-    <img 
-    className={s.itemsRatio}
+    <div className={s.legs}  onMouseOver={showDetail}>
+    <img className={s.itemsRatio}
+        style={wear.legs!==null?{opacity:"1"}:{opacity:"0",border:"10px solid red"}}
         src={wear.legs!==null?wear.legs.dataItem.grafika:null}
+        ref={img5Ref}
      />
     </div>
-    {console.info(wear.shoe)}
-    <div className={s.shoe}><img
+
+    <div className={s.shoe}   onMouseOver={showDetail}><img
      className={s.itemsRatio}
- 
-     src={wear.shoe!==null?wear.shoe.dataItem.grafika:null}
+     style={wear.shoe!==null?{opacity:"1"}:{opacity:"0",border:"10px solid red"}}
+     src={wear.shoe!==null?wear.shoe.dataItem.grafika:empty}
+     ref={img6Ref}
       /></div>
       <div className={s.gold}>
           <span className={s.spanAmountGold}>{skills.gold}</span>
+      </div>
+      <div className={s.strenght}>
+          <img className={s.img} src={"/atak-power.png"}/>
+          <span className={s.displayStrenght}>{skills.strenght.total}</span>
       </div>
 </div>
 <div className={s.pakSkills}>
 
  
-  
+
         <div className={s.stageHp}>
             
             <span ref={hpRef}  className={s.spanHp}></span>
             <span ref={defFromArmor}  className={s.defFromArmor}></span>
-            <span style={{position:"absolute",zIndex:"10"}}>{skills.hp}</span>
+            <span style={{position:"absolute",zIndex:"10"}}>{skills.hpLevel}</span>
         </div>
         
         <div className={s.stageLevel}>
@@ -112,6 +192,7 @@ console.info(e.target)
         </div>
 
 </div>
+
     </div> );
 }
  

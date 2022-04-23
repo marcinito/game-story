@@ -2,28 +2,31 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = [
         {
-            name:"Soft-Shoes",
-        grafika:"./ItemsGame/soft-boots.png",
-        atak:null,
-        def:20,
-        cost:200,
-        id:"shoe"
+          name:"Krzywy-Miecz",
+       grafika:"./ItemsGame/curve-miecz.png",
+       atak:10,
+       def:1,
+       cost:5, 
+       id:"weapon",
+       valueStall:3,
     },
     {
-    name:"Krzywy-Miecz",
-    grafika:"./ItemsGame/curve-miecz.png",
-    atak:parseInt(Math.random()*20 + 20),
-    def:null,
-    cost:80, 
-    id:"weapon"
+      name:"Buty Chłopa",
+      grafika:"./ItemsGame/plain-shoes.png",
+      atak:5,
+      def:5,
+      cost:5,
+      id:"shoe",
+      valueStall:4,
     },
     {
-            name:"Golden Helmet",
-            grafika:"./ItemsGame/golden-hlemet.png",
-            atak:null,
-            def:30,
-            cost:300,
-            id:"helmet"
+      name:"Spodnie Chłopa",
+    grafika:"./ItemsGame/plain-legs.png",
+    atak:5,
+    def:10,
+    cost:5,
+    id:"legs",
+    valueStall:5,
     
     },
     ]
@@ -34,15 +37,29 @@ const ownItems = createSlice({
   initialState,
   reducers: {
     buyItems(state,action) {
+   
       state.push(action.payload)
     },
     lostAllItems(state){
-      console.info("usuniete")
+     
       state.splice(0)
+    },
+    sellItems(state,action){
+      
+      state.forEach((el,i,arr)=>{
+        if(el.name===action.payload.name){
+          arr.splice(i,1)
+        }
+      })
+
+ 
+
+    
+
     }
   
   },
 })
 
-export const { buyItems,lostAllItems} = ownItems.actions
+export const { buyItems,lostAllItems,sellItems} = ownItems.actions
 export default ownItems.reducer

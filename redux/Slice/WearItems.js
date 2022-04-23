@@ -7,6 +7,7 @@ weapon:null,
 shield:null,
 legs:null,
 shoe:null,
+
 }
 
 
@@ -16,7 +17,8 @@ const wearItems = createSlice({
   initialState,
   reducers: {
     dressUp(state,action) {
-        console.log(action)
+        console.info(action)
+     
         switch(action.payload.id){
             case "weapon":
                 return {...state,weapon:{dataItem:action.payload}};
@@ -29,20 +31,34 @@ const wearItems = createSlice({
                           case "armor":
                             return {...state,armor:{dataItem:action.payload}}
                             case "shield":
-                            return {...state,shield:{dataItem:action.payload}}
-
-
-        }
-      
+                            return {...state,shield:{dataItem:action.payload}}            
+      }
     },
     takeOffLostItem(state) {
       console.log("usuniete2")
-      state={...state,helmet:null,armor:null,weapon:null,shield:null,legs:null,shoe:null}
-      console.info(initialState)
+      return {...state,helmet:null,armor:null,weapon:null,shield:null,legs:null,shoe:null,}
+     
       },
-
+      removeSoldItem(state,action){
+   
+        switch(action.payload.id){
+          case "weapon":
+              return {...state,weapon:null};
+              case "shoe":
+                  return {...state,shoe:null}
+                  case "helmet":
+                      return {...state,helmet:null}
+                      case "legs":
+                        return {...state,legs:null}
+                        case "armor":
+                          return {...state,armor:null}
+                          case "shield":
+                          return {...state,shield:null}            
+    }
+      }
   },
+  
 })
 
-export const { dressUp, takeOffLostItem} = wearItems.actions
+export const { dressUp, takeOffLostItem,removeSoldItem} = wearItems.actions
 export default wearItems.reducer

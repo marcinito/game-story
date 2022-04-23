@@ -4,90 +4,101 @@ export const initialState = [
    {
        name:"Krzywy-Miecz",
        grafika:"./ItemsGame/curve-miecz.png",
-       atak:parseInt(Math.random()*20 + 20),
+       atak:10,
        def:1,
-       cost:80, 
-       id:"weapon"
+       cost:5, 
+       id:"weapon",
+       valueStall:3,
    },
 {
     name:"Soft-Shoes",
     grafika:"./ItemsGame/soft-boots.png",
-    atak:null,
-    def:20,
-    cost:200,
-    id:"shoes"
+    atak:15,
+    def:30,
+    cost:50,
+    id:"shoes",
+    valueStall:30,
 },
 {
     name:"Golden Helmet",
     grafika:"./ItemsGame/golden-hlemet.png",
-    atak:null,
-    def:30,
-    cost:300,
-    id:"helmet"
+    atak:5,
+    def:40,
+    cost:200,
+    id:"helmet",
+    valueStall:165,
 },
 {
     name:"GOLD $",
-    grafika:"./ItemsGame/gold.jpg",
+    grafika:"./ItemsGame/gold.png",
     atak:null,
     def:null,
     cost:1,
-    id:"zloto"
+    id:"zloto",
+    valueStall:1,
 },
 {
     name:"dEmOn ArMoR",
     grafika:"./ItemsGame/demon-armor.png",
     atak:10,
-    def:20,
-    cost:200,
-    id:"armor"
+    def:100,
+    cost:400,
+    id:"armor",
+    valueStall:300,
 },
 {
     name:"dEmOn HeLmEt",
     grafika:"./ItemsGame/demon-helmet.png",
-    atak:7,
-    def:50,
+    atak:10,
+    def:70,
     cost:350,
-    id:"armor"
+    id:"armor",
+    valueStall:270,
 },
 {
     name:"King Armor",
     grafika:"./ItemsGame/dwarve-armor.png",
     atak:5,
-    def:15,
-    cost:150,
-    id:"armor"
+    def:90,
+    cost:400,
+    id:"armor",
+    valueStall:350,
 },
 {
     name:"Ognisty Miecz",
     grafika:"./ItemsGame/fire-miecz.png",
-    atak:parseInt(Math.random()*30 + 30),
+    atak:40,
     def:15,
     cost:350,
-    id:"weapon"
+    id:"weapon",
+    valueStall:290,
 },
 {
     name:"Golden Legs",
     grafika:"./ItemsGame/golde-legs.png",
     atak:7,
-    def:50,
-    cost:500,
-    id:"legs"
+    def:80,
+    cost:250,
+    id:"legs",
+    valueStall:185,
 },
 {
     name:"Golden Armor",
     grafika:"./ItemsGame/golden-armor.png",
-    atak:parseInt(Math.random()*10+3),
+    atak:8,
     def:80,
-    cost:500,
-    id:"armor"
+    cost:350,
+    id:"armor",
+    valueStall:270,
 },
 {
     name:"Golden Shoes",
     grafika:"./ItemsGame/golden-shoes.png",
     atak:3,
     def:30,
-    cost:290,
-    id:"shoe"
+    cost:200,
+    id:"shoe",
+    valueStall:150,
 },
 {
     name:"King Helmet",
@@ -95,15 +106,17 @@ export const initialState = [
     atak:5,
     def:45,
     cost:100,
-    id:"helmet"
+    id:"helmet",
+    valueStall:60,
 },
 {
     name:"Miecz",
     grafika:"./ItemsGame/miecz.png",
-    atak:5,
+    atak:20,
     def:45,
-    cost:100,
-    id:"weapon"
+    cost:20,
+    id:"weapon",
+    valueStall:10,
 },
 {
     name:"MpA ArMoR",
@@ -111,7 +124,8 @@ export const initialState = [
     atak:5,
     def:50,
     cost:100,
-    id:"armor"
+    id:"armor",
+    valueStall:50,
 },
 {
     name:"King Legs",
@@ -119,47 +133,62 @@ export const initialState = [
     atak:5,
     def:30,
     cost:150,
-    id:"legs"
+    id:"legs",
+    valueStall:100,
 },
 {
     name:"Spodnie Chłopa",
     grafika:"./ItemsGame/plain-legs.png",
     atak:5,
-    def:30,
-    cost:150,
-    id:"legs"
+    def:10,
+    cost:5,
+    id:"legs",
+    valueStall:5,
 },
 {
     name:"Buty Chłopa",
     grafika:"./ItemsGame/plain-shoes.png",
     atak:5,
-    def:30,
-    cost:150,
-    id:"shoe"
+    def:5,
+    cost:5,
+    id:"shoe",
+    valueStall:4,
 },
 {
     name:"Zoan Helmet",
     grafika:"./ItemsGame/zoan-helmet.png",
     atak:5,
-    def:30,
+    def:40,
     cost:150,
-    id:"helmet"
+    id:"helmet",
+    valueStall:100,
 },
 {
     name:"DeMoN ShIeLd",
     grafika:"./ItemsGame/demon-shield.png",
-    atak:5,
-    def:30,
+    atak:15,
+    def:150,
     cost:150,
-    id:"shield"
+    id:"shield",
+    valueStall:100,
 },
 {
     name:"Crown Shield",
     grafika:"./ItemsGame/crown-shield.png",
     atak:5,
-    def:20,
-    cost:150,
-    id:"shield"
+    def:60,
+    cost:140,
+    id:"shield",
+    valueStall:80,
+},
+{
+    name:"Health Potion",
+    grafika:"./ItemsGame/mana-fluid.png",
+    atak:0,
+    def:0,
+    cost:200,
+    id:"potion",
+    valueStall:10,
 },
 
 
@@ -171,17 +200,9 @@ const itemsSlice = createSlice({
   name: 'items',
   initialState,
   reducers: {
-    increment(state) {
-      state.value++
-    },
-    decrement(state) {
-      state.value--
-    },
-    incrementByAmount(state, action) {
-      state.value += action.payload
-    },
+
   },
 })
 
-export const { increment, decrement, incrementByAmount } = itemsSlice.actions
+export const { } = itemsSlice.actions
 export default itemsSlice.reducer

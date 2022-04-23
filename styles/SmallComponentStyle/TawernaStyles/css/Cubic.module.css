@@ -1,0 +1,365 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+  position: relative;
+  background-color: gray;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.startAnimation {
+  animation: rots1 0.3s infinite linear alternate-reverse;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2/4;
+  left: 20%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateX(10deg) rotateY(30deg);
+          transform: rotateX(10deg) rotateY(30deg);
+  background-color: transparent;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.box .all {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 3px solid red;
+  background: url("../../../public/wypalona-kartka-papieru.png");
+  border-image-source: url("../../../public/ramka.jpg");
+  border-image-slice: 30;
+  border-image-repeat: repeat;
+}
+
+.box .dot {
+  width: 20%;
+  height: 20%;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid brown;
+  border-radius: 50%;
+}
+
+.box .one {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: rotateX(0deg) rotateY(90deg) translateZ(50px) translateX(50px);
+          transform: rotateX(0deg) rotateY(90deg) translateZ(50px) translateX(50px);
+}
+
+.box .two {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: rotateX(0deg) rotateY(90deg) translateZ(-50px) translateX(50px);
+          transform: rotateX(0deg) rotateY(90deg) translateZ(-50px) translateX(50px);
+}
+
+.box .three {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: rotateX(90deg) rotateY(0deg) translateZ(50px) translateY(-50px);
+          transform: rotateX(90deg) rotateY(0deg) translateZ(50px) translateY(-50px);
+}
+
+.box .four {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-transform: rotateX(90deg) rotateY(0deg) translateZ(-50px) translateY(-50px);
+          transform: rotateX(90deg) rotateY(0deg) translateZ(-50px) translateY(-50px);
+}
+
+.box .four .dot {
+  margin: 10%;
+}
+
+.box .five {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-transform: rotateX(0deg) rotateY(0deg) translateZ(-100px) translateY(0px);
+          transform: rotateX(0deg) rotateY(0deg) translateZ(-100px) translateY(0px);
+}
+
+.box .five .dot {
+  margin: 10%;
+}
+
+.box .five .dot:nth-child(5) {
+  position: absolute;
+}
+
+.box .last {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transform: rotateX(0deg) rotateY(0deg) translateZ(0px) translateY(0px);
+          transform: rotateX(0deg) rotateY(0deg) translateZ(0px) translateY(0px);
+}
+
+.box .last .dot {
+  margin: 6%;
+}
+
+@-webkit-keyframes rots1 {
+  0% {
+    -webkit-transform: translateY(30px) rotateX(45deg) rotateY(45deg);
+            transform: translateY(30px) rotateX(45deg) rotateY(45deg);
+  }
+  25% {
+    -webkit-transform: translateX(50px) rotateX(90deg) rotateY(90deg);
+            transform: translateX(50px) rotateX(90deg) rotateY(90deg);
+  }
+  50% {
+    -webkit-transform: translateX(-50px) rotateX(180deg) rotateY(150deg);
+            transform: translateX(-50px) rotateX(180deg) rotateY(150deg);
+  }
+  75% {
+    -webkit-transform: translateY(-30px) rotateX(250deg) rotateY(250deg);
+            transform: translateY(-30px) rotateX(250deg) rotateY(250deg);
+  }
+  100% {
+    -webkit-transform: translateY(30px) rotateX(360deg) rotateY(360deg);
+            transform: translateY(30px) rotateX(360deg) rotateY(360deg);
+  }
+}
+
+@keyframes rots1 {
+  0% {
+    -webkit-transform: translateY(30px) rotateX(45deg) rotateY(45deg);
+            transform: translateY(30px) rotateX(45deg) rotateY(45deg);
+  }
+  25% {
+    -webkit-transform: translateX(50px) rotateX(90deg) rotateY(90deg);
+            transform: translateX(50px) rotateX(90deg) rotateY(90deg);
+  }
+  50% {
+    -webkit-transform: translateX(-50px) rotateX(180deg) rotateY(150deg);
+            transform: translateX(-50px) rotateX(180deg) rotateY(150deg);
+  }
+  75% {
+    -webkit-transform: translateY(-30px) rotateX(250deg) rotateY(250deg);
+            transform: translateY(-30px) rotateX(250deg) rotateY(250deg);
+  }
+  100% {
+    -webkit-transform: translateY(30px) rotateX(360deg) rotateY(360deg);
+            transform: translateY(30px) rotateX(360deg) rotateY(360deg);
+  }
+}
+
+@-webkit-keyframes rots {
+  0% {
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+            transform: rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    -webkit-transform: rotateX(360deg) rotateY(180deg);
+            transform: rotateX(360deg) rotateY(180deg);
+  }
+  100% {
+    -webkit-transform: rotateX(180deg) rotateY(360deg);
+            transform: rotateX(180deg) rotateY(360deg);
+  }
+}
+
+@keyframes rots {
+  0% {
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+            transform: rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    -webkit-transform: rotateX(360deg) rotateY(180deg);
+            transform: rotateX(360deg) rotateY(180deg);
+  }
+  100% {
+    -webkit-transform: rotateX(180deg) rotateY(360deg);
+            transform: rotateX(180deg) rotateY(360deg);
+  }
+}
+
+.play {
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  outline: none;
+  -webkit-box-shadow: 0 0 3px brown;
+          box-shadow: 0 0 3px brown;
+  background: url("../../../public/drawno2.png");
+  -webkit-text-stroke: 1px blue;
+  background-size: cover;
+  bottom: 0;
+  background-color: #b3b3b3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  grid-row: 4/5;
+  -webkit-transition: -webkit-box-shadow 2s;
+  transition: -webkit-box-shadow 2s;
+  transition: box-shadow 2s;
+  transition: box-shadow 2s, -webkit-box-shadow 2s;
+}
+
+.play:hover {
+  font-size: 2.5rem;
+  -webkit-box-shadow: 0 0 10px brown, 0 0 20px brown, 0 0 30px brown, 0 0 40px brown;
+          box-shadow: 0 0 10px brown, 0 0 20px brown, 0 0 30px brown, 0 0 40px brown;
+}
+
+.stake {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2/4;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  background: url("../../../public/drawno2.png");
+}
+
+.stake .payment {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.stake .payment .range {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: -webkit-gradient(linear, right top, left top, from(red), to(black));
+  background: linear-gradient(to left, red, black);
+  height: 15px;
+}
+
+.stake .payment .amount {
+  font-weight: bold;
+  color: gold;
+  font-size: 2rem;
+}
+
+.stake .payment .img {
+  width: 50%;
+}
+
+.stake .gameResult {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
+.stake .bet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.stake .bet .betChoice {
+  width: 30%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  border: 1px solid black;
+  font-family: 'Grape Nuts', cursiv;
+  background: url("../../../public/drewno.png");
+  background-size: cover;
+  color: brown;
+  -webkit-text-stroke: 0.1px white;
+  border-image-source: url("../../../public/ramka-sklep.jpg");
+  border-image-slice: 30;
+  border-image-repeat: repeat;
+}
+
+.stake .bet .img {
+  width: 20%;
+}
+/*# sourceMappingURL=Cubic.module.css.map */

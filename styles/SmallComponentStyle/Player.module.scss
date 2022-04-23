@@ -1,4 +1,6 @@
 //background skills stage//@at-root
+$imgBGC:url("../../public/stara-kartka-papieru.png");
+$imgBorder:url("../../public/ramka-drut-kolczasty.png");
 $bgcSkills:#A67D3D;
 
 .container{
@@ -20,6 +22,7 @@ grid-template-columns:repeat(2,1fr);
     background-color: #DB9370;
  
 }
+
 .imgCharacter{
     width:100%;
     height:100%;
@@ -28,12 +31,13 @@ grid-template-columns:repeat(2,1fr);
 }
 //Eq//
 .eq{
+    position:relative;
     width:100%;
     height:80%;
     grid-column: 2/3;
     grid-row: 1/2;
     border:10px solid;
-    border-image-source: url("../../public/ramka.jpg") ;
+    border-image-source: $imgBorder;
     border-image-slice: 30 30 30 30;
     border-image-repeat:repeat;
     border-image-width: 1px 1px 5px 5px;
@@ -56,6 +60,11 @@ grid-template-columns:repeat(2,1fr);
         grid-column: 2/3;
         grid-row: 2/3;
         position:relative;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
+    
     }
     .armor{
         border:1px solid black;
@@ -64,6 +73,11 @@ grid-template-columns:repeat(2,1fr);
         grid-column: 2/3;
         grid-row: 3/5;
         position:relative;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
+
     
     }
     .weapon{
@@ -73,6 +87,10 @@ grid-template-columns:repeat(2,1fr);
         grid-column: 1/2;
         grid-row: 3/5;
         position:relative;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
     }
     .shield{
         border:1px solid black;
@@ -81,6 +99,10 @@ grid-template-columns:repeat(2,1fr);
         grid-column: 3/4;
         grid-row: 3/5;
         position:relative;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
     }
     .legs{
         border:1px solid black;
@@ -89,6 +111,10 @@ grid-template-columns:repeat(2,1fr);
         grid-column: 2/3;
         grid-row: 5/7;
         position:relative;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
     }
     .shoe{
         position:relative;
@@ -97,6 +123,10 @@ grid-template-columns:repeat(2,1fr);
         height:100%;
         grid-column: 2/3;
         grid-row: 7/8;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
     }
     .gold{
         position:relative;
@@ -105,19 +135,54 @@ grid-template-columns:repeat(2,1fr);
         height:100%;
         grid-column: 3/4;
         grid-row: 5/6;
-        background-image: url("../../public/ItemsGame/gold.jpg");
+        background-image: url("../../public/ItemsGame/gold.png");
         background-size: 100% 100%;
         background-repeat: no-repeat;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
+        .spanAmountGold{
+            font-size:2rem;
+            text-align: center;
+            position:absolute;
+            width:100%;
+            font-weight:bold;
+            color:gold;
+            -webkit-text-stroke:1px darken(gold,60%)
+        }
     }
-    .spanAmountGold{
-        font-size:2rem;
-        text-align: center;
+    .strenght{
         position:absolute;
-        width:100%;
+        width:50%;
+        height:100%;
+        border:1px solid black;
+        grid-column:1/2;
+        grid-row:5/7;
+        left:50%;
+        font-size:2rem;
+        background-color: gray;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
+    .displayStrenght{
+    
+
+        color:darkblue;
+        -webkit-text-stroke:1px red;
+        text-align: center;
+        display:block;
         font-weight:bold;
-        color:gold;
-        -webkit-text-stroke:1px darken(gold,60%)
     }
+        
+        .img{
+            width:100%;
+            height:60%;
+       
+        }
+    }
+    
     .itemsRatio{
         width:100%;
         height:100%;
@@ -169,7 +234,7 @@ grid-template-columns:repeat(2,1fr);
         position:absolute;
         left:0;
         top:0;
-        width:70%;
+        width:0%;
         height:100%;
         background-color: #6B8E23; 
     }
@@ -292,4 +357,23 @@ grid-template-columns:repeat(2,1fr);
         height:100%;
         background-color:#236B8E;
     }
+}
+.infoAboutItem{
+    width:100px;
+    height:100px;
+    background-color:#990033;
+   
+top:20%;
+
+    position: absolute;
+    opacity:0;
+    transform:scale(0);
+    border:5px solid;
+    border-image-source: url("../../public/ramka-drut-kolczasty.png") ;
+    border-image-slice: 30 30 30 30;
+    border-image-repeat:repeat;
+    border-image-width: 10px 10px 10px 10px;
+    box-shadow:0 0 15px rgba(0,0,0,.5);
+    border-radius:10%;
+
 }

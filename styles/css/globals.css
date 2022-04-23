@@ -4,4 +4,24 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+.InfoAboutItemPlayerComponent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  -webkit-text-stroke: .4px yellow;
+}
+
+.InfoAboutItemPlayerComponent img {
+  width: 50%;
+  height: 20%;
+}
 /*# sourceMappingURL=globals.css.map */

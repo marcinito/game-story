@@ -7,6 +7,8 @@ import MenuOptions from './Slice/MenuOptions'
 import OwnItems from './Slice/OwnItems'
 import WearItems from './Slice/WearItems'
 import Monsters from './Slice/Monsters'
+import OverallSlice from './Slice/OverallSlice'
+import TawernaSlice from './Slice/TawernaSlice'
 
 export const store = configureStore({
   reducer: {
@@ -15,7 +17,10 @@ export const store = configureStore({
       items:Items,
       menuOption:MenuOptions,
       ownItems:OwnItems,
-      wear:WearItems,
+      wearItems:WearItems,
       monsters:Monsters,
+      overall:OverallSlice,
+      tawerna:TawernaSlice,
+
   },
 })
