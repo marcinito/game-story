@@ -40,7 +40,7 @@ const wearItems = createSlice({
      
       },
       removeSoldItem(state,action){
-   
+   console.info(action)
         switch(action.payload.id){
           case "weapon":
               return {...state,weapon:null};

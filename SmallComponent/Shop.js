@@ -1,16 +1,14 @@
 import s from '../styles/SmallComponentStyle/Shop.module.scss'
 import {useState,useRef,useEffect, createElement} from 'react'
 import { useSelector,useDispatch } from 'react-redux'
-import { buyItems,sellItems } from '../redux/Slice/OwnItems'
+import { buyItems,markItemsWhichYouSell,sellItems } from '../redux/Slice/OwnItems'
 import { debitFromAccout, paymentToAccount } from '../redux/Slice/Levels'
 import BuyPanel from './ShopPak/BuyPanel'
 import SellPanel from './ShopPak/SellPanel'
 import { removeSoldItem } from '../redux/Slice/WearItems'
-
-
-
-
-
+import checkIfObjectContain from '../Modules/checkIfObjectContain'
+import markWearItemInSellShop from '../Modules/markWaerItemInSellShop'
+import useInfoWindow from '../Modules/useInfoWindow'
 
 const Shop = () => {
 
@@ -18,16 +16,35 @@ const allItems=useSelector((state)=>state.items)
 const ownItems=useSelector((state)=>state.ownItems)
 const skills=useSelector((state)=>state.skills)
 const wearItems=useSelector((state)=>state.wearItems)
+const message=useSelector((state)=>state.message)
+const windowInfo=useSelector((state)=>state.windowInfo)
+const [swapOption,setSwapOption]=useState(false)
+
 const [targetItem,setTargetItem]=useState({name:"",grafika:null,atak:0,def:0,cost:0})
 const [whatDisplay,setWhatDisplay]=useState(allItems)
 const [prop,setProp]=useState("buy")
 const dispatch=useDispatch()
-
+const eqShopRef=useRef()
 const panelShopRef=useRef()
+
+useInfoWindow(message[0].shop,windowInfo,"shop")
 
 useEffect(()=>{
     panelShopRef.current.style.transform=`scale(0)`
 },[])
+
+useEffect(()=>{
+const {helmet,armor,weapon,shield,legs,shoe}=wearItems
+if(prop==="sell"){
+markWearItemInSellShop(ownItems,eqShopRef,helmet)
+markWearItemInSellShop(ownItems,eqShopRef,armor)
+markWearItemInSellShop(ownItems,eqShopRef,weapon)
+markWearItemInSellShop(ownItems,eqShopRef,shield)
+markWearItemInSellShop(ownItems,eqShopRef,legs)
+markWearItemInSellShop(ownItems,eqShopRef,shoe)
+}
+})
+
 
 useEffect(()=>{
 if(prop==="buy")setWhatDisplay(allItems)
@@ -35,15 +52,20 @@ if(prop==="sell")setWhatDisplay(ownItems)
 },[ownItems])
 
 const showItem=(el)=>{
+    console.info(el)
     panelShopRef.current.style.transform=`scale(1)`
 setTargetItem(el)
+setSwapOption(true)
+
 }
+
 const closePanel=()=>{
     panelShopRef.current.style.transform=`scale(0)`
+    setSwapOption(false)
 }
-console.info(wearItems)
+
 const buyItemsFromShop=(el)=>{
-  
+    setSwapOption(false)
     if(prop==="buy"){
 dispatch(debitFromAccout(el.cost))
 dispatch(buyItems(el))
@@ -53,8 +75,13 @@ dispatch(buyItems(el))
         dispatch(paymentToAccount(el.valueStall))
         dispatch(sellItems(el))
        
+        const {helmet,armor,legs,shield,weapon,shoe}=wearItems
+      
+        if(checkIfObjectContain(wearItems,ownItems,el)){
+            dispatch(removeSoldItem(el))
+        }
        
-       dispatch(removeSoldItem(el))
+      
        
             }
 setTimeout(()=>{
@@ -74,13 +101,15 @@ const whichWindowDisplay=(which)=>{
     }
 }
 
+
     return ( 
         <div className={s.container}>
-            <div className={s.store}>
+            <div className={s.store} ref={eqShopRef}>
 {whatDisplay.map((el,i,arr)=>{
   return(
     <div 
-    key={parseInt(Math.random()*123123)}
+    key={Math.random()*123}
+    id={el.hash}
     className={s.shopSlot}
     onClick={(e)=>showItem(el)}
     >
@@ -96,8 +125,8 @@ const whichWindowDisplay=(which)=>{
 
 </div>
 <div className={s.optionShop}>
-        <button onClick={()=>{setWhatDisplay(allItems);setProp("buy")}}>Buy</button>
-        <button onClick={()=>{setWhatDisplay(ownItems);setProp("sell")}}>Sell</button>
+        <button disabled={swapOption} className={s.btnBuy} onClick={()=>{setWhatDisplay(allItems);setProp("buy")}}>Buy</button>
+        <button disabled={swapOption} className={s.btnSell} onClick={()=>{setWhatDisplay(ownItems);setProp("sell")}}>Sell</button>
     </div>
         </div>
      );

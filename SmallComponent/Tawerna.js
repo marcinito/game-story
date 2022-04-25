@@ -4,14 +4,22 @@ import { useSelector,useDispatch } from 'react-redux'
 import Choice from './TawernaPak/Choice'
 import Cubic from './TawernaPak/Cubic'
 import { changeOptionTawerna } from '../redux/Slice/MenuOptions'
-
 import OneHandBandit from './TawernaPak/OneHandBandit'
+import { openCloseWindowMessage } from '../redux/Slice/infoWindowSlice'
+import { expireMessage, getMessageFromWordl } from '../redux/Slice/MessageSlice'
+import useInfoWindow from '../Modules/useInfoWindow'
 const Tawerna = () => {
 const [headBack,setHeadBack]=useState(false)
+console.info("TAWERNA")
+const message=useSelector((state)=>state.message)
+const windowInfo=useSelector((state)=>state.windowInfo)
+
+useInfoWindow(message[0].tawerna,windowInfo,"tawerna")
 
 const menuTawerna=useSelector((state)=>state.menuOption.optionTawerna)
 const containerRef=useRef()
 const dispatch=useDispatch()
+
 const whatDispaly=()=>{
 
     switch(menuTawerna){

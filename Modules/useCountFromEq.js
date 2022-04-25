@@ -29,8 +29,7 @@ export const useCountFromEq=(whatCount)=>{
             total+=sum
             return total
         })
-        console.info("-----------xxxxxxxxxxxxxxxxxxxxxxxxx---------------")
-      console.info(score)
+     
         if(whatCount==="def"){
         dispatch(countDefFromArmor(score))
         }

@@ -11,7 +11,7 @@ import { useCountFromEq } from '../Modules/useCountFromEq'
 import { getAtakFromMonster } from '../redux/Slice/Levels'
 import { dressUp, takeOffLostItem } from '../redux/Slice/WearItems'
 
-import { setRateMonsterHp, subRateDef, subRateHp } from '../redux/Slice/OverallSlice'
+import { setRateMonsterHp, subRateMonsterHp, subRateHp } from '../redux/Slice/OverallSlice'
 import { handleHp } from '../Modules/handleHp'
 const Forest = () => {
     const router=useRouter()
@@ -72,7 +72,7 @@ const handleAtak=()=>{
     dispatch(monsterGetAtak(skills.strenght.total))
     dispatch(subRateHp(handleHp(skills.hpTotal,monsters[0].atak)))
     dispatch(getAtakFromMonster(monsters[0].atak))
-dispatch(setRateMonsterHp(handleHp(monsters[0].hpTotal,skills.strenght.total)))
+dispatch(subRateMonsterHp(handleHp(monsters[0].hpTotal,skills.strenght.total)))
 hitFromMonster.current.style.opacity=`1`
 hitFromPlayer.current.style.opacity=`1`
 setTimeout(()=>{
@@ -83,6 +83,7 @@ hitFromPlayer.current.style.opacity=`0`
 
 const nextMonster=()=>{
     dispatch(deleteDefeatedMonster())
+    dispatch(setRateMonsterHp(100))
     atakRef.current.style.zIndex=`10`
     monsterRef.current.style.filter=`blur(0px) grayscale(0%)`
     windowAfterWinRef.current.style.transform=`scale(0)`
@@ -116,7 +117,7 @@ const backAfterWin=()=>{
                 <h1 className={s.h1Two}>Your loot...</h1>
                 <div className={s.lootItem}>
         
-                    <div className={s.gold}><img className={s.imgGold} src={"/ItemsGame/gold.jpg"}/>
+                    <div className={s.gold}><img className={s.imgGold} src={"/ItemsGame/gold.png"}/>
                     <span className={s.amountGoldFromMonster}>{monsters[0].gold}</span></div>
                     <div className={s.item}><img className={s.imgItem} src={monsters[0].item.grafika}/></div>
                 </div>

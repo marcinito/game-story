@@ -1,32 +1,40 @@
 import s from '../styles/Below.module.scss'
 import {useRef,useState,useEffect} from 'react'
+import { useSelector,useDispatch } from 'react-redux'
 
 import answerRobot from '../Modules/answerRobot'
 import userMessage from '../Modules/userMessage'
+import { getMessageFromWordl, openWindowMessage } from '../redux/Slice/MessageSlice'
+import { openCloseWindowMessage } from '../redux/Slice/infoWindowSlice'
 const Below = () => {
+const info=useSelector((state)=>state.message)
+const windowIsOpen=useSelector((state)=>state.windowInfo)
+const windowInfo=useSelector((state)=>state.windowInfo)
 
-const [stan,setStan]=useState(10)
 const [flag,setFlag]=useState("close")
 const [conversation,setConversation]=useState("siema")
-const [arrayDialog,setArrayDialog]=useState([
-    {txt:`Co chcesz wiedziec:`,id:"robot"},
-    {txt:`kliknij w poniższe wiadomości`,id:"robot"},
-    {txt:`Czego dotyczy ta strona?`,id:"robot",propQuestion:true},
-    {txt:`Jak często będzie dodawana gra?`,id:"robot",propQuestion:true},
-    
-    
-])
+console.info("REFRESH BELOW")
 
+const dispatch=useDispatch()
+console.info(windowIsOpen)
 const windowRef=useRef()
 const dashboardRef=useRef()
 const enterMessageRef=useRef()
 const talkingRef=useRef()
 
 useEffect(()=>{
-setTimeout(()=>{
-handleWindow()
-},2000)
-},[])
+if(windowIsOpen.windowIsOpen===true){
+    handleWindow()
+    console.info("Jestem tutaj")
+    
+   
+}
+},[windowInfo])
+
+useEffect(()=>{
+    talkingRef.current.scrollTop=talkingRef.current.scrollHeight
+})
+
     const handleWindow=(e)=>{
    
         //Close Window//
@@ -35,9 +43,12 @@ handleWindow()
            dashboardRef.current.style="height:100%"
            dashboardRef.current.children[0].textContent="OPEN CHAT"
            dashboardRef.current.children[0].style.width="100%"
-           enterMessageRef.current.style.transform="scale(0)"
+         
            talkingRef.current.style.transform="scale(0)"
+           dispatch(openCloseWindowMessage("close"))
+          
 setFlag("close")
+
 return
        }
        //Open WINDOW//
@@ -45,8 +56,8 @@ return
         windowRef.current.style.height="calc(100% * 7)"
         dashboardRef.current.style="height:10%"
         dashboardRef.current.children[0].textContent="X"
-        dashboardRef.current.children[0].style.width="8%"
-        enterMessageRef.current.style.transform="scale(1)"
+        dashboardRef.current.children[0].style.width="12%"
+        
         talkingRef.current.style.transform="scale(1)"
         setFlag("open")
        }
@@ -54,12 +65,9 @@ return
 const sendMessage=()=>{
     setArrayDialog([...arrayDialog,userMessage(conversation)])
     setTimeout(()=>{
-        setArrayDialog([...arrayDialog,userMessage(conversation),answerRobot(conversation)])
+        setArrayDialog([...arrayDialog,userMessage(conversation),answerRobot(info)])
     },1000)
     setConversation("")
-}
-const answerForPropQuestion=(question)=>{
-setArrayDialog([...arrayDialog,answerRobot(question)])
 }
 
 
@@ -67,33 +75,19 @@ setArrayDialog([...arrayDialog,answerRobot(question)])
         <div className={s.below}>
               <div className={s.information} ref={windowRef}>
        <div className={s.dashboard} ref={dashboardRef}>
-           <button  className={s.btnCloseWindow} onClick={(e)=>handleWindow(e)}>OPEN CHAT</button>
+           <button className={s.btn}  onClick={(e)=>handleWindow(e)}>OPEN CHAT</button>
        </div>
-       <div className={s.talking} ref={talkingRef}>
-           {arrayDialog.map((el,i,arr)=>{
-            
-              return( <div
-            
-              key={Math.random()*123123123}>
-                   <h4 
-                    className={el.id==="user"?`${s.userMessage}`:el.propQuestion===true?
-                    `${s.specialQuestion}`:`${s.robotMessage}`}
-                   onClick={el.propQuestion===true?
-                   ()=>{answerForPropQuestion(el.txt)}:null}>{el.txt}
-                   </h4>
-                 {el.id==="robot" && el.hasOwnProperty('txt2') ?<h4 
-                  className={el.id==="user"?`${s.userMessage}`:el.propQuestion===true?
-                  `${s.specialQuestion}`:`${s.robotMessage}`}
-                 >{el.txt2}</h4>:null}
+       <div  ref={talkingRef} className={s.message}>
+           {info.map((el,i,arr)=>{
+       return (
+           <div key={Math.floor(Math.random()*23323)} className={s.messages} >
+              <div className={s.text}>{el.txt}<img src={el.img}/></div>
                </div>
-              )
+       )     
+       
            })}
        </div>
-       <div ref={enterMessageRef} className={s.enterMessage}>
-           <textarea className={s.textArea} value={conversation} 
-           onChange={(e)=>setConversation(e.target.value)} ></textarea>
-           <button className={s.btnSend} onClick={()=>sendMessage()}>SEND</button>
-       </div>
+  
      </div>
   
         </div>

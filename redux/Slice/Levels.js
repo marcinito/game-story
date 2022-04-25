@@ -7,7 +7,7 @@ const initialState = {
     },
     strenght:{
       fromEq:0,
-      fromLvl:10,
+      fromLvl:50,
       total:0
     },
     defArmor:0,
@@ -52,7 +52,7 @@ const levelSlice = createSlice({
       state.gold+=action.payload
     },
     countDefFromArmor(state,action){
-    console.log(action)
+
       state.defArmor=action.payload
     }  ,
 

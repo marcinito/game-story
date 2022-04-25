@@ -3,6 +3,7 @@ import { useState,useRef, useEffect } from 'react';
 import { useSelector,useDispatch } from 'react-redux';
 import { debitFromAccout, paymentToAccount } from '../../redux/Slice/Levels';
 import { buyItems } from '../../redux/Slice/OwnItems';
+import useInfoWindow from '../../Modules/useInfoWindow';
 const OneHandBandit = (props) => {
 const [input,setInput]=useState({x:1,y:20,scaleY:0.2,scaleX:0.2})
 const [check,setCheck]=useState([])
@@ -36,6 +37,11 @@ const refMachine=useRef()
 const checkRef=useRef()
 const awardRef=useRef()
 const infoRef=useRef()
+const windowInfo=useSelector((state)=>state.windowInfo)
+const message=useSelector((state)=>state.message)
+
+useInfoWindow(message[0].oneHandBandit,windowInfo,"oneHandBandit")
+
 const play=()=>{
     props.fn(true)
    if(skills.gold<=0){
@@ -81,11 +87,11 @@ setCanIPlay(true)
             case "/ItemsGame/dwarve-armor.png":
                 dispatch(buyItems({name: 'King Armor',
                  grafika: './ItemsGame/dwarve-armor.png',
-                  atak: 5, def: 15, cost: 0,id:"armor"}));break
+                  atak: 5, def: 15, cost: 0,id:"armor",valueStall:80}));break
                   case "/ItemsGame/demon-shield.png":
                       dispatch(buyItems({name: 'DeMoN ShIeLd',
                        grafika: './ItemsGame/demon-shield.png',
-                        atak: 5, def: 30, cost: 0,id:"shield"}));break
+                        atak: 5, def: 30, cost: 0,id:"shield",valueStall:45}));break
                         case "/ItemsGame/gold.png":
                             setWonMoney(20)
                             dispatch(paymentToAccount(20));break

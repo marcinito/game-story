@@ -10,15 +10,14 @@ import { subRateHp,setRateHp, setRateDef } from '../redux/Slice/OverallSlice';
 import { handleHp } from '../Modules/handleHp';
 
 const Player = () => {
-   console.info("REFRESH")
+
     const skills=useSelector((state)=>state.skills)
     const overall=useSelector((state)=>state.overall)
     const wear=useSelector((state)=>state.wearItems)
     const ownItems=useSelector((state)=>state.ownItems)
     const facadeCharacter=useSelector((state)=>state.setFacada)
  const menuOption=useSelector((state)=>state.menuOption.option)
-console.info(ownItems)
-console.info(wear)
+
     const hpRef=useRef(null)
     const levelRef=useRef(null)
     const defFromArmor=useRef(null)
@@ -151,7 +150,7 @@ infoAboutItemRef.current.innerHTML=`<div class="InfoAboutItemPlayerComponent">
     <div className={s.shoe}   onMouseOver={showDetail}><img
      className={s.itemsRatio}
      style={wear.shoe!==null?{opacity:"1"}:{opacity:"0",border:"10px solid red"}}
-     src={wear.shoe!==null?wear.shoe.dataItem.grafika:empty}
+     src={wear.shoe!==null?wear.shoe.dataItem.grafika:null}
      ref={img6Ref}
       /></div>
       <div className={s.gold}>

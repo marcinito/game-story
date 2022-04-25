@@ -1,11 +1,21 @@
 import s from '../styles/SmallComponentStyle/BackPack.module.scss'
 import { useSelector,useDispatch } from 'react-redux'
 import { dressUp } from '../redux/Slice/WearItems'
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import { setNewValueHp } from '../redux/Slice/Levels'
+import { openCloseWindowMessage } from '../redux/Slice/OverallSlice'
+import { expireMessage, getMessageFromWordl } from '../redux/Slice/MessageSlice'
+import useInfoWindow from '../Modules/useInfoWindow'
 const BackPack = () => {
 const dispatch=useDispatch()
 const skills=useSelector(state=>state.skills)
+const windowInfo=useSelector(state=>state.windowInfo)
+const message=useSelector(state=>state.message)
+console.info(windowInfo)
+useInfoWindow(message[0].backpack,windowInfo,"backpack")
+
+
+
 const wearItem=(el)=>{
     if(el.id==="potion"){
         dispatch(setNewValueHp(skills.hpTotal))
@@ -15,7 +25,7 @@ const wearItem=(el)=>{
 }
 
     const ownedItems=useSelector((state)=>state.ownItems)
-    console.info(ownedItems)
+    
 
     return ( <div className={s.container}>
 

@@ -3,7 +3,7 @@ import Layout from '../component/Layout'
 import styles from '../styles/globals.scss'
 
 function MyApp({ Component, pageProps }) {
-  return <StrictMode> <Layout> <Component {...pageProps} /></Layout></StrictMode>
+  return  <Layout> <Component {...pageProps} /></Layout>
 }
 
 export default MyApp

@@ -9,6 +9,8 @@ import WearItems from './Slice/WearItems'
 import Monsters from './Slice/Monsters'
 import OverallSlice from './Slice/OverallSlice'
 import TawernaSlice from './Slice/TawernaSlice'
+import MessageSlice from './Slice/MessageSlice'
+import infoWindowSlice from './Slice/infoWindowSlice'
 
 export const store = configureStore({
   reducer: {
@@ -21,6 +23,8 @@ export const store = configureStore({
       monsters:Monsters,
       overall:OverallSlice,
       tawerna:TawernaSlice,
+      message:MessageSlice,
+      windowInfo:infoWindowSlice
 
   },
 })

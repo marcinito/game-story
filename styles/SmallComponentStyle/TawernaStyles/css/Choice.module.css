@@ -138,7 +138,6 @@
 .choice .thirdGame::before {
   content: "15 level";
   position: absolute;
-  z-index: 2;
   font-size: 4rem;
   top: 50%;
   left: 50%;
@@ -149,13 +148,7 @@
   font-weight: bold;
 }
 
-.choice .thirdGame:hover {
-  -webkit-filter: blur(1px);
-          filter: blur(1px);
-}
-
 .choice .thirdGame:hover::before {
   color: red;
-  font-size: 5rem;
 }
 /*# sourceMappingURL=Choice.module.css.map */

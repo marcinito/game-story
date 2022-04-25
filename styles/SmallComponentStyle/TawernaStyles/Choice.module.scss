@@ -114,7 +114,7 @@
     .thirdGame::before{
         content:"15 level";
         position:absolute;
-        z-index:2;
+    
         font-size:4rem;
     top:50%;
     left:50%;
@@ -124,12 +124,12 @@
   font-weight:bold;
     }
     .thirdGame:hover{
-        filter: blur(1px);
+       
 
     }
     .thirdGame:hover::before{
         color:red;
-        font-size:5rem;
+        
       
     }
 }

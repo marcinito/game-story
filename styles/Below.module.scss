@@ -1,5 +1,5 @@
 .below{
-    position:absolute;
+ position:fixed;
     bottom:0;
     width:100%;
     height:6%;
@@ -9,92 +9,107 @@
 }
 //---Information window--//@at-root
 .information{
-
+   
     transform: rotateY(2deg);
     transform-origin: center;
     position:absolute;
     width:20%;
-    right:1%;
+    right:10%;
     height:calc(50%);
     bottom:20%;
-    background-color: skyblue;
-    box-shadow:0 0 10px black,0 0 10px black;
-   
-}
-.dashboard{
+    border:5px solid black;
+    background: url("../public/stara-kartka-papieru.png");
+    border-image-source:url("../public/ramka-box.png");
+    border-image-slice:30;
+    border-image-width:10px;
+  display:flex;
+  flex-direction: column;
 
-    position:relative;
-    display:flex;
-    align-items: center;
+    box-shadow:0 0 10px black,0 0 10px black;
+
+
+.dashboard{
+  
     width:100%;
-    height:100%;
-    background-color: darken(skyblue,10%);
-    border-bottom:2px ridge black;
-    .btnCloseWindow{
+
+  height:20%;
+
+    .btn{
         position:absolute;
         right:0%;
-        width:100%;
-        height:90%;
-        -webkit-text-stroke:1px red;
-        font-weight:bold;
-
+        height:9%;
+        width:15px;
+        border:none;
+        background: url("../public/stara-kartka-papieru2.png");
+        
+     border:5px solid;
+     border-image-source: url("../public/ramka-box.png");
+     border-image-slice:30;
+     border-image-width:5px;
+        
     }
 }
 
-
-
-.talking{
-    transform:scale(0);
-overflow-y: scroll;
-height:60%;
-
-    .userMessage{
-        width:100%;
-        height:100%;
-        background-color: pink;
-        text-indent: 4%;
-      overflow-wrap: break-word;
-      border-bottom:1px dotted orange;
-    }
-    .robotMessage{
-        width:100%;
-        height:100%;
-        background-color: lighten(rgba(55, 151, 31, 0.694),20%);
-  
-        border-bottom:1px dotted white;
-        overflow-wrap: break-word;
-    }
-    .specialQuestion{
-        width:100%;
-        height:100%;
-        background-color: orange;
-        color:black;
-        overflow-wrap: break-word;
-       
-        border-bottom:2px solid red
+.message{
+   
+    height:80%;
+    overflow-y:scroll;
+    
+    border:5px solid;
+    border-image-source: url("../public/ramka-box.png");
+    border-image-slice:30;
+    border-image-width:5px 0px;
+    
+    
+    .text{
+        
+     border:5px solid;
+     border-image-source: url("../public/ramka-drut-kolczasty.png");
+     border-image-slice:30;
+     border-image-width:10px;
      
+        background:url("../public/wypalona-kartka-papieru.png");
+        font-size:1.3rem;
+        font-family: 'Grape Nuts', cursive;
+        font-weight:bold;
+        letter-spacing: 1px;
+       
+
     }
-    .specialQuestion:hover{
-        transform:scaleY(1.2);
-        color:white;
-        cursor:pointer;
+    img{
+        width:40%;
     }
+}
 }
 
-.enterMessage{
-    width:100%;
-    height:30%;
-    border:1px solid black;
-    position:absolute;
-    bottom:0;
-    transform:scale(0);
-    .textArea{
-        width:100%;
-        height:70%;
-    }
-    .btnSend{
-        width:100%;
-        height:20%;
-    }
+.message::-webkit-scrollbar{
+   width:20px;
 }
+  .message::-webkit-scrollbar-button{
+   
+     border:5px solid;
+     border-image-source: url("../public/ramka-box.png");
+     border-image-slice:30;
+     border-image-width:5px;
+     background: url("../public/stara-kartka-papieru.png");
+  }
+  .message::-webkit-scrollbar-track {
+    background: url("../public/stara-kartka-papieru2.png");
+  }
+  .message::-webkit-scrollbar-thumb {
+  
+    border-radius:30%;
+    border:5px solid;
+    border-image-source: url("../public/ramka-box.png");
+    border-image-slice:30;
+    border-image-width:5px;
+    background: url("../public/stara-kartka-papieru.png");
+  }
+  
+  .message::-webkit-scrollbar-thumb:hover {
+    background: url("../public/stara-kartka-papieru.png");
+  }
+  
+
+
 

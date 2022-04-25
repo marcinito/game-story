@@ -14,15 +14,18 @@ const dispatch=useDispatch()
     let procent=100
  
 
-
+console.info("REFRESH MONSTER COMPONENT")
 
 
 useEffect(()=>{ 
+    console.info(overall.rateHpMonster)
     console.info(monsters[0].hpLevel)
-    console.info("----------------------")
+    console.info(monsters[0].hpTotal)
+    console.info(monsters[0].name)
 hpRef.current.style.width=overall.rateHpMonster+"%"
 
-},[overall.rateHpMonster])
+
+},[overall.rateHpMonster,monsters])
     return ( <div className={s.container}>
     
         <img className={s.imgMonster} src={monsters[0].img}></img>

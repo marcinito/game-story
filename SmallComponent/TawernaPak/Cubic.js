@@ -4,7 +4,12 @@ import React, { useState,useRef,useEffect } from 'react';
 import { changeOptionTawerna } from '../../redux/Slice/MenuOptions';
 import { useSelector,useDispatch } from 'react-redux'
 import { debitFromAccout, paymentToAccount } from '../../redux/Slice/Levels';
+import { openCloseWindowMessage } from '../../redux/Slice/infoWindowSlice';
+import { getMessageFromWordl } from '../../redux/Slice/MessageSlice';
+import { expireMessage } from '../../redux/Slice/MessageSlice';
+import useInfoWindow from '../../Modules/useInfoWindow';
 const Cubic = (props) => {
+    console.info("CUBIC CUBIC")
     console.info(props)
     const [payment,setPayment]=useState(5)
     const [throwResult,setThrowResult]=useState("wait")
@@ -22,6 +27,12 @@ const Cubic = (props) => {
     
 const dispatch=useDispatch()
 const gold=useSelector((state)=>state.skills.gold)
+const windowInfo=useSelector((state)=>state.windowInfo)
+const message=useSelector((state)=>state.message)
+
+
+useInfoWindow(message[0].cubic,windowInfo,"cubic")
+
 useEffect(()=>{
 
 if(throwResult===chosenNumber.current){

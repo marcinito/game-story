@@ -4,6 +4,7 @@ const initialState = {
     rateHp: 0,
     rateHpMonster:100,
     rateDefArmor:0,
+   
  }
 
 const overallSlice = createSlice({
@@ -11,7 +12,7 @@ const overallSlice = createSlice({
   initialState,
   reducers: {
     subRateHp(state,action) {
-        console.info(action)
+      
       state.rateHp-=action.payload
       if(state.rateHp<=0){
           state.rateHp=0
@@ -26,6 +27,11 @@ const overallSlice = createSlice({
         }
     },
     setRateMonsterHp(state, action) {
+      console.info(action)
+      console.info(typeof action.payload)
+      state.rateHpMonster=action.payload
+    },
+    subRateMonsterHp(state, action) {
       
       state.rateHpMonster-=action.payload
     },
@@ -36,9 +42,11 @@ const overallSlice = createSlice({
     subRateDef(state,action){
   
       state.rateDefArmor-=action.payload
-    }
+    },
+    
   },
 })
 
-export const { subRateHp ,setRateHp,setRateMonsterHp,setRateDef,subRateDef } = overallSlice.actions
+export const { subRateHp ,setRateHp,setRateMonsterHp,
+  setRateDef,subRateDef,subRateMonsterHp } = overallSlice.actions
 export default overallSlice.reducer
