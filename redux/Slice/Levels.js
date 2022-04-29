@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = { 
     level:{
       exp:0,
+      totalExp:0,
       lvl:1,
     },
     strenght:{
@@ -17,8 +18,8 @@ const initialState = {
       lvl:1
     },
     respect:20,
-    hpLevel:1000,
-    hpTotal:1000, 
+    hpLevel:50,
+    hpTotal:50, 
     gold:2000,
 }
 
@@ -27,11 +28,16 @@ const levelSlice = createSlice({
   initialState,
   reducers: {
     getExp(state,action) {
+      console.info(action)
       state.level.exp+=action.payload
+      state.level.totalExp+=action.payload
     },
     getLevel(state,action){
-      state.level.lvl+=1
-      state.hpTotal+=50
+      console.info(action)
+      state.level.exp-=100
+    state.level.lvl+=1
+     
+     
     
     },
     magicLevel(state) {

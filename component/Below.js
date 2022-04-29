@@ -13,23 +13,23 @@ const windowInfo=useSelector((state)=>state.windowInfo)
 
 const [flag,setFlag]=useState("close")
 const [conversation,setConversation]=useState("siema")
-console.info("REFRESH BELOW")
+
 
 const dispatch=useDispatch()
-console.info(windowIsOpen)
+
 const windowRef=useRef()
 const dashboardRef=useRef()
 const enterMessageRef=useRef()
 const talkingRef=useRef()
 
-useEffect(()=>{
-if(windowIsOpen.windowIsOpen===true){
-    handleWindow()
-    console.info("Jestem tutaj")
+// useEffect(()=>{
+// if(windowIsOpen.windowIsOpen===true){
+//     handleWindow()
+//     console.info("Jestem tutaj")
     
    
-}
-},[windowInfo])
+// }
+// },[windowInfo])
 
 useEffect(()=>{
     talkingRef.current.scrollTop=talkingRef.current.scrollHeight

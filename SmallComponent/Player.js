@@ -2,16 +2,19 @@ import s from '../styles/SmallComponentStyle/Player.module.scss'
 import { useDispatch,useSelector } from 'react-redux';
 import { useState,useRef,useEffect,useCallback } from 'react';
 import React from 'react';
-import { countDefFromArmor, setNewValueHp } from '../redux/Slice/Levels';
+import { countDefFromArmor, getLevel, setNewValueHp } from '../redux/Slice/Levels';
 import { useCountFromEq } from '../Modules/useCountFromEq';
 import { takeOffLostItem } from '../redux/Slice/WearItems';
 import { createDataAttribute } from '../Modules/createDataAttribute';
 import { subRateHp,setRateHp, setRateDef } from '../redux/Slice/OverallSlice';
 import { handleHp } from '../Modules/handleHp';
+import { setRateExp } from '../redux/Slice/OverallSlice';
 
 const Player = () => {
+console.info("PLAYER COMPONENT")
 
     const skills=useSelector((state)=>state.skills)
+    const monsters=useSelector((state)=>state.monsters)
     const overall=useSelector((state)=>state.overall)
     const wear=useSelector((state)=>state.wearItems)
     const ownItems=useSelector((state)=>state.ownItems)
@@ -29,7 +32,6 @@ const Player = () => {
     const img5Ref=useRef()
     const img6Ref=useRef()
     const containerRef=useRef()
-
 
     const dispatch=useDispatch()
 
@@ -52,17 +54,22 @@ else{
 
 
 useEffect(()=>{
-    dispatch(setRateDef(handleHp(skills.defArmorTotal,skills.defArmor)))
+    // dispatch(setRateDef(handleHp(skills.defArmorTotal,skills.defArmor)))
 dispatch(setRateHp(handleHp(skills.hpTotal,skills.hpLevel)))
-    levelRef.current.style.width=skills.level.lvl+"%"
+
+    levelRef.current.style.width=overall.rateExp+"%"
     defFromArmor.current.style.width=overall.rateDefArmor+"%"
   hpRef.current.style.width=overall.rateHp+"%"
+  console.info("REFRESH PLAYER COMPONENT")
+  if(skills.hpLevel<=0){
+      dispatch(setNewValueHp(50))
+  }
 
+},[skills.hpTotal,skills.hpLevel,overall.rateHp,skills.defArmor,overall.rateExp,wear])
 
-},[skills.hpTotal,skills.hpLevel,overall.rateHp,skills.defArmor,overall.rateDefArmor,wear])
+console.info(skills.level.exp)
+console.info(skills.level.totalExp)
 
-
-let empty ="/stara-kartka-papieru.png"
 
 useEffect(()=>{
     createDataAttribute(img1Ref.current,wear.helmet)   
@@ -79,6 +86,11 @@ useEffect(()=>{
     infoAboutItem.className=s.infoAboutItem
     document.body.appendChild(infoAboutItem)
 },[])
+
+useEffect(()=>{
+
+},[skills.level.exp])
+
 const showDetail=(e)=>{
 
     

@@ -3,7 +3,7 @@ import {useRouter} from 'next/router'
 import Player from '../SmallComponent/Player'
 import Monster from '../SmallComponent/Monster'
 import { useSelector,useDispatch } from 'react-redux'
-import { monsterGetAtak,deleteDefeatedMonster } from '../redux/Slice/Monsters'
+import { monsterGetAtak,deleteDefeatedMonster, cureMonster } from '../redux/Slice/Monsters'
 import { buyItems, lostAllItems } from '../redux/Slice/OwnItems'
 import { debitFromAccout, getExp, paymentToAccount, setNewValueHp,getLevel } from '../redux/Slice/Levels'
 import { useEffect,useRef } from 'react'
@@ -11,7 +11,7 @@ import { useCountFromEq } from '../Modules/useCountFromEq'
 import { getAtakFromMonster } from '../redux/Slice/Levels'
 import { dressUp, takeOffLostItem } from '../redux/Slice/WearItems'
 
-import { setRateMonsterHp, subRateMonsterHp, subRateHp } from '../redux/Slice/OverallSlice'
+import { setRateMonsterHp, subRateMonsterHp, subRateHp, setRateExp } from '../redux/Slice/OverallSlice'
 import { handleHp } from '../Modules/handleHp'
 const Forest = () => {
     const router=useRouter()
@@ -34,25 +34,30 @@ monsterRef.current.style.filter=`blur(0px) grayscale(0%)`
 playerRef.current.style.filter=`blur(0px) grayscale(0%)`
 },[])
 
+console.info(skills.level.exp)
+console.info(skills.level.totalExp)
+
+useEffect(()=>{
+    dispatch(setRateExp(skills.level.exp))
+if(skills.level.exp>=100){
+    dispatch(getLevel())
+}
+},[skills.level.exp])
 
 useEffect(()=>{
     
-    if(monsters[0].hpLevel<=0){
+    if(monsters[0].hpLevel<=0 && skills.hpLevel>0){
         atakRef.current.style.zIndex=`-10`
         dispatch(buyItems(monsters[0].item))
         dispatch(paymentToAccount(monsters[0].gold))
         dispatch(getExp(monsters[0].experience))
-        if(skills.level.exp%100===0){
-            dispatch(getLevel())
-            console.info("Get - level")
-        }
+   console.info("wykonalo sie")
  setTimeout(()=>{
     windowAfterWinRef.current.style.transform=`scale(1)`
     monsterRef.current.style.filter=`blur(20px) grayscale(100%)`
- },1000)
-     
-      
+ },10)
     }
+ 
  
     if(skills.hpLevel<=0){
         
@@ -60,7 +65,7 @@ useEffect(()=>{
         atakRef.current.style.zIndex=`-10`
         windowAfterLostRef.current.style.transform=`scale(1)`
         playerRef.current.style.filter=`blur(20px) grayscale(100%)`
-     },1000)
+     },10)
         dispatch(debitFromAccout(skills.gold-1))
         dispatch(lostAllItems())
         dispatch(takeOffLostItem())
@@ -68,10 +73,13 @@ useEffect(()=>{
     }
 },[monsters[0].hpLevel,skills.hpLevel])
 
+
+
+
 const handleAtak=()=>{
-    dispatch(monsterGetAtak(skills.strenght.total))
-    dispatch(subRateHp(handleHp(skills.hpTotal,monsters[0].atak)))
+        dispatch(monsterGetAtak(skills.strenght.total))
     dispatch(getAtakFromMonster(monsters[0].atak))
+    dispatch(subRateHp(handleHp(skills.hpTotal,monsters[0].atak)))
 dispatch(subRateMonsterHp(handleHp(monsters[0].hpTotal,skills.strenght.total)))
 hitFromMonster.current.style.opacity=`1`
 hitFromPlayer.current.style.opacity=`1`
@@ -94,7 +102,7 @@ const nextMonster=()=>{
 const backAfterDefeat=()=>{
     router.push('/player-panel')
     console.info("----back----")
-    dispatch(setNewValueHp(50))
+   
 }
 const backAfterWin=()=>{
     dispatch(deleteDefeatedMonster())

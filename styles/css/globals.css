@@ -5,6 +5,10 @@
           box-sizing: border-box;
 }
 
+html {
+  font-size: 14px;
+}
+
 .InfoAboutItemPlayerComponent {
   display: -webkit-box;
   display: -ms-flexbox;

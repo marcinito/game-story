@@ -52,6 +52,15 @@ hash:Math.floor(Math.random()*9394329423),
     hash:Math.floor(Math.random()*9394329423),
     
     },
+    {
+      name:"Health Potion",
+      grafika:"./ItemsGame/mana-fluid.png",
+      atak:0,
+      def:0,
+      cost:200,
+      id:"potion",
+      valueStall:10,
+  }
     ]
 
 

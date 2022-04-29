@@ -11,7 +11,7 @@ const initialState = [
         gold:10,
         info:"Vampire is dark character living near soul betrayed people",
         atak:30+Math.floor(Math.random()*10),
-        experience:100,
+        experience:110,
 
 },
 {
@@ -22,7 +22,7 @@ const initialState = [
     item:allItems[11],
     gold:15,
     atak:10+Math.floor(Math.random()*20),
-    experience:100,
+    experience:60,
 },
 {
   name:"Minotaur",
@@ -32,7 +32,7 @@ const initialState = [
   item:allItems[1],
   gold:22,
   atak:70,
-  experience:100,
+  experience:150,
 },
 {
   name:"Elf",
@@ -42,7 +42,7 @@ const initialState = [
   item:allItems[1],
   gold:45,
   atak:70,
-  experience:100,
+  experience:90,
 },
 {
   name:"Oblivion",
@@ -52,7 +52,7 @@ const initialState = [
   item:allItems[7],
   gold:50,
   atak:100,
-  experience:100,
+  experience:190,
 },
 {
   name:"Cyklop",
@@ -62,7 +62,7 @@ const initialState = [
   item:allItems[3],
   gold:100,
   atak:100,
-  experience:100,
+  experience:140,
 },
 {
   name:"Bad Mag",
@@ -72,7 +72,7 @@ const initialState = [
   item:allItems[3],
   gold:100,
   atak:100,
-  experience:100,
+  experience:170,
 },
 {
   name:"Hero",
@@ -107,9 +107,12 @@ const monstersSlice = createSlice({
       state.shift()
    
     },
+    cureMonster(state,action){
+state[0].hpLevel+=50
+    }
 
   },
 })
 
-export const { monsterGetAtak,  deleteDefeatedMonster } = monstersSlice.actions
+export const { monsterGetAtak,  deleteDefeatedMonster,cureMonster } = monstersSlice.actions
 export default monstersSlice.reducer
