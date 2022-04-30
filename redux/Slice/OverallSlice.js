@@ -48,9 +48,7 @@ const overallSlice = createSlice({
       console.info(action)
 
 state.rateExp=action.payload
-if(state.rateExp>100){
-  state.rateExp=0
-}
+
     }
     
   },

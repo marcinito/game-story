@@ -11,7 +11,7 @@ const initialState = [
         gold:10,
         info:"Vampire is dark character living near soul betrayed people",
         atak:30+Math.floor(Math.random()*10),
-        experience:110,
+        experience:395,
 
 },
 {
@@ -22,7 +22,7 @@ const initialState = [
     item:allItems[11],
     gold:15,
     atak:10+Math.floor(Math.random()*20),
-    experience:60,
+    experience:370,
 },
 {
   name:"Minotaur",
@@ -32,7 +32,7 @@ const initialState = [
   item:allItems[1],
   gold:22,
   atak:70,
-  experience:150,
+  experience:130,
 },
 {
   name:"Elf",
@@ -52,7 +52,7 @@ const initialState = [
   item:allItems[7],
   gold:50,
   atak:100,
-  experience:190,
+  experience:175,
 },
 {
   name:"Cyklop",
@@ -62,7 +62,7 @@ const initialState = [
   item:allItems[3],
   gold:100,
   atak:100,
-  experience:140,
+  experience:175,
 },
 {
   name:"Bad Mag",

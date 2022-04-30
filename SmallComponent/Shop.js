@@ -75,7 +75,7 @@ dispatch(buyItems(el))
         dispatch(paymentToAccount(el.valueStall))
         dispatch(sellItems(el))
        
-        const {helmet,armor,legs,shield,weapon,shoe}=wearItems
+        
       
         if(checkIfObjectContain(wearItems,ownItems,el)){
             dispatch(removeSoldItem(el))

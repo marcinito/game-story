@@ -4,8 +4,8 @@ import Player from '../SmallComponent/Player'
 import Monster from '../SmallComponent/Monster'
 import { useSelector,useDispatch } from 'react-redux'
 import { monsterGetAtak,deleteDefeatedMonster, cureMonster } from '../redux/Slice/Monsters'
-import { buyItems, lostAllItems } from '../redux/Slice/OwnItems'
-import { debitFromAccout, getExp, paymentToAccount, setNewValueHp,getLevel } from '../redux/Slice/Levels'
+import { buyItems, lostItems } from '../redux/Slice/OwnItems'
+import { debitFromAccout, getExp, paymentToAccount, setNewValueHp,getLevel, decreaseLevel } from '../redux/Slice/Levels'
 import { useEffect,useRef } from 'react'
 import { useCountFromEq } from '../Modules/useCountFromEq'
 import { getAtakFromMonster } from '../redux/Slice/Levels'
@@ -17,6 +17,7 @@ const Forest = () => {
     const router=useRouter()
 const monsters=useSelector((state)=>state.monsters)
 const skills=useSelector((state)=>state.skills)
+const ownItems=useSelector((state)=>state.ownItems)
 const dispatch=useDispatch()
 useCountFromEq("atak")
 const windowAfterWinRef=useRef()
@@ -37,6 +38,18 @@ playerRef.current.style.filter=`blur(0px) grayscale(0%)`
 console.info(skills.level.exp)
 console.info(skills.level.totalExp)
 
+const lostRandomItems=()=>{
+let copyOwn=[...ownItems]
+
+for(let i=0;i<copyOwn.length;i+=2){
+copyOwn.splice(i,Math.floor(Math.random()*2))
+
+}
+
+dispatch(lostItems(copyOwn))
+}
+
+
 useEffect(()=>{
     dispatch(setRateExp(skills.level.exp))
 if(skills.level.exp>=100){
@@ -45,7 +58,7 @@ if(skills.level.exp>=100){
 },[skills.level.exp])
 
 useEffect(()=>{
-    
+    //what happen after monster dead//
     if(monsters[0].hpLevel<=0 && skills.hpLevel>0){
         atakRef.current.style.zIndex=`-10`
         dispatch(buyItems(monsters[0].item))
@@ -58,7 +71,7 @@ useEffect(()=>{
  },10)
     }
  
- 
+ //What happen after player dead//
     if(skills.hpLevel<=0){
         
      setTimeout(()=>{
@@ -66,9 +79,12 @@ useEffect(()=>{
         windowAfterLostRef.current.style.transform=`scale(1)`
         playerRef.current.style.filter=`blur(20px) grayscale(100%)`
      },10)
+        lostRandomItems()
         dispatch(debitFromAccout(skills.gold-1))
-        dispatch(lostAllItems())
+        
         dispatch(takeOffLostItem())
+        dispatch(decreaseLevel(150))
+        dispatch(setRateExp(skills.level.exp))
      
     }
 },[monsters[0].hpLevel,skills.hpLevel])

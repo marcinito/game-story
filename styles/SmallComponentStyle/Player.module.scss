@@ -28,6 +28,7 @@ grid-template-columns:repeat(2,1fr);
     height:100%;
  grid-column: 1/2;
  grid-row: 1/2;
+ border:5px solid green;
 }
 //Eq//
 .eq{
@@ -237,6 +238,7 @@ grid-template-columns:repeat(2,1fr);
         width:0%;
         height:100%;
         background-color: #6B8E23; 
+        overflow:hidden;
     }
     .defFromArmor{
         width:100%;
@@ -268,6 +270,7 @@ grid-template-columns:repeat(2,1fr);
         border-image-slice: 30;
         border-image-repeat:repeat;
         border-image-width: 2px;
+       
     
     }
     .stageLevel:after{
@@ -279,6 +282,7 @@ grid-template-columns:repeat(2,1fr);
         left:40%;
        
     }
+
     @keyframes textLvl{
         0%{transform:translateY(-5px) rotateY(20deg) ;opacity:0.5;color:red;-webkit-text-stroke:1px green; }
         50%{ opacity:1;color:black;-webkit-text-stroke:1px blue;  }

@@ -11,7 +11,8 @@ import { handleHp } from '../Modules/handleHp';
 import { setRateExp } from '../redux/Slice/OverallSlice';
 
 const Player = () => {
-console.info("PLAYER COMPONENT")
+
+
 
     const skills=useSelector((state)=>state.skills)
     const monsters=useSelector((state)=>state.monsters)
@@ -54,9 +55,10 @@ else{
 
 
 useEffect(()=>{
-    // dispatch(setRateDef(handleHp(skills.defArmorTotal,skills.defArmor)))
+    dispatch(setRateDef(handleHp(skills.defArmorTotal,skills.defArmor)))
 dispatch(setRateHp(handleHp(skills.hpTotal,skills.hpLevel)))
 
+  
     levelRef.current.style.width=overall.rateExp+"%"
     defFromArmor.current.style.width=overall.rateDefArmor+"%"
   hpRef.current.style.width=overall.rateHp+"%"
@@ -65,7 +67,7 @@ dispatch(setRateHp(handleHp(skills.hpTotal,skills.hpLevel)))
       dispatch(setNewValueHp(50))
   }
 
-},[skills.hpTotal,skills.hpLevel,overall.rateHp,skills.defArmor,overall.rateExp,wear])
+},[skills.hpTotal,skills.hpLevel,overall.rateHp,skills.defArmor,overall.rateExp,wear,skills.hpTotal])
 
 console.info(skills.level.exp)
 console.info(skills.level.totalExp)
@@ -114,6 +116,11 @@ infoAboutItemRef.current.innerHTML=`<div class="InfoAboutItemPlayerComponent">
  },2000)
 }
 
+
+console.info(skills.level.exp,"exp")
+console.info(skills.level.totalExp.toString().slice(-2),"sprawdzam moja metode")
+console.info(skills.level.totalExp,"Totalexp")
+console.info(skills.level.lvl,"level poziom")
 
 
     return ( <div className={s.container} ref={containerRef}>

@@ -72,12 +72,11 @@ const ownItems = createSlice({
    
       state.push({...action.payload,hash:Math.floor(Math.random()*32423423)})
     },
-    lostAllItems(state){
-     
-      state.splice(0)
+    lostItems(state,action){
+      console.info(action)
+return action.payload
     },
     sellItems(state,action){
-      
       state.forEach((el,i,arr)=>{
         if(el.hash===action.payload.hash){
           arr.splice(i,1)
@@ -92,5 +91,5 @@ const ownItems = createSlice({
   },
 })
 
-export const { buyItems,lostAllItems,sellItems,markItemsWhichYouSell} = ownItems.actions
+export const { buyItems,lostItems,sellItems,markItemsWhichYouSell} = ownItems.actions
 export default ownItems.reducer

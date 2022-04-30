@@ -4,7 +4,7 @@ const initialState = {
     level:{
       exp:0,
       totalExp:0,
-      lvl:1,
+      lvl:0,
     },
     strenght:{
       fromEq:0,
@@ -18,8 +18,8 @@ const initialState = {
       lvl:1
     },
     respect:20,
-    hpLevel:50,
-    hpTotal:50, 
+    hpLevel:90,
+    hpTotal:300, 
     gold:2000,
 }
 
@@ -35,10 +35,17 @@ const levelSlice = createSlice({
     getLevel(state,action){
       console.info(action)
       state.level.exp-=100
-    state.level.lvl+=1
-     
-     
-    
+      state.level.lvl=Math.floor(state.level.totalExp/100)
+      state.hpTotal+=10
+    },
+    decreaseLevel(state,action){
+      
+      state.level.totalExp-=action.payload
+      if(state.level.totalExp<0){
+        state.level.totalExp=1
+      }
+      state.level.lvl=Math.floor(state.level.totalExp/100)
+      state.level.exp=state.level.totalExp.toString().slice(-2)*1
     },
     magicLevel(state) {
       state.value--
@@ -76,5 +83,6 @@ const levelSlice = createSlice({
 
 export const { level, magicLevel, respect , 
   debitFromAccout,paymentToAccount,countDefFromArmor,
-  countAtakFromArmor,getAtakFromMonster,setNewValueHp,getExp,getLevel} = levelSlice.actions
+  countAtakFromArmor,getAtakFromMonster,setNewValueHp,getExp,getLevel,
+decreaseLevel} = levelSlice.actions
 export default levelSlice.reducer
