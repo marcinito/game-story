@@ -11,6 +11,8 @@ import OverallSlice from './Slice/OverallSlice'
 import TawernaSlice from './Slice/TawernaSlice'
 import MessageSlice from './Slice/MessageSlice'
 import infoWindowSlice from './Slice/infoWindowSlice'
+import Spells from './Slice/Spells'
+import AboutSlice from './Slice/AboutSlice'
 
 export const store = configureStore({
   reducer: {
@@ -24,7 +26,9 @@ export const store = configureStore({
       overall:OverallSlice,
       tawerna:TawernaSlice,
       message:MessageSlice,
-      windowInfo:infoWindowSlice
+      windowInfo:infoWindowSlice,
+      spells:Spells,
+      about:AboutSlice,
 
   },
 })

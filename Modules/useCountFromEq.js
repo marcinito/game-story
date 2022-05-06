@@ -3,7 +3,6 @@ import { useSelector,useDispatch } from "react-redux"
 import { countDefFromArmor ,countAtakFromArmor} from "../redux/Slice/Levels"
 export const useCountFromEq=(whatCount)=>{
     const wear=useSelector((state)=>state.wearItems)
-    const skills=useSelector((state)=>state.skills)
     const dispatch=useDispatch()
     useEffect(()=>{
         const {helmet,armor,weapon,shield,legs,shoe} = wear

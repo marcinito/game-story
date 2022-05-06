@@ -7,20 +7,34 @@ const initialState = {
       lvl:0,
     },
     strenght:{
-      fromEq:0,
-      fromLvl:50,
-      total:0
+      fromEq:10,
+      fromLvl:10,
+      total:0,
     },
-    defArmor:0,
-    defArmorTotal:300,
+    def:{
+      defArmor:0,
+      defArmorTotal:250,
+    },
     magicLevel:{
-      experience:0,
-      lvl:1
+      exp:0,
+      totalExp:0,
+      lvl:100,
+      
     },
-    respect:20,
-    hpLevel:90,
-    hpTotal:300, 
-    gold:2000,
+    mana:{
+      mana:1100,
+      manaTotal:1100,
+    
+    },
+    hpLevel:9100,
+    hpTotal:9100,
+    howManyHpAddPerLvl:25, 
+    gold:43235,
+    productExp:{
+      magicExp:120,
+      levelExp:120,
+      product:40,//Its means how many more experiecne you need to get more to get higher level, it will increase every level//
+    }
 }
 
 const levelSlice = createSlice({
@@ -31,50 +45,72 @@ const levelSlice = createSlice({
       console.info(action)
       state.level.exp+=action.payload
       state.level.totalExp+=action.payload
+    while(state.level.exp>=state.productExp.levelExp){
+      state.level.lvl+=1
+      state.level.exp-=state.productExp.levelExp
+      state.productExp.levelExp+=state.productExp.product
+      state.hpTotal+=state.howManyHpAddPerLvl
+    }
     },
-    getLevel(state,action){
+    getMagicExp(state,action){
       console.info(action)
-      state.level.exp-=100
-      state.level.lvl=Math.floor(state.level.totalExp/100)
-      state.hpTotal+=10
+      state.magicLevel.exp+=action.payload
+      state.magicLevel.totalExp+=action.payload
+     while(state.magicLevel.exp>=state.productExp.magicExp){
+       state.magicLevel.lvl+=1
+       state.magicLevel.exp-=state.productExp.magicExp
+       state.productExp.magicExp+=state.productExp.product
+     }
     },
     decreaseLevel(state,action){
-      
-      state.level.totalExp-=action.payload
-      if(state.level.totalExp<0){
-        state.level.totalExp=1
-      }
-      state.level.lvl=Math.floor(state.level.totalExp/100)
-      state.level.exp=state.level.totalExp.toString().slice(-2)*1
-    },
-    magicLevel(state) {
-      state.value--
+  state.level.lvl-=1
+  state.magicLevel.lvl-=1
+  state.productExp.levelExp-=state.productExp.product
+  state.productExp.magicExp-=state.productExp.product
+  state.hpTotal-=state.howManyHpAddPerLvl
+
     },
     getAtakFromMonster(state,action){
-      state.hpLevel-=action.payload
+      
+   if(state.def.defArmor<=action.payload){
+    state.hpLevel-=(action.payload-state.def.defArmor)
+
+   }
+   if(state.def.defArmor>0)state.def.defArmor-=action.payload
+   if(state.def.defArmor<=0)state.def.defArmor=0   
+   
+   
+
+      
     },
-    respect(state, action) {
-      state.value += action.payload
+    setNewValueMana(state, action) {
+      state.mana.mana=action.payload
+      if(state.mana.mana<=0){
+        state.mana.mana=0
+        return
+      }
+     
     },
     debitFromAccout(state,action){
-    
       state.gold-=action.payload
     },
     paymentToAccount(state,action){
-     
       state.gold+=action.payload
     },
     countDefFromArmor(state,action){
-
-      state.defArmor=action.payload
-    }  ,
-
-     countAtakFromArmor(state,action){
-       
+      console.info(action)
+      state.def.defArmor=action.payload
+    },
+     countAtakFromArmor(state,action){   
     state.strenght.total=action.payload+state.strenght.fromLvl
     },
     setNewValueHp(state,action){
+   
       state.hpLevel=action.payload
+      if(state.hpLevel>=state.hpTotal){
+        state.hpLevel=state.hpTotal
+        return
+      }
     },
 
 
@@ -83,6 +119,6 @@ const levelSlice = createSlice({
 
 export const { level, magicLevel, respect , 
   debitFromAccout,paymentToAccount,countDefFromArmor,
-  countAtakFromArmor,getAtakFromMonster,setNewValueHp,getExp,getLevel,
-decreaseLevel} = levelSlice.actions
+  countAtakFromArmor,getAtakFromMonster,setNewValueHp,getExp,
+decreaseLevel,setNewValueMana,getMagicExp} = levelSlice.actions
 export default levelSlice.reducer

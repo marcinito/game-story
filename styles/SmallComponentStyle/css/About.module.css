@@ -1,0 +1,137 @@
+.container {
+  background: conic-gradient(#6666ff 180deg, #333333);
+  width: 100%;
+  height: 100%;
+}
+
+.container .nav {
+  position: relative;
+  list-style-type: none;
+  height: 30%;
+}
+
+.container .nav li {
+  border-bottom: 1px solid black;
+  text-align: center;
+  font-size: 1.2rem;
+  background: url("../../public/stara-kartka-papieru2.png");
+  background-origin: center;
+  font-weight: bold;
+}
+
+.container .nav li:hover {
+  background: url("../../public/stara-kartka-papieru.png");
+  color: white;
+  -webkit-box-shadow: 2px 2px 10px black,2px 2px 20px brown;
+          box-shadow: 2px 2px 10px black,2px 2px 20px brown;
+}
+
+.container .section {
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  border: 3px solid red;
+  border-image-source: url("../../public/ramka-monster.png");
+  border-image-slice: 90;
+  border-image-width: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-y: scroll;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .section::-webkit-scrollbar {
+  width: 10px;
+}
+
+.container .section::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px grey;
+          box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+.container .section::-webkit-scrollbar-thumb {
+  background: url("../../public/drawno2.png");
+  border-radius: 10px;
+}
+
+.container .section .name {
+  text-align: center;
+  z-index: 2;
+  margin-top: 35%;
+  height: 10%;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 2rem;
+}
+
+.container .section .img {
+  width: 50%;
+  margin-top: 5%;
+}
+
+.container .section .describe {
+  margin-top: 5%;
+  font-weight: bold;
+  text-align: center;
+}
+
+.container .section .skills {
+  margin-top: 5%;
+  border: 3px solid brown;
+  width: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-image-source: url("../../public/ramka-box.png");
+  border-image-slice: 30;
+}
+
+.container .section .skills .itemDrop {
+  border: 3px solid brown;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-image-source: url("../../public/ramka-box.png");
+  border-image-slice: 30;
+  border-left: none;
+  border-right: none;
+}
+
+.container .section .skills .itemDrop h3 {
+  display: inline-block;
+}
+
+.container .section .skills .itemDrop img {
+  width: 20%;
+}
+/*# sourceMappingURL=About.module.css.map */

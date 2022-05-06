@@ -5,6 +5,7 @@ import Shop from "./Shop";
 import {useRouter} from 'next/router'
 import { useEffect,useRef } from "react";
 import Tawerna from "./Tawerna";
+import About from "./About";
 const DisplayOption = () => {
     const router=useRouter()
     const containerRef=useRef()
@@ -31,8 +32,10 @@ useEffect(()=>{
                     return(<BackPack/>);
                     case "tawerna":
                         return(<Tawerna/>);
+                        case "about":
+                            return(<About/>);
                         default:
-                            return(<h1>Nic</h1>)
+                            return(<About/>)
 
         }
       

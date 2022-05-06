@@ -1,34 +1,77 @@
 import s from '../styles/SmallComponentStyle/Monster.module.scss'
 import {useRef,useEffect} from 'react'
 import {useSelector,useDispatch} from 'react-redux'
-import { cureMonster, monsterGetAtak } from '../redux/Slice/Monsters'
+import { cureMonster, floorNumbersOfTreatments, monsterGetAtak } from '../redux/Slice/Monsters'
 import { setRateMonsterHp } from '../redux/Slice/OverallSlice'
 import { handleHp } from '../Modules/handleHp'
-const Monster = () => {
-    console.info("MONSTER")
+import { getAtakFromMonster } from '../redux/Slice/Levels'
+import { useState } from 'react'
+const Monster = (props) => {
+
+
+
 const monsters=useSelector((state)=>state.monsters)
 const wear=useSelector((state)=>state.wear)
 const overall=useSelector((state)=>state.overall)
 const skills=useSelector((state)=>state.skills)
 const dispatch=useDispatch()
+const checkIfMonsterNeededHelpRef=useRef()
+
+
 
     const hpRef=useRef()
     let procent=100
  
 
+    
+
+// useEffect(()=>{
+// props.randomActionRef.current=setInterval(()=>{
+// props.randomActionFunction()
+
+// },3000)
+
+// return()=>{
+// clearInterval(props.randomActionRef.current)
+// }
+// },[])
+
+useEffect(()=>{
+    if(monsters[0].hpLevel<monsters[0].hpTotal)checkIfMonsterNeededHelpRef.current=true
+  
+
+
+    if(monsters[0].numbersOfTreatments>0 && checkIfMonsterNeededHelpRef.current){
+        hpRef.current.style.backgroundColor="green"
+        props.treatmentMonsterRef.current.style.opacity=1
+        setTimeout(()=>{
+            props.treatmentMonsterRef.current.style.opacity=0
+        },500)
+    }
+    let setTime=setTimeout(()=>{
+        hpRef.current.style.backgroundColor="white"
+        if(monsters[0].hpLevel===monsters[0].hpTotal){
+            dispatch(floorNumbersOfTreatments())
+        }
+    },500)
+if(monsters[0].hpLevel>=monsters[0].hpTotal){
+    checkIfMonsterNeededHelpRef.current=false
+
+}
+
+    return ()=>{
+        clearTimeout(setTime)
+    }
+},[monsters[0].numbersOfTreatments])
 
 
 
 useEffect(()=>{ 
 if(skills.hpLevel<0){
-    dispatch(cureMonster())
+    dispatch(cureMonster(30))
 }
-
     dispatch(setRateMonsterHp(handleHp(monsters[0].hpTotal,monsters[0].hpLevel)))
-  console.info("wykonuj sie ustawienie na monster")
 hpRef.current.style.width=overall.rateHpMonster+"%"
-console.info("REFRESH MONSTER COMPONENT")
-
 },[overall.rateHpMonster,monsters])
     return ( <div className={s.container}>
     
@@ -41,7 +84,7 @@ console.info("REFRESH MONSTER COMPONENT")
             <div className={s.slot}>
                 <img className={s.displayItem} src={"./ItemsGame/gold.png"}/>
             <span className={s.displayAmountGold}>{monsters[0].gold}</span></div>
-            <div className={s.slot}></div>
+          
         </div>
         <div className={s.skills}>
             <div className={s.hp} >

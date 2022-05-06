@@ -3,64 +3,66 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = [
         {
           name:"Krzywy-Miecz",
-       grafika:"./ItemsGame/curve-miecz.png",
+       grafika:"/ItemsGame/curve-miecz.png",
        atak:10,
        def:1,
        cost:5, 
        id:"weapon",
        valueStall:3,
-       hash:Math.floor(Math.random()*9394329423),
+       hash:12312312,
     },
     {
       name:"Krzywy-Miecz",
-   grafika:"./ItemsGame/curve-miecz.png",
+   grafika:"/ItemsGame/curve-miecz.png",
    atak:10,
    def:1,
    cost:5, 
    id:"weapon",
    valueStall:3,
-   hash:Math.floor(Math.random()*9394329423),
+   hash:12345566,
 },
 {
   name:"Krzywy-Miecz",
-grafika:"./ItemsGame/curve-miecz.png",
+grafika:"/ItemsGame/curve-miecz.png",
 atak:10,
 def:1,
 cost:5, 
 id:"weapon",
 valueStall:3,
-hash:Math.floor(Math.random()*9394329423),
+hash:3432432432,
 },
     {
       name:"Buty Chłopa",
-      grafika:"./ItemsGame/plain-shoes.png",
+      grafika:"/ItemsGame/plain-shoes.png",
       atak:5,
       def:5,
       cost:5,
       id:"shoe",
       valueStall:4,
-      hash:Math.floor(Math.random()*9394329423),
+      hash:41234121,
     },
     {
       name:"Spodnie Chłopa",
-    grafika:"./ItemsGame/plain-legs.png",
+    grafika:"/ItemsGame/plain-legs.png",
     atak:5,
     def:10,
     cost:5,
     id:"legs",
     valueStall:5,
-    hash:Math.floor(Math.random()*9394329423),
+    hash:54325432,
     
     },
-    {
-      name:"Health Potion",
-      grafika:"./ItemsGame/mana-fluid.png",
-      atak:0,
-      def:0,
-      cost:200,
-      id:"potion",
-      valueStall:10,
-  }
+
+  {
+    name:"Magic Maca",
+    grafika:"/ItemsGame/magic-maca.png",
+    atak:80,
+    def:0,
+    cost:500,
+    id:"weapon",
+    valueStall:10,
+    hash:543254322312,
+},
     ]
 
 
@@ -83,13 +85,24 @@ return action.payload
           console.info("usuniete")
         }
       })
-      
-
-
+    
     },
+    handleManaHpPotion(state,action){
+      state.forEach((el,i,arr)=>{
+        if(el.name==="Health Potion"){
+          if(action.payload===el.hash){
+            el.use-=1
+            if(el.use<=0){
+              arr.splice(i,1)
+            }
+          }
+        }
+      })
+     
+    }
 
   },
 })
 
-export const { buyItems,lostItems,sellItems,markItemsWhichYouSell} = ownItems.actions
+export const { buyItems,lostItems,sellItems,markItemsWhichYouSell,handleManaHpPotion} = ownItems.actions
 export default ownItems.reducer

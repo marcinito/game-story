@@ -44,6 +44,7 @@
   border-image-slice: 30 30 30 30;
   border-image-repeat: stretch;
   border-image-width: 3px 3px 3px 3px;
+  background: conic-gradient(gray, black, gray);
 }
 
 .container .store .shopSlot .imgSlot {
@@ -149,7 +150,6 @@
 }
 
 .panelBuy .describe .wallet span {
-  position: absolute;
   bottom: 15%;
   z-index: 1;
   color: red;
@@ -161,7 +161,7 @@
 
 .panelBuy .describe .wallet .imgGold {
   width: 25%;
-  position: absolute;
+  position: relative;
   bottom: 0%;
 }
 

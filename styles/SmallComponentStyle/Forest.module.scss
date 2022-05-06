@@ -2,20 +2,18 @@
     width:100%;
     height:77%;
     border:20px solid yellow;
-border-image-source: url("../../public/ramka-drut-kolczasty.png");
-border-image-slice:30;
-border-image-outset: 0.5;
-border-image-width: 40px;
-border-image-repeat: repeat;
-
+    border-image-source: url("../../public/ramka-drut-kolczasty.png");
+    border-image-slice:30;
+    border-image-outset: 0.5;
+    border-image-width: 40px;
+    border-image-repeat: repeat;
     box-sizing: border-box;
     display:flex;
     flex-direction: column;
     align-items:center;
-  
+   
 }
 .arena{
-
     width:100%;
     position:relative;
     border:20px solid yellow;
@@ -26,22 +24,56 @@ border-image-repeat: repeat;
     border-image-repeat: repeat;
     height:90%;
     display:grid;
-    grid-template-columns: 25% 50% 25%;
-    grid-template-rows:repeat(2,1fr)
+    grid-template-columns: 35% 30% 35%;
+    grid-template-rows:repeat(2,1fr);
+    
 }
-.player{
-position:absolute;
+    .player{
+        position:absolute;
     width:100%;
     height:100%;
-grid-column: 1/2;
-grid-row: 1/3;
+    grid-column: 1/2;
+    grid-row: 1/3;
+    .showHitFromMonster{
+        width:25%;
+        height:100px;
+        border:1px solid transparent;
+        position:absolute;
+        z-index:10;
+        left:8%;
+        top:20%;
+        opacity:0;
+        font-size:3rem;
+        text-align: center;
+        z-index:20;
+        color:white;
+        .sprite{
+            position:absolute;
+          width:100%;
+          height:100%;
+       
+          img{
+              width:100%;
+          }
+  
+        }
+    }
+    .treatmentPlayer{
+        width:50%;
+        height:78%;
+        position:absolute;
+        top:2%;
+        z-index:1;
+        opacity:0;
+    }
 
-}
-.fightArea{
+            }
+            //Finish player section in forest//
+    .fightArea{
     width:100%;
     height:100%;
     position:absolute;
-    border:3px solid orange;
+   
     grid-column:2/3;
     grid-row:1/3;
     .windowAfterWin{
@@ -158,97 +190,98 @@ grid-row: 1/3;
      }
     }
 }
-}
-.monster{
-    
+
+     //Atak button//
+     .atak{
+        position:absolute;
+        width:45%;
+        height:30%;
+        font-size:3rem;
+      left:50%;
+      transform:translateX(-50%);
+      border-image-source:url("../../public/ramka-drut-kolczasty.png");
+      border-image-slice: 30;
+      border-image-width:10;
+      font-family: 'Rubik Wet Paint';
+        border-radius:15%;
+        z-index:20;
+        transition:0.15s;
+       
+        }
+        .atak:hover{
+            background:conic-gradient(red,green);
+        color:white;            
+    }
+        }
+    .monster{
     position:absolute;
     width:100%;
     height:100%;
-grid-column: 3/4;
-grid-row: 1/3;
+    grid-column: 3/4;
+    grid-row: 1/3;
+    .spells{
+        position:absolute;
+        z-index:10;
+        width:50%;
+        height:70%;
+    }
+    .showHitFromPlayer{
+        width:30%;
+        height:100px;
+        color:white;
+        position:absolute;
+        z-index:10;
+        left:8%;
+        top:20%;
+        opacity:0;
+        text-align: center;
+        font-size:3rem;
+     
+     .sprite{
+         position:absolute;
+        width:100%;
+        height:100%;
+        left:5%;
+        overflow:hidden;    
+        img{
+            position:absolute;
+        width:100%;
+        animation:atakIntoMonster 0.45s infinite linear;
+    
+        }
+         }
+    }
+    .treatmentMonster{
+        position:absolute;
+        top:5%;
+        z-index:1;
+        width:50%;
+        height:60%;
+        opacity:0;
+    }
 
-}
-.atak{
-    position:absolute;
-
-    width:200px;
-    height:200px;
-    font-size:3rem;
-    left:37%;
-    background-color: skyblue;
-    border:20px solid green;
-    border-radius:15%;
-}
-.atak:hover{
-    background-color: green;
-}
-.back{
+    }
+    
+ 
+    .back{
     width:20%;
     height:5%;
     grid-row:2/3;
     
 }
-.showHitFromMonster{
-    width:25%;
-    height:100px;
-border:1px solid transparent;
 
-    position:absolute;
-    z-index:10;
-    left:8%;
-    top:20%;
-    opacity:0;
-    font-size:3rem;
-    text-align: center;
-    z-index:20;
-    color:white;
-    overflow:hidden;
-    .sprite{
-        position:absolute;
-        left:0;
-        top:0;
 
-        width:calc(2500px / 5);
-        height:100px;
-        background: url("../../public/sprite-fire.png");
-        background-size: cover;
-        animation: fires 5s  infinite linear;
+
+    
+
+        @keyframes fires{
+            0%{background-position: 30px;}
+            100%{background-position: 2500px;}
+        }
         
-    }
-
-}
-@keyframes fires{
-    0%{background-position: 30px;}
-    100%{background-position: 2500px;}
-}
-.showHitFromPlayer{
-    width:30%;
-    height:100px;
-    color:white;
-    position:absolute;
-    z-index:10;
-    left:8%;
-    top:20%;
-    opacity:0;
-    text-align: center;
-    font-size:3rem;
-    overflow:hidden;
-
+            @keyframes atakIntoMonster{
+            0%{transform:translateX(-50px)}
+          
+            100%{transform:translateX(60px)}
+            }
    
- .sprite{
-    position:absolute;
-    left:0;
-    top:0;
-
-    width:calc(2500px / 5);
-    height:100px;
-    background: url("../../public/sprite-fire.png");
-    background-size: cover;
-    animation: fires 5s  infinite linear;
- }
-}
-@keyframes fires{
-    0%{background-position: 0;}
-  
-    100%{background-position: 2500px;}
-}

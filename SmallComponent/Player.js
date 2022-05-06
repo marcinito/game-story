@@ -2,29 +2,40 @@ import s from '../styles/SmallComponentStyle/Player.module.scss'
 import { useDispatch,useSelector } from 'react-redux';
 import { useState,useRef,useEffect,useCallback } from 'react';
 import React from 'react';
-import { countDefFromArmor, getLevel, setNewValueHp } from '../redux/Slice/Levels';
+import { setNewValueHp, setNewValueMana,getMagicExp,getMagicLevel, getAtakFromMonster } from '../redux/Slice/Levels';
 import { useCountFromEq } from '../Modules/useCountFromEq';
 import { takeOffLostItem } from '../redux/Slice/WearItems';
 import { createDataAttribute } from '../Modules/createDataAttribute';
-import { subRateHp,setRateHp, setRateDef } from '../redux/Slice/OverallSlice';
+import { subRateHp,setRateHp, setRateDef, setRateMana } from '../redux/Slice/OverallSlice';
 import { handleHp } from '../Modules/handleHp';
+import { setRateMagic } from '../redux/Slice/OverallSlice';
+import { finishSpells, useSpells } from '../redux/Slice/Spells';
+import { monsterGetAtak } from '../redux/Slice/Monsters';
+import {useRouter} from 'next/router'
 import { setRateExp } from '../redux/Slice/OverallSlice';
 
-const Player = () => {
+const Player = (props) => {
+const [disabledExevoVis,setDisabledExevoVis]=useState(false)
+const [disabledExevoMort,setDisabledExevoMort]=useState(false)
+const [disabledExura,setDisabledExura]=useState(false)
+const [disabledExuraVita,setDisabledExuraVita]=useState(false)
+const [cycleLifeSpell,setCycleLifeSpell]=useState("start")
 
-
-
+    const router=useRouter()
     const skills=useSelector((state)=>state.skills)
     const monsters=useSelector((state)=>state.monsters)
     const overall=useSelector((state)=>state.overall)
     const wear=useSelector((state)=>state.wearItems)
     const ownItems=useSelector((state)=>state.ownItems)
     const facadeCharacter=useSelector((state)=>state.setFacada)
- const menuOption=useSelector((state)=>state.menuOption.option)
+    const menuOption=useSelector((state)=>state.menuOption.option)
 
+    const spellsRef=useRef()
     const hpRef=useRef(null)
     const levelRef=useRef(null)
+    const magicLevelRef=useRef(null)
     const defFromArmor=useRef(null)
+    const manaRef=useRef(null)
     const infoAboutItemRef=useRef(null)
     const img1Ref=useRef()
     const img2Ref=useRef()
@@ -33,12 +44,16 @@ const Player = () => {
     const img5Ref=useRef()
     const img6Ref=useRef()
     const containerRef=useRef()
-
     const dispatch=useDispatch()
+
+    const exevoVisRef=useRef()
+    const exevoMortRef=useRef()
+    const exuraRef=useRef()
+    const exuraVitaRef=useRef()
 
 useCountFromEq("def")
 useCountFromEq("atak")
-
+//How to customize size of primary component//
 useEffect(()=>{
 if(menuOption==="tawerna"){
 containerRef.current.style.gridColumn="2/3"
@@ -55,24 +70,25 @@ else{
 
 
 useEffect(()=>{
-    dispatch(setRateDef(handleHp(skills.defArmorTotal,skills.defArmor)))
+    dispatch(setRateDef(handleHp(skills.def.defArmorTotal,skills.def.defArmor)))
 dispatch(setRateHp(handleHp(skills.hpTotal,skills.hpLevel)))
-
-  
+dispatch(setRateMana(handleHp(skills.mana.manaTotal,skills.mana.mana)))
+dispatch(setRateMagic(handleHp(skills.productExp.magicExp,skills.magicLevel.exp)))
+dispatch(setRateExp(handleHp(skills.productExp.levelExp,skills.level.exp)))
     levelRef.current.style.width=overall.rateExp+"%"
+    magicLevelRef.current.style.width=overall.rateMagicExp+"%"
     defFromArmor.current.style.width=overall.rateDefArmor+"%"
   hpRef.current.style.width=overall.rateHp+"%"
-  console.info("REFRESH PLAYER COMPONENT")
-  if(skills.hpLevel<=0){
-      dispatch(setNewValueHp(50))
-  }
+  manaRef.current.style.width=overall.rateMana+"%"
+ 
 
-},[skills.hpTotal,skills.hpLevel,overall.rateHp,skills.defArmor,overall.rateExp,wear,skills.hpTotal])
-
-console.info(skills.level.exp)
-console.info(skills.level.totalExp)
-
-
+},[
+    overall.rateMana,skills.mana.mana,
+    skills.hpTotal,skills.hpLevel,overall.rateHp,
+    skills.def.defArmor,overall.rateDefArmor,overall.rateExp,wear,
+    skills.mana.manaTotal,skills.magicLevel.exp,
+    skills.magicLevel.totalExp,skills.level.exp,overall.rateMagicExp,
+    overall.rateExp])
 useEffect(()=>{
     createDataAttribute(img1Ref.current,wear.helmet)   
     createDataAttribute(img2Ref.current,wear.armor)   
@@ -80,8 +96,9 @@ useEffect(()=>{
     createDataAttribute(img4Ref.current,wear.shield)   
     createDataAttribute(img5Ref.current,wear.legs)   
     createDataAttribute(img6Ref.current,wear.shoe) 
-   
 })
+
+
 useEffect(()=>{
     const infoAboutItem=document.createElement("div")
     infoAboutItemRef.current=infoAboutItem
@@ -89,13 +106,16 @@ useEffect(()=>{
     document.body.appendChild(infoAboutItem)
 },[])
 
+//Display panel with spells if you are on battle fields//
 useEffect(()=>{
+    if(router.pathname==="/forest"){
+        spellsRef.current.style.opacity=1
+        spellsRef.current.style.zIndex=1
+    }
+})
 
-},[skills.level.exp])
 
 const showDetail=(e)=>{
-
-    
  if(e.target.src){
 infoAboutItemRef.current.style.left=e.target.x +"px"
 infoAboutItemRef.current.style.top=e.target.y +"px"
@@ -107,9 +127,7 @@ infoAboutItemRef.current.innerHTML=`<div class="InfoAboutItemPlayerComponent">
 <h6>Def:${e.target.dataset.def}</h6>
 <h6>Atak:${e.target.dataset.atak}</h6>
 </div>`
-
  }
-
  setTimeout(()=>{
     infoAboutItemRef.current.style.transform=`scale(0)`
     return
@@ -117,10 +135,90 @@ infoAboutItemRef.current.innerHTML=`<div class="InfoAboutItemPlayerComponent">
 }
 
 
-console.info(skills.level.exp,"exp")
-console.info(skills.level.totalExp.toString().slice(-2),"sprawdzam moja metode")
-console.info(skills.level.totalExp,"Totalexp")
-console.info(skills.level.lvl,"level poziom")
+const atakSpell=(costMana,concerningSpan,spell,timeReload,disabled,hitPower)=>{
+    if(cycleLifeSpell==="start"){
+       
+    if(skills.mana.mana>=costMana){
+        setCycleLifeSpell("end")
+        concerningSpan.current.style.transition=`0s`
+        concerningSpan.current.style.width=0+"%"
+        disabled(true)
+        if(monsters[0].hpLevel>0){
+            dispatch(getAtakFromMonster(monsters[0].atak))
+            }
+        dispatch(setNewValueMana(skills.mana.mana-costMana))
+        dispatch(useSpells(spell))
+            dispatch(getMagicExp(70))
+        setTimeout(()=>{
+            setCycleLifeSpell("start")
+            props.hitFromPlayer.current.textContent=hitPower
+            props.hitFromPlayer.current.style.opacity=1
+            setTimeout(()=>{
+                props.hitFromPlayer.current.style.opacity=0
+            },500)
+            dispatch(useSpells(null))
+            dispatch(monsterGetAtak(hitPower))
+           console.info(timeReload,"timeReload")
+            concerningSpan.current.style.transition=(timeReload/1000)+"s"+" linear"
+            concerningSpan.current.style.width=`100%`
+            setTimeout(()=>{
+          disabled(false)
+            },timeReload)
+        },1400)
+    }
+    else{
+        console.info("Za mało many")
+    }
+}
+}
+
+const cureSpell=(costMana,might,concerningSpan,disabled,reloadTime,obtainExp)=>{
+    if(cycleLifeSpell==="start"){
+    if(skills.mana.mana>=costMana){
+        setCycleLifeSpell("end")
+        concerningSpan.current.style.transition=`0s`
+        concerningSpan.current.style.width="0%"
+        props.treatmentRef.current.style.opacity=1
+        disabled(true)
+        dispatch(getMagicExp(obtainExp))
+        dispatch(setNewValueMana(skills.mana.mana-costMana))
+        setTimeout(()=>{
+            props.treatmentRef.current.style.opacity=0
+            dispatch(setNewValueHp(skills.hpLevel+might))
+            concerningSpan.current.style.transition=`${reloadTime/1000}s linear`
+            concerningSpan.current.style.width="100%"
+            setCycleLifeSpell("start")
+            setTimeout(()=>{
+                disabled(false)
+            },reloadTime)
+        },500)
+        }
+        else{
+            console.info("Za mało many ziom!")
+        }
+    }
+}
+
+const activeSpell=(whichSpell,costMana)=>{
+    switch(whichSpell){
+        case "exura":
+            cureSpell(costMana,50,exuraRef,setDisabledExura,1000,15)
+            ;break;
+        case "exura vita":
+            cureSpell(costMana,100,exuraVitaRef,setDisabledExuraVita,2000,30)
+          ;break;  
+        case "exevo vis":
+                atakSpell(costMana,exevoVisRef,"/spells/exevo-vis.webp",
+                3000,setDisabledExevoVis,50)
+           ;break;
+            case "exevo mort":
+                atakSpell(costMana,exevoMortRef,"/spells/exevo-mort.gif",
+                2000,setDisabledExevoMort,90)
+          ;break;
+    }
+
+}
+
 
 
     return ( <div className={s.container} ref={containerRef}>
@@ -180,10 +278,15 @@ console.info(skills.level.lvl,"level poziom")
           <span className={s.displayStrenght}>{skills.strenght.total}</span>
       </div>
 </div>
+<div className={s.spells} ref={spellsRef}>
+   <button className={s.exura}   onClick={()=>activeSpell("exura",10)}><span ref={exuraRef}></span><h4>Exura</h4></button>
+   <button className={s.exuraVita} disabled={skills.magicLevel.lvl<=2?true:disabledExuraVita} onClick={()=>activeSpell("exura vita",30)}><span ref={exuraVitaRef}></span><h4>Exura Vita</h4></button>
+   <button className={s.exevoVis} disabled={skills.magicLevel.lvl<4?true:disabledExevoVis} onClick={()=>activeSpell("exevo vis",80)}>
+       <span ref={exevoVisRef}></span><h4>Exevo Vis</h4></button>
+   <button className={s.exevoMort} disabled={skills.magicLevel.lvl<7?true:disabledExevoMort} onClick={()=>activeSpell("exevo mort",80)}>
+       <span ref={exevoMortRef}></span><h4>Exevo Mort</h4></button>
+</div>
 <div className={s.pakSkills}>
-
- 
-
         <div className={s.stageHp}>
             
             <span ref={hpRef}  className={s.spanHp}></span>
@@ -199,14 +302,14 @@ console.info(skills.level.lvl,"level poziom")
 
         <div className={s.stageMagic}>
             
-            <span  className={s.spanMagic}></span>
+            <span  className={s.spanMagic} ref={magicLevelRef}></span>
             <span style={{position:"absolute",zIndex:"10"}}>{skills.magicLevel.lvl}</span>
         </div>
 
-        <div className={s.stageRespect}>
+        <div className={s.stageMana}>
             
-            <span  className={s.spanRespect}></span>
-            <span style={{position:"absolute",zIndex:"10"}}>{skills.respect}</span>
+            <span  className={s.spanMana} ref={manaRef}></span>
+            <span style={{position:"absolute",zIndex:"10"}}>{skills.mana.mana}</span>
         </div>
 
 </div>

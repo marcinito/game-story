@@ -55,7 +55,8 @@ const showItem=(el)=>{
     console.info(el)
     panelShopRef.current.style.transform=`scale(1)`
 setTargetItem(el)
-setSwapOption(true)
+
+setSwapOption(true)//Panel in shop is blocked, it prevent swap buy/sell //
 
 }
 
@@ -71,12 +72,8 @@ dispatch(debitFromAccout(el.cost))
 dispatch(buyItems(el))
     }
     if(prop==="sell"){
-        console.info(el)
         dispatch(paymentToAccount(el.valueStall))
         dispatch(sellItems(el))
-       
-        
-      
         if(checkIfObjectContain(wearItems,ownItems,el)){
             dispatch(removeSoldItem(el))
         }
@@ -101,18 +98,19 @@ const whichWindowDisplay=(which)=>{
     }
 }
 
-
     return ( 
         <div className={s.container}>
             <div className={s.store} ref={eqShopRef}>
 {whatDisplay.map((el,i,arr)=>{
+    
   return(
     <div 
-    key={Math.random()*123}
-    id={el.hash}
+    key={whatDisplay===allItems?el.name:el.hash}
+    id={whatDisplay===ownItems?el.hash:null}
     className={s.shopSlot}
     onClick={(e)=>showItem(el)}
     >
+
     <img className={s.imgSlot} src={el.grafika}></img>
 </div>
   )

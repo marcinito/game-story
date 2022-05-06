@@ -9,7 +9,7 @@ import { getMessageFromWordl } from '../../redux/Slice/MessageSlice';
 import { expireMessage } from '../../redux/Slice/MessageSlice';
 import useInfoWindow from '../../Modules/useInfoWindow';
 const Cubic = (props) => {
-    console.info("CUBIC CUBIC")
+    
     console.info(props)
     const [payment,setPayment]=useState(5)
     const [throwResult,setThrowResult]=useState("wait")

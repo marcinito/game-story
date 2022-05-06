@@ -5,8 +5,8 @@ const BuyPanel=({tarItem,gold,buy,closeP})=>{
         <>
         <div className={s.describe}>
       
-        <h4>Atack:{tarItem.atak}</h4>
-        <h4>Deffence:{tarItem.def}</h4>
+        <h4>{tarItem.id==="potion"?`Use: ${tarItem.use}`:`Attack: ${tarItem.atak}`}</h4>
+        <h4 style={{color:"brown"}}>{tarItem.id==="potion"?`${tarItem.describe}`:`Deffence: ${tarItem.def}`}</h4>
         <h4>Cost:{tarItem.cost}</h4>
         <div className={s.wallet}>Your money: <span>{gold}</span> <img className={s.imgGold} src={"./ItemsGame/gold.png"}></img></div>
     </div>

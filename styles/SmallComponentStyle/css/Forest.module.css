@@ -33,8 +33,8 @@
   height: 90%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 25% 50% 25%;
-      grid-template-columns: 25% 50% 25%;
+  -ms-grid-columns: 35% 30% 35%;
+      grid-template-columns: 35% 30% 35%;
   -ms-grid-rows: (1fr)[2];
       grid-template-rows: repeat(2, 1fr);
 }
@@ -51,11 +51,44 @@
   grid-row: 1/3;
 }
 
+.player .showHitFromMonster {
+  width: 25%;
+  height: 100px;
+  border: 1px solid transparent;
+  position: absolute;
+  z-index: 10;
+  left: 8%;
+  top: 20%;
+  opacity: 0;
+  font-size: 3rem;
+  text-align: center;
+  z-index: 20;
+  color: white;
+}
+
+.player .showHitFromMonster .sprite {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.player .showHitFromMonster .sprite img {
+  width: 100%;
+}
+
+.player .treatmentPlayer {
+  width: 50%;
+  height: 78%;
+  position: absolute;
+  top: 2%;
+  z-index: 1;
+  opacity: 0;
+}
+
 .fightArea {
   width: 100%;
   height: 100%;
   position: absolute;
-  border: 3px solid orange;
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
@@ -226,6 +259,29 @@
   font-size: 3rem;
 }
 
+.fightArea .atak {
+  position: absolute;
+  width: 45%;
+  height: 30%;
+  font-size: 3rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-image-source: url("../../public/ramka-drut-kolczasty.png");
+  border-image-slice: 30;
+  border-image-width: 10;
+  font-family: 'Rubik Wet Paint';
+  border-radius: 15%;
+  z-index: 20;
+  -webkit-transition: 0.15s;
+  transition: 0.15s;
+}
+
+.fightArea .atak:hover {
+  background: conic-gradient(red, green);
+  color: white;
+}
+
 .monster {
   position: absolute;
   width: 100%;
@@ -238,19 +294,48 @@
   grid-row: 1/3;
 }
 
-.atak {
+.monster .spells {
   position: absolute;
-  width: 200px;
-  height: 200px;
-  font-size: 3rem;
-  left: 37%;
-  background-color: skyblue;
-  border: 20px solid green;
-  border-radius: 15%;
+  z-index: 10;
+  width: 50%;
+  height: 70%;
 }
 
-.atak:hover {
-  background-color: green;
+.monster .showHitFromPlayer {
+  width: 30%;
+  height: 100px;
+  color: white;
+  position: absolute;
+  z-index: 10;
+  left: 8%;
+  top: 20%;
+  opacity: 0;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.monster .showHitFromPlayer .sprite {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 5%;
+  overflow: hidden;
+}
+
+.monster .showHitFromPlayer .sprite img {
+  position: absolute;
+  width: 100%;
+  -webkit-animation: atakIntoMonster 0.45s infinite linear;
+          animation: atakIntoMonster 0.45s infinite linear;
+}
+
+.monster .treatmentMonster {
+  position: absolute;
+  top: 5%;
+  z-index: 1;
+  width: 50%;
+  height: 60%;
+  opacity: 0;
 }
 
 .back {
@@ -259,34 +344,6 @@
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
-}
-
-.showHitFromMonster {
-  width: 25%;
-  height: 100px;
-  border: 1px solid transparent;
-  position: absolute;
-  z-index: 10;
-  left: 8%;
-  top: 20%;
-  opacity: 0;
-  font-size: 3rem;
-  text-align: center;
-  z-index: 20;
-  color: white;
-  overflow: hidden;
-}
-
-.showHitFromMonster .sprite {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: calc(2500px / 5);
-  height: 100px;
-  background: url("../../public/sprite-fire.png");
-  background-size: cover;
-  -webkit-animation: fires 5s  infinite linear;
-          animation: fires 5s  infinite linear;
 }
 
 @-webkit-keyframes fires {
@@ -307,38 +364,25 @@
   }
 }
 
-.showHitFromPlayer {
-  width: 30%;
-  height: 100px;
-  color: white;
-  position: absolute;
-  z-index: 10;
-  left: 8%;
-  top: 20%;
-  opacity: 0;
-  text-align: center;
-  font-size: 3rem;
-  overflow: hidden;
-}
-
-.showHitFromPlayer .sprite {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: calc(2500px / 5);
-  height: 100px;
-  background: url("../../public/sprite-fire.png");
-  background-size: cover;
-  -webkit-animation: fires 5s  infinite linear;
-          animation: fires 5s  infinite linear;
-}
-
-@keyframes fires {
+@-webkit-keyframes atakIntoMonster {
   0% {
-    background-position: 0;
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
   }
   100% {
-    background-position: 2500px;
+    -webkit-transform: translateX(60px);
+            transform: translateX(60px);
+  }
+}
+
+@keyframes atakIntoMonster {
+  0% {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+  100% {
+    -webkit-transform: translateX(60px);
+            transform: translateX(60px);
   }
 }
 /*# sourceMappingURL=Forest.module.css.map */
