@@ -9,10 +9,13 @@ import { openCloseWindowMessage } from '../redux/Slice/infoWindowSlice'
 const Below = () => {
 const info=useSelector((state)=>state.message)
 const windowIsOpen=useSelector((state)=>state.windowInfo)
-const windowInfo=useSelector((state)=>state.windowInfo)
+
+const menuOption=useSelector((state)=>state.menuOption.option)
+
+
 
 const [flag,setFlag]=useState("close")
-const [conversation,setConversation]=useState("siema")
+
 
 
 const dispatch=useDispatch()
@@ -22,14 +25,24 @@ const dashboardRef=useRef()
 const enterMessageRef=useRef()
 const talkingRef=useRef()
 
-// useEffect(()=>{
-// if(windowIsOpen.windowIsOpen===true){
-//     handleWindow()
-//     console.info("Jestem tutaj")
+useEffect(()=>{
+if(menuOption!=="default")
+{
+    setFlag("close")
+ console.info(flag)
+}
+},[menuOption])
+
+useEffect(()=>{
+   console.info(windowIsOpen)
+if(windowIsOpen.windowIsOpen===true){
+    handleWindow()
     
    
-// }
-// },[windowInfo])
+}
+},[windowIsOpen])
+
+
 
 useEffect(()=>{
     talkingRef.current.scrollTop=talkingRef.current.scrollHeight
@@ -41,12 +54,13 @@ useEffect(()=>{
        if(flag==="open"){
            windowRef.current.style.height="50%"
            dashboardRef.current.style="height:100%"
-           dashboardRef.current.children[0].textContent="OPEN CHAT"
+        
            dashboardRef.current.children[0].style.width="100%"
+           dashboardRef.current.children[0].textContent=`open`
          
            talkingRef.current.style.transform="scale(0)"
            dispatch(openCloseWindowMessage("close"))
-          
+         
 setFlag("close")
 
 return
@@ -55,27 +69,22 @@ return
        if(flag=="close"){
         windowRef.current.style.height="calc(100% * 7)"
         dashboardRef.current.style="height:10%"
-        dashboardRef.current.children[0].textContent="X"
+        dashboardRef.current.children[0].textContent=`X`
         dashboardRef.current.children[0].style.width="12%"
-        
+     
         talkingRef.current.style.transform="scale(1)"
         setFlag("open")
+       
+      
        }
     }
-const sendMessage=()=>{
-    setArrayDialog([...arrayDialog,userMessage(conversation)])
-    setTimeout(()=>{
-        setArrayDialog([...arrayDialog,userMessage(conversation),answerRobot(info)])
-    },1000)
-    setConversation("")
-}
 
 
     return ( 
         <div className={s.below}>
               <div className={s.information} ref={windowRef}>
        <div className={s.dashboard} ref={dashboardRef}>
-           <button className={s.btn}  onClick={(e)=>handleWindow(e)}>OPEN CHAT</button>
+           <button className={s.btn}  onClick={(e)=>handleWindow(e)}>open</button>
        </div>
        <div  ref={talkingRef} className={s.message}>
            {info.map((el,i,arr)=>{

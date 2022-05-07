@@ -6,10 +6,14 @@ import { useSelector,useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { openCloseWindowMessage } from '../redux/Slice/infoWindowSlice';
 const PlayerPanel = () => {
+
+const menuOption=useSelector((state)=>state.menuOption)
     const dispatch=useDispatch()
+console.info(menuOption.option)
 useEffect(()=>{
-    console.info("FROM PANEL-PLAYER")
+    if(menuOption.option==="default"){
     dispatch(openCloseWindowMessage("open"))
+    }
 },[])
     return ( <div className={s.containerPlayerPanel}>
         <DashBoardGame/>

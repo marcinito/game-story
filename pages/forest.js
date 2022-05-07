@@ -17,7 +17,7 @@ const Forest = () => {
 
 
 const [handlAtakDisabled,setHandleAtakDisabled]=useState(false)
-
+const [disabledSpellAfterWin,setDisabledSpellAfterWin]=useState(false)
     const router=useRouter()
 const monsters=useSelector((state)=>state.monsters)
 const skills=useSelector((state)=>state.skills)
@@ -82,6 +82,7 @@ monsters[0].attackPower[Math.floor(Math.random()*monsters[0].attackPower.length)
  setTimeout(()=>{
     windowAfterWinRef.current.style.transform=`scale(1)`
     monsterRef.current.style.filter=`blur(20px) grayscale(100%)`
+    setDisabledSpellAfterWin(true)
  },800)
     }
 
@@ -115,8 +116,7 @@ const getAtakFromMonsterCount=()=>{
 getAtakFromMonsterCount()
 
 const handleAtak=()=>{
-    console.info(randomPowerAtakRef.current)
-    //DO POPRAWY //
+  
     setHandleAtakDisabled(true)
     dispatch(monsterGetAtak(skills.strenght.total))
     dispatch(getAtakFromMonster(monsters[0].atak*randomPowerAtakRef.current))
@@ -141,12 +141,14 @@ const nextMonster=()=>{
     monsterRef.current.style.filter=`blur(0px) grayscale(0%)`
     windowAfterWinRef.current.style.transform=`scale(0)`
     windowAfterLostRef.current.style.transform=`scale(0)`
+    setDisabledSpellAfterWin(false)
     clearTimeout(timeoutRef.current)
 }
 
 const backAfterDefeat=()=>{
     router.push('/player-panel')
     clearTimeout(timeoutRef.current)
+    setDisabledSpellAfterWin(false)
    
 }
 const backAfterWin=()=>{
@@ -156,7 +158,7 @@ const backAfterWin=()=>{
 }
 
 const randomActionFunction=()=>{
-    //It is give to Monster component and execute  per 1s
+    //It's hand over to Monster component and execute  per 1s
     let randomNumber=Math.floor(Math.random()*5)
     if(randomNumber===0 || randomNumber===5){
         dispatch(cureMonster(30))
@@ -179,14 +181,14 @@ const randomActionFunction=()=>{
         <div className={s.player} ref={playerRef}>
      
             <div className={s.showHitFromMonster} 
-            ref={hitFromMonster}>{monsters[0].atak*randomPowerAtakRef.current}
+            ref={hitFromMonster}>{Math.floor(monsters[0].atak*randomPowerAtakRef.current)}
            <div className={s.sprite}>
                <img  src={monsters[0].atakImage}/>
            </div>
           
             </div>
             <img className={s.treatmentPlayer} ref={treatmentPlayerRef} src={"/spells/treatment-spell.gif"}/>
-            <Player hitFromPlayer={hitFromPlayer} treatmentRef={treatmentPlayerRef}/>
+            <Player hitFromPlayer={hitFromPlayer} treatmentRef={treatmentPlayerRef} disabledSpell={disabledSpellAfterWin}/>
         </div>
         <div className={s.fightArea}>
             <div className={s.windowAfterWin} ref={windowAfterWinRef}>

@@ -14,7 +14,10 @@ const DashBoardGame = () => {
         <button disabled={sel.optionTawerna==="cubic" || sel.optionTawerna==="oneHandBandit"}  className={s.shop} onClick={()=>dispatch(changeOption("backpack"))}>Backpack</button>    
         <button disabled={sel.optionTawerna==="cubic" || sel.optionTawerna==="oneHandBandit"}  className={s.shop} onClick={()=>dispatch(changeOption("tawerna"))}>Tavern</button>    
         <button disabled={sel.optionTawerna==="cubic" || sel.optionTawerna==="oneHandBandit"} className={s.shop} onClick={()=>router.push("/forest")}>Fight</button>    
-        <button disabled={sel.optionTawerna==="cubic" || sel.optionTawerna==="oneHandBandit"} className={s.shop} onClick={()=>dispatch(changeOption("About"))}>About</button>    
+        <button disabled={sel.optionTawerna==="cubic" || sel.optionTawerna==="oneHandBandit"} className={s.shop} onClick={()=>dispatch(changeOption("About"))}>About</button>
+        <div className={s.decoration}>
+            <img src={"/kompas.png"}/>
+            </div>    
     </div> );
 }
  

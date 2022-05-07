@@ -13,7 +13,6 @@ const dispatch=useDispatch()
 const skills=useSelector(state=>state.skills)
 const windowInfo=useSelector(state=>state.windowInfo)
 const message=useSelector(state=>state.message)
-console.info(windowInfo)
 useInfoWindow(message[0].backpack,windowInfo,"backpack")
 const clickItemRef=useRef()
 
@@ -32,7 +31,6 @@ const wearItem=(el)=>{
 
     const ownedItems=useSelector((state)=>state.ownItems)
     
-console.info(ownedItems)
     return ( <div className={s.container}>
 
 {ownedItems.map(el=>{

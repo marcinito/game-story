@@ -98,7 +98,7 @@ const levelSlice = createSlice({
       state.gold+=action.payload
     },
     countDefFromArmor(state,action){
-      console.info(action)
+      
       state.def.defArmor=action.payload
     },
      countAtakFromArmor(state,action){   

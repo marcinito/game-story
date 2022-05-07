@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = { windowIsOpen: false }
 
 const infoWindowSlice = createSlice({
-  name: 'openWindow',
+  name: 'windowInfo',
   initialState,
   reducers: {
     openCloseWindowMessage(state,action){

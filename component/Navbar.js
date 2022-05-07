@@ -1,8 +1,10 @@
 import s from '../styles/Nav.module.scss'
 
 const Navbar = () => {
+
+
+
     return ( 
-    
     <div className={s.logo}>
      
 <div className={`${s.divLogo} ${s.firstDiv}`}></div>

@@ -5,6 +5,7 @@
     height:6%;
     background-color: white;
     box-shadow:0 0 10px black;
+    background:lighten(black,10%);
     
 }
 //---Information window--//@at-root
@@ -47,6 +48,7 @@
      border-image-slice:30;
      border-image-width:5px;
         
+    
     }
 }
 

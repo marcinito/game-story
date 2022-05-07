@@ -9,6 +9,8 @@
     border-image-slice: 30 30 30 30;
     border-image-repeat:repeat;
     border-image-width: 10px 10px 10px 0px;
+    overflow:hidden;
+    
 }
 .shop{
     width:100%;
@@ -21,11 +23,32 @@
     font-size:4rem;
     text-align: center;
     font-family: 'Babylonica', cursive;
-    background-color:darken(beige,20%)
+    background-color:darken(beige,20%);
+   
 }
 .shop:hover{
     background-color: darken(beige,5%);
     cursor:pointer;
     letter-spacing: 3px;
     
+}
+.decoration{
+    position:absolute;
+   background:url("../../public/stara-kartka-papieru.png");
+    height:25%;
+    width:100%;
+    overflow:hidden;
+    border:10px solid;
+    border-image-source: url("../../public/ramka.jpg") ;
+    border-image-slice: 30 30 30 30;
+    border-image-repeat:repeat;
+    border-image-width: 5px 5px 5px 5px;
+    img{
+        width:100%;
+        height:100%;
+        transition:1s;
+        &:hover{
+            transform:rotate(20deg)
+        }
+    }
 }

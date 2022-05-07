@@ -68,7 +68,6 @@ else{
 }
 },[menuOption])
 
-
 useEffect(()=>{
     dispatch(setRateDef(handleHp(skills.def.defArmorTotal,skills.def.defArmor)))
 dispatch(setRateHp(handleHp(skills.hpTotal,skills.hpLevel)))
@@ -89,6 +88,7 @@ dispatch(setRateExp(handleHp(skills.productExp.levelExp,skills.level.exp)))
     skills.mana.manaTotal,skills.magicLevel.exp,
     skills.magicLevel.totalExp,skills.level.exp,overall.rateMagicExp,
     overall.rateExp])
+
 useEffect(()=>{
     createDataAttribute(img1Ref.current,wear.helmet)   
     createDataAttribute(img2Ref.current,wear.armor)   
@@ -114,6 +114,11 @@ useEffect(()=>{
     }
 })
 
+useEffect(()=>{
+   
+        console.info(props)
+    
+})
 
 const showDetail=(e)=>{
  if(e.target.src){
@@ -281,9 +286,9 @@ const activeSpell=(whichSpell,costMana)=>{
 <div className={s.spells} ref={spellsRef}>
    <button className={s.exura}   onClick={()=>activeSpell("exura",10)}><span ref={exuraRef}></span><h4>Exura</h4></button>
    <button className={s.exuraVita} disabled={skills.magicLevel.lvl<=2?true:disabledExuraVita} onClick={()=>activeSpell("exura vita",30)}><span ref={exuraVitaRef}></span><h4>Exura Vita</h4></button>
-   <button className={s.exevoVis} disabled={skills.magicLevel.lvl<4?true:disabledExevoVis} onClick={()=>activeSpell("exevo vis",80)}>
+   <button className={s.exevoVis} disabled={skills.magicLevel.lvl<4?true:disabledExevoVis  || props.disabledSpell} onClick={()=>activeSpell("exevo vis",80)}>
        <span ref={exevoVisRef}></span><h4>Exevo Vis</h4></button>
-   <button className={s.exevoMort} disabled={skills.magicLevel.lvl<7?true:disabledExevoMort} onClick={()=>activeSpell("exevo mort",80)}>
+   <button className={s.exevoMort} disabled={skills.magicLevel.lvl<7?true:disabledExevoMort  || props.disabledSpell} onClick={()=>activeSpell("exevo mort",80)}>
        <span ref={exevoMortRef}></span><h4>Exevo Mort</h4></button>
 </div>
 <div className={s.pakSkills}>

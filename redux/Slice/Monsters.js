@@ -2,44 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import { initialState as allItems } from './Items'
 
 const initialState = [
-{
-        name:"Vampire",
-        img:"./monster/Vampire.png",
-        hpLevel:80,
-        hpTotal:80,
-        item:allItems[0],
-        gold:10,
-        info:"Vampire is dark character living near soul betrayed people",
-        atak:10,
-        attackPower:[1.1,1.2,1.3,1.4,1.5,0.9,0.8,0.7],
-        atakImage:"/atakMonster/atak-vampire.png",
-        experience:150,
-        numbersOfTreatments:0,
-        describe:`Are you cut? Or have bleeding injury, becarefull Vampire can be your guest
-         in oncoming night, do not desired quest.They are like shark feel smell of bleed from 
-         long distance, always thirsty and clever to get what they want.Their attribute are long
-         claws, sharp teeth, cunning personality`
 
-},
-{
-  name:"Vampire",
-  img:"./monster/Vampire.png",
-  hpLevel:80,
-  hpTotal:80,
-  item:allItems[0],
-  gold:10,
-  info:"Vampire is dark character living near soul betrayed people",
-  atak:10,
-  attackPower:[1.1,1.2,1.3,1.4,1.5,0.9,0.8,0.7],
-  atakImage:"/atakMonster/atak-vampire.png",
-  experience:150,
-  numbersOfTreatments:0,
-  describe:`Are you cut? Or have bleeding injury, becarefull Vampire can be your guest
-   in oncoming night, do not desired quest.They are like shark feel smell of bleed from 
-   long distance, always thirsty and clever to get what they want.Their attribute are long
-   claws, sharp teeth, cunning personality`
-
-},
 {
   name:"Vampire",
   img:"./monster/Vampire.png",
@@ -173,6 +136,74 @@ gold:50,
   atak:80,
   attackPower:[1.1,1.2,1.3,1.4,1.5,0.9,0.8,0.7],
   atakImage:"/atakMonster/hero-atak.gif",
+  experience:100,
+  numbersOfTreatments:0,
+  describe:`Are you cut? Or have bleeding injury, becarefull Vampire can be your guest
+  in oncoming night, do not desired quest.They are like shark feel smell of bleed from 
+  long distance, always thirsty and clever to get what they want.Their attribute are long
+  claws, sharp teeth, cunning personality`
+},
+{
+  name:"Toxic Spider",
+  img:"./monster/toxic-spider.png",
+  hpLevel:900,
+  hpTotal:900,
+  item:allItems[3],
+  gold:40,
+  atak:120,
+  attackPower:[1,1,1,1,1,0.9,0.8,0.7],
+  atakImage:"/atakMonster/spider-atak.png",
+  experience:300,
+  numbersOfTreatments:0,
+  describe:`Are you cut? Or have bleeding injury, becarefull Vampire can be your guest
+  in oncoming night, do not desired quest.They are like shark feel smell of bleed from 
+  long distance, always thirsty and clever to get what they want.Their attribute are long
+  claws, sharp teeth, cunning personality`
+},
+{
+  name:"A stray wanderer",
+  img:"./monster/another-plater.png",
+  hpLevel:1050,
+  hpTotal:1050,
+  item:allItems[3],
+  gold:10,
+  atak:90,
+  attackPower:[1.1,1.2,1.3,1.4,1.5,0.9,0.8,0.7],
+  atakImage:"/atakMonster/another-player-atak.png",
+  experience:100,
+  numbersOfTreatments:0,
+  describe:`Are you cut? Or have bleeding injury, becarefull Vampire can be your guest
+  in oncoming night, do not desired quest.They are like shark feel smell of bleed from 
+  long distance, always thirsty and clever to get what they want.Their attribute are long
+  claws, sharp teeth, cunning personality`
+},
+{
+  name:"Faraon",
+  img:"./monster/mumia.png",
+  hpLevel:1300,
+  hpTotal:1300,
+  item:allItems[3],
+  gold:10,
+  atak:140,
+  attackPower:[1.1,1.2,1.3,1.4,1.5,0.9,0.8,0.7],
+  atakImage:"/atakMonster/faraon-atak.png",
+  experience:100,
+  numbersOfTreatments:0,
+  describe:`Are you cut? Or have bleeding injury, becarefull Vampire can be your guest
+  in oncoming night, do not desired quest.They are like shark feel smell of bleed from 
+  long distance, always thirsty and clever to get what they want.Their attribute are long
+  claws, sharp teeth, cunning personality`
+},
+{
+  name:"Dragon Lord",
+  img:"./monster/dragon-lord.png",
+  hpLevel:2000,
+  hpTotal:2000,
+  item:allItems[3],
+  gold:10,
+  atak:200,
+  attackPower:[1.1,1.2,1.3,1.4,1.5,0.9,0.8,0.7],
+  atakImage:"/atakMonster/dragon-atak.png",
   experience:100,
   numbersOfTreatments:0,
   describe:`Are you cut? Or have bleeding injury, becarefull Vampire can be your guest

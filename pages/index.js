@@ -9,6 +9,12 @@ import { donowaldInfoAboutMonster } from '../redux/Slice/AboutSlice'
 export default function Home() {
 const monsters=useSelector((state)=>state.monsters)
 const dispatch=useDispatch()
+useEffect(()=>{
+  window.addEventListener("beforeunload",(e)=>{
+    console.info(e)
+  })
+})
+
   useEffect(()=>{
 
 setTimeout(()=>{
