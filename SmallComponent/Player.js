@@ -53,19 +53,21 @@ const [cycleLifeSpell,setCycleLifeSpell]=useState("start")
 
 useCountFromEq("def")
 useCountFromEq("atak")
-//How to customize size of primary component//
-useEffect(()=>{
-if(menuOption==="tawerna"){
-containerRef.current.style.gridColumn="2/3"
 
-}
- else if(menuOption==="shop"){
-    containerRef.current.style.gridColumn="2/3"
+useEffect(()=>{
+
+
+// if(menuOption==="tawerna"){
+// containerRef.current.style.gridColumn="2/3"
+
+// }
+//  else if(menuOption==="shop"){
+//     containerRef.current.style.gridColumn="2/3"
     
-    }
-else{
-    containerRef.current.style.gridColumn="2/4"
-}
+//     }
+// else{
+//     containerRef.current.style.gridColumn="2/4"
+// }
 },[menuOption])
 
 useEffect(()=>{
@@ -114,11 +116,7 @@ useEffect(()=>{
     }
 })
 
-useEffect(()=>{
-   
-        console.info(props)
-    
-})
+
 
 const showDetail=(e)=>{
  if(e.target.src){

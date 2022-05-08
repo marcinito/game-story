@@ -89,7 +89,7 @@ return
        <div  ref={talkingRef} className={s.message}>
            {info.map((el,i,arr)=>{
        return (
-           <div key={Math.floor(Math.random()*23323)} className={s.messages} >
+           <div key={el.id} className={s.messages} >
               <div className={s.text}>{el.txt}<img src={el.img}/></div>
                </div>
        )     

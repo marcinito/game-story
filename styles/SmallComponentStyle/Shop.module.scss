@@ -5,25 +5,23 @@
     border-image-source: url("../../public/ramka-sklep.jpg") ;
     border-image-slice: 30 30 30 30;
     border-image-repeat:stretch;
-    border-image-width: 15px 15px 15px 15px;
-    display:grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(4,1fr);
+    border-image-width: 10px;
+ display:flex;
+ flex-direction: column;
     background: url("../../public/stragan.png");
-  
+  align-items: center;
 
     
 .store{
-    grid-column:3/4;
-    grid-row:2/6;
-    position:relative;
-    top:2%;
-    left:-5%;
+   
+    position:absolute;
+    top:13%;
+   
     display: grid;
  
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(10,1fr);
-   width:100%;
+   width:90%;
    height:100%;
 
    .shopSlot{
@@ -35,7 +33,7 @@
     border-image-source: url("../../public/ramka-sklep.jpg") ;
     border-image-slice: 30 30 30 30;
     border-image-repeat:stretch;
-    border-image-width: 3px 3px 3px 3px;
+    border-image-width: 2px;
     background:conic-gradient(gray,black,gray);
     
     .imgSlot{
@@ -51,8 +49,7 @@
     
 
 .panelBuy{
-    grid-column:1/2;
-    grid-row:1/3;
+    
    position: absolute;
     border:5px solid yellow;
     border-image-source: url("../../public/ramka-sklep.jpg") ;
@@ -61,13 +58,14 @@
     border-image-width: 5px;
     border-image-outset: 0;
     background-color: darken(beige,30%);
-    width:40%;
+    width:90%;
     height:70%;
     display:grid;
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: repeat(5,1fr);
-    left:8%;
+    
    top:3%;
+   z-index:1;
 
 .imgItems{
     width:100%;
@@ -93,7 +91,7 @@
     
     grid-column: 1/6;
     grid-row:3/4;
-    font-size:1.3rem;
+    font-size:1.7rem;
     text-align: center;
     font-family: 'Grape Nuts', cursive;
  
@@ -107,8 +105,8 @@
         color:gold;
         background-color: black;;
      margin-top:5%;
-        height:80%;
-    
+        height:65%;
+    font-size:2rem;
       display:flex;
       flex-direction: column;
       align-items: center;
@@ -139,6 +137,7 @@
 }
 .pakBtn{
     width:100%;
+    
     height:100%;
     border:5px solid yellow;
     border-image-source: url("../../public/ramka-sklep.jpg") ;
@@ -146,10 +145,11 @@
     border-image-repeat:stretch;
     border-image-width: 1px 1px 1px 1px;
     grid-column:1/6;
-    grid-row:5/6;
+    grid-row:4/6;
     display:flex;
     justify-content: center;
     background-color: #6F4242;
+  
     button:nth-child(1){
         background-color: darken(beige,10%);
         width:30%;
@@ -188,15 +188,13 @@
 
 }
 .optionShop{
-    width:100%;
-    height:20%;
+    width:90%;
+    height:10%;
+    top:3%;
     border:5px solid red;
-    grid-column:3/4;
-    grid-row:1/2;
-    position:relative;
-    top:10%;
-    left:-5%;
-    border-image-source:url("../../public/ramka-sklep.jpg");
+   
+    position:absolute;
+      border-image-source:url("../../public/ramka-sklep.jpg");
     border-image-slice:30;
     border-image-width:5px 0px 5px 5px;
     .btnBuy{
@@ -206,13 +204,19 @@
         color:brown;
         -webkit-text-stroke:1px brown;
         font-weight:bold;
+        height:100%;
+        -webkit-text-stroke:1px orange;
+        font-size:2rem;
     }
     .btnSell{
         width:50%;
+        height:100%;
         background: url("../../public/stara-kartka-papieru2.png");
         background-size: cover;
         color:brown;
         -webkit-text-stroke:1px brown;
         font-weight:bold;
+        font-size:2rem;
+        -webkit-text-stroke:1px orange;
     }
 }

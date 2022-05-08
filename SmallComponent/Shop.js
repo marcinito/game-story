@@ -100,6 +100,7 @@ const whichWindowDisplay=(which)=>{
 
     return ( 
         <div className={s.container}>
+   
             <div className={s.store} ref={eqShopRef}>
 {whatDisplay.map((el,i,arr)=>{
     
@@ -126,6 +127,7 @@ const whichWindowDisplay=(which)=>{
         <button disabled={swapOption} className={s.btnBuy} onClick={()=>{setWhatDisplay(allItems);setProp("buy")}}>Buy</button>
         <button disabled={swapOption} className={s.btnSell} onClick={()=>{setWhatDisplay(ownItems);setProp("sell")}}>Sell</button>
     </div>
+
         </div>
      );
 }

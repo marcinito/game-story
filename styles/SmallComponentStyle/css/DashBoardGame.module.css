@@ -1,59 +1,55 @@
-.containerDashBoardGame {
-  position: relative;
-  width: 100%;
-  height: 98.5%;
-  top: 1.5%;
-  border: 5px solid yellow;
-  border: 10px solid;
-  border-image-source: url("../../public/ramka.jpg");
-  border-image-slice: 30 30 30 30;
-  border-image-repeat: repeat;
-  border-image-width: 10px 10px 10px 0px;
-  overflow: hidden;
-}
-
-.shop {
-  width: 100%;
-  height: 15%;
-  border: 10px solid;
-  border-image-source: url("../../public/ramka.jpg");
-  border-image-slice: 30 30 30 30;
-  border-image-repeat: repeat;
-  border-image-width: 5px 5px 5px 5px;
-  font-size: 4rem;
-  text-align: center;
-  font-family: 'Babylonica', cursive;
-  background-color: #dede8d;
-}
-
-.shop:hover {
-  background-color: #efefc8;
-  cursor: pointer;
-  letter-spacing: 3px;
-}
-
-.decoration {
-  position: absolute;
-  background: url("../../public/stara-kartka-papieru.png");
-  height: 25%;
-  width: 100%;
-  overflow: hidden;
-  border: 10px solid;
-  border-image-source: url("../../public/ramka.jpg");
-  border-image-slice: 30 30 30 30;
-  border-image-repeat: repeat;
-  border-image-width: 5px 5px 5px 5px;
-}
-
-.decoration img {
-  width: 100%;
-  height: 100%;
-  -webkit-transition: 1s;
-  transition: 1s;
-}
-
-.decoration img:hover {
-  -webkit-transform: rotate(20deg);
-          transform: rotate(20deg);
+@media (min-width: 360px) {
+  .containerDashBoardGame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid;
+    border-image-source: url("../../public/ramka.jpg");
+    border-image-slice: 30 30 30 30;
+    border-image-repeat: repeat;
+    border-image-width: 1px 1px 1px 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .option {
+    width: 33%;
+    height: 50%;
+    background-color: skyblue;
+  }
+  .shop {
+    width: 33%;
+  }
+  .option:hover {
+    background-color: #efefc8;
+    cursor: pointer;
+    letter-spacing: 3px;
+  }
+  .decoration {
+    position: absolute;
+    background: url("../../public/stara-kartka-papieru.png");
+    height: 25%;
+    width: 100%;
+    overflow: hidden;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    border: 10px solid;
+    border-image-source: url("../../public/ramka.jpg");
+    border-image-slice: 30 30 30 30;
+    border-image-repeat: repeat;
+    border-image-width: 5px 5px 5px 5px;
+  }
+  .decoration img {
+    width: 100%;
+    height: 100%;
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+  .decoration img:hover {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
 }
 /*# sourceMappingURL=DashBoardGame.module.css.map */

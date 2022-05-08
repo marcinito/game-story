@@ -1,4 +1,5 @@
-//background skills stage//@at-root
+@media(min-width:300px){
+    //background skills stage//@at-root
 $imgBGC:url("../../public/stara-kartka-papieru.png");
 $imgBorder:url("../../public/ramka-drut-kolczasty.png");
 $bgcSkills:#A67D3D;
@@ -9,7 +10,7 @@ $bgcSkills:#A67D3D;
     height:98.5%;
     top:1.5%;
     border:5px solid;
-    grid-column:2/4;
+   
 display:grid;
 grid-template-columns:repeat(2,1fr);
 grid-template-rows:repeat(5,1fr);
@@ -22,6 +23,9 @@ grid-template-rows:repeat(5,1fr);
     border-image-repeat:repeat;
     border-image-width: 5px;
     background-color: #DB9370;
+   
+    grid-row:2/12;
+    grid-column:1/5;
  
 }
 
@@ -36,9 +40,11 @@ grid-template-rows:repeat(5,1fr);
 //Eq//
 .eq{
     position:absolute;
-    width:100%;
+    width:110%;
+    left:-10%;
     height:100%;
     grid-column: 2/3;
+    
     grid-row: 1/4;
     border:10px solid;
     border-image-source: $imgBorder;
@@ -48,6 +54,7 @@ grid-template-rows:repeat(5,1fr);
     display:grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(7,1fr);
+   
 
 .name{
  font-family: 'Grape Nuts', cursive;
@@ -533,4 +540,6 @@ animation:reloadSpell 5s linear forwards
 @keyframes reloadSpell{
     0%{width:0%}
     100%{width:100%}
+}
+
 }
