@@ -123,16 +123,18 @@ const handleAtak=()=>{
     dispatch(subRateHp(handleHp(skills.hpTotal,monsters[0].atak*randomPowerAtakRef.current)))
 dispatch(subRateMonsterHp(handleHp(monsters[0].hpTotal,skills.strenght.total)))
 hitFromMonster.current.style.opacity=`1`
-hitFromPlayer.current.textContent=`${skills.strenght.total}`
 hitFromPlayer.current.style.opacity=`1`
+// hitFromPlayer.textContent=skills.strenght.total
+
 
 timeoutRef.current=setTimeout(()=>{
     setHandleAtakDisabled(false)
     hitFromMonster.current.style.opacity=`0`
 hitFromPlayer.current.style.opacity=`0`
+
 },1000)
 }
-
+console.info(hitFromPlayer.current,"hit from player")
 const nextMonster=()=>{
     randomActionRef.current=setInterval(randomActionFunction,3000)
     dispatch(deleteDefeatedMonster())
@@ -174,6 +176,7 @@ const randomActionFunction=()=>{
     }
 }
 
+console.info(weapon,"weapon")
     return ( 
         <div className={s.container}>
            

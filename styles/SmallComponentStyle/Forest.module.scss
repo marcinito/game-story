@@ -24,7 +24,7 @@
         border-image-outset: 0.5;
         border-image-width: 3px;
         border-image-repeat: repeat;
-        height:120%;
+        height:105%;
         display:grid;
         grid-template-columns: 100%;
         grid-template-rows:50% 5% 45%;
@@ -56,6 +56,7 @@
                 position:absolute;
               width:100%;
               height:100%;
+              
            
               img{
                   width:100%;
@@ -205,19 +206,20 @@
     
          //Atak button//
          .atak{
-            position:absolute;
+            
             width:90%;
             height:100%;
             font-size:3rem;
-          left:50%;
-          transform:translateX(-50%);
+         
+       margin-left:5%;
           border-image-source:url("../../public/ramka-drut-kolczasty.png");
           border-image-slice: 30;
           border-image-width:10;
           font-family: 'Rubik Wet Paint';
             border-radius:15%;
-            z-index:20;
+            z-index:1;
             transition:0.15s;
+            
            
             }
             .atak:hover{
@@ -230,35 +232,41 @@
         position:absolute;
         width:100%;
         height:100%;
-        
         grid-row: 3/4;
+      
+            background-color: skyblue;
         .spells{
             position:absolute;
             z-index:10;
             width:50%;
             height:70%;
+           
         }
         .showHitFromPlayer{
-            width:30%;
-            height:100px;
+            width:40%;
+            height:20%;
             color:white;
             position:absolute;
             z-index:10;
-            left:8%;
+            
             top:20%;
-            opacity:0;
+          
             text-align: center;
             font-size:3rem;
+           opacity:0;
+          
          
          .sprite{
              position:absolute;
             width:100%;
             height:100%;
-            left:5%;
+         
+           
+            
             overflow:hidden;    
             img{
                 position:absolute;
-            width:100%;
+            width:40%;
             animation:atakIntoMonster 0.45s infinite linear;
         
             }
@@ -291,7 +299,7 @@
             }
             
                 @keyframes atakIntoMonster{
-                0%{transform:translateX(-50px)}
+                0%{transform:translateX(-80px)}
               
                 100%{transform:translateX(60px)}
                 }

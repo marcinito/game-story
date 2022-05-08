@@ -1,117 +1,121 @@
-.container{
-    width:100%;
-    height:98.5%;
-    top:1.5%;
-    border:10px solid yellow;
-    position:relative;
-    display:grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(3,1fr);
-    border:2px solid yellow;
-    border-image-source: url("../../public/ramka.jpg");
-    border-image-slice:20;
-    
-    border-image-width: 1px;
-    border-image-repeat: repeat;
-    background-color:#DB9370;
-
-
-
-    .imgMonster{
-        transform:rotate(15deg);
-        width:70%;
-    
-        height:100%;
-        grid-column:1/2;
-        grid-row:1/3;
-        z-index:2;
-    }
-    .eq{
-   
-        position:absolute;
-
+@media(min-width:300px){
+    .container{
         width:100%;
-        height:80%;
-        border:1px solid black;
-        grid-column:2/3;
-        grid-row:1/3;
-        display:flex;
-        flex-direction: column;
-        border:1px solid;
-        border-image-source: url("../../public/ramka.jpg") ;
-        border-image-slice: 30 30 30 30;
-        border-image-repeat:repeat;
-        border-image-width: 1px 1px 5px 5px;
-        border-image-outset: 1.5;
-        .name{
-            text-align: center;
-            font-family: 'Grape Nuts', cursive;
-           
+        height:100%;
+       
+        border:10px solid yellow;
+        position:relative;
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(3,1fr);
+        border:2px solid yellow;
+        border-image-source: url("../../public/ramka-drut-kolczasty.png");
+        border-image-slice:20;
+        
+        border-image-width: 2px;
+        border-image-repeat: repeat;
+        background:linear-gradient(darkorange,lighten(red,10%) 20%,darkblue 70%);
+    
+    
+    
+        .imgMonster{
+            transform:rotate(15deg);
+            width:70%;
+        
+            height:100%;
+            grid-column:1/2;
+            grid-row:1/3;
+            z-index:2;
         }
-        .slot{
+        .eq{
+       
+            position:absolute;
+    
+            width:100%;
+            height:80%;
+            border:1px solid black;
+            grid-column:2/3;
+            grid-row:1/3;
+            display:flex;
+            flex-direction: column;
             border:1px solid;
-            border-image-source: url("../../public/ramka.jpg") ;
+            border-image-source: url("../../public/ramka-box.png") ;
             border-image-slice: 30 30 30 30;
             border-image-repeat:repeat;
-            border-image-width: 1px;
-            height:33.33%;
-            width:100%;
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            .displayItem{
-                width:50%;
-                height:80%;
+            border-image-width: 5px;
+            border-image-outset: 1.5;
+            .name{
+                text-align: center;
+                font-family: 'Grape Nuts', cursive;
+               
             }
-            .displayAmountGold{
-                font-weight:bold;
-                position:absolute;
-                font-size:2rem;
-                color:gold;
-                -webkit-text-stroke:2px red;
-             
+            .slot{
+                border:1px solid;
+                border-image-source: url("../../public/ramka-box.png") ;
+                border-image-slice: 30 30 30 30;
+                border-image-repeat:repeat;
+                border-image-width: 2px 0 0 2px;
+                height:33.33%;
+                width:100%;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                
+                .displayItem{
+                    width:50%;
+                    height:80%;
+                   
+                }
+                .displayAmountGold{
+                    font-weight:bold;
+                    position:absolute;
+                    font-size:2rem;
+                    color:gold;
+                    -webkit-text-stroke:2px red;
+                 
+                }
             }
         }
-    }
+        
+    .skills{
+        width:100%;
+       
+        height:100%;
+        position:absolute;
+        grid-column:1/3;
+        grid-row:3/4;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top:3%;
+        border: 1px solid;
+      top:-45%;
+      border-image-source: url("../../public/ramka.jpg") ;
+        border-image-slice: 30 ;
+        border-image-repeat:repeat;
+        border-image-width: 7px;
+        background: url("../../public/lawa.png");
+        background-repeat: repeat;
+        background-size:cover;
+        .hp{
+            position:relative;
+            margin-top:10%;
+    width:80%;
+    height:20%;
+    border:1px solid red;
+    .stageHp{
+        width:100%;
+        height:100%;
+        position:absolute;
+        left:0;
+        top:0;
+        background-color: white;
+        text-align: center;
+        font-size:2rem;
+        color:lime;
     
-.skills{
-    width:100%;
-   
-    height:100%;
-    position:absolute;
-    grid-column:1/3;
-    grid-row:3/4;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top:3%;
-    border: 1px solid;
-  top:-45%;
-    border-image-source: url("../../public/ramka.jpg") ;
-    border-image-slice: 30 ;
-    border-image-repeat:repeat;
-    border-image-width: 2px;
-    background: url("../../public/wypalona-kartka-papieru.png");
-    background-repeat: repeat;
-    background-size:cover;
-    .hp{
-        position:relative;
-        margin-top:10%;
-width:80%;
-height:20%;
-border:1px solid red;
-.stageHp{
-    width:100%;
-    height:100%;
-    position:absolute;
-    left:0;
-    top:0;
-    background-color: white;
-    text-align: center;
-    font-size:2rem;
-    color:lime;
-
-}
     }
-}
+        }
+    }
+    }
 }

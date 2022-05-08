@@ -10,8 +10,6 @@
     background: url("../public/stara-kartka-papieru.png");
   }
   .information {
-    -webkit-transform: rotateY(2deg);
-            transform: rotateY(2deg);
     -webkit-transform-origin: center;
             transform-origin: center;
     position: absolute;
@@ -34,6 +32,7 @@
             flex-direction: column;
     -webkit-box-shadow: 0 0 10px black,0 0 10px black;
             box-shadow: 0 0 10px black,0 0 10px black;
+    z-index: 30;
   }
   .information .dashboard {
     width: 100%;
