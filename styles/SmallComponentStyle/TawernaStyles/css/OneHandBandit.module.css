@@ -134,7 +134,7 @@
 .container .machine .eight {
   width: 200px;
   height: 150px;
-  background-color: aqua;
+  background-color: #0affff;
   position: absolute;
   -webkit-transform: rotateY(90deg) translateZ(-200px) translateX(-100px) translateY(150px);
           transform: rotateY(90deg) translateZ(-200px) translateX(-100px) translateY(150px);

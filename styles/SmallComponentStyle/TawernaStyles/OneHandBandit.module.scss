@@ -123,7 +123,7 @@ $height:300px;
         .eight{
             width:200px;
             height:150px;
-            background-color:aqua;
+            background-color:lighten(aqua,2%);
             position:absolute;
             transform:rotateY(90deg) translateZ(-200px) translateX(-100px) translateY(150px);
             background: url("../../../public/stare-drewno.png");
