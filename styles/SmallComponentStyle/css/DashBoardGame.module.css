@@ -1,4 +1,4 @@
-@media (min-width: 360px) {
+@media (min-width: 300px) {
   .containerDashBoardGame {
     position: relative;
     width: 100%;
@@ -7,7 +7,7 @@
     border-image-source: url("../../public/ramka.jpg");
     border-image-slice: 30 30 30 30;
     border-image-repeat: repeat;
-    border-image-width: 1px 1px 1px 0px;
+    border-image-width: 5px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -18,6 +18,12 @@
     width: 33%;
     height: 50%;
     background-color: skyblue;
+    border: 1px solid;
+    border-image-source: url("../../public/ramka.jpg");
+    border-image-slice: 30 30 30 30;
+    border-image-repeat: repeat;
+    border-image-width: 5px;
+    background: url("../../public/stara-kartka-papieru.png");
   }
   .shop {
     width: 33%;

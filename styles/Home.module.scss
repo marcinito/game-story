@@ -1,17 +1,21 @@
-//Size translate Z in catalog//
+@media(min-width:300px){
+    //Size translate Z in catalog//
 $z:200px;
+
 //color btn start game//
 $colorBtnStart:#66FF33;
 
 .firstPage{
     position:relative;
     width:100%;
-    height:80%;
+    height:90%;
     background-color: darken(skyblue,50%);
-    
     display: flex;
     flex-direction: column;
     overflow:hidden;
+    background: url("../public/smok.jpg");
+    background-size: cover;
+  
   
 
    
@@ -20,19 +24,21 @@ $colorBtnStart:#66FF33;
 .catalogDiv{
     width:100%;
     height:100%;
-    
     display:flex;
     justify-content: center;
     align-items: center;
+    overflow:hidden;
+  
     
 }
 .catalog{
-    width:10%;
+    width:45%;
     height:20%;
     position:relative;
-  
+    z-index:2;
     transform-style: preserve-3d;
     animation:animate 20s linear infinite;
+    
 }
 @keyframes animate{
     0%{transform:perspective(1000px) rotateY(0deg) }
@@ -40,24 +46,30 @@ $colorBtnStart:#66FF33;
     
 }
 .div{
-    width:100%;
-    height:100%;
+    
     position:absolute;
     top:0;
     left:0;
     transform-origin:center;
     transform-style:preserve-3d;
+ 
+    min-width:100%;
+    height:100%;
 
     
 }
+
 .div1{
-    transform:rotateY(calc(1 * 45deg)) translateZ($z)
+    transform:rotateY(calc(1 * 45deg)) translateZ($z);
+   
 }
 .div2{
-    transform:rotateY(calc(2 * 45deg)) translateZ($z)
+    transform:rotateY(calc(2 * 45deg)) translateZ($z);
+    
 }
 .div3{
-    transform:rotateY(calc(3 * 45deg)) translateZ($z)
+    transform:rotateY(calc(3 * 45deg)) translateZ($z);
+   
 }
 .div4{
     transform:rotateY(calc(4 * 45deg)) translateZ($z)
@@ -72,26 +84,20 @@ $colorBtnStart:#66FF33;
     transform:rotateY(calc(7 * 45deg)) translateZ($z)
 }
 .div8{
-    transform:rotateY(calc(8 * 45deg)) translateZ($z)
+    transform:rotateY(calc(8 * 45deg)) translateZ($z);
+    .img{
+        transform:rotateZ(0deg)
+    }
 }
 
 .img{
     width:50%;
     height:80%;
     object-fit:cover;
+    transform:rotateZ(35deg)
 }
 
-.imgCharacter{
- position:absolute;
-   
-    
-   
-    .img{
-  
-        width:100%;
-        height:100%;
-    }
-}
+
 
 .startDiv{
     width:100%;
@@ -106,8 +112,8 @@ $colorBtnStart:#66FF33;
 .btnLink{
    
     display:inline-block;
-    width:20%;
-    height:40%;
+    width:70%;
+    height:80%;
     font-size:3rem;
     background-color: transparent;
     position:relative;
@@ -116,7 +122,7 @@ $colorBtnStart:#66FF33;
     justify-content: center;
     align-items: center;
     font-family: monospace;
-    
+    bottom:40%;
     
 }
 .btnLink a{
@@ -186,4 +192,6 @@ box-shadow:0 0 10px $colorBtnStart,0 0 20px $colorBtnStart,0 0 30px $colorBtnSta
     transition: 1s;
     transition-delay: 0.8s;
     top:-100%;
+}
+
 }

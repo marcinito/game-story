@@ -40,7 +40,7 @@ containerRef.current.transform=`scaleX(0)`
                     return(<BackPack/>);
                     case "tawerna":
                         return(<Tawerna/>);
-                        case "about":
+                        case "About":
                             return(<About/>);
                         case "player":
                             return(<Player/>)

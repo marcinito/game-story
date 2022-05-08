@@ -1,49 +1,53 @@
-.container {
-  width: 100%;
-  height: 100%;
-  border: 5px solid yellow;
-  border-image-source: url("../../public/ramka-drut-kolczasty.png");
-  border-image-slice: 30 30 30 30;
-  border-image-repeat: repeat;
-  border-image-width: 15px 15px 15px 15px;
-  border-image-outset: 1;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (1fr)[10];
-      grid-template-rows: repeat(10, 1fr);
-}
-
-.container .slot {
-  border: 5px solid yellow;
-  border-image-source: url("../../public/ramka-drut-kolczasty.png");
-  border-image-slice: 30 30 30 30;
-  border-image-repeat: repeat;
-  border-image-width: 10px 10px 10px 10px;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-top: 5%;
-  background-color: gray;
-  position: relative;
-}
-
-.container .itemInSlot {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.container .logoBp {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-column: 1/4;
-  -ms-grid-row: 8;
-  -ms-grid-row-span: 3;
-  grid-row: 8/11;
-  background-image: url("../../public/back-pack.png");
-  background-size: cover;
+@media (min-width: 300px) {
+  .container {
+    width: 100%;
+    height: 100%;
+    border: 5px solid yellow;
+    border-image-source: url("../../public/ramka-drut-kolczasty.png");
+    border-image-slice: 30 30 30 30;
+    border-image-repeat: repeat;
+    border-image-width: 15px;
+    border-image-outset: 1;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: (1fr)[10];
+        grid-template-rows: repeat(10, 1fr);
+  }
+  .container .slot {
+    border: 5px solid yellow;
+    border-image-source: url("../../public/ramka-drut-kolczasty.png");
+    border-image-slice: 30 30 30 30;
+    border-image-repeat: repeat;
+    border-image-width: 10px 10px 10px 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    background-color: gray;
+    position: relative;
+  }
+  .container .itemInSlot {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .container .itemInSlot:active {
+    background: radial-gradient(white, red, blue);
+  }
+  .container .logoBp {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1/4;
+    -ms-grid-row: 8;
+    -ms-grid-row-span: 3;
+    grid-row: 8/11;
+    background-image: url("../../public/back-pack.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 /*# sourceMappingURL=BackPack.module.css.map */

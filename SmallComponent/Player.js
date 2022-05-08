@@ -277,7 +277,7 @@ const activeSpell=(whichSpell,costMana)=>{
           <span className={s.spanAmountGold}>{skills.gold}</span>
       </div>
       <div className={s.strenght}>
-          <img className={s.img} src={"/atak-power.png"}/>
+        
           <span className={s.displayStrenght}>{skills.strenght.total}</span>
       </div>
 </div>

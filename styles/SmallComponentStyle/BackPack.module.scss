@@ -25,6 +25,7 @@
         margin-top:5%;
         background-color:gray;
         position:relative;
+        
         }
         .itemInSlot{
             position:absolute;
@@ -33,6 +34,9 @@
             
             width:100%;
             height:100%;
+            &:active{
+                background:radial-gradient(white,red,blue)
+            }
            
         }
         .logoBp{

@@ -25,13 +25,16 @@ const dashboardRef=useRef()
 const enterMessageRef=useRef()
 const talkingRef=useRef()
 
+
 useEffect(()=>{
-if(menuOption!=="default")
+if(menuOption!=="player")
 {
     setFlag("close")
- console.info(flag)
 }
+
 },[menuOption])
+
+
 
 useEffect(()=>{
    console.info(windowIsOpen)
@@ -49,14 +52,14 @@ useEffect(()=>{
 })
 
     const handleWindow=(e)=>{
-   
+  
         //Close Window//
        if(flag==="open"){
            windowRef.current.style.height="50%"
            dashboardRef.current.style="height:100%"
         
            dashboardRef.current.children[0].style.width="100%"
-           dashboardRef.current.children[0].textContent=`open`
+           dashboardRef.current.children[0].textContent=``
          
            talkingRef.current.style.transform="scale(0)"
            dispatch(openCloseWindowMessage("close"))
@@ -84,7 +87,7 @@ return
         <div className={s.below}>
               <div className={s.information} ref={windowRef}>
        <div className={s.dashboard} ref={dashboardRef}>
-           <button className={s.btn}  onClick={(e)=>handleWindow(e)}>open</button>
+           <button className={s.btn}  onClick={(e)=>handleWindow(e)}></button>
        </div>
        <div  ref={talkingRef} className={s.message}>
            {info.map((el,i,arr)=>{

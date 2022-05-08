@@ -1,20 +1,15 @@
-@media (min-width: 360px) {
+@media (min-width: 300px) {
   .container {
     position: relative;
     width: 100%;
     height: 98.5%;
     top: 1.5%;
-    border: 5px solid;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
     -ms-grid-rows: (1fr)[5];
         grid-template-rows: repeat(5, 1fr);
-    border-image-source: url("../../public/ramka.jpg");
-    border-image-slice: 30;
-    border-image-repeat: repeat;
-    border-image-width: 5px;
     background-color: #DB9370;
     -ms-grid-row: 2;
     -ms-grid-row-span: 10;
@@ -36,7 +31,8 @@
   }
   .eq {
     position: absolute;
-    width: 100%;
+    width: 110%;
+    left: -10%;
     height: 100%;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
@@ -64,12 +60,13 @@
     grid-column: 2/3;
     -webkit-text-decoration: underline solid;
             text-decoration: underline solid;
+    position: absolute;
   }
   .eq .helmet {
     position: relative;
     border: 1px solid black;
-    width: 100%;
-    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
@@ -84,8 +81,8 @@
   }
   .eq .armor {
     border: 1px solid black;
-    width: 100%;
-    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
@@ -100,8 +97,8 @@
   }
   .eq .weapon {
     border: 1px solid black;
-    width: 100%;
-    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-column: 1/2;
@@ -116,8 +113,8 @@
   }
   .eq .shield {
     border: 1px solid black;
-    width: 100%;
-    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
     -ms-grid-column: 3;
     -ms-grid-column-span: 1;
     grid-column: 3/4;
@@ -132,8 +129,8 @@
   }
   .eq .legs {
     border: 1px solid black;
-    width: 100%;
-    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
@@ -149,8 +146,8 @@
   .eq .shoe {
     position: relative;
     border: 1px solid black;
-    width: 100%;
-    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
@@ -165,21 +162,21 @@
   .eq .gold {
     position: relative;
     border: 1px solid black;
-    width: 100%;
-    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
     -ms-grid-column: 3;
     -ms-grid-column-span: 1;
     grid-column: 3/4;
     -ms-grid-row: 5;
     -ms-grid-row-span: 1;
     grid-row: 5/6;
-    background-image: url("../../public/ItemsGame/gold.png");
-    background-size: 100% 100%;
+    background: url("../../public/ItemsGame/gold.png");
+    background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
     border: 5px solid;
     border-image-source: url("../../public/ramka-drut-kolczasty.png");
     border-image-slice: 30;
-    background: url("../../public/stara-kartka-papieru.png");
   }
   .eq .gold .spanAmountGold {
     font-size: 2rem;
@@ -192,33 +189,39 @@
   }
   .eq .strenght {
     position: absolute;
-    width: 50%;
+    width: 80%;
     height: 100%;
     border: 1px solid black;
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-column: 1/2;
     -ms-grid-row: 5;
-    -ms-grid-row-span: 2;
-    grid-row: 5/7;
-    left: 50%;
+    -ms-grid-row-span: 1;
+    grid-row: 5/6;
+    left: 20%;
     font-size: 2rem;
     background-color: gray;
     border: 5px solid;
     border-image-source: url("../../public/ramka-drut-kolczasty.png");
     border-image-slice: 30;
     background: url("../../public/stara-kartka-papieru.png");
+    background: url("../../public/atak-power.png");
+    background-size: cover;
+    background-position: center;
   }
   .eq .strenght .displayStrenght {
-    color: darkblue;
-    -webkit-text-stroke: 1px red;
-    text-align: center;
+    background: conic-gradient(gray, black);
+    position: absolute;
+    color: white;
+    opacity: 0.8;
     display: block;
     font-weight: bold;
+    font-size: 1.5rem;
   }
   .eq .strenght .img {
     width: 100%;
     height: 60%;
+    position: absolute;
   }
   .eq .itemsRatio {
     width: 100%;
@@ -246,17 +249,17 @@
         -ms-flex-align: center;
             align-items: center;
     background-color: beige;
-    border: 26px solid;
+    border: 5px solid;
     border-image-source: url("../../public/ramka.jpg");
     border-image-slice: 30;
     border-image-repeat: repeat;
-    border-image-width: 20px;
+    border-image-width: 10px 0 0 0;
     background: url("../../public/wypalona-kartka-papieru.png");
     background-repeat: repeat;
     background-size: cover;
   }
   .pakSkills .stageHp {
-    width: 80%;
+    width: 100%;
     height: 100%;
     background-color: #A67D3D;
     text-align: center;
@@ -268,6 +271,7 @@
     border-image-slice: 30;
     border-image-repeat: repeat;
     border-image-width: 2px;
+    margin-top: 2%;
   }
   .pakSkills .spanHp {
     position: absolute;
@@ -298,7 +302,7 @@
     left: 20%;
   }
   .pakSkills .stageLevel {
-    width: 80%;
+    width: 100%;
     height: 100%;
     background-color: #A67D3D;
     text-align: center;
@@ -373,7 +377,7 @@
     background-color: #4A148C;
   }
   .pakSkills .stageMagic {
-    width: 80%;
+    width: 100%;
     height: 100%;
     background-color: #A67D3D;
     text-align: center;
@@ -406,7 +410,7 @@
     background-color: #FF7F00;
   }
   .pakSkills .stageMana {
-    width: 80%;
+    width: 100%;
     height: 100%;
     background-color: #A67D3D;
     text-align: center;
@@ -460,10 +464,10 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 5px solid;
+    border: 1px solid;
     border-image-source: url("../../public/ramka-forest.png");
     border-image-slice: 30;
-    border-image-width: 10px;
+    border-image-width: 1px;
     border-image-outset: 0.5;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
@@ -483,7 +487,7 @@
   .spells .exura {
     background-color: #990033;
     position: relative;
-    border: 5px solid;
+    border: 1px solid;
     border-image-source: url("../../public/ramka-drut-kolczasty.png");
     border-image-slice: 30;
     border-image-width: 10px;
@@ -508,7 +512,7 @@
   }
   .spells .exuraVita {
     position: relative;
-    border: 5px solid;
+    border: 1px solid;
     border-image-source: url("../../public/ramka-drut-kolczasty.png");
     border-image-slice: 30;
     border-image-width: 10px;
@@ -535,7 +539,7 @@
   }
   .spells .exevoVis {
     position: relative;
-    border: 5px solid;
+    border: 1px solid;
     border-image-source: url("../../public/ramka-drut-kolczasty.png");
     border-image-slice: 30;
     border-image-width: 10px;
@@ -562,7 +566,7 @@
   .spells .exevoMort {
     position: relative;
     background-color: #990033;
-    border: 5px solid;
+    border: 1px solid;
     border-image-source: url("../../public/ramka-drut-kolczasty.png");
     border-image-slice: 30;
     border-image-width: 10px;

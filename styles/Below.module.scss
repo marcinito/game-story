@@ -18,8 +18,9 @@
        position:absolute;
        width:80%;
        right:10%;
-       height:100%;
+       height:50%;
        bottom:20%;
+       opacity:1;
        border:5px solid black;
        background: url("../public/stara-kartka-papieru.png");
        border-image-source:url("../public/ramka-box.png");
@@ -27,14 +28,12 @@
        border-image-width:10px;
      display:flex;
      flex-direction: column;
-   
        box-shadow:0 0 10px black,0 0 10px black;
+      
    
    
    .dashboard{
-     
        width:100%;
-   
      height:20%;
    
        .btn{
@@ -73,15 +72,15 @@
         border-image-width:10px;
         
            background:url("../public/wypalona-kartka-papieru.png");
-           font-size:1.3rem;
+           font-size:1.9rem;
            font-family: 'Grape Nuts', cursive;
            font-weight:bold;
            letter-spacing: 1px;
-          
+         
    
        }
        img{
-           width:40%;
+           width:20%;
        }
    }
    }

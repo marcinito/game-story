@@ -37,10 +37,10 @@ setTimeout(()=>{
         <div className={`${s.div} ${s.div8}`}><img className={s.img} src={"./ItemsGame/golden-armor.png"}></img></div>
 
       </div>
-      <div className={s.imgCharacter}><img className={s.img} src={"./smok.jpg"}></img></div>
+    
       </div>
       <div className={s.startDiv}>
-        <div className={s.btnLink} onClick={()=>dispatch(donowaldInfoAboutMonster(monsters))}><Link href="/create-character">Start Game</Link>
+        <div className={s.btnLink} ><Link href="/create-character">Start Game</Link>
         <span className={s.span1}></span>
         <span className={s.span2}></span>
         <span className={s.span3}></span>
