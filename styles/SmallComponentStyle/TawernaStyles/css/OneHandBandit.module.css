@@ -1,392 +1,354 @@
-.container {
-  width: 100%;
-  height: 100%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[6];
-      grid-template-columns: repeat(6, 1fr);
-  -ms-grid-rows: (1fr)[6];
-      grid-template-rows: repeat(6, 1fr);
-  position: relative;
-  background-color: gray;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
-}
-
-.container .machine {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 3;
-  grid-column: 2/5;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 4;
-  grid-row: 2/6;
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-transform: rotateY(110deg) translateY(90px) translateX(0px) scaleX(1) scaleY(0.6);
-          transform: rotateY(110deg) translateY(90px) translateX(0px) scaleX(1) scaleY(0.6);
-  left: -80%;
-}
-
-.container .machine .one {
-  width: 200px;
-  height: 300px;
-  background-color: green;
-  position: absolute;
-  -webkit-transform: rotateY(0deg) translateZ(200px);
-          transform: rotateY(0deg) translateZ(200px);
-  background: url("../../../public/stare-drewno.png");
-  border: 5px solid;
-  border-image-source: url("../../../public/ramka-box.png");
-  border-image-slice: 40;
-  border-width: 5px;
-}
-
-.container .machine .two {
-  width: 200px;
-  height: 200px;
-  background-color: blue;
-  position: absolute;
-  -webkit-transform: rotateX(90deg) translateZ(100px) translateY(100px);
-          transform: rotateX(90deg) translateZ(100px) translateY(100px);
-  background: url("../../../public/stare-drewno.png");
-  border: 5px solid;
-  border-image-source: url("../../../public/ramka-box.png");
-  border-image-slice: 40;
-  border-width: 5px;
-}
-
-.container .machine .three {
-  width: 200px;
-  height: 200px;
-  background-color: orange;
-  position: absolute;
-  -webkit-transform: rotateX(90deg) translateZ(-200px) translateY(100px);
-          transform: rotateX(90deg) translateZ(-200px) translateY(100px);
-  background: url("../../../public/stare-drewno.png");
-  border: 5px solid;
-  border-image-source: url("../../../public/ramka-box.png");
-  border-image-slice: 40;
-  border-width: 5px;
-}
-
-.container .machine .four {
-  width: 200px;
-  height: 300px;
-  background-color: magenta;
-  position: absolute;
-  -webkit-transform: rotateY(90deg) translateZ(100px) translateX(-100px);
-          transform: rotateY(90deg) translateZ(100px) translateX(-100px);
-  background: url("../../../public/stare-drewno.png");
-  border: 5px solid;
-  border-image-source: url("../../../public/ramka-box.png");
-  border-image-slice: 40;
-  border-width: 5px;
-  -webkit-box-shadow: 0 0 10px black,0 0 20px black,0 0 30px black,0 0 40px black;
-          box-shadow: 0 0 10px black,0 0 20px black,0 0 30px black,0 0 40px black;
-}
-
-.container .machine .five {
-  width: 100px;
-  height: 150px;
-  background-color: salmon;
-  position: absolute;
-  -webkit-transform: rotateY(0deg) translateZ(0px) translateX(-100px) translateY(150px);
-          transform: rotateY(0deg) translateZ(0px) translateX(-100px) translateY(150px);
-  background: url("../../../public/stare-drewno.png");
-  border: 5px solid;
-  border-image-source: url("../../../public/ramka-box.png");
-  border-image-slice: 40;
-  border-width: 5px;
-  border-right: none;
-  border-left: none;
-}
-
-.container .machine .last {
-  width: 200px;
-  height: 300px;
-  background-color: palegreen;
-  position: absolute;
-  background: url("../../../public/stare-drewno.png");
-  border: 5px solid;
-  border-image-source: url("../../../public/ramka-box.png");
-  border-image-slice: 40;
-  border-width: 5px;
-}
-
-.container .machine .seven {
-  width: 100px;
-  height: 200px;
-  background-color: maroon;
-  position: absolute;
-  -webkit-transform: rotateX(90deg) translateZ(-50px) translateX(-100px) translateY(100px);
-          transform: rotateX(90deg) translateZ(-50px) translateX(-100px) translateY(100px);
-  background: url("../../../public/stare-drewno.png");
-  border: 5px solid;
-  border-image-source: url("../../../public/ramka-box.png");
-  border-image-slice: 40;
-  border-width: 5px;
-}
-
-.container .machine .eight {
-  width: 200px;
-  height: 150px;
-  background-color: #0affff;
-  position: absolute;
-  -webkit-transform: rotateY(90deg) translateZ(-200px) translateX(-100px) translateY(150px);
-          transform: rotateY(90deg) translateZ(-200px) translateX(-100px) translateY(150px);
-  background: url("../../../public/stare-drewno.png");
-  border: 5px solid;
-  border-image-source: url("../../../public/ramka-box.png");
-  border-image-slice: 40;
-  border-width: 5px;
-}
-
-.container .machine .screen {
-  border: 5px solid;
-  border-image-source: url("../../../public/ramka-sklep.jpg");
-  border-image-slice: 30;
-  border-width: 10px;
-  width: 200px;
-  height: 150px;
-  background-color: black;
-  -webkit-transform: rotateY(90deg) translateZ(-100px) translateX(-100px);
-          transform: rotateY(90deg) translateZ(-100px) translateX(-100px);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.container .machine .screen .award {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-color: white;
-  z-index: 1;
-  opacity: 0;
-  -webkit-transform: rotateX(360deg) rotateY(180deg);
-          transform: rotateX(360deg) rotateY(180deg);
-}
-
-.container .machine .screen .award h1 {
-  background-color: blue;
-  height: 30%;
-  text-align: center;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  -webkit-text-stroke: 1px yellow;
-  text-shadow: 0 0 5px gold;
-}
-
-.container .machine .screen .award img {
-  border: 5px solid;
-  border-image-source: url("../../../public/ramka-forest.png");
-  border-image-slice: 5;
-  border-image-width: 10px;
-  width: 100%;
-  height: 70%;
-}
-
-.container .machine .screen .award span {
-  font-size: 3rem;
-  font-weight: bold;
-  font-family: 'Grape Nuts';
-  position: absolute;
-  -webkit-text-stroke: 1px red;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.container .machine .screen .info {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #104b63;
-  z-index: 3;
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  opacity: 0;
-}
-
-.container .machine .screen .info img {
-  width: 50%;
-}
-
-.container .machine .screen .info h1 {
-  font-weight: bold;
-  -webkit-text-stroke: 1px white;
-  font-family: 'Grape Nuts', cursive;
-}
-
-.container .machine .screen .info span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  font-size: 3rem;
-  color: red;
-  font-weight: bold;
-  -webkit-text-stroke: 0.5px yellow;
-}
-
-.container .machine .screen .firstPart {
-  -webkit-filter: blur(2px) grayscale(50%);
-          filter: blur(2px) grayscale(50%);
-  height: 33%;
-  border: 5px solid;
-  border-image-source: url("../../../public/ramka-sklep.jpg");
-  border-image-slice: 30;
-  border-width: 3px;
-}
-
-.container .machine .screen .firstPart .img {
-  width: 33.33%;
-  height: 100%;
-}
-
-.container .machine .screen .secondPart {
-  height: 33%;
-  border: 5px solid;
-  border-image-source: url("../../../public/ramka-sklep.jpg");
-  border-image-slice: 30;
-  border-width: 3px;
-}
-
-.container .machine .screen .secondPart .img {
-  width: 33.33%;
-  height: 100%;
-}
-
-.container .machine .screen .thirdPart {
-  -webkit-filter: blur(2px) grayscale(50%);
-          filter: blur(2px) grayscale(50%);
-  height: 33.33%;
-  border: 5px solid;
-  border-image-source: url("../../../public/ramka-sklep.jpg");
-  border-image-slice: 30;
-  border-width: 3px;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-column: 1/4;
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  grid-row: 3/4;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.container .machine .screen .thirdPart .img {
-  width: 33.33%;
-  height: 100%;
-}
-
-.container .machine .hand {
-  width: 100px;
-  height: 150px;
-  background-color: black;
-  color: white;
-  -webkit-transition: 2s;
-  transition: 2s;
-  -webkit-transform: rotateY(90deg) translateZ(-300px) translateX(50px) translateY(100px);
-          transform: rotateY(90deg) translateZ(-300px) translateX(50px) translateY(100px);
-  -webkit-clip-path: polygon(5% 33%, 10% 33%, 16% 33%, 21% 33%, 25% 34%, 30% 34%, 35% 34%, 39% 34%, 43% 34%, 48% 34%, 52% 34%, 56% 34%, 57% 31%, 57% 26%, 57% 22%, 57% 18%, 57% 16%, 59% 11%, 64% 11%, 70% 11%, 70% 15%, 71% 18%, 71% 22%, 71% 26%, 71% 29%, 71% 33%, 70% 37%, 70% 41%, 70% 43%, 65% 45%, 62% 46%, 59% 46%, 54% 46%, 51% 45%, 47% 46%, 43% 46%, 40% 46%, 36% 46%, 33% 46%, 27% 46%, 23% 47%, 19% 46%, 16% 47%, 11% 47%, 7% 47%, 3% 47%, 0% 44%, 2% 40%, 2% 35%);
-          clip-path: polygon(5% 33%, 10% 33%, 16% 33%, 21% 33%, 25% 34%, 30% 34%, 35% 34%, 39% 34%, 43% 34%, 48% 34%, 52% 34%, 56% 34%, 57% 31%, 57% 26%, 57% 22%, 57% 18%, 57% 16%, 59% 11%, 64% 11%, 70% 11%, 70% 15%, 71% 18%, 71% 22%, 71% 26%, 71% 29%, 71% 33%, 70% 37%, 70% 41%, 70% 43%, 65% 45%, 62% 46%, 59% 46%, 54% 46%, 51% 45%, 47% 46%, 43% 46%, 40% 46%, 36% 46%, 33% 46%, 27% 46%, 23% 47%, 19% 46%, 16% 47%, 11% 47%, 7% 47%, 3% 47%, 0% 44%, 2% 40%, 2% 35%);
-}
-
-.container .machine .hand:active {
-  -webkit-clip-path: polygon(3% 37%, 9% 37%, 14% 37%, 19% 37%, 26% 37%, 30% 37%, 36% 37%, 41% 38%, 46% 37%, 53% 38%, 58% 38%, 63% 39%, 68% 38%, 69% 44%, 68% 47%, 68% 51%, 69% 55%, 69% 59%, 69% 65%, 69% 69%, 69% 73%, 64% 73%, 58% 72%, 54% 73%, 51% 72%, 51% 67%, 52% 62%, 53% 58%, 52% 54%, 46% 53%, 42% 53%, 38% 54%, 34% 54%, 30% 55%, 25% 55%, 20% 55%, 15% 55%, 11% 55%, 6% 54%, 2% 55%, 2% 47%, 1% 41%, 2% 51%);
-          clip-path: polygon(3% 37%, 9% 37%, 14% 37%, 19% 37%, 26% 37%, 30% 37%, 36% 37%, 41% 38%, 46% 37%, 53% 38%, 58% 38%, 63% 39%, 68% 38%, 69% 44%, 68% 47%, 68% 51%, 69% 55%, 69% 59%, 69% 65%, 69% 69%, 69% 73%, 64% 73%, 58% 72%, 54% 73%, 51% 72%, 51% 67%, 52% 62%, 53% 58%, 52% 54%, 46% 53%, 42% 53%, 38% 54%, 34% 54%, 30% 55%, 25% 55%, 20% 55%, 15% 55%, 11% 55%, 6% 54%, 2% 55%, 2% 47%, 1% 41%, 2% 51%);
-}
-
-.container .machine .floor {
-  position: absolute;
-  width: 1000px;
-  height: 700px;
-  background-color: skyblue;
-  -webkit-transform: rotateX(90deg) translateZ(50px) translateY(200px) translateX(-100px);
-          transform: rotateX(90deg) translateZ(50px) translateY(200px) translateX(-100px);
-  background: url("../../../public/drawno2.png");
-}
-
-.container .machine .wall {
-  position: absolute;
-  width: 700px;
-  height: 700px;
-  background-color: white;
-  -webkit-transform: rotateY(90deg) translateZ(550px) translateY(-400px) translateX(-200px);
-          transform: rotateY(90deg) translateZ(550px) translateY(-400px) translateX(-200px);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background: url("../../../public/sciana.png");
-  background-size: cover;
-}
-
-.container .machine .wall .img {
-  position: absolute;
-  top: 20%;
-  left: 10%;
-  width: 50%;
-  height: 50%;
-}
-
-.container .machine .secondWall {
-  position: absolute;
-  width: 1000px;
-  height: 700px;
-  background-color: brown;
-  -webkit-transform: rotateY(180deg) translateZ(-550px) translateY(-400px) translateX(100px);
-          transform: rotateY(180deg) translateZ(-550px) translateY(-400px) translateX(100px);
-  background: url("../../../public/sciana.png");
-}
-
-.container .machine .secondWall .img {
-  position: absolute;
-  left: 20%;
-  top: 10%;
-}
-
-.container .machine .thirdWall {
-  position: absolute;
-  width: 1000px;
-  height: 700px;
-  background-color: brown;
-  -webkit-transform: rotateY(0deg) rotateX(0deg) translateZ(-150px) translateY(-400px) translateX(-100px);
-          transform: rotateY(0deg) rotateX(0deg) translateZ(-150px) translateY(-400px) translateX(-100px);
-  background: url("../../../public/sciana.png");
-}
-
-.container .machine .ceiling {
-  position: absolute;
-  width: 1000px;
-  height: 700px;
-  background-color: brown;
-  -webkit-transform: rotateX(90deg) rotateX(0deg) translateZ(750px) translateY(200px) translateX(-100px);
-          transform: rotateX(90deg) rotateX(0deg) translateZ(750px) translateY(200px) translateX(-100px);
-  background: url("../../../public/drawno2.png");
+@media (min-width: 300px) {
+  .container {
+    width: 20%;
+    height: 50%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+    -ms-grid-rows: (1fr)[6];
+        grid-template-rows: repeat(6, 1fr);
+    position: absolute;
+    background-color: gray;
+    -webkit-perspective: 1000px;
+            perspective: 1000px;
+  }
+  .container .machine {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transform: rotateY(95deg) translateY(90px) translateX(0px) scaleX(0.7) scaleY(0.5);
+            transform: rotateY(95deg) translateY(90px) translateX(0px) scaleX(0.7) scaleY(0.5);
+  }
+  .container .machine .one {
+    width: 200px;
+    height: 300px;
+    background-color: green;
+    position: absolute;
+    -webkit-transform: rotateY(0deg) translateZ(200px);
+            transform: rotateY(0deg) translateZ(200px);
+    background: url("../../../public/stare-drewno.png");
+    border: 5px solid;
+    border-image-source: url("../../../public/ramka-box.png");
+    border-image-slice: 40;
+    border-width: 5px;
+  }
+  .container .machine .two {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    position: absolute;
+    -webkit-transform: rotateX(90deg) translateZ(100px) translateY(100px);
+            transform: rotateX(90deg) translateZ(100px) translateY(100px);
+    background: url("../../../public/stare-drewno.png");
+    border: 5px solid;
+    border-image-source: url("../../../public/ramka-box.png");
+    border-image-slice: 40;
+    border-width: 5px;
+  }
+  .container .machine .three {
+    width: 200px;
+    height: 200px;
+    background-color: orange;
+    position: absolute;
+    -webkit-transform: rotateX(90deg) translateZ(-200px) translateY(100px);
+            transform: rotateX(90deg) translateZ(-200px) translateY(100px);
+    background: url("../../../public/stare-drewno.png");
+    border: 5px solid;
+    border-image-source: url("../../../public/ramka-box.png");
+    border-image-slice: 40;
+    border-width: 5px;
+  }
+  .container .machine .four {
+    width: 200px;
+    height: 300px;
+    background-color: magenta;
+    position: absolute;
+    -webkit-transform: rotateY(90deg) translateZ(100px) translateX(-100px);
+            transform: rotateY(90deg) translateZ(100px) translateX(-100px);
+    background: url("../../../public/stare-drewno.png");
+    border: 5px solid;
+    border-image-source: url("../../../public/ramka-box.png");
+    border-image-slice: 40;
+    border-width: 5px;
+    -webkit-box-shadow: 0 0 10px black,0 0 20px black,0 0 30px black,0 0 40px black;
+            box-shadow: 0 0 10px black,0 0 20px black,0 0 30px black,0 0 40px black;
+  }
+  .container .machine .five {
+    width: 100px;
+    height: 150px;
+    background-color: salmon;
+    position: absolute;
+    -webkit-transform: rotateY(0deg) translateZ(0px) translateX(-100px) translateY(150px);
+            transform: rotateY(0deg) translateZ(0px) translateX(-100px) translateY(150px);
+    background: url("../../../public/stare-drewno.png");
+    border: 5px solid;
+    border-image-source: url("../../../public/ramka-box.png");
+    border-image-slice: 40;
+    border-width: 5px;
+    border-right: none;
+    border-left: none;
+  }
+  .container .machine .last {
+    width: 200px;
+    height: 300px;
+    background-color: palegreen;
+    position: absolute;
+    background: url("../../../public/stare-drewno.png");
+    border: 5px solid;
+    border-image-source: url("../../../public/ramka-box.png");
+    border-image-slice: 40;
+    border-width: 5px;
+  }
+  .container .machine .seven {
+    width: 100px;
+    height: 200px;
+    background-color: maroon;
+    position: absolute;
+    -webkit-transform: rotateX(90deg) translateZ(-50px) translateX(-100px) translateY(100px);
+            transform: rotateX(90deg) translateZ(-50px) translateX(-100px) translateY(100px);
+    background: url("../../../public/stare-drewno.png");
+    border: 5px solid;
+    border-image-source: url("../../../public/ramka-box.png");
+    border-image-slice: 40;
+    border-width: 5px;
+  }
+  .container .machine .eight {
+    width: 200px;
+    height: 150px;
+    background-color: #0affff;
+    position: absolute;
+    -webkit-transform: rotateY(90deg) translateZ(-200px) translateX(-100px) translateY(150px);
+            transform: rotateY(90deg) translateZ(-200px) translateX(-100px) translateY(150px);
+    background: url("../../../public/stare-drewno.png");
+    border: 5px solid;
+    border-image-source: url("../../../public/ramka-box.png");
+    border-image-slice: 40;
+    border-width: 5px;
+  }
+  .container .machine .screen {
+    border: 5px solid;
+    border-image-source: url("../../../public/ramka-sklep.jpg");
+    border-image-slice: 30;
+    border-width: 10px;
+    width: 200px;
+    height: 150px;
+    background-color: black;
+    -webkit-transform: rotateY(90deg) translateZ(-100px) translateX(-100px);
+            transform: rotateY(90deg) translateZ(-100px) translateX(-100px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .container .machine .screen .award {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+    opacity: 0;
+    -webkit-transform: rotateX(360deg) rotateY(180deg);
+            transform: rotateX(360deg) rotateY(180deg);
+  }
+  .container .machine .screen .award h1 {
+    background-color: blue;
+    height: 30%;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    -webkit-text-stroke: 1px yellow;
+    text-shadow: 0 0 5px gold;
+  }
+  .container .machine .screen .award img {
+    border: 5px solid;
+    border-image-source: url("../../../public/ramka-forest.png");
+    border-image-slice: 5;
+    border-image-width: 10px;
+    width: 100%;
+    height: 70%;
+  }
+  .container .machine .screen .award span {
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Grape Nuts';
+    position: absolute;
+    -webkit-text-stroke: 1px red;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .container .machine .screen .info {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #104b63;
+    z-index: 3;
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    opacity: 0;
+  }
+  .container .machine .screen .info img {
+    width: 50%;
+  }
+  .container .machine .screen .info h1 {
+    font-weight: bold;
+    -webkit-text-stroke: 1px white;
+    font-family: 'Grape Nuts', cursive;
+  }
+  .container .machine .screen .info span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: red;
+    font-weight: bold;
+    -webkit-text-stroke: 0.5px yellow;
+  }
+  .container .machine .screen .firstPart {
+    -webkit-filter: blur(2px) grayscale(50%);
+            filter: blur(2px) grayscale(50%);
+    height: 33%;
+    border: 5px solid;
+    border-image-source: url("../../../public/ramka-sklep.jpg");
+    border-image-slice: 30;
+    border-width: 3px;
+  }
+  .container .machine .screen .firstPart .img {
+    width: 33.33%;
+    height: 100%;
+  }
+  .container .machine .screen .secondPart {
+    height: 33%;
+    border: 5px solid;
+    border-image-source: url("../../../public/ramka-sklep.jpg");
+    border-image-slice: 30;
+    border-width: 3px;
+  }
+  .container .machine .screen .secondPart .img {
+    width: 33.33%;
+    height: 100%;
+  }
+  .container .machine .screen .thirdPart {
+    -webkit-filter: blur(2px) grayscale(50%);
+            filter: blur(2px) grayscale(50%);
+    height: 33.33%;
+    border: 5px solid;
+    border-image-source: url("../../../public/ramka-sklep.jpg");
+    border-image-slice: 30;
+    border-width: 3px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1/4;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .container .machine .screen .thirdPart .img {
+    width: 33.33%;
+    height: 100%;
+  }
+  .container .machine .hand {
+    width: 100px;
+    height: 150px;
+    background-color: black;
+    color: white;
+    -webkit-transition: 2s;
+    transition: 2s;
+    -webkit-transform: rotateY(90deg) translateZ(-300px) translateX(50px) translateY(100px);
+            transform: rotateY(90deg) translateZ(-300px) translateX(50px) translateY(100px);
+    -webkit-clip-path: polygon(5% 33%, 10% 33%, 16% 33%, 21% 33%, 25% 34%, 30% 34%, 35% 34%, 39% 34%, 43% 34%, 48% 34%, 52% 34%, 56% 34%, 57% 31%, 57% 26%, 57% 22%, 57% 18%, 57% 16%, 59% 11%, 64% 11%, 70% 11%, 70% 15%, 71% 18%, 71% 22%, 71% 26%, 71% 29%, 71% 33%, 70% 37%, 70% 41%, 70% 43%, 65% 45%, 62% 46%, 59% 46%, 54% 46%, 51% 45%, 47% 46%, 43% 46%, 40% 46%, 36% 46%, 33% 46%, 27% 46%, 23% 47%, 19% 46%, 16% 47%, 11% 47%, 7% 47%, 3% 47%, 0% 44%, 2% 40%, 2% 35%);
+            clip-path: polygon(5% 33%, 10% 33%, 16% 33%, 21% 33%, 25% 34%, 30% 34%, 35% 34%, 39% 34%, 43% 34%, 48% 34%, 52% 34%, 56% 34%, 57% 31%, 57% 26%, 57% 22%, 57% 18%, 57% 16%, 59% 11%, 64% 11%, 70% 11%, 70% 15%, 71% 18%, 71% 22%, 71% 26%, 71% 29%, 71% 33%, 70% 37%, 70% 41%, 70% 43%, 65% 45%, 62% 46%, 59% 46%, 54% 46%, 51% 45%, 47% 46%, 43% 46%, 40% 46%, 36% 46%, 33% 46%, 27% 46%, 23% 47%, 19% 46%, 16% 47%, 11% 47%, 7% 47%, 3% 47%, 0% 44%, 2% 40%, 2% 35%);
+  }
+  .container .machine .hand:active {
+    -webkit-clip-path: polygon(3% 37%, 9% 37%, 14% 37%, 19% 37%, 26% 37%, 30% 37%, 36% 37%, 41% 38%, 46% 37%, 53% 38%, 58% 38%, 63% 39%, 68% 38%, 69% 44%, 68% 47%, 68% 51%, 69% 55%, 69% 59%, 69% 65%, 69% 69%, 69% 73%, 64% 73%, 58% 72%, 54% 73%, 51% 72%, 51% 67%, 52% 62%, 53% 58%, 52% 54%, 46% 53%, 42% 53%, 38% 54%, 34% 54%, 30% 55%, 25% 55%, 20% 55%, 15% 55%, 11% 55%, 6% 54%, 2% 55%, 2% 47%, 1% 41%, 2% 51%);
+            clip-path: polygon(3% 37%, 9% 37%, 14% 37%, 19% 37%, 26% 37%, 30% 37%, 36% 37%, 41% 38%, 46% 37%, 53% 38%, 58% 38%, 63% 39%, 68% 38%, 69% 44%, 68% 47%, 68% 51%, 69% 55%, 69% 59%, 69% 65%, 69% 69%, 69% 73%, 64% 73%, 58% 72%, 54% 73%, 51% 72%, 51% 67%, 52% 62%, 53% 58%, 52% 54%, 46% 53%, 42% 53%, 38% 54%, 34% 54%, 30% 55%, 25% 55%, 20% 55%, 15% 55%, 11% 55%, 6% 54%, 2% 55%, 2% 47%, 1% 41%, 2% 51%);
+  }
+  .container .machine .floor {
+    position: absolute;
+    width: 1000px;
+    height: 700px;
+    background-color: skyblue;
+    -webkit-transform: rotateX(90deg) translateZ(50px) translateY(200px) translateX(-100px);
+            transform: rotateX(90deg) translateZ(50px) translateY(200px) translateX(-100px);
+    background: url("../../../public/drawno2.png");
+  }
+  .container .machine .wall {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    background-color: white;
+    -webkit-transform: rotateY(90deg) translateZ(550px) translateY(-400px) translateX(-200px);
+            transform: rotateY(90deg) translateZ(550px) translateY(-400px) translateX(-200px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background: url("../../../public/sciana.png");
+    background-size: cover;
+  }
+  .container .machine .wall .img {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 50%;
+    height: 50%;
+  }
+  .container .machine .secondWall {
+    position: absolute;
+    width: 1000px;
+    height: 700px;
+    background-color: brown;
+    -webkit-transform: rotateY(180deg) translateZ(-550px) translateY(-400px) translateX(100px);
+            transform: rotateY(180deg) translateZ(-550px) translateY(-400px) translateX(100px);
+    background: url("../../../public/sciana.png");
+  }
+  .container .machine .secondWall .img {
+    position: absolute;
+    left: 20%;
+    top: 10%;
+  }
+  .container .machine .thirdWall {
+    position: absolute;
+    width: 1000px;
+    height: 700px;
+    background-color: brown;
+    -webkit-transform: rotateY(0deg) rotateX(0deg) translateZ(-150px) translateY(-400px) translateX(-100px);
+            transform: rotateY(0deg) rotateX(0deg) translateZ(-150px) translateY(-400px) translateX(-100px);
+    background: url("../../../public/sciana.png");
+  }
+  .container .machine .ceiling {
+    position: absolute;
+    width: 1000px;
+    height: 700px;
+    background-color: brown;
+    -webkit-transform: rotateX(90deg) rotateX(0deg) translateZ(750px) translateY(200px) translateX(-100px);
+            transform: rotateX(90deg) rotateX(0deg) translateZ(750px) translateY(200px) translateX(-100px);
+    background: url("../../../public/drawno2.png");
+  }
 }
 /*# sourceMappingURL=OneHandBandit.module.css.map */

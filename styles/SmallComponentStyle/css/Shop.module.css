@@ -41,7 +41,8 @@
   border-image-slice: 30 30 30 30;
   border-image-repeat: stretch;
   border-image-width: 2px;
-  background: conic-gradient(gray, black, gray);
+  background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(gray), to(black));
+  background: linear-gradient(black, gray, black);
 }
 
 .container .store .shopSlot .imgSlot {

@@ -28,7 +28,7 @@ const whatDispaly=()=>{
             case "cubic":
                 return <Cubic fn={setHeadBack}/>
                 case "oneHandBandit":
-                // return <OneHandBandit fn={setHeadBack} />
+                return <OneHandBandit fn={setHeadBack} />
     }
 }
 

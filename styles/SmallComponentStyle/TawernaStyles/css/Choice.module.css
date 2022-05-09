@@ -1,154 +1,145 @@
-.container {
-  width: 100%;
-  height: 100%;
-}
-
-.choice {
-  width: 100%;
-  height: 80%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (1fr)[5];
-      grid-template-rows: repeat(5, 1fr);
-  grid-gap: 5%;
-}
-
-.choice .cubic {
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 4;
-  grid-row: 2/6;
-  border: 5px solid;
-  border-image-source: url("../../../public/ramka.jpg");
-  border-image-slice: 30;
-  border-image-repeat: repeat;
-  border-image-width: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-family: 'Grape Nuts', cursive;
-  font-weight: bold;
-  font-size: 1.3rem;
-  text-align: center;
-  background: url("../../../public/wypalona-kartka-papieru.png");
-}
-
-.choice .cubic .img {
-  width: 80%;
-  height: 50%;
-}
-
-.choice .cubic p {
-  display: block;
-  height: 50%;
-  font-size: 1.2rem;
-  -webkit-text-stroke: 0.5px darkblue;
-}
-
-.choice .oneHandBandit {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 4;
-  grid-row: 2/6;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  border: 1px solid red;
-  font-family: 'Grape Nuts', cursive;
-  font-weight: bold;
-  font-size: 1rem;
-  text-align: center;
-  border: 5px solid;
-  border-image-source: url("../../../public/ramka.jpg");
-  border-image-slice: 30;
-  border-image-repeat: repeat;
-  border-image-width: 5px;
-  background: url("../../../public/wypalona-kartka-papieru.png");
-}
-
-.choice .oneHandBandit .img {
-  width: 100%;
-  height: 50%;
-  position: absolute;
-}
-
-.choice .oneHandBandit .p {
-  display: block;
-  height: 50%;
-  font-size: 1.2rem;
-  -webkit-text-stroke: 0.5px darkblue;
-  position: absolute;
-  top: 50%;
-}
-
-.choice .thirdGame {
-  position: relative;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 1;
-  grid-column: 3/4;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  border: 1px solid red;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 4;
-  grid-row: 2/6;
-  border: 5px solid;
-  border-image-source: url("../../../public/ramka.jpg");
-  border-image-slice: 30;
-  border-image-repeat: repeat;
-  border-image-width: 5px;
-  background: url("../../../public/wypalona-kartka-papieru.png");
-}
-
-.choice .thirdGame .img {
-  width: 100%;
-  height: 100%;
-  -webkit-filter: grayscale(100%) blur(2px) saturate(100%);
-          filter: grayscale(100%) blur(2px) saturate(100%);
-}
-
-.choice .thirdGame::before {
-  content: "15 level";
-  position: absolute;
-  font-size: 4rem;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  text-align: center;
-  font-family: 'Babylonica', cursiv;
-  font-weight: bold;
-}
-
-.choice .thirdGame:hover::before {
-  color: red;
+@media (min-width: 300px) {
+  .container {
+    width: 100%;
+    height: 100%;
+  }
+  .choice {
+    width: 100%;
+    height: 80%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: (1fr)[5];
+        grid-template-rows: repeat(5, 1fr);
+    grid-gap: 5%;
+  }
+  .choice .cubic {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 4;
+    grid-row: 2/6;
+    border: 5px solid;
+    border-image-source: url("../../../public/ramka.jpg");
+    border-image-slice: 30;
+    border-image-repeat: repeat;
+    border-image-width: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-family: 'Grape Nuts', cursive;
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-align: center;
+    background: url("../../../public/wypalona-kartka-papieru.png");
+  }
+  .choice .cubic .img {
+    width: 80%;
+    height: 50%;
+  }
+  .choice .cubic p {
+    display: block;
+    height: 50%;
+    font-size: 1.2rem;
+    -webkit-text-stroke: 0.5px darkblue;
+  }
+  .choice .oneHandBandit {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 4;
+    grid-row: 2/6;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border: 1px solid red;
+    font-family: 'Grape Nuts', cursive;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    border: 5px solid;
+    border-image-source: url("../../../public/ramka.jpg");
+    border-image-slice: 30;
+    border-image-repeat: repeat;
+    border-image-width: 5px;
+    background: url("../../../public/wypalona-kartka-papieru.png");
+  }
+  .choice .oneHandBandit .img {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+  }
+  .choice .oneHandBandit .p {
+    display: block;
+    height: 50%;
+    font-size: 1.2rem;
+    -webkit-text-stroke: 0.5px darkblue;
+    position: absolute;
+    top: 50%;
+  }
+  .choice .thirdGame {
+    position: relative;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3/4;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border: 1px solid red;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 4;
+    grid-row: 2/6;
+    border: 5px solid;
+    border-image-source: url("../../../public/ramka.jpg");
+    border-image-slice: 30;
+    border-image-repeat: repeat;
+    border-image-width: 5px;
+    background: url("../../../public/wypalona-kartka-papieru.png");
+  }
+  .choice .thirdGame .img {
+    width: 100%;
+    height: 100%;
+    -webkit-filter: grayscale(100%) blur(2px) saturate(100%);
+            filter: grayscale(100%) blur(2px) saturate(100%);
+  }
+  .choice .thirdGame::before {
+    content: "15 level";
+    position: absolute;
+    font-size: 4rem;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'Babylonica', cursiv;
+    font-weight: bold;
+  }
+  .choice .thirdGame:hover::before {
+    color: red;
+  }
 }
 /*# sourceMappingURL=Choice.module.css.map */

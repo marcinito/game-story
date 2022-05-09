@@ -16,12 +16,12 @@ $height:300px;
 
 
     .machine{
-        grid-column:1/2;
-        position: absolute;
+     
+        position: relative;
         display:flex;
         transform-style: preserve-3d;
         transform:rotateY(95deg)  translateY(90px) translateX(0px) scaleX(0.7) scaleY(0.5);
-        
+    
        
 
         
