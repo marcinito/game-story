@@ -9,7 +9,7 @@ const PlayerPanel = () => {
 const playercomponentRef=useRef()
 const menuOption=useSelector((state)=>state.menuOption)
     const dispatch=useDispatch()
-console.info(menuOption.option)
+console.info(menuOption.option,"menuOption")
 
 useEffect(()=>{
     if(window.innerWidth>300){
