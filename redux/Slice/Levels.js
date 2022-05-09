@@ -26,8 +26,8 @@ const initialState = {
       manaTotal:1100,
     
     },
-    hpLevel:9100,
-    hpTotal:9100,
+    hpLevel:500,
+    hpTotal:500,
     howManyHpAddPerLvl:25, 
     gold:43235,
     productExp:{

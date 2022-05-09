@@ -124,7 +124,7 @@ const handleAtak=()=>{
 dispatch(subRateMonsterHp(handleHp(monsters[0].hpTotal,skills.strenght.total)))
 hitFromMonster.current.style.opacity=`1`
 hitFromPlayer.current.style.opacity=`1`
-// hitFromPlayer.textContent=skills.strenght.total
+
 
 
 timeoutRef.current=setTimeout(()=>{
@@ -135,6 +135,7 @@ hitFromPlayer.current.style.opacity=`0`
 },1000)
 }
 console.info(hitFromPlayer.current,"hit from player")
+console.info(skills.strenght.total)
 const nextMonster=()=>{
     randomActionRef.current=setInterval(randomActionFunction,3000)
     dispatch(deleteDefeatedMonster())
@@ -146,7 +147,7 @@ const nextMonster=()=>{
     setDisabledSpellAfterWin(false)
     clearTimeout(timeoutRef.current)
 }
-
+console.info(hitFromPlayer.current,"hitFromPlayer")
 const backAfterDefeat=()=>{
     router.push('/player-panel')
     clearTimeout(timeoutRef.current)
@@ -223,7 +224,7 @@ console.info(weapon,"weapon")
         <div className={s.monster} ref={monsterRef}>
         <img className={s.spells} style={spells.inUse===null?{opacity:"0"}:{opacity:"1"}} src={spells.inUse}></img>
         <div className={s.showHitFromPlayer} ref={hitFromPlayer}>
-        <div className={s.sprite}><img src={weapon!==null?weapon.dataItem.grafika:null}/></div>
+        <div className={s.sprite}><img src={weapon!==null?weapon.dataItem.grafika:null}/><h3>{skills.strenght.total}</h3></div>
         </div>
         <img className={s.treatmentMonster} ref={treatmentMonsterRef} src={"/spells/treatment-spell.gif"}/>
             <Monster 

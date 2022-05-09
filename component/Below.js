@@ -70,7 +70,7 @@ return
        }
        //Open WINDOW//
        if(flag=="close"){
-        windowRef.current.style.height="calc(100% * 7)"
+        windowRef.current.style.height="calc(100% * 9)"
         dashboardRef.current.style="height:10%"
         dashboardRef.current.children[0].textContent=`X`
         dashboardRef.current.children[0].style.width="12%"
