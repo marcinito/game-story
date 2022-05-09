@@ -150,7 +150,7 @@ setCanIPlay(true)
                    <img className={s.img} src={display1[change3].img}/>
                     </div>
                 </div>
-                <button className={s.hand} onClick={()=>play()} disabled={canIPlay}>PLAY</button>
+                <button className={s.hand} onClick={()=>play()} disabled={canIPlay}><img src={"/OneHandBandit/play.png"}/></button>
                 <div className={s.floor} ></div>
                 <div className={s.wall} >
                     <img src={"/okno.png"} className={s.img}/>

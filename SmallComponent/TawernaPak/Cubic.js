@@ -130,42 +130,42 @@ if(chosenNumber.current!==null){
             <div  className={`${s.one} ${s.all}`} ref={div1}>
      {drawDot(1).map(el=>{
          return (
-             <div key={Math.random()*7132} className={s.dot}></div>
+             <div key={1} className={s.dot}></div>
          )
      })}
             </div>
             <div  className={`${s.two} ${s.all}` } ref={div2}  >
             {drawDot(2).map(el=>{
          return (
-             <div key={Math.random()*7132} className={s.dot}></div>
+             <div key={2} className={s.dot}></div>
          )
      })}
             </div>
             <div  className={`${s.three} ${s.all}`} ref={div3} >
             {drawDot(3).map(el=>{
          return (
-             <div key={Math.random()*7132} className={s.dot}></div>
+             <div key={3} className={s.dot}></div>
          )
      })}
             </div>
             <div  className={`${s.four} ${s.all}`} ref={div4}  >
             {drawDot(4).map(el=>{
          return (
-             <div key={Math.random()*7132} className={s.dot}></div>
+             <div key={4} className={s.dot}></div>
          )
      })}
             </div>
             <div  className={`${s.five} ${s.all}`} ref={div5} >
             {drawDot(5).map(el=>{
          return (
-             <div key={Math.random()*7132} className={s.dot}></div>
+             <div key={5} className={s.dot}></div>
          )
      })}
             </div>
             <div  className={`${s.last} ${s.all}`} ref={div6} >
             {drawDot(6).map(el=>{
          return (
-             <div key={Math.random()*7132} className={s.dot}></div>
+             <div key={6} className={s.dot}></div>
          )
      })}
             </div>

@@ -87,14 +87,19 @@ align-items: center;
     align-items: center;
     flex-wrap:wrap;
     justify-content: space-around;
-    transform:rotateX(0deg) rotateY(0deg) translateZ(-100px) translateY(0px)
+    transform:rotateX(0deg) rotateY(0deg) translateZ(-100px) translateY(0px);
+ 
+ 
+  
 }
 .five .dot{
-    margin:10%;
+   margin:10%;
+   
 }
+
 .five .dot:nth-child(5){
- 
-    position:absolute;
+ position:absolute;
+   
 }
 .last{
  
