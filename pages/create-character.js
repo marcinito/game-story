@@ -28,10 +28,10 @@ const startGame=()=>{
     return ( 
         <div className={s.container}>
 <div className={s.windowInput}>
-    <img className={s.blackBird} src={"./kruk.png"}></img>
+
     <img className={s.profession} src={dataFacade.profession}></img>
     <div className={s.inputPak}>
-        <h1 className={s.h1}>Create Character</h1>
+    
     <input
     ref={nameRef}
      type="text"

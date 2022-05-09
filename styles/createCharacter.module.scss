@@ -2,56 +2,45 @@
     .container{
   
         width:100%;
-        height:90%;
+        height:87%;
         display:flex;
         justify-content: center;
         align-items: center;
         overflow-y: scroll;
-        
+        background: url("../public/smok.jpg");
+        background-size: cover;
+                
     
     
     }
     .windowInput{
         width:100%;
         height:100%;
-        
-    
-       
-        background-image: url("../public/ramka.png");
         background-repeat: no-repeat;
         background-size:auto;
-        border-top-right-radius: 5%;
-        border-bottom-right-radius: 15%;
-       
-    
+        
     }
     .inputPak{
-    
+   
         display:flex;
         flex-direction: column;
         width:100%;
         position: relative;
         top:20%;
         align-items: center;
-        height:40%;
+        height:100%;
+        top:-10%;
        
     }
-    .h1{
-        position:absolute;
-        top:-90%;
-        left:45%;
-        font-family: 'Babylonica', cursive;
-        font-size:4rem;
-        text-shadow:6px 2px rgba(0,0,0,0.5) ;
-    }
+
     
     .inputPak input{
-        top:-40%;
+      
         position:absolute;
         background-color: darken($color: beige, $amount: 10);
-        width:60%;
-        left:25%;
-        height:15%;
+        width:80%;
+        
+        height:7%;
         font-size:2rem;
         font-family: 'Grape Nuts', cursive;
         font-weight:bold;
@@ -64,11 +53,11 @@
     }
     .inputPak select{
         position:absolute;
-        background-color: red;
-        width:60%;
-        left:25%;
-       top:-10%;
-        height:15%;
+     
+        width:80%;
+       
+       top:10%;
+        height:7%;
         font-size:2rem;
         text-align: center;
         background-color: darken($color: beige, $amount: 10);
@@ -83,8 +72,8 @@
     .playButton{
         position:absolute;
         width:40%;
-        left:35%;
-        height:20%;
+        
+        height:10%;
         background-color: red;
         top:60%;
         background-color: darken($color: beige, $amount: 10);
@@ -93,18 +82,14 @@
         font-weight:bold;
         letter-spacing: 2px;
     }
-    .blackBird{
-        width: 40%;
-        position:relative;
-        
-        
-    }
+
     .profession{
         position:relative;
-        width:25%;
+        width:40%;
         top:43%;
-        left:5%;
+        left:28%;
         object-fit: cover;
+        
     }
     
 }
