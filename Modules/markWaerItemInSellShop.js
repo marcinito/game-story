@@ -6,10 +6,7 @@ export default function markWearItemInSellShop(ownItems,eqShopRef,whichPart,from
              elemnts.forEach((el2)=>{
                  if(el2.getAttribute("id")===el.hash.toString()){
                     if(from==="shop")el2.style.borderImageWidth="25px"
-                     
                      if(from==="bp")el2.style.backgroundColor="darkorange"
-                     
-                    
                  }
              })
             

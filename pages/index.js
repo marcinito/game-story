@@ -25,6 +25,7 @@ setTimeout(()=>{
 
   return (
     <div className={s.firstPage}>
+      <div className={s.textDiv}><h1>Let the one who hunts monsters himself take care not to become a monster</h1></div>
       <div className={s.catalogDiv}>
       <div className={s.catalog}>
         <div className={`${s.div} ${s.div1}`}><img className={s.img} src={"./monster/cyklop.png"}></img></div>

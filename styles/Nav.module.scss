@@ -9,6 +9,10 @@
         position:relative;
         display:flex;
         justify-content: center;
+        border-bottom:5px solid;
+        border-image-source:url("../public/ramka-box.png");
+        border-image-slice:20;
+        border-image-width:0 0 10px 0;
 
         
     }

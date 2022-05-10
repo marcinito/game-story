@@ -54,14 +54,14 @@ const play=()=>{
        return
    }
     dispatch(debitFromAccout(1))
-let dwa=setInterval(()=>{
+let fortune=setInterval(()=>{
     setChange1(Math.floor(Math.random()*4))
     setChange2(Math.floor(Math.random()*4))
     setChange3(Math.floor(Math.random()*4))
 },200)
 
 setTimeout(()=>{
-    clearInterval(dwa)
+    clearInterval(fortune)
     setFinish(!finish)
 },1000)
 }
@@ -70,7 +70,7 @@ useEffect(()=>{
     props.fn(false)
      setCheck([...checkRef.current.children])
   let result=check.filter((el,i,arr)=>{
-      if(arr[0].src===arr[0].src && el.src===arr[1].src && el.src===arr[2].src){
+      if(el.src===arr[0].src && el.src===arr[1].src && el.src===arr[2].src){
           return el
       }
   })
