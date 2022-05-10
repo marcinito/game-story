@@ -11,7 +11,7 @@ $bgcSkills:#A67D3D;
 display:grid;
 grid-template-columns:repeat(2,1fr);
 grid-template-rows:repeat(5,1fr);
-    background-color: #DB9370;
+    background:url("../../public/extraImage/background2.png");
     grid-row:2/12;
     grid-column:1/5;
 }

@@ -28,7 +28,7 @@ const eqShopRef=useRef()
 const panelShopRef=useRef()
 
 useInfoWindow(message[0].shop,windowInfo,"shop")
-
+console.info(message[0])
 useEffect(()=>{
     panelShopRef.current.style.transform=`scale(0)`
 },[])
@@ -36,12 +36,12 @@ useEffect(()=>{
 useEffect(()=>{
 const {helmet,armor,weapon,shield,legs,shoe}=wearItems
 if(prop==="sell"){
-markWearItemInSellShop(ownItems,eqShopRef,helmet)
-markWearItemInSellShop(ownItems,eqShopRef,armor)
-markWearItemInSellShop(ownItems,eqShopRef,weapon)
-markWearItemInSellShop(ownItems,eqShopRef,shield)
-markWearItemInSellShop(ownItems,eqShopRef,legs)
-markWearItemInSellShop(ownItems,eqShopRef,shoe)
+markWearItemInSellShop(ownItems,eqShopRef,helmet,"shop")
+markWearItemInSellShop(ownItems,eqShopRef,armor,"shop")
+markWearItemInSellShop(ownItems,eqShopRef,weapon,"shop")
+markWearItemInSellShop(ownItems,eqShopRef,shield,"shop")
+markWearItemInSellShop(ownItems,eqShopRef,legs,"shop")
+markWearItemInSellShop(ownItems,eqShopRef,shoe,"shop")
 }
 })
 

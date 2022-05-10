@@ -17,8 +17,8 @@ const isLoaded=()=>{
        <h3>HP--{about[whatDisplay].hpLevel}</h3>
        <h3>Strenght--{about[whatDisplay].atak}</h3>
        <div className={s.itemDrop}><h3>Own Item</h3><img src={about[whatDisplay].item.grafika}/></div>
-       <div className={s.itemDrop}><h3>Own Money</h3><img src={"/ItemsGame/gold.png"}/>
-       <span>{about[whatDisplay].gold}</span></div>
+       <div className={s.moneyDrop}><h3>Own Money</h3><img src={"/ItemsGame/gold.png"}/>
+       <span className={s.amountMoney}>{about[whatDisplay].gold}</span></div>
        
        
    </div>

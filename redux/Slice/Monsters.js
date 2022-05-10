@@ -14,7 +14,7 @@ const initialState = [
   atak:10,
   attackPower:[1.1,1.2,1.3,1.4,1.5,0.9,0.8,0.7],
   atakImage:"/atakMonster/atak-vampire.png",
-  experience:150,
+  experience:780,
   numbersOfTreatments:0,
   describe:`Are you cut? Or have bleeding injury, becarefull Vampire can be your guest
    in oncoming night, do not desired quest.They are like shark feel smell of bleed from 
@@ -33,7 +33,7 @@ const initialState = [
     atak:15,
     attackPower:[1.1,1.2,1.3,1.4,1.5,0.9,0.8,0.7],
     atakImage:"/atakMonster/atak-vampire.png",
-    experience:200,
+    experience:543,
     numbersOfTreatments:0,
     describe:`Are you cut? Or have bleeding injury, becarefull Vampire can be your guest
     in oncoming night, do not desired quest.They are like shark feel smell of bleed from 

@@ -8,6 +8,7 @@ const initialState = [
         cubic:true,
         oneHandBandit:true,
         shop:true,
+        shopSell:true,
         id:1,
     }
     ,{
@@ -42,7 +43,10 @@ const messageSlice = createSlice({
                                   state.push({txt:`Welcome dear customer in our shop, you can check what particular items do and what a price
                                   take your time, and dont get out
                                    with empty hand.We also can buy something from you,
-                                    show as your item in "sell" part`,img:"/image-face/seller.png",id:7})
+                                    show as your item in "sell" part`,img:"/image-face/seller.png",id:7});break;
+                                    case "shopSell":
+                                        state.push({txt:`Here you see your own item, special background underneath means that you have
+                                        this item on yourself,`,img:"/image-face/seller.png",id:8});break;
         }
       },
       openWindowMessage(state,action){
@@ -66,6 +70,8 @@ const messageSlice = createSlice({
                         state=[...state,state[0].shop=false];break;
                         case "oneHandBandit":
                         state=[...state,state[0].oneHandBandit=false];break;
+                        case "shopSell":
+                            state=[...state,state[0].shopSell=false];break;
           }
 
       }

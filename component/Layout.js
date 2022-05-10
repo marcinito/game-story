@@ -10,10 +10,8 @@ const Layout = ({children}) => {
             <title>Game Story</title>
             <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet"></link>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Babylonica&family=Grape+Nuts&display=swap" rel="stylesheet"></link>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Babylonica&family=Bebas+Neue&family=Creepster&family=Grape+Nuts&family=Inconsolata&family=Oleo+Script+Swash+Caps:wght@700&family=Pacifico&family=Permanent+Marker&family=Press+Start+2P&family=Rubik+Glitch&family=Rubik+Wet+Paint&family=Whisper&display=swap" rel="stylesheet"/>
+
         </Head>
         <Provider store={store}>
     <Navbar/>

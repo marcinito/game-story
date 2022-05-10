@@ -3,7 +3,7 @@ import {useRef,useEffect} from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 import { cureMonster, floorNumbersOfTreatments, monsterGetAtak } from '../redux/Slice/Monsters'
 import { setRateMonsterHp } from '../redux/Slice/OverallSlice'
-import { handleHp } from '../Modules/handleHp'
+import {handlePercentages } from '../Modules/handleHp'
 import { getAtakFromMonster } from '../redux/Slice/Levels'
 import { useState } from 'react'
 const Monster = (props) => {
@@ -70,7 +70,7 @@ useEffect(()=>{
 if(skills.hpLevel<0){
     dispatch(cureMonster(30))
 }
-    dispatch(setRateMonsterHp(handleHp(monsters[0].hpTotal,monsters[0].hpLevel)))
+    dispatch(setRateMonsterHp(handlePercentages(monsters[0].hpTotal,monsters[0].hpLevel)))
 hpRef.current.style.width=overall.rateHpMonster+"%"
 },[overall.rateHpMonster,monsters])
     return ( <div className={s.container}>

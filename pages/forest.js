@@ -11,7 +11,7 @@ import { useCountFromEq } from '../Modules/useCountFromEq'
 import { getAtakFromMonster } from '../redux/Slice/Levels'
 import { takeOffLostItem } from '../redux/Slice/WearItems'
 import { setRateMonsterHp, subRateMonsterHp, subRateHp, setRateExp } from '../redux/Slice/OverallSlice'
-import { handleHp } from '../Modules/handleHp'
+import {handlePercentages } from '../Modules/handleHp'
 const Forest = () => {
     
 
@@ -23,7 +23,8 @@ const monsters=useSelector((state)=>state.monsters)
 const skills=useSelector((state)=>state.skills)
 const ownItems=useSelector((state)=>state.ownItems)
 const weapon=useSelector((state)=>state.wearItems.weapon)
-const spell=useSelector((state)=>state.spells)
+const spells=useSelector((state)=>state.spells)
+const overall=useSelector((state)=>state.overall)
 const dispatch=useDispatch()
 useCountFromEq("atak")
 
@@ -41,14 +42,8 @@ const treatmentPlayerRef=useRef()
 const treatmentMonsterRef=useRef()
 const randomPowerAtakRef=useRef()
 
-useEffect(()=>{
-    atakRef.current.style.zIndex=`10`
-windowAfterLostRef.current.style.transform=`scale(0)`
-windowAfterWinRef.current.style.transform=`scale(0)`
-monsterRef.current.style.filter=`blur(0px) grayscale(0%)`
-playerRef.current.style.filter=`blur(0px) grayscale(0%)`
-},[])
 const lostRandomItems=(frequency)=>{
+    /*Small function to choose random items to drop after defeat */
 let copyOwn=[...ownItems]
 
 copyOwn=copyOwn.filter((el,i,arr)=>{
@@ -59,12 +54,6 @@ copyOwn=copyOwn.filter((el,i,arr)=>{
 
 dispatch(lostItems(copyOwn))
 }
-
-const spells=useSelector((state)=>state.spells)
-useEffect(()=>{
-    dispatch(setRateExp(skills.level.exp))
-  
-},[skills.level.exp])
 
 useEffect(()=>{
 //This code serve as ratio how strong Monster will hit player its random number from own Monster scope//
@@ -81,13 +70,12 @@ monsters[0].attackPower[Math.floor(Math.random()*monsters[0].attackPower.length)
         
  setTimeout(()=>{
     windowAfterWinRef.current.style.transform=`scale(1)`
+    windowAfterWinRef.current.style.opacity=1
+    windowAfterWinRef.current.style.zIndex=1
     monsterRef.current.style.filter=`blur(20px) grayscale(100%)`
     setDisabledSpellAfterWin(true)
  },800)
     }
-
-
- 
  //What happen after player dead//
     if(skills.hpLevel<=0){
         clearInterval(randomActionRef.current)
@@ -102,28 +90,24 @@ monsters[0].attackPower[Math.floor(Math.random()*monsters[0].attackPower.length)
         dispatch(debitFromAccout(skills.gold-10))
         dispatch(takeOffLostItem())
         dispatch(decreaseLevel())
-        dispatch(setRateExp(handleHp(skills.levelExp,skills.level.exp)))
+        dispatch(setRateExp(handlePercentages(skills.levelExp,skills.level.exp)))
+        console.info("AFTER DEAfd")
     }
 
 },[monsters[0].hpLevel,skills.hpLevel])
 
-const getAtakFromMonsterCount=()=>{
 
-    let atak = monsters[0].atak*randomPowerAtakRef.current-skills.def.defArmor
-    return atak
-}
-
-getAtakFromMonsterCount()
 
 const handleAtak=()=>{
   
     setHandleAtakDisabled(true)
     dispatch(monsterGetAtak(skills.strenght.total))
     dispatch(getAtakFromMonster(monsters[0].atak*randomPowerAtakRef.current))
-    dispatch(subRateHp(handleHp(skills.hpTotal,monsters[0].atak*randomPowerAtakRef.current)))
-dispatch(subRateMonsterHp(handleHp(monsters[0].hpTotal,skills.strenght.total)))
+    dispatch(subRateHp(handlePercentages(skills.hpTotal,monsters[0].atak*randomPowerAtakRef.current)))
+dispatch(subRateMonsterHp(handlePercentages(monsters[0].hpTotal,skills.strenght.total)))
 hitFromMonster.current.style.opacity=`1`
 hitFromPlayer.current.style.opacity=`1`
+hitFromPlayer.current.textContent=skills.strenght.total
 
 
 
@@ -134,8 +118,7 @@ hitFromPlayer.current.style.opacity=`0`
 
 },1000)
 }
-console.info(hitFromPlayer.current,"hit from player")
-console.info(skills.strenght.total)
+
 const nextMonster=()=>{
     randomActionRef.current=setInterval(randomActionFunction,3000)
     dispatch(deleteDefeatedMonster())
@@ -143,11 +126,10 @@ const nextMonster=()=>{
     atakRef.current.style.zIndex=`10`
     monsterRef.current.style.filter=`blur(0px) grayscale(0%)`
     windowAfterWinRef.current.style.transform=`scale(0)`
-    windowAfterLostRef.current.style.transform=`scale(0)`
     setDisabledSpellAfterWin(false)
     clearTimeout(timeoutRef.current)
 }
-console.info(hitFromPlayer.current,"hitFromPlayer")
+
 const backAfterDefeat=()=>{
     router.push('/player-panel')
     clearTimeout(timeoutRef.current)
@@ -161,12 +143,11 @@ const backAfterWin=()=>{
 }
 
 const randomActionFunction=()=>{
-    //It's hand over to Monster component and execute  per 1s
+    /*It's hand over to Monster component and execute  per 1s if
+    monster is alive*/
     let randomNumber=Math.floor(Math.random()*5)
     if(randomNumber===0 || randomNumber===5){
         dispatch(cureMonster(30))
-    
-     
     }
     if(randomNumber===1){
         dispatch(getAtakFromMonster(monsters[0].atak*randomPowerAtakRef.current))
@@ -177,7 +158,7 @@ const randomActionFunction=()=>{
     }
 }
 
-console.info(weapon,"weapon")
+console.info(skills.strenght.total,"siła totalna")
     return ( 
         <div className={s.container}>
            
@@ -224,7 +205,7 @@ console.info(weapon,"weapon")
         <div className={s.monster} ref={monsterRef}>
         <img className={s.spells} style={spells.inUse===null?{opacity:"0"}:{opacity:"1"}} src={spells.inUse}></img>
         <div className={s.showHitFromPlayer} ref={hitFromPlayer}>
-        <div className={s.sprite}><img src={weapon!==null?weapon.dataItem.grafika:null}/><h3>{skills.strenght.total}</h3></div>
+        <div className={s.sprite}><img src={weapon!==null?weapon.dataItem.grafika:null}/></div>
         </div>
         <img className={s.treatmentMonster} ref={treatmentMonsterRef} src={"/spells/treatment-spell.gif"}/>
             <Monster 

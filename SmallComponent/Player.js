@@ -4,12 +4,12 @@ import { useState,useRef,useEffect,useCallback } from 'react';
 import React from 'react';
 import { setNewValueHp, setNewValueMana,getMagicExp,getMagicLevel, getAtakFromMonster } from '../redux/Slice/Levels';
 import { useCountFromEq } from '../Modules/useCountFromEq';
-import { takeOffLostItem } from '../redux/Slice/WearItems';
+
 import { createDataAttribute } from '../Modules/createDataAttribute';
-import { subRateHp,setRateHp, setRateDef, setRateMana } from '../redux/Slice/OverallSlice';
-import { handleHp } from '../Modules/handleHp';
+import { setRateHp, setRateDef, setRateMana } from '../redux/Slice/OverallSlice';
+import {handlePercentages } from '../Modules/handleHp';
 import { setRateMagic } from '../redux/Slice/OverallSlice';
-import { finishSpells, useSpells } from '../redux/Slice/Spells';
+import { spellsUse } from '../redux/Slice/Spells';
 import { monsterGetAtak } from '../redux/Slice/Monsters';
 import {useRouter} from 'next/router'
 import { setRateExp } from '../redux/Slice/OverallSlice';
@@ -71,11 +71,11 @@ useEffect(()=>{
 },[menuOption])
 
 useEffect(()=>{
-    dispatch(setRateDef(handleHp(skills.def.defArmorTotal,skills.def.defArmor)))
-dispatch(setRateHp(handleHp(skills.hpTotal,skills.hpLevel)))
-dispatch(setRateMana(handleHp(skills.mana.manaTotal,skills.mana.mana)))
-dispatch(setRateMagic(handleHp(skills.productExp.magicExp,skills.magicLevel.exp)))
-dispatch(setRateExp(handleHp(skills.productExp.levelExp,skills.level.exp)))
+    dispatch(setRateDef(handlePercentages(skills.def.defArmorTotal,skills.def.defArmor)))
+dispatch(setRateHp(handlePercentages(skills.hpTotal,skills.hpLevel,"stad")))
+dispatch(setRateMana(handlePercentages(skills.mana.manaTotal,skills.mana.mana)))
+dispatch(setRateMagic(handlePercentages(skills.productExp.magicExp,skills.magicLevel.exp)))
+dispatch(setRateExp(handlePercentages(skills.productExp.levelExp,skills.level.exp)))
     levelRef.current.style.width=overall.rateExp+"%"
     magicLevelRef.current.style.width=overall.rateMagicExp+"%"
     defFromArmor.current.style.width=overall.rateDefArmor+"%"
@@ -92,24 +92,31 @@ dispatch(setRateExp(handleHp(skills.productExp.levelExp,skills.level.exp)))
     overall.rateExp])
 
 useEffect(()=>{
+    //This useEffect serve to create dataset on wearItem and this details
+    // can be display afeter mouseover //
     createDataAttribute(img1Ref.current,wear.helmet)   
     createDataAttribute(img2Ref.current,wear.armor)   
     createDataAttribute(img3Ref.current,wear.weapon)   
     createDataAttribute(img4Ref.current,wear.shield)   
     createDataAttribute(img5Ref.current,wear.legs)   
     createDataAttribute(img6Ref.current,wear.shoe) 
-})
+  
+},[wear])
 
 
 useEffect(()=>{
+    /*Its serve to create div on which will be display 
+    info about wears items
+    */
     const infoAboutItem=document.createElement("div")
     infoAboutItemRef.current=infoAboutItem
     infoAboutItem.className=s.infoAboutItem
     document.body.appendChild(infoAboutItem)
 },[])
 
-//Display panel with spells if you are on battle fields//
+
 useEffect(()=>{
+    //Display panel with spells if you are on battle fields//
     if(router.pathname==="/forest"){
         spellsRef.current.style.opacity=1
         spellsRef.current.style.zIndex=1
@@ -117,8 +124,9 @@ useEffect(()=>{
 })
 
 
-
+console.info("PLAYER")
 const showDetail=(e)=>{
+    /*It's fire after mouseover on wear item */
  if(e.target.src){
 infoAboutItemRef.current.style.left=e.target.x +"px"
 infoAboutItemRef.current.style.top=e.target.y +"px"
@@ -150,7 +158,7 @@ const atakSpell=(costMana,concerningSpan,spell,timeReload,disabled,hitPower)=>{
             dispatch(getAtakFromMonster(monsters[0].atak))
             }
         dispatch(setNewValueMana(skills.mana.mana-costMana))
-        dispatch(useSpells(spell))
+        dispatch(spellsUse(spell))
             dispatch(getMagicExp(70))
         setTimeout(()=>{
             setCycleLifeSpell("start")
@@ -159,7 +167,7 @@ const atakSpell=(costMana,concerningSpan,spell,timeReload,disabled,hitPower)=>{
             setTimeout(()=>{
                 props.hitFromPlayer.current.style.opacity=0
             },500)
-            dispatch(useSpells(null))
+            dispatch(spellsUse(null))
             dispatch(monsterGetAtak(hitPower))
            console.info(timeReload,"timeReload")
             concerningSpan.current.style.transition=(timeReload/1000)+"s"+" linear"
@@ -294,25 +302,25 @@ const activeSpell=(whichSpell,costMana)=>{
             
             <span ref={hpRef}  className={s.spanHp}></span>
             <span ref={defFromArmor}  className={s.defFromArmor}></span>
-            <span style={{position:"absolute",zIndex:"10"}}>{skills.hpLevel}</span>
+            <span style={{position:"absolute"}}>{skills.hpLevel}</span>
         </div>
         
         <div className={s.stageLevel}>
             
             <span ref={levelRef}  className={s.spanLevel}></span>
-            <span style={{position:"absolute",zIndex:"10"}}>{skills.level.lvl}</span>
+            <span style={{position:"absolute"}}>{skills.level.lvl}</span>
         </div>
 
         <div className={s.stageMagic}>
             
             <span  className={s.spanMagic} ref={magicLevelRef}></span>
-            <span style={{position:"absolute",zIndex:"10"}}>{skills.magicLevel.lvl}</span>
+            <span style={{position:"absolute"}}>{skills.magicLevel.lvl}</span>
         </div>
 
         <div className={s.stageMana}>
             
             <span  className={s.spanMana} ref={manaRef}></span>
-            <span style={{position:"absolute",zIndex:"10"}}>{skills.mana.mana}</span>
+            <span style={{position:"absolute"}}>{skills.mana.mana}</span>
         </div>
 
 </div>

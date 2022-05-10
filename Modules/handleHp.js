@@ -1,6 +1,8 @@
-export function handleHp(hpTotal,hit){
+//handleHp means handlePercentage, it's serve to count percentage//
+export function handlePercentages(totality,part){
+   
     let percent=0
-    percent=(hit*100)/hpTotal
+    percent=(part*100)/totality
 
 return Math.floor(percent)
 

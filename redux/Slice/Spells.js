@@ -9,7 +9,7 @@ const Spells = createSlice({
   name: 'spells',
   initialState,
   reducers: {
-    useSpells(state,action) {
+    spellsUse(state,action) {
         console.info(action)
       return {...state,inUse:action.payload}
     },
@@ -18,5 +18,5 @@ const Spells = createSlice({
   },
 })
 
-export const { useSpells,finishSpells} = Spells.actions
+export const { spellsUse} = Spells.actions
 export default Spells.reducer

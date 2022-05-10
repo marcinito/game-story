@@ -26,8 +26,8 @@ const initialState = {
       manaTotal:1100,
     
     },
-    hpLevel:500,
-    hpTotal:500,
+    hpLevel:620,
+    hpTotal:800,
     howManyHpAddPerLvl:25, 
     gold:43235,
     productExp:{
@@ -68,6 +68,7 @@ const levelSlice = createSlice({
   state.productExp.levelExp-=state.productExp.product
   state.productExp.magicExp-=state.productExp.product
   state.hpTotal-=state.howManyHpAddPerLvl
+  state.hpLevel=1
 
     },
     getAtakFromMonster(state,action){

@@ -1,6 +1,10 @@
+import useInfoWindow from '../../Modules/useInfoWindow'
 import s from '../../styles/SmallComponentStyle/Shop.module.scss'
+import { useSelector,useDispatch } from 'react-redux'
 const SellPanel=({tarItem,gold,buy,closeP})=>{
-    
+    const message=useSelector((state)=>state.message)
+    const windowInfo=useSelector((state)=>state.windowInfo)
+    useInfoWindow(message[0].shopSell,windowInfo,"shopSell")
     return (
         <>
         <div className={s.describe}>

@@ -25,8 +25,20 @@
     border-image-width: 5px;
     background: url("../../public/stara-kartka-papieru.png");
   }
+  .option:focus {
+    color: blue;
+    letter-spacing: 3px;
+    -webkit-filter: sepia(50%) brightness(125%);
+            filter: sepia(50%) brightness(125%);
+    font-size: 1.5rem;
+  }
   .shop {
     width: 33%;
+  }
+  .player {
+    color: brown;
+    text-shadow: 1px 1px brown;
+    font-weight: bold;
   }
   .option:hover {
     background-color: #efefc8;
