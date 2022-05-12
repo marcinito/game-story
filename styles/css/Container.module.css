@@ -1,6 +1,8 @@
-.container {
-  width: 100vw;
-  height: 100vh;
-  background-color: #333333;
+@media (min-width: 300px) {
+  .container {
+    width: 100vw;
+    height: 845px;
+    background-color: #333333;
+  }
 }
 /*# sourceMappingURL=Container.module.css.map */

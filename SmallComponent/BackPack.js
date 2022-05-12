@@ -71,9 +71,7 @@ const wearItem=(el)=>{
     )
 })}
 
-<div className={s.logoBp}>
-    
-</div>
+
     </div> );
 }
  

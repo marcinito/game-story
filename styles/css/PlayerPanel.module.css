@@ -1,7 +1,7 @@
 @media (min-width: 300px) {
   .containerPlayerPanel {
     width: 100%;
-    height: 100%;
+    height: 85%;
     border: 2px solid;
     border-image-source: url("../public/ramka.jpg");
     border-image-slice: 30 30 30 30;
@@ -19,14 +19,13 @@
             box-sizing: border-box;
   }
   .containerPlayerPanel .dashboard {
-    height: 15%;
+    height: 20%;
   }
   .containerPlayerPanel .player {
     position: absolute;
   }
   .containerPlayerPanel .displayOption {
-    margin-top: 1%;
-    height: 79%;
+    height: 80%;
   }
 }
 /*# sourceMappingURL=PlayerPanel.module.css.map */

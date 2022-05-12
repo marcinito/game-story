@@ -1,7 +1,7 @@
 @media(min-width:300px){
     .container{
         width:100%;
-        height:110%;
+        height:100%;
         border:3px solid yellow;
         border-image-source: url("../../public/ramka-drut-kolczasty.png");
         border-image-slice:30;
@@ -87,26 +87,36 @@
             width:100%;
             height:900%;
             position:absolute;
-            background-color: grey;
+        background-color: gray;
+        border:3px solid red;
+        border-image-source:url("../../public/ramka-forest.png");
+        border-image-slice:40;
+        border-image-width:10px;
+        border-image-outset: 1;
             z-index:-10;
+            background:url("../../public/extraImage/background.png");
         display:grid;
         grid-template-columns: repeat(3,1fr);
         grid-template-rows: repeat(7,1fr);
         opacity:0;
+        
        
             .h1{
-                font-family:  Georgia, Times, 'Times New Roman', serif;
+                
                 width:100%;
                 text-align: center;
-                font-size:3rem;
+                font-size:2.7rem;
                 grid-column:1/4;
                 grid-row: 1/2;
+                margin-top:5%;
+                font-family: 'Pacifico', cursive;
             }
             .h1Two{
             width:100%;
             text-align: center;
             grid-column:1/4;
             grid-row: 2/3;
+            font-family: 'Pacifico', cursive;
             }
             .fancyText{
                 -webkit-text-stroke:0.1px lighten(red,20%);
@@ -165,11 +175,36 @@
                height:100%;
                grid-column:1/4;
                grid-row:5/7;
+               
+               display:flex;
+               justify-content: center;
             
-               .btn{
-                width:50%;
+               .btnBack{
+                width:45%;
                 height:100%;
                 font-size:3rem;
+                margin-right:1%;
+                border:3px solid red;
+                border-image-source:url("../../public/ramka-forest.png");
+                border-image-slice:40;
+                border-image-width:10px;
+                border-image-outset: 1;
+        font-family: 'Pacifico', cursive;
+        background:url("../../public/stara-kartka-papieru2.png");
+            }
+            .btnNext{
+                width:45%;
+                height:100%;
+                font-size:3rem;
+                margin-left:1%;
+                border:3px solid red;
+                border-image-source:url("../../public/ramka-forest.png");
+                border-image-slice:40;
+                border-image-width:10px;
+                border-image-outset: 1;
+        font-family: 'Pacifico', cursive;
+        background:url("../../public/stara-kartka-papieru2.png");
+        
             }
            }
         }
@@ -178,11 +213,12 @@
             height:100%;
             position:absolute;
             background-color: grey;
-            z-index:0;
+            z-index:1;
             transform:scale(0);
         display:grid;
         grid-template-columns: repeat(3,1fr);
         grid-template-rows: repeat(7,1fr);
+        
     
         .h1{
             font-family: 'Grape Nuts', cursive;
@@ -192,16 +228,25 @@
         }
     
         .pakBtn{
-            margin-top:10%;
+            position:relative;
+            top:-200%;
             width:100%;
-            height:100%;
+            height:100px;
             grid-column:1/4;
             grid-row:5/7;
+            z-index:10;
+            background:transparent;
          
             .btn{
              width:100%;
              height:100%;
              font-size:3rem;
+             border-image-source:url("../../public/ramka-drut-kolczasty.png");
+          border-image-slice: 30;
+          border-image-width:10;
+          border-radius:20%;
+          font-family: 'Rubik Glitch', cursive;
+          background:linear-gradient(black,gray,white);
          }
         }
     }
@@ -233,10 +278,11 @@
         .monster{
         position:absolute;
         width:100%;
-        height:100%;
+        height:90%;
         grid-row: 3/4;
-      
-            background-color: skyblue;
+        background-color: skyblue;
+        
+
         .spells{
             position:absolute;
             z-index:10;
@@ -250,29 +296,23 @@
             color:white;
             position:absolute;
             z-index:10;
-            
             top:20%;
-          
             text-align: center;
             font-size:3rem;
            opacity:0;
-          
-         
-         .sprite{
-             position:absolute;
-            width:100%;
-            height:100%;
-         
-           
-            
-            overflow:hidden;    
-            img{
-                position:absolute;
-            width:40%;
+            .showWeapon{
+                position:relative;
+            width:50%;
             animation:atakIntoMonster 0.45s infinite linear;
-        
             }
-             }
+            .showStrenght{
+                position:absolute;
+                left:50%;
+                transform:translate(-50%,0);
+                -webkit-text-stroke:1px red;
+
+            }
+             
         }
         .treatmentMonster{
             position:absolute;

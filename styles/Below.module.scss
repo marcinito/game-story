@@ -1,13 +1,13 @@
 @media(min-width:300px){
   .below{
-    position:fixed;
+      position:fixed;
        bottom:0;
        width:100%;
-       height:6%;
+       height:40px;
        background-color: white;
        box-shadow:0 0 10px black;
-       background:url("../public/stara-kartka-papieru.png")
-       
+       background:url("../public/stara-kartka-papieru.png");
+       z-index:12;
        
    }
    //---Information window--//@at-root

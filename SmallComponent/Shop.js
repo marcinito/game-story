@@ -100,7 +100,7 @@ const whichWindowDisplay=(which)=>{
 
     return ( 
         <div className={s.container}>
-   
+ 
             <div className={s.store} ref={eqShopRef}>
 {whatDisplay.map((el,i,arr)=>{
     

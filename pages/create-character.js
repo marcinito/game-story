@@ -14,13 +14,24 @@ const nav=useRouter()
 const startGame=()=>{
     if(dataFacade.name.length<3){
     nameRef.current.style.backgroundColor="orange"
-    nameRef.current.placeholder="przynajmniej wiecej niż 3 znaki"
+    nameRef.current.value="Minimum three characters"
+  
     setTimeout(()=>{
         nameRef.current.style.backgroundColor="rgb(235, 245, 200)"
-        nameRef.current.placeholder="Your Name"
-    },1000)
+        nameRef.current.value=""
+    },1500)
     return
     }
+    if(dataFacade.name.length>12){
+        nameRef.current.style.backgroundColor="orange"
+        nameRef.current.value="Maxium twelve characters"
+        setTimeout(()=>{
+            nameRef.current.style.backgroundColor="rgb(235, 245, 200)"
+            nameRef.current.value=""
+        },1500)
+        return
+    }
+    
     dispatch(change({name:dataFacade.name,profession:dataFacade.profession}))
     nav.push('/player-panel')
 }
@@ -29,7 +40,7 @@ const startGame=()=>{
         <div className={s.container}>
 <div className={s.windowInput}>
 
-    <img className={s.profession} src={dataFacade.profession}></img>
+   
     <div className={s.inputPak}>
     
     <input
@@ -49,12 +60,14 @@ const startGame=()=>{
        <option className={s.option}  value="./rycerz.png" >Rycerz</option>
        <option className={s.option}  value="Palladyn" disabled>Palladyn</option>
    </select>
+   <img className={s.profession} src={dataFacade.profession}></img>
+   </div>
    <button
     className={s.playButton}
     onClick={()=>startGame()}
     >Play</button>
-   </div>
 </div>
+
         </div>
      );
 }

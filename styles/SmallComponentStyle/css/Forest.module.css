@@ -1,7 +1,7 @@
 @media (min-width: 300px) {
   .container {
     width: 100%;
-    height: 110%;
+    height: 100%;
     border: 3px solid yellow;
     border-image-source: url("../../public/ramka-drut-kolczasty.png");
     border-image-slice: 30;
@@ -78,26 +78,34 @@
     width: 100%;
     height: 900%;
     position: absolute;
-    background-color: grey;
-    z-index: 10;
+    background-color: gray;
+    border: 3px solid red;
+    border-image-source: url("../../public/ramka-forest.png");
+    border-image-slice: 40;
+    border-image-width: 10px;
+    border-image-outset: 1;
+    z-index: -10;
+    background: url("../../public/extraImage/background.png");
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
     -ms-grid-rows: (1fr)[7];
         grid-template-rows: repeat(7, 1fr);
+    opacity: 0;
   }
   .fightArea .windowAfterWin .h1 {
-    font-family: Georgia, Times, 'Times New Roman', serif;
     width: 100%;
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.7rem;
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
     grid-column: 1/4;
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1/2;
+    margin-top: 5%;
+    font-family: 'Pacifico', cursive;
   }
   .fightArea .windowAfterWin .h1Two {
     width: 100%;
@@ -108,6 +116,7 @@
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
     grid-row: 2/3;
+    font-family: 'Pacifico', cursive;
   }
   .fightArea .windowAfterWin .fancyText {
     -webkit-text-stroke: 0.1px #ff6666;
@@ -174,18 +183,45 @@
     -ms-grid-row: 5;
     -ms-grid-row-span: 2;
     grid-row: 5/7;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
-  .fightArea .windowAfterWin .pakBtn .btn {
-    width: 50%;
+  .fightArea .windowAfterWin .pakBtn .btnBack {
+    width: 45%;
     height: 100%;
     font-size: 3rem;
+    margin-right: 1%;
+    border: 3px solid red;
+    border-image-source: url("../../public/ramka-forest.png");
+    border-image-slice: 40;
+    border-image-width: 10px;
+    border-image-outset: 1;
+    font-family: 'Pacifico', cursive;
+    background: url("../../public/stara-kartka-papieru2.png");
+  }
+  .fightArea .windowAfterWin .pakBtn .btnNext {
+    width: 45%;
+    height: 100%;
+    font-size: 3rem;
+    margin-left: 1%;
+    border: 3px solid red;
+    border-image-source: url("../../public/ramka-forest.png");
+    border-image-slice: 40;
+    border-image-width: 10px;
+    border-image-outset: 1;
+    font-family: 'Pacifico', cursive;
+    background: url("../../public/stara-kartka-papieru2.png");
   }
   .fightArea .windowAfterLost {
     width: 100%;
     height: 100%;
     position: absolute;
     background-color: grey;
-    z-index: 0;
+    z-index: 1;
     -webkit-transform: scale(0);
             transform: scale(0);
     display: -ms-grid;
@@ -204,20 +240,30 @@
     font-size: 3rem;
   }
   .fightArea .windowAfterLost .pakBtn {
-    margin-top: 10%;
+    position: relative;
+    top: -200%;
     width: 100%;
-    height: 100%;
+    height: 100px;
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
     grid-column: 1/4;
     -ms-grid-row: 5;
     -ms-grid-row-span: 2;
     grid-row: 5/7;
+    z-index: 10;
+    background: transparent;
   }
   .fightArea .windowAfterLost .pakBtn .btn {
     width: 100%;
     height: 100%;
     font-size: 3rem;
+    border-image-source: url("../../public/ramka-drut-kolczasty.png");
+    border-image-slice: 30;
+    border-image-width: 10;
+    border-radius: 20%;
+    font-family: 'Rubik Glitch', cursive;
+    background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(gray), to(white));
+    background: linear-gradient(black, gray, white);
   }
   .fightArea .atak {
     width: 90%;
@@ -240,7 +286,7 @@
   .monster {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 90%;
     -ms-grid-row: 3;
     -ms-grid-row-span: 1;
     grid-row: 3/4;
@@ -263,17 +309,18 @@
     font-size: 3rem;
     opacity: 0;
   }
-  .monster .showHitFromPlayer .sprite {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-  .monster .showHitFromPlayer .sprite img {
-    position: absolute;
-    width: 40%;
+  .monster .showHitFromPlayer .showWeapon {
+    position: relative;
+    width: 50%;
     -webkit-animation: atakIntoMonster 0.45s infinite linear;
             animation: atakIntoMonster 0.45s infinite linear;
+  }
+  .monster .showHitFromPlayer .showStrenght {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    -webkit-text-stroke: 1px red;
   }
   .monster .treatmentMonster {
     position: absolute;

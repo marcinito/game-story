@@ -107,7 +107,7 @@ const handleAtak=()=>{
 dispatch(subRateMonsterHp(handlePercentages(monsters[0].hpTotal,skills.strenght.total)))
 hitFromMonster.current.style.opacity=`1`
 hitFromPlayer.current.style.opacity=`1`
-hitFromPlayer.current.textContent=skills.strenght.total
+
 
 
 
@@ -186,8 +186,8 @@ console.info(skills.strenght.total,"siła totalna")
                     <div className={s.item}><img className={s.imgItem} src={monsters[0].item.grafika}/></div>
                 </div>
                <div className={s.pakBtn}>
-               <button className={s.btn} onClick={()=>backAfterWin()}>Back</button>
-                <button className={s.btn} onClick={()=>nextMonster()} >Next</button>
+               <button className={s.btnBack} onClick={()=>backAfterWin()}>Back</button>
+                <button className={s.btnNext} onClick={()=>nextMonster()} >Next</button>
                </div>
             </div>
             <div className={s.windowAfterLost} ref={windowAfterLostRef}>
@@ -205,7 +205,8 @@ console.info(skills.strenght.total,"siła totalna")
         <div className={s.monster} ref={monsterRef}>
         <img className={s.spells} style={spells.inUse===null?{opacity:"0"}:{opacity:"1"}} src={spells.inUse}></img>
         <div className={s.showHitFromPlayer} ref={hitFromPlayer}>
-        <div className={s.sprite}><img src={weapon!==null?weapon.dataItem.grafika:null}/></div>
+            <h3 className={s.showStrenght}>{skills.strenght.total}</h3>
+        <img className={s.showWeapon} src={weapon!==null?weapon.dataItem.grafika:null}/>
         </div>
         <img className={s.treatmentMonster} ref={treatmentMonsterRef} src={"/spells/treatment-spell.gif"}/>
             <Monster 
