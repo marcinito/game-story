@@ -8,15 +8,15 @@
         border-image-outset: 0.5;
         border-image-width: 1px;
         border-image-repeat: repeat;
+        overflow-y:scroll;
         box-sizing: border-box;
-        
-   
-       
-       
+        background: url("../../public/extraImage/backgroundForest.png");
+&::-webkit-scrollbar {
+    width: 0px;
+  }
     }
     .arena{
         width:100%;
-       
         position:relative;
         border:3px solid yellow;
         border-image-source: url("../../public/ramka-drut-kolczasty.png");
@@ -24,21 +24,15 @@
         border-image-outset: 0.5;
         border-image-width: 3px;
         border-image-repeat: repeat;
-        height:105%;
-        display:grid;
-        grid-template-columns: 100%;
-        grid-template-rows:50% 5% 45%;
-    
-        
-      
+        height:95%;
+        display:flex;
+        flex-direction: column;
         
     }
         .player{
-            position:absolute;
+            position:relative;
         width:100%;
-        height:100%;
-       
-        grid-row: 1/2;
+        height:450px;
         .showHitFromMonster{
             width:25%;
             height:100px;
@@ -76,12 +70,357 @@
                 }
                 //Finish player section in forest//
         .fightArea{
+
+        width:100%;
+        height:7%;
+        
+        
+        display:flex;
+        align-items: center;
+        justify-content: center;
+      
+     
+        
+        
+        .windowAfterWin{
+            width:100%;
+            height:350px;
+            position:absolute;
+        background-color: gray;
+        border:3px solid red;
+        border-image-source:url("../../public/ramka-forest.png");
+        border-image-slice:40;
+        border-image-width:10px;
+        border-image-outset: 1;
+            z-index:-10;
+            background:url("../../public/extraImage/background.png");
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(7,1fr);
+        opacity:0;
+       
+        
+       
+            .h1{
+                
+                width:100%;
+                text-align: center;
+                font-size:2.7rem;
+                grid-column:1/4;
+                grid-row: 1/2;
+                margin-top:5%;
+                font-family: 'Pacifico', cursive;
+            }
+            .h1Two{
+            width:100%;
+            text-align: center;
+            grid-column:1/4;
+            grid-row: 2/3;
+            font-family: 'Pacifico', cursive;
+            }
+            .fancyText{
+                -webkit-text-stroke:0.1px lighten(red,20%);
+                font-weight:bold;
+                
+            }
+            .lootItem{
+            width:100%;
+             height:80%;
+             position:relative;
+         display:flex;
+         
+            grid-column: 1/4;
+            grid-row:3/6;
+         
+    
+         
+            .gold{
+            width:50%;
+            height:100%;
+                
+            display:flex;
+            justify-content: center;
+            position:relative;
+           
+            .imgGold{
+            width:50%;
+            height:80%;
+
+                    }
+                    .amountGoldFromMonster{
+                        font-size:2rem;
+                        -webkit-text-stroke:1px red;
+                        font-weight:bold;
+                        position:absolute;
+                        color:gold;
+                    }
+            }
+            .item{
+            position:relative;
+            width:50%;
+            height:100%;
+        
+            display:flex;
+            justify-content: center;
+         
+            .imgItem{
+            width:50%;
+            height:100%;
+                }
+                    }
+            }
+           .pakBtn{
+               margin-top:10%;
+               width:100%;
+               height:100%;
+               grid-column:1/4;
+               grid-row:5/7;
+               
+               display:flex;
+               justify-content: center;
+            
+               .btnBack{
+                width:45%;
+                height:100%;
+                font-size:3rem;
+                margin-right:1%;
+                border:3px solid red;
+                border-image-source:url("../../public/ramka-forest.png");
+                border-image-slice:40;
+                border-image-width:10px;
+                border-image-outset: 1;
+        font-family: 'Pacifico', cursive;
+        background:url("../../public/stara-kartka-papieru2.png");
+            }
+            .btnNext{
+                width:45%;
+                height:100%;
+                font-size:3rem;
+                margin-left:1%;
+                border:3px solid red;
+                border-image-source:url("../../public/ramka-forest.png");
+                border-image-slice:40;
+                border-image-width:10px;
+                border-image-outset: 1;
+        font-family: 'Pacifico', cursive;
+        background:url("../../public/stara-kartka-papieru2.png");
+        
+            }
+           }
+        }
+        .windowAfterLost{
+            width:100%;
+            height:100%;
+            position:absolute;
+            background-color: grey;
+            z-index:1;
+            transform:scale(0);
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(7,1fr);
+        
+    
+        .h1{
+            font-family: 'Grape Nuts', cursive;
+            text-align:center;
+            grid-column:1/4;
+            font-size:3rem;
+        }
+    
+        .pakBtn{
+            position:relative;
+            top:-200%;
+            width:100%;
+            height:100px;
+            grid-column:1/4;
+            grid-row:5/7;
+            z-index:10;
+            background:transparent;
+         
+            .btn{
+             width:100%;
+             height:100%;
+             font-size:3rem;
+             border-image-source:url("../../public/ramka-drut-kolczasty.png");
+          border-image-slice: 30;
+          border-image-width:10;
+          border-radius:20%;
+          font-family: 'Rubik Glitch', cursive;
+          background:linear-gradient(black,gray,white);
+         }
+        }
+    }
+    
+         //Atak button//
+         .atak{
+            
+            width:90%;
+            height:100%;
+            font-size:3rem;
+         
+      
+          border-image-source:url("../../public/ramka-drut-kolczasty.png");
+          border-image-slice: 30;
+          border-image-width:10;
+          font-family: 'Rubik Wet Paint';
+            border-radius:15%;
+            z-index:1;
+            transition:0.15s;
+            
+            
+           
+            }
+            .atak:hover{
+                background:conic-gradient(red,green);
+            color:white;            
+        }
+            }
+            //MONSTER//
+        .monster{
+        position:relative;
+        width:100%;
+        height:280px;
+        
+    
+      
+        
+
+        .spells{
+            position:absolute;
+            z-index:10;
+            width:50%;
+            height:70%;
+           
+        }
+        .showHitFromPlayer{
+            width:40%;
+            height:20%;
+            color:white;
+            position:absolute;
+            z-index:10;
+            top:20%;
+            text-align: center;
+            font-size:3rem;
+           opacity:0;
+            .showWeapon{
+                position:relative;
+            width:50%;
+            animation:atakIntoMonster 0.45s infinite linear;
+            }
+            .showStrenght{
+                position:absolute;
+                left:50%;
+                transform:translate(-50%,0);
+                -webkit-text-stroke:1px red;
+
+            }
+             
+        }
+        .treatmentMonster{
+            position:absolute;
+            top:5%;
+            z-index:1;
+            width:50%;
+            height:60%;
+            opacity:0;
+        }
+    
+        }
+        
+                @keyframes atakIntoMonster{
+                0%{transform:translateX(-80px)}
+              
+                100%{transform:translateX(60px)}
+                }
+       
+}
+//BREAK POINT MEDIA MEDIA MEDIA BREAKPOINT MEDIA MEDIA MEDIA//
+@media(min-width:435px){
+    .container{
         width:100%;
         height:100%;
-        position:absolute;
+        border:3px solid yellow;
+        border-image-source: url("../../public/ramka-drut-kolczasty.png");
+        border-image-slice:30;
+        border-image-outset: 0.5;
+        border-image-width: 1px;
+        border-image-repeat: repeat;
+        overflow-y:scroll;
+        box-sizing: border-box;
+        background: url("../../public/extraImage/backgroundForest.png");
+        display:flex;
+        justify-content: center;
+    }
+    .arena{
+        width:80%;
+        border:3px solid yellow;
+        border-image-source: url("../../public/ramka-drut-kolczasty.png");
+        border-image-slice:20;
+        border-image-outset: 0.5;
+        border-image-width: 3px;
+        border-image-repeat: repeat;
+        height:95%;
+        justify-content: center;
+     
+       
+        
+    }
+        .player{
+            position:relative;
+        width:100%;
+        height:450px;
+       
+        border:5px solid;
+        border-image-source:url("../../public/ramka.jpg");
+        border-image-slice:30;
+        border-image-width:8px;
+        .showHitFromMonster{
+            width:25%;
+            height:100px;
+            border:1px solid transparent;
+            position:absolute;
+            z-index:10;
+            left:8%;
+            top:20%;
+            opacity:0;
+            font-size:3rem;
+            text-align: center;
+            z-index:20;
+            color:white;
+            .sprite{
+                position:absolute;
+              width:100%;
+              height:100%;
+              
+           
+              img{
+                  width:100%;
+              }
+      
+            }
+        }
+        .treatmentPlayer{
+            width:50%;
+            height:78%;
+            position:absolute;
+            top:2%;
+            z-index:1;
+            opacity:0;
+        }
+    
+                }
+                //Finish player section in forest//
+        .fightArea{
+
+        width:100%;
+        height:62px;
+        position:relative;
+        
+        display:flex;
+        align-items: center;
        
      
-        grid-row:2/3;
+        
         
         .windowAfterWin{
             width:100%;
@@ -255,7 +594,7 @@
          .atak{
             
             width:90%;
-            height:100%;
+            height:80%;
             font-size:3rem;
          
        margin-left:5%;
@@ -267,6 +606,7 @@
             z-index:1;
             transition:0.15s;
             
+            
            
             }
             .atak:hover{
@@ -276,11 +616,355 @@
             }
             //MONSTER//
         .monster{
-        position:absolute;
+        position:relative;
         width:100%;
-        height:90%;
-        grid-row: 3/4;
-        background-color: skyblue;
+        height:280px;
+      
+        border:5px solid;
+        border-image-source:url("../../public/ramka.jpg");
+        border-image-slice:30;
+        border-image-width:10px;
+        .spells{
+            position:absolute;
+            z-index:10;
+            width:50%;
+            height:70%;
+           
+        }
+        .showHitFromPlayer{
+            width:40%;
+            height:20%;
+            color:white;
+            position:absolute;
+            z-index:10;
+            top:20%;
+            text-align: center;
+            font-size:3rem;
+           opacity:0;
+            .showWeapon{
+                position:relative;
+            width:50%;
+            animation:atakIntoMonster 0.45s infinite linear;
+            }
+            .showStrenght{
+                position:absolute;
+                left:50%;
+                transform:translate(-50%,0);
+                -webkit-text-stroke:1px red;
+
+            }
+             
+        }
+        .treatmentMonster{
+            position:absolute;
+            top:5%;
+            z-index:1;
+            width:50%;
+            height:60%;
+            opacity:0;
+        }
+    
+        }
+        
+                @keyframes atakIntoMonster{
+                0%{transform:translateX(-80px)}
+              
+                100%{transform:translateX(60px)}
+                }
+    
+  
+}
+@media(min-width:535px){
+    .container{
+        width:100%;
+        height:100%;
+        border:3px solid yellow;
+        border-image-source: url("../../public/ramka-drut-kolczasty.png");
+        border-image-slice:30;
+        border-image-outset: 0.5;
+        border-image-width: 1px;
+        border-image-repeat: repeat;
+        overflow-y:scroll;
+        box-sizing: border-box;
+        background: url("../../public/extraImage/backgroundForest.png");
+        display:flex;
+        justify-content: center;
+       
+    }
+    .arena{
+        width:70%;
+        border:3px solid yellow;
+        border-image-source: url("../../public/ramka-drut-kolczasty.png");
+        border-image-slice:20;
+        border-image-outset: 0.5;
+        border-image-width: 3px;
+        border-image-repeat: repeat;
+        height:95%;
+       
+       
+        
+    }
+        .player{
+            position:relative;
+        width:100%;
+        height:450px;
+       
+       
+        border:5px solid;
+        border-image-source:url("../../public/ramka.jpg");
+        border-image-slice:30;
+        border-image-width:10px;
+        .showHitFromMonster{
+            width:25%;
+            height:100px;
+            border:1px solid transparent;
+            position:absolute;
+            z-index:10;
+            left:8%;
+            top:20%;
+            opacity:0;
+            font-size:3rem;
+            text-align: center;
+            z-index:20;
+            color:white;
+            .sprite{
+                position:absolute;
+              width:100%;
+              height:100%;
+              
+           
+              img{
+                  width:100%;
+              }
+      
+            }
+        }
+        .treatmentPlayer{
+            width:50%;
+            height:78%;
+            position:absolute;
+            top:2%;
+            z-index:1;
+            opacity:0;
+        }
+    
+                }
+                //Finish player section in forest//
+        .fightArea{
+
+        width:100%;
+        height:62px;
+        position:relative;
+        
+        display:flex;
+        align-items: center;
+       
+     
+        
+        
+        .windowAfterWin{
+            width:100%;
+            height:900%;
+            position:absolute;
+        background-color: gray;
+        border:3px solid red;
+        border-image-source:url("../../public/ramka-forest.png");
+        border-image-slice:40;
+        border-image-width:10px;
+        border-image-outset: 1;
+            z-index:-10;
+            background:url("../../public/extraImage/background.png");
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(7,1fr);
+        opacity:0;
+        
+       
+            .h1{
+                
+                width:100%;
+                text-align: center;
+                font-size:2.7rem;
+                grid-column:1/4;
+                grid-row: 1/2;
+                margin-top:5%;
+                font-family: 'Pacifico', cursive;
+            }
+            .h1Two{
+            width:100%;
+            text-align: center;
+            grid-column:1/4;
+            grid-row: 2/3;
+            font-family: 'Pacifico', cursive;
+            }
+            .fancyText{
+                -webkit-text-stroke:0.1px lighten(red,20%);
+                font-weight:bold;
+                
+            }
+            .lootItem{
+            width:100%;
+             height:80%;
+             position:relative;
+         display:flex;
+         
+            grid-column: 1/4;
+            grid-row:3/6;
+         
+    
+         
+            .gold{
+            width:50%;
+            height:100%;
+                
+            display:flex;
+            justify-content: center;
+            position:relative;
+           
+            .imgGold{
+            width:50%;
+            height:80%;
+
+                    }
+                    .amountGoldFromMonster{
+                        font-size:2rem;
+                        -webkit-text-stroke:1px red;
+                        font-weight:bold;
+                        position:absolute;
+                        color:gold;
+                    }
+            }
+            .item{
+            position:relative;
+            width:50%;
+            height:100%;
+        
+            display:flex;
+            justify-content: center;
+         
+            .imgItem{
+            width:50%;
+            height:100%;
+                }
+                    }
+            }
+           .pakBtn{
+               margin-top:10%;
+               width:100%;
+               height:100%;
+               grid-column:1/4;
+               grid-row:5/7;
+               
+               display:flex;
+               justify-content: center;
+            
+               .btnBack{
+                width:45%;
+                height:100%;
+                font-size:3rem;
+                margin-right:1%;
+                border:3px solid red;
+                border-image-source:url("../../public/ramka-forest.png");
+                border-image-slice:40;
+                border-image-width:10px;
+                border-image-outset: 1;
+        font-family: 'Pacifico', cursive;
+        background:url("../../public/stara-kartka-papieru2.png");
+            }
+            .btnNext{
+                width:45%;
+                height:100%;
+                font-size:3rem;
+                margin-left:1%;
+                border:3px solid red;
+                border-image-source:url("../../public/ramka-forest.png");
+                border-image-slice:40;
+                border-image-width:10px;
+                border-image-outset: 1;
+        font-family: 'Pacifico', cursive;
+        background:url("../../public/stara-kartka-papieru2.png");
+        
+            }
+           }
+        }
+        .windowAfterLost{
+            width:100%;
+            height:100%;
+            position:absolute;
+            background-color: grey;
+            z-index:1;
+            transform:scale(0);
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(7,1fr);
+        
+    
+        .h1{
+            font-family: 'Grape Nuts', cursive;
+            text-align:center;
+            grid-column:1/4;
+            font-size:3rem;
+        }
+    
+        .pakBtn{
+            position:relative;
+            top:-200%;
+            width:100%;
+            height:100px;
+            grid-column:1/4;
+            grid-row:5/7;
+            z-index:10;
+            background:transparent;
+         
+            .btn{
+             width:100%;
+             height:100%;
+             font-size:3rem;
+             border-image-source:url("../../public/ramka-drut-kolczasty.png");
+          border-image-slice: 30;
+          border-image-width:10;
+          border-radius:20%;
+          font-family: 'Rubik Glitch', cursive;
+          background:linear-gradient(black,gray,white);
+         }
+        }
+    }
+    
+         //Atak button//
+         .atak{
+            
+            width:90%;
+            height:80%;
+            font-size:3rem;
+         
+       margin-left:5%;
+          border-image-source:url("../../public/ramka-drut-kolczasty.png");
+          border-image-slice: 30;
+          border-image-width:10;
+          font-family: 'Rubik Wet Paint';
+            border-radius:15%;
+            z-index:1;
+            transition:0.15s;
+            
+            
+           
+            }
+            .atak:hover{
+                background:conic-gradient(red,green);
+            color:white;            
+        }
+            }
+            //MONSTER//
+        .monster{
+        position:relative;
+        width:100%;
+        height:280px;
+     
+        border:5px solid;
+        border-image-source:url("../../public/ramka.jpg");
+        border-image-slice:30;
+        border-image-width:10px;
+      
         
 
         .spells{
@@ -325,25 +1009,609 @@
     
         }
         
-     
-        .back{
-            position:absolute;
-            display:none;
-        width:20%;
-        height:5%;
-        grid-row:2/3;
-        
-    }
+                @keyframes atakIntoMonster{
+                0%{transform:translateX(-80px)}
+              
+                100%{transform:translateX(60px)}
+                }
     
-            @keyframes fires{
-                0%{background-position: 30px;}
-                100%{background-position: 2500px;}
+ 
+}
+@media(min-width:700px){
+    .container{
+        width:100%;
+        height:100%;
+        border:3px solid yellow;
+        border-image-source: url("../../public/ramka-drut-kolczasty.png");
+        border-image-slice:30;
+        border-image-outset: 0.5;
+        border-image-width: 1px;
+        border-image-repeat: repeat;
+        
+        box-sizing: border-box;
+        background: url("../../public/extraImage/backgroundForest.png");
+       display:flex;
+       align-items: center;
+    }
+    .arena{
+        width:100%;
+       
+        position:absolute;
+        border:3px solid yellow;
+        border-image-source: url("../../public/ramka-drut-kolczasty.png");
+        border-image-slice:20;
+        border-image-outset: 0.5;
+        border-image-width: 3px;
+        border-image-repeat: repeat;
+        height:80%;
+        display:flex;
+        flex-direction: row;
+        flex-wrap:wrap;
+        justify-content: space-between;
+      
+        .windowAfterWin{
+           left:50%;
+           transform:translate(-50%,0);
+            width:50%;
+            height:100%;
+            position:absolute;
+        background-color: gray;
+        border:3px solid red;
+        border-image-source:url("../../public/ramka-forest.png");
+        border-image-slice:40;
+        border-image-width:10px;
+        border-image-outset: 1;
+            z-index:-10;
+            background:url("../../public/extraImage/background.png");
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(7,1fr);
+        opacity:0;
+        
+       
+            .h1{
+                
+                width:100%;
+                text-align: center;
+                font-size:2.7rem;
+                grid-column:1/4;
+                grid-row: 1/2;
+                margin-top:5%;
+                font-family: 'Pacifico', cursive;
             }
+            .h1Two{
+            width:100%;
+            text-align: center;
+            grid-column:1/4;
+            grid-row: 2/3;
+            font-family: 'Pacifico', cursive;
+            }
+            .fancyText{
+                -webkit-text-stroke:0.1px lighten(red,20%);
+                font-weight:bold;
+                
+            }
+            .lootItem{
+            width:100%;
+             height:80%;
+             position:relative;
+         display:flex;
+         
+            grid-column: 1/4;
+            grid-row:3/6;
+         
+    
+         
+            .gold{
+            width:50%;
+            height:100%;
+                
+            display:flex;
+            justify-content: center;
+            position:relative;
+           
+            .imgGold{
+            width:50%;
+            height:80%;
+
+                    }
+                    .amountGoldFromMonster{
+                        font-size:2rem;
+                        -webkit-text-stroke:1px red;
+                        font-weight:bold;
+                        position:absolute;
+                        color:gold;
+                    }
+            }
+            .item{
+            position:relative;
+            width:50%;
+            height:100%;
+        
+            display:flex;
+            justify-content: center;
+         
+            .imgItem{
+            width:50%;
+            height:100%;
+                }
+                    }
+            }
+           .pakBtn{
+               margin-top:10%;
+               width:100%;
+               height:100%;
+               grid-column:1/4;
+               grid-row:5/7;
+               
+               display:flex;
+               justify-content: center;
             
+               .btnBack{
+                width:45%;
+                height:100%;
+                font-size:3rem;
+                margin-right:1%;
+                border:3px solid red;
+                border-image-source:url("../../public/ramka-forest.png");
+                border-image-slice:40;
+                border-image-width:10px;
+                border-image-outset: 1;
+        font-family: 'Pacifico', cursive;
+        background:url("../../public/stara-kartka-papieru2.png");
+            }
+            .btnNext{
+                width:45%;
+                height:100%;
+                font-size:3rem;
+                margin-left:1%;
+                border:3px solid red;
+                border-image-source:url("../../public/ramka-forest.png");
+                border-image-slice:40;
+                border-image-width:10px;
+                border-image-outset: 1;
+        font-family: 'Pacifico', cursive;
+        background:url("../../public/stara-kartka-papieru2.png");
+        
+            }
+           }
+        }
+        
+       
+    }
+        .player{
+            position:relative;
+        width:45%;
+        height:70%;
+        order:1;
+    
+        .showHitFromMonster{
+            width:25%;
+            height:100px;
+            border:1px solid transparent;
+            position:absolute;
+            z-index:10;
+            left:8%;
+            top:20%;
+            opacity:0;
+            font-size:3rem;
+            text-align: center;
+            z-index:20;
+            color:white;
+            .sprite{
+                position:absolute;
+              width:100%;
+              height:100%;
+              
+           
+              img{
+                  width:100%;
+              }
+      
+            }
+        }
+        .treatmentPlayer{
+            width:50%;
+            height:78%;
+            position:absolute;
+            top:2%;
+            z-index:1;
+            opacity:0;
+        }
+    
+                }
+                //Finish player section in forest//
+        .fightArea{
+            
+        width:100%;
+        height:10%;
+        display:flex;
+        order:3;
+       
+       justify-content: center;
+        
+    
+            }
+            //MONSTER//
+        .monster{
+        position:relative;
+        width:45%;
+        height:70%;
+        
+        order:2;
+        .spells{
+            position:absolute;
+            z-index:10;
+            width:50%;
+            height:70%;
+           
+        }
+        .showHitFromPlayer{
+            width:40%;
+            height:20%;
+            color:white;
+            position:absolute;
+            z-index:10;
+            top:20%;
+            text-align: center;
+            font-size:3rem;
+           opacity:0;
+            .showWeapon{
+                position:relative;
+            width:50%;
+            animation:atakIntoMonster 0.45s infinite linear;
+            }
+            .showStrenght{
+                position:absolute;
+                left:50%;
+                transform:translate(-50%,0);
+                -webkit-text-stroke:1px red;
+
+            }
+             
+        }
+        .treatmentMonster{
+            position:absolute;
+            top:5%;
+            z-index:1;
+            width:50%;
+            height:60%;
+            opacity:0;
+        }
+    
+        }
+        
                 @keyframes atakIntoMonster{
                 0%{transform:translateX(-80px)}
               
                 100%{transform:translateX(60px)}
                 }
        
+}
+@media(min-width:900px){
+    .container{
+        width:100%;
+        height:100%;
+        border:3px solid yellow;
+        border-image-source: url("../../public/ramka-drut-kolczasty.png");
+        border-image-slice:30;
+        border-image-outset: 0.5;
+        border-image-width: 1px;
+        border-image-repeat: repeat;
+        
+        box-sizing: border-box;
+        background: url("../../public/extraImage/backgroundForest.png");
+       display:flex;
+       align-items: center;
+    }
+    .arena{
+        width:80%;
+       
+        position:absolute;
+        border:3px solid yellow;
+        border-image-source: url("../../public/ramka-drut-kolczasty.png");
+        border-image-slice:20;
+        border-image-outset: 0.5;
+        border-image-width: 3px;
+        border-image-repeat: repeat;
+        height:90%;
+        display:flex;
+        flex-direction: row;
+        
+       
+    }
+        .player{
+            position:relative;
+            grid-column:1/2;
+            grid-row:1/2;
+            
+        width:45%;
+        height:600px;
+        order:1;
+        .showHitFromMonster{
+            width:25%;
+            height:100px;
+            border:1px solid transparent;
+            position:absolute;
+            z-index:10;
+            left:8%;
+            top:20%;
+            opacity:0;
+            font-size:3rem;
+            text-align: center;
+            z-index:20;
+            color:white;
+            .sprite{
+                position:absolute;
+              width:100%;
+              height:100%;
+              
+           
+              img{
+                  width:100%;
+              }
+      
+            }
+        }
+        .treatmentPlayer{
+            width:50%;
+            height:78%;
+            position:absolute;
+            top:2%;
+            z-index:1;
+            opacity:0;
+        }
+    
+                }
+                //Finish player section in forest//
+        .fightArea{
+            
+        width:100%;
+     
+        display:flex;
+       order:3;
+       
+      
+       justify-content: center;
+        .windowAfterWin{
+           
+            width:50%;
+            height:100%;
+            position:absolute;
+        background-color: gray;
+        border:3px solid red;
+        border-image-source:url("../../public/ramka-forest.png");
+        border-image-slice:40;
+        border-image-width:10px;
+        border-image-outset: 1;
+            z-index:-10;
+            background:url("../../public/extraImage/background.png");
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(7,1fr);
+        opacity:0;
+        
+       
+            .h1{
+                
+                width:100%;
+                text-align: center;
+                font-size:2.7rem;
+                grid-column:1/4;
+                grid-row: 1/2;
+                margin-top:5%;
+                font-family: 'Pacifico', cursive;
+            }
+            .h1Two{
+            width:100%;
+            text-align: center;
+            grid-column:1/4;
+            grid-row: 2/3;
+            font-family: 'Pacifico', cursive;
+            }
+            .fancyText{
+                -webkit-text-stroke:0.1px lighten(red,20%);
+                font-weight:bold;
+                
+            }
+            .lootItem{
+            width:100%;
+             height:80%;
+             position:relative;
+         display:flex;
+         
+            grid-column: 1/4;
+            grid-row:3/6;
+         
+    
+         
+            .gold{
+            width:50%;
+            height:100%;
+                
+            display:flex;
+            justify-content: center;
+            position:relative;
+           
+            .imgGold{
+            width:50%;
+            height:80%;
+
+                    }
+                    .amountGoldFromMonster{
+                        font-size:2rem;
+                        -webkit-text-stroke:1px red;
+                        font-weight:bold;
+                        position:absolute;
+                        color:gold;
+                    }
+            }
+            .item{
+            position:relative;
+            width:50%;
+            height:100%;
+        
+            display:flex;
+            justify-content: center;
+         
+            .imgItem{
+            width:50%;
+            height:100%;
+                }
+                    }
+            }
+           .pakBtn{
+               margin-top:10%;
+               width:100%;
+               height:100%;
+               grid-column:1/4;
+               grid-row:5/7;
+               
+               display:flex;
+               justify-content: center;
+            
+               .btnBack{
+                width:45%;
+                height:100%;
+                font-size:3rem;
+                margin-right:1%;
+                border:3px solid red;
+                border-image-source:url("../../public/ramka-forest.png");
+                border-image-slice:40;
+                border-image-width:10px;
+                border-image-outset: 1;
+        font-family: 'Pacifico', cursive;
+        background:url("../../public/stara-kartka-papieru2.png");
+            }
+            .btnNext{
+                width:45%;
+                height:100%;
+                font-size:3rem;
+                margin-left:1%;
+                border:3px solid red;
+                border-image-source:url("../../public/ramka-forest.png");
+                border-image-slice:40;
+                border-image-width:10px;
+                border-image-outset: 1;
+        font-family: 'Pacifico', cursive;
+        background:url("../../public/stara-kartka-papieru2.png");
+        
+            }
+           }
+        }
+        .windowAfterLost{
+            width:100%;
+            height:30%;
+            position:absolute;
+            background-color: grey;
+            z-index:1;
+            transform:scale(0);
+            display:flex;
+        z-index:4;
+        border:3px solid;
+        border-radius:20%;
+        border-image-source:url("../../public/ramka-drut-kolczasty.png");
+        border-image-slice: 30;
+        border-image-width:10;
+        flex-direction: column;
+        text-align: center;
+  
+   
+         
+            .btnAfterLost{
+             width:100%;
+             height:100px;
+             font-size:3.5rem;
+             border-image-source:url("../../public/ramka-drut-kolczasty.png");
+          border-image-slice: 30;
+          border-image-width:10;
+          border-radius:20%;
+          font-family: 'Rubik Glitch', cursive;
+          background:linear-gradient(black,gray,white);
+          z-index:10;
+         }
+         h1{
+             font-size:3rem;
+             display:block;
+             height:100px;
+         }
+        
+    }
+    
+         //Atak button//
+         .atak{
+             position:absolute;
+            width:90%;
+            height:100%;
+            font-size:3rem;
+       margin-left:5%;
+       
+          border-image-source:url("../../public/ramka-drut-kolczasty.png");
+          border-image-slice: 30;
+          border-image-width:10;
+          font-family: 'Rubik Wet Paint';
+            border-radius:15%;
+            z-index:1;
+            transition:0.15s;
+            bottom:0;
+            }
+            .atak:hover{
+                background:conic-gradient(red,green);
+            color:white;            
+        }
+            }
+            //MONSTER//
+        .monster{
+        position:relative;
+        width:45%;
+        height:600px;
+        order:2;
+        .spells{
+            position:absolute;
+            z-index:10;
+            width:50%;
+            height:70%;
+           
+        }
+        .showHitFromPlayer{
+            width:40%;
+            height:20%;
+            color:white;
+            position:absolute;
+            z-index:10;
+            top:20%;
+            text-align: center;
+            font-size:3rem;
+           opacity:0;
+            .showWeapon{
+                position:relative;
+            width:50%;
+            animation:atakIntoMonster 0.45s infinite linear;
+            }
+            .showStrenght{
+                position:absolute;
+                left:50%;
+                transform:translate(-50%,0);
+                -webkit-text-stroke:1px red;
+
+            }
+             
+        }
+        .treatmentMonster{
+            position:absolute;
+            top:5%;
+            z-index:1;
+            width:50%;
+            height:60%;
+            opacity:0;
+        }
+    
+        }
+        
+                @keyframes atakIntoMonster{
+                0%{transform:translateX(-80px)}
+              
+                100%{transform:translateX(60px)}
+                }
+    
 }

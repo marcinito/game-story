@@ -3,7 +3,6 @@
     position: relative;
     width: 100%;
     height: 100%;
-    top: 1.5%;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[2];
@@ -62,7 +61,6 @@
     -webkit-text-decoration: underline solid;
             text-decoration: underline solid;
     position: absolute;
-    border: 1px solid red;
   }
   .eq .helmet {
     position: relative;
@@ -255,10 +253,12 @@
     border-image-source: url("../../public/ramka.jpg");
     border-image-slice: 30;
     border-image-repeat: repeat;
-    border-image-width: 10px 0 0 0;
+    border-image-width: 10px;
     background: url("../../public/wypalona-kartka-papieru.png");
     background-repeat: repeat;
     background-size: cover;
+    font-weight: bold;
+    letter-spacing: 1px;
   }
   .pakSkills .stageHp {
     width: 100%;
@@ -266,7 +266,7 @@
     background-color: #A67D3D;
     text-align: center;
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 1rem;
     border: 3px solid;
     position: relative;
     border-image-source: url("../../public/ramka.jpg");
@@ -309,7 +309,7 @@
     background-color: #A67D3D;
     text-align: center;
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 1rem;
     border: 3px solid;
     position: relative;
     border-image-source: url("../../public/ramka.jpg");
@@ -384,14 +384,13 @@
     background-color: #A67D3D;
     text-align: center;
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 1rem;
     border: 3px solid;
     position: relative;
     border-image-source: url("../../public/ramka.jpg");
     border-image-slice: 0 30 30 30;
     border-image-repeat: repeat;
     border-image-width: 2px;
-    overflow: hidden;
   }
   .pakSkills .stageMagic:after {
     content: "magic level";
@@ -418,7 +417,7 @@
     background-color: #A67D3D;
     text-align: center;
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 1rem;
     border: 3px solid;
     position: relative;
     border-image-source: url("../../public/ramka.jpg");

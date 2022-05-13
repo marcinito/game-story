@@ -4,6 +4,7 @@
     background: linear-gradient(yellow 60%, orange, lime 90%);
     width: 100%;
     height: 99%;
+    background: url("../../public/extraImage/biblioteka.png");
   }
   .container .nav {
     position: relative;
@@ -65,6 +66,10 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    color: white;
+    -webkit-text-stroke: 0.5px green;
+    font-weight: bold;
+    font-size: 1.5rem;
   }
   .container .section::-webkit-scrollbar {
     width: 10px;
@@ -82,7 +87,7 @@
     font-family: 'Inconsolata', monospace;
     text-align: center;
     z-index: 2;
-    margin-top: 65%;
+    margin-top: 78%;
     height: 10%;
     font-weight: bold;
     display: -webkit-box;
@@ -91,7 +96,7 @@
     font-size: 2rem;
   }
   .container .section .img {
-    width: 50%;
+    width: 30%;
     margin-top: 5%;
   }
   .container .section .describe {
@@ -146,6 +151,356 @@
   }
   .container .section .skills .itemDrop img {
     width: 20%;
+  }
+  .container .section .skills .moneyDrop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container .section .skills .moneyDrop img {
+    width: 20%;
+  }
+  .container .section .skills .moneyDrop .amountMoney {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 500px) {
+  .container {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, yellow), color-stop(orange), color-stop(90%, lime));
+    background: linear-gradient(yellow 60%, orange, lime 90%);
+    width: 100%;
+    height: 99%;
+    background: url("../../public/extraImage/biblioteka.png");
+  }
+  .container .nav {
+    position: relative;
+    list-style-type: none;
+    height: 30%;
+    overflow-y: scroll;
+    border: 3px solid red;
+    border-image-source: url("../../public/ramka-monster.png");
+    border-image-slice: 90;
+    border-image-width: 5px;
+  }
+  .container .nav::-webkit-scrollbar {
+    width: 10px;
+    background: url("../../public/stara-kartka-papieru2.png");
+  }
+  .container .nav::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px black;
+            box-shadow: inset 0 0 5px black;
+    border-radius: 10px;
+  }
+  .container .nav::-webkit-scrollbar-thumb {
+    background: url("../../public/drawno2.png");
+    border: 1px solid black;
+  }
+  .container .nav li {
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-size: 2.6rem;
+    background: url("../../public/stara-kartka-papieru2.png");
+    background-origin: center;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .container .nav li:hover {
+    background: url("../../public/stara-kartka-papieru.png");
+    color: white;
+    -webkit-box-shadow: 2px 2px 10px black,2px 2px 20px brown;
+            box-shadow: 2px 2px 10px black,2px 2px 20px brown;
+  }
+  .container .section {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    border: 3px solid red;
+    border-image-source: url("../../public/ramka-monster.png");
+    border-image-slice: 90;
+    border-image-width: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    overflow-y: scroll;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: white;
+    -webkit-text-stroke: 0.5px green;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  .container .section::-webkit-scrollbar {
+    width: 10px;
+  }
+  .container .section::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px grey;
+            box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+  .container .section::-webkit-scrollbar-thumb {
+    background: url("../../public/drawno2.png");
+    border-radius: 10px;
+  }
+  .container .section .name {
+    font-family: 'Inconsolata', monospace;
+    text-align: center;
+    z-index: 2;
+    margin-top: 77%;
+    height: 10%;
+    font-weight: bold;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 2rem;
+  }
+  .container .section .img {
+    width: 30%;
+    margin-top: 5%;
+  }
+  .container .section .describe {
+    margin-top: 5%;
+    font-weight: bold;
+    text-align: center;
+  }
+  .container .section .skills {
+    margin-top: 5%;
+    border: 3px solid brown;
+    width: 95%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-image-source: url("../../public/ramka-box.png");
+    border-image-slice: 30;
+    margin-bottom: 5%;
+  }
+  .container .section .skills h3 {
+    border-bottom: 1px solid black;
+    margin-top: 3%;
+  }
+  .container .section .skills .itemDrop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-bottom: 1px solid black;
+  }
+  .container .section .skills .itemDrop span {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .container .section .skills .itemDrop h3 {
+    display: inline-block;
+  }
+  .container .section .skills .itemDrop img {
+    width: 20%;
+  }
+  .container .section .skills .moneyDrop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container .section .skills .moneyDrop img {
+    width: 20%;
+  }
+  .container .section .skills .moneyDrop .amountMoney {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .container {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, yellow), color-stop(orange), color-stop(90%, lime));
+    background: linear-gradient(yellow 60%, orange, lime 90%);
+    width: 100%;
+    height: 99%;
+    background: url("../../public/extraImage/biblioteka.png");
+  }
+  .container .nav {
+    position: relative;
+    list-style-type: none;
+    height: 30%;
+    overflow-y: scroll;
+    border: 3px solid red;
+    border-image-source: url("../../public/ramka-monster.png");
+    border-image-slice: 90;
+    border-image-width: 5px;
+  }
+  .container .nav::-webkit-scrollbar {
+    width: 10px;
+    background: url("../../public/stara-kartka-papieru2.png");
+  }
+  .container .nav::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px black;
+            box-shadow: inset 0 0 5px black;
+    border-radius: 10px;
+  }
+  .container .nav::-webkit-scrollbar-thumb {
+    background: url("../../public/drawno2.png");
+    border: 1px solid black;
+  }
+  .container .nav li {
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-size: 2.6rem;
+    background: url("../../public/stara-kartka-papieru2.png");
+    background-origin: center;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .container .nav li:hover {
+    background: url("../../public/stara-kartka-papieru.png");
+    color: white;
+    -webkit-box-shadow: 2px 2px 10px black,2px 2px 20px brown;
+            box-shadow: 2px 2px 10px black,2px 2px 20px brown;
+  }
+  .container .section {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    border: 3px solid red;
+    border-image-source: url("../../public/ramka-monster.png");
+    border-image-slice: 90;
+    border-image-width: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    overflow-y: scroll;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: white;
+    -webkit-text-stroke: 0.5px green;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  .container .section::-webkit-scrollbar {
+    width: 10px;
+  }
+  .container .section::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px grey;
+            box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+  .container .section::-webkit-scrollbar-thumb {
+    background: url("../../public/drawno2.png");
+    border-radius: 10px;
+  }
+  .container .section .name {
+    font-family: 'Inconsolata', monospace;
+    text-align: center;
+    z-index: 2;
+    margin-top: 64%;
+    height: 10%;
+    font-weight: bold;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 2rem;
+  }
+  .container .section .img {
+    width: 20%;
+    margin-top: 5%;
+  }
+  .container .section .describe {
+    margin-top: 5%;
+    font-weight: bold;
+    text-align: center;
+  }
+  .container .section .skills {
+    margin-top: 5%;
+    border: 3px solid brown;
+    width: 95%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-image-source: url("../../public/ramka-box.png");
+    border-image-slice: 30;
+    margin-bottom: 5%;
+  }
+  .container .section .skills h3 {
+    border-bottom: 1px solid black;
+    margin-top: 3%;
+  }
+  .container .section .skills .itemDrop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-bottom: 1px solid black;
+  }
+  .container .section .skills .itemDrop span {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .container .section .skills .itemDrop h3 {
+    display: inline-block;
+  }
+  .container .section .skills .itemDrop img {
+    width: 15%;
   }
   .container .section .skills .moneyDrop {
     display: -webkit-box;

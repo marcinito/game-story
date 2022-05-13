@@ -1,9 +1,24 @@
 @media(min-width:300px){
     .container{
         width:100vw;
-        height:845px;
-      
+        height:100vh;
+        background: url("../public/extraImage/backgroundPrime.png");
+  background-size: cover;
+
+  
        background-color:lighten(black,20%) ;
 
     }
+}
+@media(min-width:700px){
+    .container{
+        width:100vw;
+        height:100vh;
+        background: url("../public/extraImage/backgroundPrime.png");
+  background-size: cover;
+       background-color:lighten(black,20%) ;
+        
+
+    }
+
 }

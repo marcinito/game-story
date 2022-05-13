@@ -176,27 +176,8 @@ console.info(skills.strenght.total,"siła totalna")
             <Player hitFromPlayer={hitFromPlayer} treatmentRef={treatmentPlayerRef} disabledSpell={disabledSpellAfterWin}/>
         </div>
         <div className={s.fightArea}>
-            <div className={s.windowAfterWin} ref={windowAfterWinRef}>
-                <h1 className={s.h1}>You are slay <span className={s.fancyText}>{monsters[0].name}</span></h1>
-                <h1 className={s.h1Two}>Your loot...</h1>
-                <div className={s.lootItem}>
-        
-                    <div className={s.gold}><img className={s.imgGold} src={"/ItemsGame/gold.png"}/>
-                    <span className={s.amountGoldFromMonster}>{monsters[0].gold}</span></div>
-                    <div className={s.item}><img className={s.imgItem} src={monsters[0].item.grafika}/></div>
-                </div>
-               <div className={s.pakBtn}>
-               <button className={s.btnBack} onClick={()=>backAfterWin()}>Back</button>
-                <button className={s.btnNext} onClick={()=>nextMonster()} >Next</button>
-               </div>
-            </div>
-            <div className={s.windowAfterLost} ref={windowAfterLostRef}>
-                <h1 className={s.h1}>You are lost...</h1>
-               <div className={s.pakBtn}>
-               <button className={s.btn} onClick={()=>backAfterDefeat()}>Back</button>
-              
-               </div>
-            </div>
+         
+           
         
         <button ref={atakRef} disabled={handlAtakDisabled} className={s.atak} 
         onClick={()=>handleAtak()}>Atak</button>
@@ -218,7 +199,25 @@ console.info(skills.strenght.total,"siła totalna")
         </div>
        
         </div>
-        <button className={s.back} onClick={()=>router.push("/player-panel")}>Powrót</button>
+        <div className={s.windowAfterWin} ref={windowAfterWinRef}>
+                <h1 className={s.h1}>You are slay <span className={s.fancyText}>{monsters[0].name}</span></h1>
+                <h1 className={s.h1Two}>Your loot...</h1>
+                <div className={s.lootItem}>
+        
+                    <div className={s.gold}><img className={s.imgGold} src={"/ItemsGame/gold.png"}/>
+                    <span className={s.amountGoldFromMonster}>{monsters[0].gold}</span></div>
+                    <div className={s.item}><img className={s.imgItem} src={monsters[0].item.grafika}/></div>
+                </div>
+               <div className={s.pakBtn}>
+               <button className={s.btnBack} onClick={()=>backAfterWin()}>Back</button>
+                <button className={s.btnNext} onClick={()=>nextMonster()} >Next</button>
+               </div>
+            </div>
+        <div className={s.windowAfterLost} ref={windowAfterLostRef}>
+               <button className={s.btnAfterLost} onClick={()=>backAfterDefeat()}>Back</button>
+               <h1 className={s.h1}>You are lost...</h1>
+              
+            </div>
         </div>
      );
 }

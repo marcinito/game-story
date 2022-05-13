@@ -28,4 +28,112 @@
     height: 80%;
   }
 }
+
+@media (min-width: 500px) {
+  .containerPlayerPanel {
+    position: absolute;
+    width: 90%;
+    height: 85%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    border: 2px solid;
+    border-image-source: url("../public/ramka.jpg");
+    border-image-slice: 30 30 30 30;
+    border-image-repeat: repeat;
+    border-image-width: 2px 2px 1px 2px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .containerPlayerPanel .dashboard {
+    height: 20%;
+  }
+  .containerPlayerPanel .player {
+    position: absolute;
+  }
+  .containerPlayerPanel .displayOption {
+    height: 80%;
+  }
+}
+
+@media (min-width: 600px) {
+  .containerPlayerPanel {
+    position: absolute;
+    width: 80%;
+    height: 85%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    border: 2px solid;
+    border-image-source: url("../public/ramka.jpg");
+    border-image-slice: 30 30 30 30;
+    border-image-repeat: repeat;
+    border-image-width: 2px 2px 1px 2px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .containerPlayerPanel .dashboard {
+    height: 20%;
+  }
+  .containerPlayerPanel .player {
+    position: absolute;
+  }
+  .containerPlayerPanel .displayOption {
+    height: 80%;
+  }
+}
+
+@media (min-width: 700px) {
+  .containerPlayerPanel {
+    position: absolute;
+    width: 80%;
+    height: 85%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    border: 2px solid;
+    border-image-source: url("../public/ramka.jpg");
+    border-image-slice: 30 30 30 30;
+    border-image-repeat: repeat;
+    border-image-width: 2px 2px 1px 2px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .containerPlayerPanel .dashboard {
+    height: 20%;
+  }
+  .containerPlayerPanel .player {
+    position: absolute;
+  }
+  .containerPlayerPanel .displayOption {
+    height: 76%;
+  }
+}
+
+@media (min-width: 900px) {
+  .containerPlayerPanel {
+    position: absolute;
+    width: 70%;
+    height: 83%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    border: 2px solid;
+    border-image-source: url("../public/ramka.jpg");
+    border-image-slice: 30 30 30 30;
+    border-image-repeat: repeat;
+    border-image-width: 2px 2px 1px 2px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .containerPlayerPanel .dashboard {
+    height: 20%;
+  }
+  .containerPlayerPanel .player {
+    position: absolute;
+  }
+  .containerPlayerPanel .displayOption {
+    height: 76%;
+  }
+}
 /*# sourceMappingURL=PlayerPanel.module.css.map */

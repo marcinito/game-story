@@ -82,10 +82,10 @@
   }
   .confirmFight .btnYes {
     position: absolute;
-    margin-top: 2%;
     width: 50%;
     height: 50%;
     background: url("../../public/stara-kartka-papieru2.png");
+    bottom: 0;
   }
   .confirmFight .btnNo {
     position: absolute;

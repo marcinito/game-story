@@ -17,6 +17,78 @@
         background-repeat: no-repeat;
         background-position: bottom;
         
+        overflow-y:scroll;
+        
+       &::-webkit-scrollbar {
+        width: 0px;
+      }
+      
+        .slot{
+            border:5px solid yellow;
+            border-image-source: url("../../public/ramka-drut-kolczasty.png") ;
+        border-image-slice: 30 30 30 30;
+        border-image-repeat:repeat;
+        border-image-width: 10px 10px 10px 10px;
+        margin-left:5%;
+        margin-right:5%;
+        margin-top:5%;
+        background-color:gray;
+        position:relative;
+        height:60px;
+      
+        
+        }
+        .itemInSlot{
+            position:absolute;
+            left:0;
+            top:0;
+            
+            width:80%;
+            height:50px;
+            
+            &:active{
+                background:radial-gradient(white,red,blue)
+            }
+           
+        }
+        .logoBp{
+            grid-column: 1/4;
+            grid-row: 8/11;
+            
+            background-image: url("../../public/back-pack.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+          
+           
+            
+        }
+    }
+}
+@media(min-width:500px){
+    .container{
+        position:absolute;
+        left:50%;
+        transform:translate(-50%,0);
+        width:60%;
+        height:90%;
+        top:5%;
+        border:5px solid yellow;
+        border-image-source: url("../../public/ramka-drut-kolczasty.png") ;
+        border-image-slice: 30 30 30 30;
+        border-image-repeat:repeat;
+        border-image-width: 15px;
+        border-image-outset: 1;
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(10,1fr);
+        background-color: rgba(0,0,0,.5);
+        background-image: url("../../public/back-pack.png");
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        
+        overflow-y:scroll;
         
        
       
@@ -31,6 +103,79 @@
         margin-top:5%;
         background-color:gray;
         position:relative;
+        height:60px;
+        width:100%;
+     
+        
+        }
+        .itemInSlot{
+            position:absolute;
+            left:0;
+            top:0;
+            
+            width:70%;
+            height:50px;
+            
+            &:active{
+                background:radial-gradient(white,red,blue)
+            }
+           
+        }
+        .logoBp{
+            grid-column: 1/4;
+            grid-row: 8/11;
+            
+            background-image: url("../../public/back-pack.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+          
+           
+            
+        }
+    }  
+}
+@media(min-width:700px){
+    .container{
+        position:absolute;
+        left:50%;
+        transform:translate(-50%,0);
+        width:50%;
+        height:90%;
+        top:5%;
+        border:5px solid yellow;
+        border-image-source: url("../../public/ramka-drut-kolczasty.png") ;
+        border-image-slice: 30 30 30 30;
+        border-image-repeat:repeat;
+        border-image-width: 15px;
+        border-image-outset: 1;
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(10,1fr);
+        background-color: rgba(0,0,0,.5);
+        background-image: url("../../public/back-pack.png");
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        
+        overflow-y:scroll;
+        
+       
+      
+        .slot{
+            border:5px solid yellow;
+            border-image-source: url("../../public/ramka-drut-kolczasty.png") ;
+        border-image-slice: 30 30 30 30;
+        border-image-repeat:repeat;
+        border-image-width: 10px 10px 10px 10px;
+        margin-left:5%;
+        margin-right:5%;
+        margin-top:5%;
+        background-color:gray;
+        position:relative;
+        height:60px;
+        width:100%;
+      
         
         }
         .itemInSlot{
@@ -39,7 +184,7 @@
             top:0;
             
             width:100%;
-            height:100%;
+            height:50px;
             
             &:active{
                 background:radial-gradient(white,red,blue)
