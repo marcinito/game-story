@@ -3,21 +3,21 @@
 
     .containerPlayerPanel{
         width:100%;
-        height:85%;
-    
+        height:100%;
+       
         border:2px solid;
         border-image-source: url("../public/ramka.jpg") ;
         border-image-slice: 30 30 30 30;
         border-image-repeat:repeat;
         border-image-width: 2px 2px 1px 2px;
-       
+      
         display:flex;
         flex-direction: column;
       background: black;
      
         box-sizing: border-box;
           
-        
+       
 .dashboard{
     height:20%;
 }
@@ -25,14 +25,41 @@
    position:absolute;
 }
 .displayOption{
-    
+ 
     height:80%;
    
 }      
         
     }
 }
-@media(min-width:500px){
+@media(min-width:300px) and (max-height:650px){
+    .containerPlayerPanel{
+        width:100%;
+        height:640px;
+        border:2px solid;
+        border-image-source: url("../public/ramka.jpg") ;
+        border-image-slice: 30 30 30 30;
+        border-image-repeat:repeat;
+        border-image-width: 2px 2px 1px 2px;
+        display:flex;
+        flex-direction: column;
+      background: black;
+        box-sizing: border-box;
+      
+       overflow-y: scroll;
+.dashboard{
+    height:20%;
+}
+.player{
+   position:absolute;
+}
+.displayOption{
+ 
+    height:80%;
+   
+}  }
+}
+@media(min-width:500px)  {
     .containerPlayerPanel{
         position:absolute;
         width:90%;
@@ -62,7 +89,39 @@
         
     }
 }
+
 @media(min-width:600px){
+    .containerPlayerPanel{
+        position:absolute;
+        width:80%;
+        height:85%;
+    left:50%;
+    transform:translate(-50%,0);
+        border:2px solid;
+        border-image-source: url("../public/ramka.jpg") ;
+        border-image-slice: 30 30 30 30;
+        border-image-repeat:repeat;
+        border-image-width: 2px 2px 1px 2px;
+        box-sizing: border-box;
+       
+        
+        
+.dashboard{
+    height:20%;
+}
+.player{
+   position:absolute;
+}
+.displayOption{
+    
+    height:80%;
+   
+}      
+        
+    }
+}
+
+@media(min-width:700px){
     .containerPlayerPanel{
         position:absolute;
         width:80%;
@@ -90,43 +149,13 @@
    
 }      
         
-    }
-}
-@media(min-width:700px){
-    .containerPlayerPanel{
-        position:absolute;
-        width:80%;
-        height:85%;
-    left:50%;
-    transform:translate(-50%,0);
-        border:2px solid;
-        border-image-source: url("../public/ramka.jpg") ;
-        border-image-slice: 30 30 30 30;
-        border-image-repeat:repeat;
-        border-image-width: 2px 2px 1px 2px;
-        box-sizing: border-box;
-       
-              
-        
-.dashboard{
-    height:20%;
-}
-.player{
-   position:absolute;
-}
-.displayOption{
-    
-    height:76%;
-   
-}      
-        
     } 
 }
 @media(min-width:900px){
     .containerPlayerPanel{
         position:absolute;
         width:70%;
-        height:83%;
+        height:80%;
     left:50%;
     transform:translate(-50%,0);
         border:2px solid;
@@ -146,7 +175,7 @@
 }
 .displayOption{
     
-    height:76%;
+    height:80%;
    
 }      
         

@@ -169,7 +169,6 @@ const atakSpell=(costMana,concerningSpan,spell,timeReload,disabled,hitPower)=>{
             },500)
             dispatch(spellsUse(null))
             dispatch(monsterGetAtak(hitPower))
-           console.info(timeReload,"timeReload")
             concerningSpan.current.style.transition=(timeReload/1000)+"s"+" linear"
             concerningSpan.current.style.width=`100%`
             setTimeout(()=>{

@@ -1,11 +1,11 @@
 import Navbar from "./Navbar";
-import styles from '../styles/Container.module.scss'
+import s from '../styles/Container.module.scss'
 import Head from 'next/head'
 import Below from "./Below";
 import {Provider} from 'react-redux'
 import { store } from "../redux/store";
 const Layout = ({children}) => {
-    return ( <div className={styles.container}>
+    return ( <div className={s.container}>
         <Head>
             <title>Game Story</title>
             <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -14,9 +14,9 @@ const Layout = ({children}) => {
 
         </Head>
         <Provider store={store}>
-    <Navbar/>
-    {children}
-    <Below/>
+   <div className={s.navbar}><Navbar/></div> 
+    <div className={s.children}>{children}</div>
+    <div className={s.below}><Below/></div>
     </Provider>
     
     </div> );

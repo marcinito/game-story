@@ -129,12 +129,43 @@
 }
 
 @media (min-width: 555px) {
+  .container {
+    width: 100%;
+    height: 81%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: url("../public/extraImage/background.png");
+    background-size: cover;
+  }
+  .windowInput {
+    width: 90%;
+    height: 80%;
+    background-repeat: no-repeat;
+    background-size: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   .inputPak {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 80%;
-    height: 60%;
+    width: 40%;
+    height: 50%;
     position: relative;
     top: 12%;
     -webkit-box-orient: vertical;
@@ -144,6 +175,86 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  .inputPak input {
+    border: 5px solid;
+    border-image-source: url("../public/ramka-forest.png");
+    border-image-slice: 40;
+    border-image-width: 10px;
+    border-image-outset: 1;
+    position: relative;
+    margin: 5%;
+    background-color: #eaeab4;
+    width: 80%;
+    outline: none;
+    height: 17%;
+    font-size: 2rem;
+    font-family: 'Grape Nuts', cursive;
+    font-weight: bold;
+    opacity: 0.9;
+    text-align: center;
+  }
+  .inputPak input::-webkit-input-placeholder {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .inputPak input:-ms-input-placeholder {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .inputPak input::-ms-input-placeholder {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .inputPak input::placeholder {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .inputPak select {
+    border: 5px solid;
+    border-image-source: url("../public/ramka-forest.png");
+    border-image-slice: 40;
+    border-image-width: 10px;
+    border-image-outset: 1;
+    width: 80%;
+    height: 17%;
+    font-size: 2rem;
+    text-align: center;
+    background-color: #eaeab4;
+    font-family: 'Grape Nuts', cursive;
+    font-weight: bold;
+    opacity: 0.9;
+  }
+  .option {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .playButton {
+    position: relative;
+    bottom: -20%;
+    width: 40%;
+    height: 10%;
+    background-color: red;
+    background-color: #eaeab4;
+    font-size: 2rem;
+    font-family: 'Grape Nuts', cursive;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: 5px solid;
+    border-image-source: url("../public/ramka-forest.png");
+    border-image-slice: 40;
+    border-image-width: 10px;
+    border-image-outset: 1;
+    outline: none;
+  }
+  .profession {
+    width: 50%;
+    position: absolute;
+    left: -40%;
   }
 }
 /*# sourceMappingURL=createCharacter.module.css.map */

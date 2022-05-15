@@ -7,7 +7,7 @@ $colorBtnStart:#66FF33;
 
 .firstPage{
     position:relative;
-    width:100%;
+    max-width:100%;
     height:100%;
     background-color: darken(skyblue,50%);
     display: flex;
@@ -22,18 +22,26 @@ $colorBtnStart:#66FF33;
     top:7%;
     left:50%;
     transform:translate(-50%,0);
-    height:20%;
+   
+    height:150px;
+   
     width:100%;
     background:url("../public/stara-kartka-papieru.png");
     border:5px solid;
     border-image-source: url("../public/ramka-box.png");
     border-image-slice:10;
     border-image-width:15px 0 15px 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+   
     h1{
+      
         position: relative;
-        top:25%;
-        font-family: 'Rubik Glitch', cursive; 
+        
         text-align: center;
+        font-family: 'Rubik Glitch', cursive; 
+        
         
     }
 }
@@ -141,7 +149,7 @@ $colorBtnStart:#66FF33;
     justify-content: center;
     align-items: center;
     font-family: monospace;
-    bottom:50%;
+    bottom:25%;
    
     
 }
@@ -442,14 +450,14 @@ $colorBtnStart:#66FF33;
 .firstPage{
     position:relative;
     width:100%;
-    height:93%;
+    height:81%;
     background-color: darken(skyblue,50%);
     display: flex;
     flex-direction: column;
     overflow:hidden;
     background: url("../public/extraImage/background.png");
     background-size: cover;
-  
+    border:10px solid orange;
   
 .textDiv{
     position:absolute;

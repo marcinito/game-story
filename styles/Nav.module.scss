@@ -2,7 +2,7 @@
 //media query-min 360//
 @media(min-width:300px){
     .logo{
-        height:10%;
+        height:100%;
         width:100%;
     
         display:block;
@@ -50,7 +50,7 @@
         -webkit-text-stroke:1px blue;
         z-index:5;
         
-        font-size:3rem;
+        font-size:4rem;
     }
     .h1TitlePage1{
         position:absolute;
@@ -58,7 +58,7 @@
     
         font-family: 'Rubik Wet Paint';
         text-align: center;
-        font-size:3rem;
+        font-size:4rem;
         animation:h1 5s forwards;
       
         border:1px solid yellow;
@@ -89,9 +89,10 @@
         100%{transform:translateY(10%) }
     }
 }
+
 @media(min-width:470px){
     .logo{
-        height:10%;
+        height:100%;
         width:100%;
     
         display:block;
@@ -103,7 +104,7 @@
         border-image-slice:20;
         border-image-width:0 0 10px 0;
         z-index:12;
-
+        overflow:hidden;
         
     }
     .loggo{
@@ -113,6 +114,7 @@
         width:100%;
         height:100%;
         position:absolute;
+        
     }
    
     .titlePagePak{
@@ -137,7 +139,7 @@
         -webkit-text-stroke:1px blue;
         z-index:5;
         
-        font-size:5rem;
+        font-size:4rem;
     }
     .h1TitlePage1{
         position:absolute;
@@ -145,7 +147,7 @@
     
         font-family: 'Rubik Wet Paint';
         text-align: center;
-        font-size:5rem;
+        font-size:4rem;
         animation:h1 5s forwards;
       
         border:1px solid yellow;
@@ -173,12 +175,12 @@
     }
     @keyframes h1{
         0%{transform:translateY(-10%)}
-        100%{transform:translateY(4%) }
+        100%{transform:translateY(0%) }
     }
 }
 @media(min-width:700px){
     .logo{
-        height:13%;
+        height:100%;
         width:100%;
     
         display:block;
@@ -224,7 +226,7 @@
         -webkit-text-stroke:1px blue;
         z-index:5;
         
-        font-size:6rem;
+        font-size:5.5rem;
     }
     .h1TitlePage1{
         position:absolute;
@@ -232,7 +234,7 @@
     
         font-family: 'Rubik Wet Paint';
         text-align: center;
-        font-size:6rem;
+        font-size:5.5rem;
         animation:h1 5s forwards;
       
         border:1px solid yellow;
@@ -265,7 +267,7 @@
 }
 @media(min-width:900px){
     .logo{
-        height:15%;
+        height:100%;
         width:100%;
     
         display:block;
@@ -277,7 +279,7 @@
         border-image-slice:20;
         border-image-width:0 0 10px 0;
         z-index:12;
-
+        
         
     }
     .loggo{

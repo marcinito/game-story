@@ -1,7 +1,7 @@
 @media (min-width: 300px) {
   .firstPage {
     position: relative;
-    width: 100%;
+    max-width: 100%;
     height: 100%;
     background-color: #104b63;
     display: -webkit-box;
@@ -21,19 +21,27 @@
     left: 50%;
     -webkit-transform: translate(-50%, 0);
             transform: translate(-50%, 0);
-    height: 20%;
+    height: 150px;
     width: 100%;
     background: url("../public/stara-kartka-papieru.png");
     border: 5px solid;
     border-image-source: url("../public/ramka-box.png");
     border-image-slice: 10;
     border-image-width: 15px 0 15px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .firstPage .textDiv h1 {
     position: relative;
-    top: 25%;
-    font-family: 'Rubik Glitch', cursive;
     text-align: center;
+    font-family: 'Rubik Glitch', cursive;
   }
   .catalogDiv {
     width: 100%;
@@ -163,7 +171,7 @@
         -ms-flex-align: center;
             align-items: center;
     font-family: monospace;
-    bottom: 50%;
+    bottom: 25%;
   }
   .btnLink a {
     text-decoration: none;
@@ -497,7 +505,7 @@
   .firstPage {
     position: relative;
     width: 100%;
-    height: 93%;
+    height: 81%;
     background-color: #104b63;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -509,6 +517,7 @@
     overflow: hidden;
     background: url("../public/extraImage/background.png");
     background-size: cover;
+    border: 10px solid orange;
   }
   .firstPage .textDiv {
     position: absolute;
