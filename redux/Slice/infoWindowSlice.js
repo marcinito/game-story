@@ -7,7 +7,7 @@ const infoWindowSlice = createSlice({
   initialState,
   reducers: {
     openCloseWindowMessage(state,action){
-        console.info(action)
+        
         
      if(action.payload==="open"){
 
@@ -19,7 +19,7 @@ const infoWindowSlice = createSlice({
          return {...state,windowIsOpen:false}
          
      }
-     console.info(action)
+     
       }
   },
 })

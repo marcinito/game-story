@@ -124,7 +124,7 @@ useEffect(()=>{
 })
 
 
-console.info("PLAYER")
+
 const showDetail=(e)=>{
     /*It's fire after mouseover on wear item */
  if(e.target.src){

@@ -12,6 +12,7 @@ const DashBoardGame = () => {
     const fightConfirmRef=useRef()
 
 useEffect(()=>{
+    //Focus on "your" card from dashboard
 querySelectorAllRef.current=[...container.current.children]
 querySelectorAllRef.current[5].classList.add(s.focusOption)
 },[])
@@ -26,7 +27,6 @@ querySelectorAllRef.current[5].classList.add(s.focusOption)
         el.classList.remove(s.focusOption)
     })
     e.target.classList.add(s.focusOption)
-    console.info(e.target.textContent)
      dispatch(changeOption(prop))
  }
    

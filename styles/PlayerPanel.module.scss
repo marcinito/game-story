@@ -23,6 +23,9 @@
 }
 .player{
    position:absolute;
+    width:0px;
+    height:0px;
+ 
 }
 .displayOption{
  
@@ -63,7 +66,7 @@
     .containerPlayerPanel{
         position:absolute;
         width:90%;
-        height:85%;
+        height:86%;
     left:50%;
     transform:translate(-50%,0);
         border:2px solid;
@@ -94,7 +97,7 @@
     .containerPlayerPanel{
         position:absolute;
         width:80%;
-        height:85%;
+        height:86%;
     left:50%;
     transform:translate(-50%,0);
         border:2px solid;
@@ -125,7 +128,7 @@
     .containerPlayerPanel{
         position:absolute;
         width:80%;
-        height:85%;
+        height:86%;
     left:50%;
     transform:translate(-50%,0);
         border:2px solid;
@@ -154,7 +157,38 @@
 @media(min-width:900px){
     .containerPlayerPanel{
         position:absolute;
-        width:70%;
+        width:65%;
+        height:86%;
+    left:50%;
+    transform:translate(-50%,0);
+        border:2px solid;
+        border-image-source: url("../public/ramka.jpg") ;
+        border-image-slice: 30 30 30 30;
+        border-image-repeat:repeat;
+        border-image-width: 2px 2px 1px 2px;
+        box-sizing: border-box;
+.dashboard{
+    height:20%;
+}
+.player{
+   position:absolute;
+   
+
+}
+.displayOption{
+    
+    height:80%;
+   
+}      
+        
+    } 
+}
+@media(min-width:1100px){
+    .containerPlayerPanel{
+        background: url("../public/extraImage/backgroundPrime.png");
+        background-size: cover;
+        position:absolute;
+        width:100%;
         height:80%;
     left:50%;
     transform:translate(-50%,0);
@@ -164,19 +198,36 @@
         border-image-repeat:repeat;
         border-image-width: 2px 2px 1px 2px;
         box-sizing: border-box;
+        display:grid;
+        grid-template-columns: 25% 30% 45%;
        
               
         
 .dashboard{
-    height:20%;
+   order:0;
+    height:100%;
+    width:80%;
+   
+    z-index:5;
+    grid-column:1/2;
 }
 .player{
-   position:absolute;
+ order:1;
+   width:100%;
+   height:100%;
+  
+  
+ 
+   grid-column:2/3;
 }
 .displayOption{
-    
-    height:80%;
-   
+    position:absolute;
+    width:95%;
+    height:100%;
+    z-index:10;
+   order:3;
+   grid-column:3/4;
+   left:5%;
 }      
         
     } 

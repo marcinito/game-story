@@ -7,7 +7,6 @@ import {useRouter} from 'next/router'
 const CreateCharacter = () => {
 const [dataFacade,setDataFacade]=useState({name:"",profession:"./druid.png"})
 const nameRef=useRef()
- const dane=useSelector((state)=>state.setFacada)
     const dispatch=useDispatch()
  
 const nav=useRouter()

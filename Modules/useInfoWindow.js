@@ -6,7 +6,7 @@ const useInfoWindow = (message,windowInfo,from) => {
 const dispatch=useDispatch()
 useEffect(()=>{
     if(message===true){
-        console.info("REFRESH, REFRESH, REFRES")
+       
         dispatch(expireMessage(from))
         
         if(windowInfo.windowIsOpen===false){

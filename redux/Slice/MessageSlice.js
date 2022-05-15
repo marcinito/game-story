@@ -58,7 +58,7 @@ const messageSlice = createSlice({
          }
       },
       expireMessage(state,action){
-          console.info(action)
+          
           switch(action.payload){
               case "backpack":
                 state=[...state,state[0].backpack=false];break;

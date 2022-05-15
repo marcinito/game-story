@@ -8,28 +8,12 @@ import Tawerna from "./Tawerna";
 import About from "./About";
 import Player from "./Player";
 const DisplayOption = () => {
+    
     const router=useRouter()
     const containerRef=useRef()
 const whatDisplay=useSelector((state)=>state.menuOption.option)
-useEffect(()=>{
-console.info(whatDisplay)
 
-if(whatDisplay==="player"){
-containerRef.current.transform=`scaleX(0)`
-}
-
-
-    // if(whatDisplay==="tawerna"){
-    // containerRef.current.style.gridColumn="3/5"
-    // console.info("wow")
-    // }
-    // else if(whatDisplay==="shop"){
-    //     containerRef.current.style.gridColumn="3/5"
-    // }
-    // else{
-    //     containerRef.current.style.gridColumn="4/5"
-    // }
-    },[whatDisplay])
+console.info(whatDisplay,"--option")
 
     const selectedOption=()=>{
    

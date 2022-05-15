@@ -10,6 +10,7 @@ const menuOptions = createSlice({
   initialState,
   reducers: {
     changeOption(state,action) {
+      console.info(action)
       state.option=action.payload
     },
     changeOptionTawerna(state,action) {

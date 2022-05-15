@@ -36,7 +36,7 @@ if(menuOption!=="player")
 
 
 useEffect(()=>{
-   console.info(windowIsOpen)
+
 if(windowIsOpen.windowIsOpen===true){
     handleWindow()
     
