@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = { 
-    option:"player",
-    optionTawerna:"choice"
+    option:"default",
+    optionTawerna:"choice",
+    
  }
 
 const menuOptions = createSlice({

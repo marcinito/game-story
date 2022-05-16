@@ -7,6 +7,7 @@ import { useEffect,useRef } from "react";
 import Tawerna from "./Tawerna";
 import About from "./About";
 import Player from "./Player";
+import Default from "./Default";
 const DisplayOption = () => {
     
     const router=useRouter()
@@ -22,13 +23,16 @@ console.info(whatDisplay,"--option")
                 return(<Shop/>);
                 case "backpack":
                     return(<BackPack/>);
-                    case "tawerna":
+                    case "tavern":
                         return(<Tawerna/>);
                         case "About":
                             return(<About/>);
-                        case "player":
-                            return(<Player/>)
-
+                            case "player":
+                                return(<Player/>)
+                                case "default":
+                                    return (<Default/>)
+                       
+                          
         }
       
     }

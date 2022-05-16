@@ -1,0 +1,52 @@
+.container {
+  position: relative;
+  background-color: black;
+  height: 98%;
+  width: 98%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  overflow: hidden;
+  -webkit-perspective: 100px;
+          perspective: 100px;
+}
+
+.container .greetings {
+  color: white;
+  font-size: 5rem;
+  position: absolute;
+  -webkit-animation: up 10s 0.3s  linear forwards;
+          animation: up 10s 0.3s  linear forwards;
+}
+
+@-webkit-keyframes up {
+  0% {
+    -webkit-perspective: 100px;
+            perspective: 100px;
+    -webkit-transform: rotateX(1deg) translateY(0px);
+            transform: rotateX(1deg) translateY(0px);
+  }
+  100% {
+    -webkit-perspective: 100px;
+            perspective: 100px;
+    -webkit-transform: rotateX(1deg) translateY(-500px);
+            transform: rotateX(1deg) translateY(-500px);
+  }
+}
+
+@keyframes up {
+  0% {
+    -webkit-perspective: 100px;
+            perspective: 100px;
+    -webkit-transform: rotateX(1deg) translateY(0px);
+            transform: rotateX(1deg) translateY(0px);
+  }
+  100% {
+    -webkit-perspective: 100px;
+            perspective: 100px;
+    -webkit-transform: rotateX(1deg) translateY(-500px);
+            transform: rotateX(1deg) translateY(-500px);
+  }
+}
+/*# sourceMappingURL=Default.module.css.map */

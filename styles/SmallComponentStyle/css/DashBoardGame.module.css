@@ -110,25 +110,41 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     background: url("../../public/stara-kartka-papieru.png");
     background-size: cover;
   }
   .defaultOption {
-    width: 100%;
-    height: 10%;
+    width: 20%;
+    height: 100%;
     background-color: skyblue;
     border: 1px solid;
     border-image-source: url("../../public/ramka.jpg");
     border-image-slice: 30 30 30 30;
     border-image-repeat: repeat;
-    border-image-width: 5px;
+    border-image-width: 0 5px 0 0;
     background: url("../../public/stara-kartka-papieru.png");
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    font-size: 3rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .focusOption {
     color: darkcyan;
@@ -155,8 +171,9 @@
   .decoration {
     position: absolute;
     background: url("../../public/stara-kartka-papieru.png");
-    height: 25%;
-    width: 100%;
+    height: 34.33%;
+    width: 50%;
+    left: 50%;
     overflow: hidden;
     -webkit-transform: scale(1);
             transform: scale(1);

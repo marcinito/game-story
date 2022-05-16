@@ -33,7 +33,7 @@
             li{
                 border-bottom:1px solid black;
                 text-align: center;
-                font-size:2.6rem;
+                font-size:2.3rem;
                 background: url("../../public/stara-kartka-papieru2.png");
                 background-origin: center;
                 font-weight:bold;
@@ -63,7 +63,7 @@
             font-weight:bold;
             font-size:1.5rem;
             
-          
+         
             
             &::-webkit-scrollbar{
                 width:10px;
@@ -83,7 +83,7 @@
                 font-family: 'Inconsolata', monospace;
                 text-align: center;
                 z-index:2;
-              margin-top:78%;
+              margin-top:85%;
                height:10%;
                 font-weight:bold;
            
@@ -161,12 +161,17 @@
         .nav{
             position:relative;
             list-style-type:none;
-            height:30%;
-            overflow-y:scroll;
+            height:25%;
+            overflow-y: scroll;
             border:3px solid red;
             border-image-source: url("../../public/ramka-monster.png");
             border-image-slice:90;
             border-image-width:5px;
+           overflow:hidden;;
+            display:flex;
+            flex-direction: column;
+            flex-wrap:wrap;
+            
             &::-webkit-scrollbar{
                 width:10px;
                 background: url("../../public/stara-kartka-papieru2.png");
@@ -181,9 +186,10 @@
               }
            
             li{
+                width:33.33%;
                 border-bottom:1px solid black;
                 text-align: center;
-                font-size:2.6rem;
+                font-size:2.2rem;
                 background: url("../../public/stara-kartka-papieru2.png");
                 background-origin: center;
                 font-weight:bold;
@@ -197,7 +203,7 @@
         }
         .section{
             position: absolute;
-            width:100%;
+            width:80%;
             height:70%;
             border:3px solid red;
             border-image-source: url("../../public/ramka-monster.png");
@@ -212,6 +218,8 @@
             -webkit-text-stroke:0.5px green;
             font-weight:bold;
             font-size:1.5rem;
+            left:50%;
+            transform:translate(-50%,0);
             
           
             
@@ -311,8 +319,8 @@
         .nav{
             position:relative;
             list-style-type:none;
-            height:30%;
-            overflow-y:scroll;
+            height:25%;
+           overflow:hidden;
             border:3px solid red;
             border-image-source: url("../../public/ramka-monster.png");
             border-image-slice:90;
@@ -333,7 +341,160 @@
             li{
                 border-bottom:1px solid black;
                 text-align: center;
-                font-size:2.6rem;
+                font-size:2.2rem;
+                background: url("../../public/stara-kartka-papieru2.png");
+                background-origin: center;
+                font-weight:bold;
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                &:hover{
+                    background: url("../../public/stara-kartka-papieru.png");
+                    color:white;
+                    box-shadow:2px 2px 10px black,2px 2px 20px brown;
+                }
+            }
+        }
+        .section{
+            position: absolute;
+            width:70%;
+            height:70%;
+            border:3px solid red;
+            border-image-source: url("../../public/ramka-monster.png");
+            border-image-slice:90;
+            border-image-width:5px;
+           display:flex;
+           flex-direction: column;
+            overflow-y:scroll;
+            justify-content: center;
+            align-items: center;
+            color:white;
+            -webkit-text-stroke:0.5px green;
+            font-weight:bold;
+            font-size:1.5rem;
+          
+            left:50%;
+            transform:translate(-50%,0);
+            
+          
+            
+            &::-webkit-scrollbar{
+                width:10px;
+            }
+            &::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 5px grey;
+                border-radius: 10px;
+              }
+              &::-webkit-scrollbar-thumb {
+                background:url("../../public/drawno2.png");
+                border-radius: 10px;
+              }
+           
+          
+            .name{
+                
+                font-family: 'Inconsolata', monospace;
+                text-align: center;
+                z-index:2;
+              margin-top:64%;
+               height:10%;
+                font-weight:bold;
+           
+                display:flex;
+              
+                font-size:2rem;
+            }
+            .img{
+                width:20%;
+               
+                margin-top:5%;
+             
+            }
+            .describe{
+               
+                margin-top:5%;
+                font-weight:bold;
+                text-align: center;
+                
+            }
+         
+            .skills{
+             
+                margin-top:5%;
+                border:3px solid brown;
+                width:95%;
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-image-source:url("../../public/ramka-box.png");
+                border-image-slice:30;
+              
+               margin-bottom:5%;
+               h3{
+                   border-bottom:1px solid black;
+                   margin-top:3%;
+               }
+         
+                .itemDrop{
+                    display:flex;
+                    flex-direction: column;
+                    align-items:center;
+                    border-bottom:1px solid black;
+                    span{
+                font-size:2rem;
+                font-weight:bold;
+                    }
+                    h3{display:inline-block;}
+                    img{width:15%;}
+                }
+                .moneyDrop{
+                    display:flex;
+                    flex-direction: column;
+                    align-items: center;
+                    img{width:20%}
+                    .amountMoney{
+                        font-weight:bold;
+                        font-size:2rem}
+                }
+            }
+        }
+    }
+ 
+}
+@media(min-width:1100px){
+    .container{
+   
+        background:linear-gradient(yellow 60%,orange,lime 90%);
+        width:100%;
+        height:99%;
+        background: url("../../public/extraImage/biblioteka.png");
+     
+        
+        .nav{
+            position:relative;
+            list-style-type:none;
+            height:25%;
+           overflow:hidden;
+            border:3px solid red;
+            border-image-source: url("../../public/ramka-monster.png");
+            border-image-slice:90;
+            border-image-width:5px;
+            &::-webkit-scrollbar{
+                width:10px;
+                background: url("../../public/stara-kartka-papieru2.png");
+            }
+            &::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 5px black;
+                border-radius: 10px;
+              }
+              &::-webkit-scrollbar-thumb{
+                  background: url("../../public/drawno2.png");
+                  border:1px solid black;
+              }
+           
+            li{
+                border-bottom:1px solid black;
+                text-align: center;
+                font-size:2.2rem;
                 background: url("../../public/stara-kartka-papieru2.png");
                 background-origin: center;
                 font-weight:bold;
@@ -362,6 +523,7 @@
             -webkit-text-stroke:0.5px green;
             font-weight:bold;
             font-size:1.5rem;
+          
             
           
             

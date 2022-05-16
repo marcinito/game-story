@@ -142,7 +142,7 @@ const initialState = [
     claws, sharp teeth, cunning personality`
   },
   {
-    name:"Toxic Spider",
+    name:"Spider",
     img:"./monster/toxic-spider.png",
     hpLevel:900,
     hpTotal:900,
@@ -159,7 +159,7 @@ const initialState = [
     claws, sharp teeth, cunning personality`
   },
   {
-    name:"A stray wanderer",
+    name:"Wanderer",
     img:"./monster/another-plater.png",
     hpLevel:1050,
     hpTotal:1050,

@@ -1,0 +1,23 @@
+.container{
+    position:relative;
+    background-color: black;
+    height:98%;
+    width:98%;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    overflow:hidden;
+    perspective:100px;
+    .greetings{
+        color:white;
+        font-size:5rem;
+        position:absolute;
+        animation:up 10s 0.3s  linear forwards;
+       
+       
+    }
+    @keyframes up{
+        0%{ perspective:100px;transform: rotateX(1deg) translateY(0px)}
+        100%{ perspective:100px;transform:rotateX(1deg) translateY(-500px)}
+    }
+}
