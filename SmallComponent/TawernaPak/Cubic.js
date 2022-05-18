@@ -1,12 +1,9 @@
 import s from '../../styles/SmallComponentStyle/TawernaStyles/Cubic.module.scss'
 
 import React, { useState,useRef,useEffect } from 'react';
-import { changeOptionTawerna } from '../../redux/Slice/MenuOptions';
 import { useSelector,useDispatch } from 'react-redux'
 import { debitFromAccout, paymentToAccount } from '../../redux/Slice/Levels';
-import { openCloseWindowMessage } from '../../redux/Slice/infoWindowSlice';
-import { getMessageFromWordl } from '../../redux/Slice/MessageSlice';
-import { expireMessage } from '../../redux/Slice/MessageSlice';
+
 import useInfoWindow from '../../Modules/useInfoWindow';
 const Cubic = (props) => {
     
@@ -41,7 +38,7 @@ if(throwResult===chosenNumber.current){
         setEndScore("...")
         props.fn(false)
     },1000)
-dispatch(paymentToAccount(parseInt(payment)))
+dispatch(paymentToAccount(parseInt(payment*payment)))
     return
 }
 
@@ -61,15 +58,16 @@ else if(throwResult!==chosenNumber.current){
 },[throwResult])
 
 const chosenNumber=useRef(null)
-let betArray=[1,2,3,4,5,6]
+let betArray=[{number:1,id:"1"},{number:2,id:"2"},{number:3,id:"3"},{number:4,id:"4"},{number:5,id:"5"},{number:6,id:"6"}]
 
 
 const drawDot=(howMany)=>{
+    let randomString="This,serve,as,uniquekeytoeveryelementinthisarray"
     let tablica=[]
     for(let i=0;i<howMany;i++){
-    tablica.push(howMany)
+    tablica.push((Math.floor(Math.random()*324324234)+(randomString.slice(0,Math.floor(Math.random()*randomString.length)))))
     }
-   
+   console.info(tablica)
 return tablica
 }
 
@@ -111,7 +109,7 @@ const makeBet=(e,el)=>{
 let allOption=[...e.target.parentNode.children]
 allOption.forEach(el=>el.style.borderWidth="0px")
 e.target.style.borderWidth="10px"
-chosenNumber.current=el
+chosenNumber.current=el.number
 }
 
 useEffect(()=>{
@@ -130,42 +128,42 @@ if(chosenNumber.current!==null){
             <div  className={`${s.one} ${s.all}`} ref={div1}>
      {drawDot(1).map(el=>{
          return (
-             <div key={1} className={s.dot}></div>
+             <div key={el} className={s.dot}></div>
          )
      })}
             </div>
             <div  className={`${s.two} ${s.all}` } ref={div2}  >
             {drawDot(2).map(el=>{
          return (
-             <div key={2} className={s.dot}></div>
+             <div key={el} className={s.dot}></div>
          )
      })}
             </div>
             <div  className={`${s.three} ${s.all}`} ref={div3} >
             {drawDot(3).map(el=>{
          return (
-             <div key={3} className={s.dot}></div>
+             <div key={el} className={s.dot}></div>
          )
      })}
             </div>
             <div  className={`${s.four} ${s.all}`} ref={div4}  >
             {drawDot(4).map(el=>{
          return (
-             <div key={4} className={s.dot}></div>
+             <div key={el} className={s.dot}></div>
          )
      })}
             </div>
             <div  className={`${s.five} ${s.all}`} ref={div5} >
             {drawDot(5).map(el=>{
          return (
-             <div key={5} className={s.dot}></div>
+             <div key={el} className={s.dot}></div>
          )
      })}
             </div>
             <div  className={`${s.last} ${s.all}`} ref={div6} >
             {drawDot(6).map(el=>{
          return (
-             <div key={6} className={s.dot}></div>
+             <div key={el} className={s.dot}></div>
          )
      })}
             </div>
@@ -183,9 +181,9 @@ if(chosenNumber.current!==null){
               <h1>{endScore}</h1>
             </div>
             <div className={s.bet} ref={betRef}>
-          {betArray.map(el=>{
+          {betArray.map((el,i)=>{
               return(
-                  <div key={Math.random()*4542} className={s.betChoice} onClick={(e)=>makeBet(e,el)}>{el}</div>
+                  <div key={el.id} className={s.betChoice} onClick={(e)=>makeBet(e,el)}>{el.number}</div>
               )
           })}
             </div>

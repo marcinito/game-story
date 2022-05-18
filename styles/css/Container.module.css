@@ -76,7 +76,7 @@
 @media (min-width: 1100px) {
   .container {
     position: absolute;
-    width: 90vw;
+    width: 100vw;
     height: 100vh;
     background: url("../public/extraImage/backgroundPrime.png");
     background-size: cover;

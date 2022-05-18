@@ -3,7 +3,8 @@ import { useEffect, useRef } from "react";
 import {useSelector,useDispatch} from 'react-redux'
 import { changeOption } from '../redux/Slice/MenuOptions';
 import {useRouter} from 'next/router'
-const DashBoardGame = () => {
+const DashBoardGame = (props) => {
+    console.info(props)
     const router=useRouter()
     const dispatch=useDispatch()
     const sel=useSelector((state)=>state.menuOption)
@@ -17,14 +18,14 @@ querySelectorAllRef.current=[...container.current.children]
 querySelectorAllRef.current[5].classList.add(s.focusOption)
 },[])
  const changeOptions=(e,prop)=>{
-     if(prop==="player"){
-         
-     }
+   
      if(prop==="forest"){
          console.info(prop)
          fightConfirmRef.current.style.transform=`scale(1)`
+         fightConfirmRef.current.style.zIndex=200
+        return
          
-         return
+       
      }
     querySelectorAllRef.current.forEach((el,i,arr)=>{
         el.classList.remove(s.focusOption)

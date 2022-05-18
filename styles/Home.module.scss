@@ -12,11 +12,14 @@ $colorBtnStart:#66FF33;
     background-color: darken(skyblue,50%);
     display: flex;
     flex-direction: column;
-    overflow:hidden;
+    overflow:scroll;
     background: url("../public/extraImage/background.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    &::-webkit-scrollbar{
+        width:0px;
+    }
   
   
 .textDiv{

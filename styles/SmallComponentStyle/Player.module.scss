@@ -3,6 +3,588 @@
 $imgBGC:url("../../public/stara-kartka-papieru.png");
 $imgBorder:url("../../public/ramka-drut-kolczasty.png");
 $bgcSkills:#A67D3D;
+$widthSkills:100%;
+.container{
+    position:relative;
+    width:100%;
+    height:100%;
+   
+display:grid;
+grid-template-columns:repeat(2,1fr);
+grid-template-rows:repeat(5,1fr);
+    background:url("../../public/extraImage/background2.png");
+    grid-row:2/12;
+    grid-column:1/5;
+    overflow:hidden;
+  
+    
+}
+
+.imgCharacter{
+    position: absolute;
+    width:100%;
+    height:100%;
+ grid-column: 1/2;
+ grid-row: 1/5;
+
+}
+//Eq//
+.eq{
+    position:absolute;
+    width:110%;
+    left:-10%;
+    height:100%;
+    grid-column: 2/3;
+    
+    grid-row: 1/4;
+    border:10px solid;
+    border-image-source: $imgBorder;
+    border-image-slice: 30 30 30 30;
+    border-image-repeat:repeat;
+    border-image-width: 1px 1px 5px 5px;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(7,1fr);
+   background:rgba(0,0,0,.4);
+   
+
+.name{
+ font-family: 'Grape Nuts', cursive;
+ text-align: center;
+ grid-column: 2/3;
+ text-decoration: underline solid;
+ position:absolute;
+ 
+
+
+}
+
+    .helmet{
+        position:relative;
+        border:1px solid black;
+        min-width:100%;
+        min-height:100%;
+        grid-column: 2/3;
+        grid-row: 2/3;
+        position:relative;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
+    
+    }
+    .armor{
+        border:1px solid black;
+        min-width:100%;
+        min-height:100%;
+        grid-column: 2/3;
+        grid-row: 3/5;
+        position:relative;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
+
+    
+    }
+    .weapon{
+        border:1px solid black;
+        min-width:100%;
+        min-height:100%;
+        grid-column: 1/2;
+        grid-row: 3/5;
+        position:relative;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
+    }
+    .shield{
+        border:1px solid black;
+        min-width:100%;
+        min-height:100%;
+        grid-column: 3/4;
+        grid-row: 3/5;
+        position:relative;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
+    }
+    .legs{
+        border:1px solid black;
+        min-width:100%;
+        min-height:100%;
+        grid-column: 2/3;
+        grid-row: 5/7;
+        position:relative;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
+    }
+    .shoe{
+        position:relative;
+        border:1px solid black;
+        min-width:100%;
+        min-height:100%;
+        grid-column: 2/3;
+        grid-row: 7/8;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
+    }
+    .gold{
+        position:relative;
+        border:1px solid black;
+        min-width:100%;
+        min-height:100%;
+        grid-column: 3/4;
+        grid-row: 5/6;
+        background:url("../../public/ItemsGame/gold.png");
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-position: center;
+        overflow:hidden;
+       
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        
+        .spanAmountGold{
+            font-size:2rem;
+            text-align: center;
+            position:absolute;
+            width:100%;
+            font-weight:bold;
+            color:red;
+            -webkit-text-stroke:1px orangered;
+        }
+        .img{
+            width:100px;
+        }
+    }
+    .strenght{
+        position:absolute;
+        width:80%;
+        height:100%;
+        border:1px solid black;
+        grid-column:1/2;
+        grid-row:5/6;
+        left:20%;
+        font-size:2rem;
+        background-color: gray;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
+        background: url("../../public/atak-power.png");
+        background-size: cover;
+        background-position: center;
+        
+    .displayStrenght{
+    background: conic-gradient(gray,black);
+        position:absolute;
+        color:white;
+        opacity:0.8;
+       
+        
+       
+        display:block;
+        font-weight:bold;
+        font-size:1.5rem;
+     
+       
+    }
+        
+        .img{
+            width:100%;
+            height:60%;
+            position:absolute;
+       
+        }
+    }
+    
+    .itemsRatio{
+        width:100%;
+        height:100%;
+        position:absolute;
+    }
+
+}
+
+//Display skills//
+.pakSkills{
+    grid-row:5/6;
+    grid-column: 1/3;
+    position:relative;
+    width:99%;
+    height:97%;
+    left:50%;
+    transform:translate(-50%,0);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  
+    background-color: beige;
+    border:5px solid;
+  
+    border-image-source: url("../../public/ramka.jpg") ;
+    border-image-slice: 30 ;
+    border-image-repeat:repeat;
+    border-image-width: 10px;
+  
+    background: url("../../public/wypalona-kartka-papieru.png");
+    background-repeat: repeat;
+    background-size:cover;
+  font-weight:bold;
+  letter-spacing:1px;
+    //--//@at-root
+    .stageHp{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:$widthSkills;
+        height:99%;
+        background-color: $bgcSkills;
+      text-align: center;
+      font-weight:bold;
+      font-size:1rem;
+        border:3px solid;
+        position:relative;
+        border-image-source: url("../../public/ramka.jpg") ;
+        border-image-slice: 30;
+        border-image-repeat:repeat;
+        border-image-width: 2px;
+        margin-top:2%;
+        
+       
+    
+    }
+    .spanHp{
+        position:absolute;
+        left:0;
+        top:0;
+        width:0%;
+        height:100%;
+        background-color: #6B8E23; 
+        overflow:hidden;
+    }
+    .defFromArmor{
+        width:$widthSkills;
+        height:99%;
+        background-color:#ECEFF1;
+        position:absolute;
+        left:0;
+        top:0;
+
+    }
+    .stageHp:after{
+        content:"~HP~";
+        opacity:0;
+        animation: textLvl 1.5s infinite  ;
+        position:absolute;
+        width:fit-content; 
+        left:20%;
+    }
+    .stageLevel{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:$widthSkills;
+        height:99%;
+        background-color: $bgcSkills;
+      text-align: center;
+      font-weight:bold;
+      font-size:1rem;
+        border:3px solid;
+        position:relative;
+        border-image-source: url("../../public/ramka.jpg") ;
+        border-image-slice: 30;
+        border-image-repeat:repeat;
+        border-image-width: 2px;
+       
+    
+    }
+    .stageLevel:after{
+        content:"level";
+        opacity:0;
+        animation: textLvl 1.5s infinite  ;
+        position:absolute;
+        width:fit-content;
+        left:40%;
+       
+    }
+
+    @keyframes textLvl{
+        0%{transform:translateY(-5px) rotateY(20deg) ;opacity:0.5;color:red;-webkit-text-stroke:1px green; }
+        50%{ opacity:1;color:black;-webkit-text-stroke:1px blue;  }
+        100%{transform:translateY(-20px) rotateX(-10deg) ;opacity:0;color:red;-webkit-text-stroke:2px firebrick;}
+    }
+    .spanLevel{
+        position:absolute;
+        left:0;
+        top:0;
+        width:70%;
+        height:100%;
+        background-color: #4A148C;
+    }
+    .stageMagic{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:$widthSkills;
+        height:99%;
+        background-color: $bgcSkills;
+      text-align: center;
+      font-weight:bold;
+      font-size:1rem;
+        border:3px solid;
+        position:relative;
+        border-image-source: url("../../public/ramka.jpg") ;
+        border-image-slice: 0 30 30 30;
+        border-image-repeat:repeat;
+        border-image-width: 2px;
+    
+        
+    }
+    .stageMagic:after{
+        content:"magic level";
+        opacity:0;
+        animation: textLvl 1.5s infinite  ;
+        position:absolute;
+        width:fit-content;
+        left:60%;
+    
+    }
+    .spanMagic{
+       position:absolute;
+        left:0;
+        top:0;
+        width:10%;
+        height:100%;
+        background-color: #FF7F00;
+      
+        
+    }
+    .stageMana{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:$widthSkills;
+        height:100%;
+        background-color: $bgcSkills;
+      text-align: center;
+      font-weight:bold;
+      font-size:1rem;
+        border:3px solid;
+        position:relative;
+        border-image-source: url("../../public/ramka.jpg") ;
+        border-image-slice: 0 30 30 30;
+        border-image-repeat:repeat;
+        border-image-width: 2px;
+      
+        margin-bottom: 2%;
+       
+        
+    }
+    .stageMana:after{
+        content:"mana";
+        opacity:0;
+        animation: textLvl 1.5s infinite  ;
+        position:absolute;
+        width:fit-content;
+        left:80%;
+    
+    }
+    .spanMana{
+        position:absolute;
+        left:0;
+        top:0;
+        width:60%;
+        height:100%;
+        background-color:#236B8E;
+    }
+}
+.infoAboutItem{
+    width:100px;
+    height:100px;
+    background-color:#990033;
+   
+    z-index:10;
+
+  position:absolute;
+    opacity:1;
+    transform:scale(0);
+    border:5px solid;
+    border-image-source: url("../../public/ramka-drut-kolczasty.png") ;
+    border-image-slice: 30 30 30 30;
+    border-image-repeat:repeat;
+    border-image-width: 10px 10px 10px 10px;
+    box-shadow:0 0 15px rgba(0,0,0,.5);
+    border-radius:10%;
+    font-size:1.3rem;
+
+}
+.spells{
+   $spellsNameFont:'Grape Nuts', cursive;
+    position:absolute;
+    width:100%;
+    height:100%;
+    border:1px solid;
+    
+    border-image-source:url("../../public/ramka-forest.png");
+    border-image-slice:30;
+    border-image-width:1px;
+    border-image-outset: 0.5;
+   
+    grid-column:2/3;
+    grid-row:4/5;
+    opacity:0;
+    display:flex;
+    flex-direction:column;
+    
+    .exura{
+        background-color: #990033;
+        position:relative;
+        border:1px solid;
+        border-image-source:url("../../public/ramka-drut-kolczasty.png");
+        border-image-slice:30;
+        border-image-width:10px;
+        border-image-outset: 0.5;
+
+        span{
+            width:100%;
+            height:100%;
+            background-color: orange;
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:1;
+        }
+        h4{
+            
+            font-family: $spellsNameFont;
+            position:absolute;
+            width:100%;
+            text-align: center;
+            top:0;
+            z-index:1;
+        }
+       
+    }
+ 
+    .exuraVita{
+        position:relative;
+        border:1px solid;
+        border-image-source:url("../../public/ramka-drut-kolczasty.png");
+        border-image-slice:30;
+        border-image-width:10px;
+        border-image-outset: 0.5;
+        background-color: #990033;
+        span{
+            
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background-color: darken(pink,20%);
+            border-radius:10%;
+        }
+        h4{
+            font-family: $spellsNameFont;
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            z-index:1;
+
+        }
+        
+    }
+   
+    .exevoVis{
+        position:relative;
+       
+        border:1px solid;
+        border-image-source:url("../../public/ramka-drut-kolczasty.png");
+        border-image-slice:30;
+        border-image-width:10px;
+        border-image-outset: 0.5;
+        background-color: #990033;
+        span{
+           display:block;
+            width:100%;
+            height:100%;
+            background-color:darken(cyan,20%);
+            border-radius:10%;
+        }
+        h4{
+            font-family: $spellsNameFont;
+            position:absolute;
+            top:0;
+            width:100%;
+            text-align:center;
+        }
+    }
+    .exevoVis:disabled{}
+    .exevoVis:valid{
+        background-color: #990033;
+    }
+    .exevoMort{
+        position: relative;
+        background-color: #990033;
+        border:1px solid;
+        border-image-source:url("../../public/ramka-drut-kolczasty.png");
+        border-image-slice:30;
+        border-image-width:10px;
+        border-image-outset: 0.5;
+        span{
+            position:absolute;
+            display:block;
+            width:100%;
+            height:100%;
+            top:0;
+            background-color:darken(cyan,20%);
+            border-radius:10%;
+        }
+        h4{
+            font-family: $spellsNameFont;
+            position:absolute;
+            top:0;
+            text-align: center;
+            width:100%;
+        }
+    }
+    .exevoMort:disabled{
+       
+    }
+    .exevoMort:valid{
+        background-color: #990033;
+      }
+    
+}
+.animation{
+animation:reloadSpell 5s linear forwards
+}
+.spells > *{
+    height:25%;
+}
+@keyframes reloadSpell{
+    0%{width:0%}
+    100%{width:100%}
+}
+
+}
+@media(min-width:435px){
+   //background skills stage//@at-root
+$imgBGC:url("../../public/stara-kartka-papieru.png");
+$imgBorder:url("../../public/ramka-drut-kolczasty.png");
+$bgcSkills:#A67D3D;
+$widthSkills:100%;
 .container{
     position:relative;
     width:100%;
@@ -141,7 +723,587 @@ grid-template-rows:repeat(5,1fr);
         grid-column: 3/4;
         grid-row: 5/6;
         background:url("../../public/ItemsGame/gold.png");
-        background-size: contain;
+        background-size: 60%;
+        background-repeat: no-repeat;
+        background-position: center;
+       
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        
+        .spanAmountGold{
+            font-size:2rem;
+            text-align: center;
+            position:absolute;
+            width:100%;
+            font-weight:bold;
+            color:gold;
+            -webkit-text-stroke:1px darken(gold,60%)
+        }
+    }
+    .strenght{
+        position:absolute;
+        width:80%;
+        height:100%;
+        border:1px solid black;
+        grid-column:1/2;
+        grid-row:5/6;
+        left:20%;
+        font-size:2rem;
+        background-color: gray;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
+        background: url("../../public/atak-power.png");
+        background-size: cover;
+        background-position: center;
+        
+    .displayStrenght{
+    background: conic-gradient(gray,black);
+        position:absolute;
+        color:white;
+        opacity:0.8;
+       
+        
+       
+        display:block;
+        font-weight:bold;
+        font-size:1.5rem;
+     
+       
+    }
+        
+        .img{
+            width:100%;
+            height:60%;
+            position:absolute;
+       
+        }
+    }
+    
+    .itemsRatio{
+        width:100%;
+        height:100%;
+        position:absolute;
+    }
+
+}
+
+//Display skills//
+.pakSkills{
+    grid-row:5/6;
+    grid-column: 1/3;
+    position:relative;
+    width:99%;
+    height:100%;
+    left:50%;
+    transform:translate(-50%,0);
+    display:flex;
+    flex-direction: column;
+  
+  
+    background-color: beige;
+    border:1px solid;
+  
+    border-image-source: url("../../public/ramka.jpg") ;
+    border-image-slice: 30 ;
+    border-image-repeat:repeat;
+    border-image-width: 5px 0 0 0;
+  
+    background: url("../../public/wypalona-kartka-papieru.png");
+    background-repeat: repeat;
+    background-size:cover;
+  font-weight:bold;
+  letter-spacing:1px;
+    //--//@at-root
+   
+    .stageHp{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:$widthSkills;
+        height:100%;
+        background-color: $bgcSkills;
+      text-align: center;
+      font-weight:bold;
+      font-size:1rem;
+        border:3px solid;
+        position:relative;
+        border-image-source: url("../../public/ramka.jpg") ;
+        border-image-slice: 30;
+        border-image-repeat:repeat;
+        border-image-width: 2px 2px 0 2px;
+        margin-top:2%;
+        
+       
+    
+    }
+    .spanHp{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        position:absolute;
+        left:0;
+        top:0;
+        width:0%;
+        height:100%;
+        background-color: #6B8E23; 
+        overflow:hidden;
+    }
+    .defFromArmor{
+        width:$widthSkills;
+        height:100%;
+        background-color:#ECEFF1;
+        position:absolute;
+        left:0;
+        top:0;
+
+    }
+    .stageHp:after{
+        content:"~HP~";
+        opacity:0;
+        animation: textLvl 1.5s infinite  ;
+        position:absolute;
+        width:fit-content; 
+        left:20%;
+    }
+    .stageLevel{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:$widthSkills;
+        height:100%;
+        background-color: $bgcSkills;
+      text-align: center;
+      font-weight:bold;
+      font-size:1rem;
+        border:3px solid;
+        position:relative;
+        border-image-source: url("../../public/ramka.jpg") ;
+        border-image-slice: 30;
+        border-image-repeat:repeat;
+        border-image-width: 2px;
+       
+    
+    }
+    .stageLevel:after{
+        content:"level";
+        opacity:0;
+        animation: textLvl 1.5s infinite  ;
+        position:absolute;
+        width:fit-content;
+        left:40%;
+       
+    }
+
+    @keyframes textLvl{
+        0%{transform:translateY(-5px) rotateY(20deg) ;opacity:0.5;color:red;-webkit-text-stroke:1px green; }
+        50%{ opacity:1;color:black;-webkit-text-stroke:1px blue;  }
+        100%{transform:translateY(-20px) rotateX(-10deg) ;opacity:0;color:red;-webkit-text-stroke:2px firebrick;}
+    }
+    .spanLevel{
+        position:absolute;
+        left:0;
+        top:0;
+        width:70%;
+        height:100%;
+        background-color: #4A148C;
+    }
+    .stageMagic{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:$widthSkills;
+        height:100%;
+        background-color: $bgcSkills;
+      text-align: center;
+      font-weight:bold;
+      font-size:1rem;
+        border:3px solid;
+        position:relative;
+        border-image-source: url("../../public/ramka.jpg") ;
+        border-image-slice: 0 30 30 30;
+        border-image-repeat:repeat;
+        border-image-width: 2px;
+    
+        
+    }
+    .stageMagic:after{
+        content:"magic level";
+        opacity:0;
+        animation: textLvl 1.5s infinite  ;
+        position:absolute;
+        width:fit-content;
+        left:60%;
+    
+    }
+    .spanMagic{
+       position:absolute;
+        left:0;
+        top:0;
+        width:10%;
+        height:100%;
+        background-color: #FF7F00;
+      
+        
+    }
+    .stageMana{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:$widthSkills;
+        height:100%;
+        background-color: $bgcSkills;
+      text-align: center;
+      font-weight:bold;
+      font-size:1rem;
+        border:3px solid;
+        position:relative;
+        border-image-source: url("../../public/ramka.jpg") ;
+        border-image-slice: 0 30 30 30;
+        border-image-repeat:repeat;
+        border-image-width: 2px;
+      
+        margin-bottom: 2%;
+       
+        
+    }
+    .stageMana:after{
+        content:"mana";
+        opacity:0;
+        animation: textLvl 1.5s infinite  ;
+        position:absolute;
+        width:fit-content;
+        left:80%;
+    
+    }
+    .spanMana{
+        position:absolute;
+        left:0;
+        top:0;
+        width:60%;
+        height:100%;
+        background-color:#236B8E;
+    }
+}
+.infoAboutItem{
+    width:100px;
+    height:100px;
+    background-color:#990033;
+   
+top:20%;
+
+    position: absolute;
+    opacity:0;
+    transform:scale(0);
+    border:5px solid;
+    border-image-source: url("../../public/ramka-drut-kolczasty.png") ;
+    border-image-slice: 30 30 30 30;
+    border-image-repeat:repeat;
+    border-image-width: 10px 10px 10px 10px;
+    box-shadow:0 0 15px rgba(0,0,0,.5);
+    border-radius:10%;
+
+}
+.spells{
+   $spellsNameFont:'Grape Nuts', cursive;
+    position:absolute;
+    width:100%;
+    height:100%;
+    border:1px solid;
+    
+    border-image-source:url("../../public/ramka-forest.png");
+    border-image-slice:30;
+    border-image-width:1px;
+    border-image-outset: 0.5;
+   
+    grid-column:2/3;
+    grid-row:4/5;
+    opacity:0;
+    display:flex;
+    flex-direction:column;
+    
+    .exura{
+        background-color: #990033;
+        position:relative;
+        border:1px solid;
+        border-image-source:url("../../public/ramka-drut-kolczasty.png");
+        border-image-slice:30;
+        border-image-width:10px;
+        border-image-outset: 0.5;
+
+        span{
+            width:100%;
+            height:100%;
+            background-color: orange;
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:1;
+        }
+        h4{
+            
+            font-family: $spellsNameFont;
+            position:absolute;
+            width:100%;
+            text-align: center;
+            top:0;
+            z-index:1;
+        }
+       
+    }
+ 
+    .exuraVita{
+        position:relative;
+        border:1px solid;
+        border-image-source:url("../../public/ramka-drut-kolczasty.png");
+        border-image-slice:30;
+        border-image-width:10px;
+        border-image-outset: 0.5;
+        background-color: #990033;
+        span{
+            
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background-color: darken(pink,20%);
+            border-radius:10%;
+        }
+        h4{
+            font-family: $spellsNameFont;
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            z-index:1;
+
+        }
+        
+    }
+   
+    .exevoVis{
+        position:relative;
+       
+        border:1px solid;
+        border-image-source:url("../../public/ramka-drut-kolczasty.png");
+        border-image-slice:30;
+        border-image-width:10px;
+        border-image-outset: 0.5;
+        background-color: #990033;
+        span{
+           display:block;
+            width:100%;
+            height:100%;
+            background-color:darken(cyan,20%);
+            border-radius:10%;
+        }
+        h4{
+            font-family: $spellsNameFont;
+            position:absolute;
+            top:0;
+            width:100%;
+            text-align:center;
+        }
+    }
+    .exevoVis:disabled{}
+    .exevoVis:valid{
+        background-color: #990033;
+    }
+    .exevoMort{
+        position: relative;
+        background-color: #990033;
+        border:1px solid;
+        border-image-source:url("../../public/ramka-drut-kolczasty.png");
+        border-image-slice:30;
+        border-image-width:10px;
+        border-image-outset: 0.5;
+        span{
+            position:absolute;
+            display:block;
+            width:100%;
+            height:100%;
+            top:0;
+            background-color:darken(cyan,20%);
+            border-radius:10%;
+        }
+        h4{
+            font-family: $spellsNameFont;
+            position:absolute;
+            top:0;
+            text-align: center;
+            width:100%;
+        }
+    }
+    .exevoMort:disabled{
+       
+    }
+    .exevoMort:valid{
+        background-color: #990033;
+      }
+    
+}
+.animation{
+animation:reloadSpell 5s linear forwards
+}
+.spells > *{
+    height:25%;
+}
+@keyframes reloadSpell{
+    0%{width:0%}
+    100%{width:100%}
+}
+  
+}
+
+@media(min-width:700px){
+        //background skills stage//@at-root
+$imgBGC:url("../../public/stara-kartka-papieru.png");
+$imgBorder:url("../../public/ramka-drut-kolczasty.png");
+$bgcSkills:#A67D3D;
+$widthSkills:95%;
+.container{
+    position:relative;
+    width:100%;
+    height:100%;
+   
+display:grid;
+grid-template-columns:repeat(2,1fr);
+grid-template-rows:repeat(5,1fr);
+    background:url("../../public/extraImage/background2.png");
+    grid-row:2/12;
+    grid-column:1/5;
+    overflow:hidden;
+  
+    
+}
+
+.imgCharacter{
+    position: absolute;
+    width:100%;
+    height:100%;
+ grid-column: 1/2;
+ grid-row: 1/5;
+
+}
+//Eq//
+.eq{
+    position:absolute;
+    width:110%;
+    left:-10%;
+    height:100%;
+    grid-column: 2/3;
+    
+    grid-row: 1/4;
+    border:10px solid;
+    border-image-source: $imgBorder;
+    border-image-slice: 30 30 30 30;
+    border-image-repeat:repeat;
+    border-image-width: 1px 1px 5px 5px;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(7,1fr);
+   
+
+.name{
+ font-family: 'Grape Nuts', cursive;
+ text-align: center;
+ grid-column: 2/3;
+ text-decoration: underline solid;
+ position:absolute;
+ 
+
+
+}
+
+    .helmet{
+        position:relative;
+        border:1px solid black;
+        min-width:100%;
+        min-height:100%;
+        grid-column: 2/3;
+        grid-row: 2/3;
+        position:relative;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
+    
+    }
+    .armor{
+        border:1px solid black;
+        min-width:100%;
+        min-height:100%;
+        grid-column: 2/3;
+        grid-row: 3/5;
+        position:relative;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
+
+    
+    }
+    .weapon{
+        border:1px solid black;
+        min-width:100%;
+        min-height:100%;
+        grid-column: 1/2;
+        grid-row: 3/5;
+        position:relative;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
+    }
+    .shield{
+        border:1px solid black;
+        min-width:100%;
+        min-height:100%;
+        grid-column: 3/4;
+        grid-row: 3/5;
+        position:relative;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
+    }
+    .legs{
+        border:1px solid black;
+        min-width:100%;
+        min-height:100%;
+        grid-column: 2/3;
+        grid-row: 5/7;
+        position:relative;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
+    }
+    .shoe{
+        position:relative;
+        border:1px solid black;
+        min-width:100%;
+        min-height:100%;
+        grid-column: 2/3;
+        grid-row: 7/8;
+        border:5px solid;
+        border-image-source: $imgBorder;
+        border-image-slice:30;
+        background: $imgBGC;
+    }
+    .gold{
+        position:relative;
+        border:1px solid black;
+        min-width:100%;
+        min-height:100%;
+        grid-column: 3/4;
+        grid-row: 5/6;
+        background:url("../../public/ItemsGame/gold.png");
+        background-size: 50%;
         background-repeat: no-repeat;
         background-position: center;
        
@@ -215,7 +1377,8 @@ grid-template-rows:repeat(5,1fr);
     position:relative;
     width:100%;
     height:100%;
-
+    left:50%;
+    transform:translate(-50%,0);
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -226,7 +1389,7 @@ grid-template-rows:repeat(5,1fr);
     border-image-source: url("../../public/ramka.jpg") ;
     border-image-slice: 30 ;
     border-image-repeat:repeat;
-    border-image-width: 10px;
+    border-image-width: 10px 0px 0px 0px;
     background: url("../../public/wypalona-kartka-papieru.png");
     background-repeat: repeat;
     background-size:cover;
@@ -235,7 +1398,7 @@ grid-template-rows:repeat(5,1fr);
     //--//@at-root
     .stageHp{
 
-        width:100%;
+        width:$widthSkills;
         height:100%;
         background-color: $bgcSkills;
       text-align: center;
@@ -262,7 +1425,8 @@ grid-template-rows:repeat(5,1fr);
         overflow:hidden;
     }
     .defFromArmor{
-        width:100%;
+        width:$widthSkills;
+     
         height:100%;
         background-color:#ECEFF1;
         position:absolute;
@@ -279,7 +1443,7 @@ grid-template-rows:repeat(5,1fr);
         left:20%;
     }
     .stageLevel{
-        width:100%;
+        width:$widthSkills;
         height:100%;
         background-color: $bgcSkills;
       text-align: center;
@@ -318,7 +1482,7 @@ grid-template-rows:repeat(5,1fr);
         background-color: #4A148C;
     }
     .stageMagic{
-        width:100%;
+        width:$widthSkills;
         height:100%;
         background-color: $bgcSkills;
       text-align: center;
@@ -352,7 +1516,7 @@ grid-template-rows:repeat(5,1fr);
         
     }
     .stageMana{
-        width:100%;
+        width:$widthSkills;
         height:100%;
         background-color: $bgcSkills;
       text-align: center;
@@ -702,7 +1866,7 @@ grid-template-rows:repeat(5,1fr);
         grid-column: 3/4;
         grid-row: 5/6;
         background:url("../../public/ItemsGame/gold.png");
-        background-size: contain;
+        background-size: 80%;
         background-repeat: no-repeat;
         background-position: center;
        
@@ -776,32 +1940,25 @@ grid-template-rows:repeat(5,1fr);
     position:relative;
     width:100%;
     height:100%;
-
     display:flex;
     flex-direction: column;
     align-items: center;
-  
     background-color: beige;
     border:5px solid;
-  
     border-image-source: url("../../public/ramka.jpg") ;
     border-image-slice: 30 ;
     border-image-repeat:repeat;
-    border-image-width: 10px;
+    border-image-width: 10px 0 0 0;
     background: url("../../public/wypalona-kartka-papieru.png");
     background-repeat: repeat;
     background-size:cover;
   font-weight:bold;
-  letter-spacing:1px;
-    //--//@at-root
+  letter-spacing:2px;
     .stageHp{
 
         width:100%;
         height:100%;
         background-color: $bgcSkills;
-      text-align: center;
-      font-weight:bold;
-      font-size:1rem;
         border:3px solid;
         position:relative;
         border-image-source: url("../../public/ramka.jpg") ;
@@ -809,6 +1966,7 @@ grid-template-rows:repeat(5,1fr);
         border-image-repeat:repeat;
         border-image-width: 2px;
         margin-top:2%;
+        font-size: 1.5rem;
         
        
     
@@ -843,17 +2001,13 @@ grid-template-rows:repeat(5,1fr);
         width:100%;
         height:100%;
         background-color: $bgcSkills;
-      text-align: center;
-      font-weight:bold;
-      font-size:1rem;
         border:3px solid;
         position:relative;
         border-image-source: url("../../public/ramka.jpg") ;
         border-image-slice: 30;
         border-image-repeat:repeat;
         border-image-width: 2px;
-       
-    
+        font-size:1.5rem;
     }
     .stageLevel:after{
         content:"level";
@@ -882,17 +2036,13 @@ grid-template-rows:repeat(5,1fr);
         width:100%;
         height:100%;
         background-color: $bgcSkills;
-      text-align: center;
-      font-weight:bold;
-      font-size:1rem;
         border:3px solid;
         position:relative;
         border-image-source: url("../../public/ramka.jpg") ;
         border-image-slice: 0 30 30 30;
         border-image-repeat:repeat;
         border-image-width: 2px;
-    
-        
+        font-size:1.5rem;
     }
     .stageMagic:after{
         content:"magic level";
@@ -916,17 +2066,13 @@ grid-template-rows:repeat(5,1fr);
         width:100%;
         height:100%;
         background-color: $bgcSkills;
-      text-align: center;
-      font-weight:bold;
-      font-size:1rem;
         border:3px solid;
         position:relative;
         border-image-source: url("../../public/ramka.jpg") ;
         border-image-slice: 0 30 30 30;
         border-image-repeat:repeat;
-        border-image-width: 2px;
-       
-        
+        border-image-width: 2px; 
+        font-size:1.5rem; 
     }
     .stageMana:after{
         content:"mana";
@@ -947,12 +2093,12 @@ grid-template-rows:repeat(5,1fr);
     }
 }
 .infoAboutItem{
-    width:100px;
-    height:100px;
+    width:150px;
+    height:150px;
     background-color:#990033;
    
 top:20%;
-
+font-size:2rem;
     position: absolute;
     opacity:0;
     transform:scale(0);

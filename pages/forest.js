@@ -57,8 +57,7 @@ dispatch(lostItems(copyOwn))
 
 useEffect(()=>{
 //This code serve as ratio how strong Monster will hit player its random number from own Monster scope//
-randomPowerAtakRef.current=
-monsters[0].attackPower[Math.floor(Math.random()*monsters[0].attackPower.length)]
+
 
     //what happen after monster dead//
     if(monsters[0].hpLevel<=0 && skills.hpLevel>0){
@@ -99,10 +98,11 @@ monsters[0].attackPower[Math.floor(Math.random()*monsters[0].attackPower.length)
 
 
 const handleAtak=()=>{
-  
+    randomPowerAtakRef.current=
+    monsters[0].attackPower[Math.floor(Math.random()*monsters[0].attackPower.length)]
     setHandleAtakDisabled(true)
     dispatch(monsterGetAtak(skills.strenght.total))
-    dispatch(getAtakFromMonster(monsters[0].atak*randomPowerAtakRef.current))
+    dispatch(getAtakFromMonster(Math.floor(monsters[0].atak*randomPowerAtakRef.current)))
     dispatch(subRateHp(handlePercentages(skills.hpTotal,monsters[0].atak*randomPowerAtakRef.current)))
 dispatch(subRateMonsterHp(handlePercentages(monsters[0].hpTotal,skills.strenght.total)))
 hitFromMonster.current.style.opacity=`1`

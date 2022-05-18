@@ -18,18 +18,18 @@ const initialState = {
     magicLevel:{
       exp:0,
       totalExp:0,
-      lvl:100,
+      lvl:0,
       
     },
     mana:{
-      mana:1100,
-      manaTotal:1100,
+      mana:200,
+      manaTotal:200,
     
     },
     hpLevel:200,
     hpTotal:200,
     howManyHpAddPerLvl:25, 
-    gold:43235,
+    gold:40,
     productExp:{
       magicExp:120,
       levelExp:120,
@@ -72,9 +72,9 @@ const levelSlice = createSlice({
 
     },
     getAtakFromMonster(state,action){
-      
+      console.info(action)
    if(state.def.defArmor<=action.payload){
-    state.hpLevel-=(action.payload-state.def.defArmor)
+    state.hpLevel-=Math.floor(action.payload-state.def.defArmor)
 
    }
    if(state.def.defArmor>0)state.def.defArmor-=action.payload

@@ -87,8 +87,8 @@
     border-image-width: 5px;
     border-image-outset: 0;
     background-color: #d3d365;
-    width: 300px;
-    height: 400px;
+    width: 90%;
+    height: 80%;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[5];
@@ -174,13 +174,14 @@
     font-weight: bold;
   }
   .panelBuy .describe .wallet .imgGold {
-    width: 25%;
+    max-width: 50px;
     position: relative;
     bottom: 0%;
   }
   .panelBuy .pakBtn {
     width: 100%;
     height: 100%;
+    min-height: 85px;
     border: 5px solid yellow;
     border-image-source: url("../../public/ramka-sklep.jpg");
     border-image-slice: 30 30 30 30;
@@ -298,10 +299,28 @@
         grid-template-columns: repeat(3, 1fr);
     -ms-grid-rows: (1fr)[10];
         grid-template-rows: repeat(10, 1fr);
-    width: 80%;
+    width: 90%;
     overflow-y: scroll;
     height: 90%;
     margin-bottom: 5%;
+    /* Handle */
+  }
+  .container .store::-webkit-scrollbar {
+    width: 10px;
+  }
+  .container .store::-webkit-scrollbar-track {
+    background: -webkit-gradient(linear, left top, left bottom, from(silver), color-stop(yellow), to(black));
+    background: linear-gradient(silver, yellow, black);
+    border-radius: 10px;
+  }
+  .container .store::-webkit-scrollbar-thumb {
+    background: -webkit-gradient(linear, left top, left bottom, from(black), to(silver));
+    background: linear-gradient(black, silver);
+    border-radius: 10px;
+  }
+  .container .store::-webkit-scrollbar-thumb:hover {
+    background: black;
+    width: 10px;
   }
   .container .store .shopSlot {
     position: relative;
@@ -315,7 +334,7 @@
         -ms-flex-align: center;
             align-items: center;
     width: 100%;
-    height: 70px;
+    height: 60px;
     border: 5px solid;
     border-image-source: url("../../public/ramka-sklep.jpg");
     border-image-slice: 30 30 30 30;
@@ -326,8 +345,198 @@
   }
   .container .store .shopSlot .imgSlot {
     position: absolute;
-    width: 70%;
+    width: 80%;
     height: 90%;
+  }
+  .panelBuy {
+    position: absolute;
+    border: 5px solid yellow;
+    border-image-source: url("../../public/ramka-sklep.jpg");
+    border-image-slice: 30 30 30 30;
+    border-image-repeat: stretch;
+    border-image-width: 5px;
+    border-image-outset: 0;
+    background-color: #d3d365;
+    width: 90%;
+    height: 80%;
+    min-height: 400px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
+    -ms-grid-rows: (1fr)[5];
+        grid-template-rows: repeat(5, 1fr);
+    top: 3%;
+    z-index: 1;
+  }
+  .panelBuy .imgItems {
+    width: 100%;
+    height: 100%;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3/4;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    min-height: 20px;
+  }
+  .panelBuy .h1Name {
+    text-align: center;
+    font-family: 'Grape Nuts', cursive;
+    font-size: 2rem;
+    color: brown;
+    position: absolute;
+    text-align: center;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+    grid-column: 2/5;
+    width: 100%;
+  }
+  .panelBuy .describe {
+    width: 100%;
+    height: 100%;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+    grid-column: 1/6;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    font-size: 1.7rem;
+    text-align: center;
+    font-family: 'Grape Nuts', cursive;
+  }
+  .panelBuy .describe .wallet {
+    border: 15px solid yellow;
+    position: relative;
+    border-image-source: url("../../public/ramka-sklep.jpg");
+    border-image-slice: 30 30 30 30;
+    border-image-repeat: stretch;
+    border-image-width: 5px 5px 5px 5px;
+    color: gold;
+    background-color: black;
+    margin-top: 5%;
+    height: 125px;
+    font-size: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    z-index: 2;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    grid-row: 2/4;
+  }
+  .panelBuy .describe .wallet span {
+    bottom: 15%;
+    z-index: 1;
+    color: red;
+    font-size: 1.6rem;
+    -webkit-text-stroke: 2px white;
+    display: block;
+    font-weight: bold;
+  }
+  .panelBuy .describe .wallet .imgGold {
+    position: relative;
+    bottom: 0%;
+    max-width: 50px;
+  }
+  .panelBuy .pakBtn {
+    width: 100%;
+    height: 100%;
+    min-height: 85px;
+    border: 5px solid yellow;
+    border-image-source: url("../../public/ramka-sklep.jpg");
+    border-image-slice: 30 30 30 30;
+    border-image-repeat: stretch;
+    border-image-width: 1px 1px 1px 1px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+    grid-column: 1/6;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 2;
+    grid-row: 4/6;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-color: #6F4242;
+  }
+  .panelBuy .pakBtn button:nth-child(1) {
+    background-color: #eaeab4;
+    width: 40%;
+    height: 70px;
+    margin: 1%;
+    font-size: 2rem;
+    border: 5px solid yellow;
+    border-image-source: url("../../public/ramka-sklep.jpg");
+    border-image-slice: 30 30 30 30;
+    border-image-repeat: stretch;
+    border-image-width: 5px 5px 5px 5px;
+  }
+  .panelBuy .pakBtn button:nth-child(1):hover {
+    background-color: #dede8d;
+    border-image-width: 10px 10px 10px 10px;
+  }
+  .panelBuy .pakBtn button:nth-child(1):active {
+    background-color: #c8c83d;
+  }
+  .panelBuy .pakBtn button:nth-child(2) {
+    background-color: #eaeab4;
+    width: 40%;
+    margin: 1%;
+    height: 70px;
+    font-size: 1rem;
+    border: 5px solid yellow;
+    border-image-source: url("../../public/ramka-sklep.jpg");
+    border-image-slice: 30 30 30 30;
+    border-image-repeat: stretch;
+    border-image-width: 5px 5px 5px 5px;
+  }
+  .panelBuy .pakBtn button:nth-child(2):hover {
+    background-color: #dede8d;
+    border-image-width: 10px 10px 10px 10px;
+  }
+  .optionShop {
+    position: relative;
+    width: 90%;
+    height: 10%;
+    border-image-source: url("../../public/ramka-sklep.jpg");
+    border-image-slice: 30;
+    border-image-width: 5px 0px 5px 5px;
+  }
+  .optionShop .btnBuy {
+    width: 50%;
+    background: url("../../public/stara-kartka-papieru2.png");
+    background-size: cover;
+    color: brown;
+    -webkit-text-stroke: 1px brown;
+    font-weight: bold;
+    height: 100%;
+    -webkit-text-stroke: 1px orange;
+    font-size: 2rem;
+  }
+  .optionShop .btnSell {
+    width: 50%;
+    height: 100%;
+    background: url("../../public/stara-kartka-papieru2.png");
+    background-size: cover;
+    color: brown;
+    -webkit-text-stroke: 1px brown;
+    font-weight: bold;
+    font-size: 2rem;
+    -webkit-text-stroke: 1px orange;
   }
 }
 
@@ -583,6 +792,257 @@
 }
 
 @media (min-width: 900px) {
+  .container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid yellow;
+    border-image-source: url("../../public/ramka-sklep.jpg");
+    border-image-slice: 30 30 30 30;
+    border-image-repeat: stretch;
+    border-image-width: 1px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background: url("../../public/stragan.png");
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container .store {
+    position: relative;
+    top: 2%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: (1fr)[10];
+        grid-template-rows: repeat(10, 1fr);
+    width: 70%;
+    overflow-y: scroll;
+    height: 90%;
+    margin-bottom: 5%;
+  }
+  .container .store .shopSlot {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    height: 70px;
+    border: 5px solid;
+    border-image-source: url("../../public/ramka-sklep.jpg");
+    border-image-slice: 30 30 30 30;
+    border-image-repeat: stretch;
+    border-image-width: 2px;
+    background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(gray), to(black));
+    background: linear-gradient(black, gray, black);
+  }
+  .container .store .shopSlot .imgSlot {
+    position: absolute;
+    width: 70%;
+    height: 90%;
+  }
+  .panelBuy {
+    position: absolute;
+    border: 5px solid yellow;
+    border-image-source: url("../../public/ramka-sklep.jpg");
+    border-image-slice: 30 30 30 30;
+    border-image-repeat: stretch;
+    border-image-width: 5px;
+    border-image-outset: 0;
+    background-color: #d3d365;
+    width: 400px;
+    height: 400px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
+    -ms-grid-rows: (1fr)[5];
+        grid-template-rows: repeat(5, 1fr);
+    top: 3%;
+    z-index: 1;
+  }
+  .panelBuy .imgItems {
+    width: 100%;
+    height: 100%;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3/4;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+  }
+  .panelBuy .h1Name {
+    text-align: center;
+    font-family: 'Grape Nuts', cursive;
+    font-size: 2rem;
+    color: brown;
+    position: absolute;
+    text-align: center;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+    grid-column: 2/5;
+    width: 100%;
+  }
+  .panelBuy .describe {
+    width: 100%;
+    height: 100%;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+    grid-column: 1/6;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    font-size: 1.7rem;
+    text-align: center;
+    font-family: 'Grape Nuts', cursive;
+  }
+  .panelBuy .describe .wallet {
+    border: 15px solid yellow;
+    position: relative;
+    border-image-source: url("../../public/ramka-sklep.jpg");
+    border-image-slice: 30 30 30 30;
+    border-image-repeat: stretch;
+    border-image-width: 5px 5px 5px 5px;
+    color: gold;
+    background-color: black;
+    margin-top: 5%;
+    height: 125px;
+    font-size: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    z-index: 2;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    grid-row: 2/4;
+  }
+  .panelBuy .describe .wallet span {
+    bottom: 15%;
+    z-index: 1;
+    color: red;
+    font-size: 1.6rem;
+    -webkit-text-stroke: 2px white;
+    display: block;
+    font-weight: bold;
+  }
+  .panelBuy .describe .wallet .imgGold {
+    width: 25%;
+    position: relative;
+    bottom: 0%;
+  }
+  .panelBuy .pakBtn {
+    width: 100%;
+    height: 100%;
+    border: 5px solid yellow;
+    border-image-source: url("../../public/ramka-sklep.jpg");
+    border-image-slice: 30 30 30 30;
+    border-image-repeat: stretch;
+    border-image-width: 1px 1px 1px 1px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+    grid-column: 1/6;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 2;
+    grid-row: 4/6;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-color: #6F4242;
+  }
+  .panelBuy .pakBtn button:nth-child(1) {
+    background-color: #eaeab4;
+    width: 40%;
+    height: 70px;
+    margin: 1%;
+    font-size: 2rem;
+    border: 5px solid yellow;
+    border-image-source: url("../../public/ramka-sklep.jpg");
+    border-image-slice: 30 30 30 30;
+    border-image-repeat: stretch;
+    border-image-width: 5px 5px 5px 5px;
+  }
+  .panelBuy .pakBtn button:nth-child(1):hover {
+    background-color: #dede8d;
+    border-image-width: 10px 10px 10px 10px;
+  }
+  .panelBuy .pakBtn button:nth-child(1):active {
+    background-color: #c8c83d;
+  }
+  .panelBuy .pakBtn button:nth-child(2) {
+    background-color: #eaeab4;
+    width: 40%;
+    margin: 1%;
+    height: 70px;
+    font-size: 1rem;
+    border: 5px solid yellow;
+    border-image-source: url("../../public/ramka-sklep.jpg");
+    border-image-slice: 30 30 30 30;
+    border-image-repeat: stretch;
+    border-image-width: 5px 5px 5px 5px;
+  }
+  .panelBuy .pakBtn button:nth-child(2):hover {
+    background-color: #dede8d;
+    border-image-width: 10px 10px 10px 10px;
+  }
+  .optionShop {
+    position: relative;
+    width: 90%;
+    height: 10%;
+    border-image-source: url("../../public/ramka-sklep.jpg");
+    border-image-slice: 30;
+    border-image-width: 5px 0px 5px 5px;
+  }
+  .optionShop .btnBuy {
+    width: 50%;
+    background: url("../../public/stara-kartka-papieru2.png");
+    background-size: cover;
+    color: brown;
+    -webkit-text-stroke: 1px brown;
+    font-weight: bold;
+    height: 100%;
+    -webkit-text-stroke: 1px orange;
+    font-size: 2rem;
+  }
+  .optionShop .btnSell {
+    width: 50%;
+    height: 100%;
+    background: url("../../public/stara-kartka-papieru2.png");
+    background-size: cover;
+    color: brown;
+    -webkit-text-stroke: 1px brown;
+    font-weight: bold;
+    font-size: 2rem;
+    -webkit-text-stroke: 1px orange;
+  }
+}
+
+@media (min-width: 1100px) {
   .container {
     position: absolute;
     width: 100%;

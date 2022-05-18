@@ -1,6 +1,6 @@
 .container{
     position:relative;
-    background-color: black;
+    background:url("../../public/extraImage/background2.png");
     height:98%;
     width:98%;
     left:50%;
@@ -8,16 +8,45 @@
     transform:translate(-50%,-50%);
     overflow:hidden;
     perspective:100px;
-    .greetings{
-        color:white;
-        font-size:5rem;
-        position:absolute;
-        animation:up 10s 0.3s  linear forwards;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+   .one{
+       position:absolute;
+       background-color: transparent;
+       width:100px;
+       height:100px;
+       border-radius:50%;
+       border-top:5px solid cyan;
+       animation:round 1s infinite linear;
        
-       
-    }
-    @keyframes up{
-        0%{ perspective:100px;transform: rotateX(1deg) translateY(0px)}
-        100%{ perspective:100px;transform:rotateX(1deg) translateY(-500px)}
-    }
+      
+   }
+   .two{
+    background-color: green;
+    width:100px;
+    height:100px;
+    position:absolute;
+    border-radius:50%;
+    border-right:5px solid orange;
+ 
+    background-color: transparent;
+    animation:round 1s infinite linear ;
 }
+.three{
+    background-color: transparent;
+    width:100px;
+    height:100px;
+    position:absolute;
+    border-radius:50%;
+    border-left:5px solid blue;
+   
+    animation:round 1s infinite linear;
+
+}
+    }
+   @keyframes round{
+       0%{transform:rotate(0deg)}
+       100%{transform:rotate(360deg)}
+   }

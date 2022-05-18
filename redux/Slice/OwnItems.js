@@ -1,26 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = [
-        {
-          name:"Krzywy-Miecz",
-       grafika:"/ItemsGame/curve-miecz.png",
-       atak:10,
-       def:1,
-       cost:5, 
-       id:"weapon",
-       valueStall:3,
-       hash:12312312,
-    },
-    {
-      name:"Krzywy-Miecz",
-   grafika:"/ItemsGame/curve-miecz.png",
-   atak:10,
-   def:1,
-   cost:5, 
-   id:"weapon",
-   valueStall:3,
-   hash:12345566,
-},
+
 {
   name:"Krzywy-Miecz",
 grafika:"/ItemsGame/curve-miecz.png",
@@ -53,16 +34,7 @@ hash:3432432432,
     
     },
 
-  {
-    name:"Magic Maca",
-    grafika:"/ItemsGame/magic-maca.png",
-    atak:80,
-    def:0,
-    cost:500,
-    id:"weapon",
-    valueStall:10,
-    hash:543254322312,
-},
+
     ]
 
 

@@ -14,7 +14,7 @@ const DisplayOption = () => {
     const containerRef=useRef()
 const whatDisplay=useSelector((state)=>state.menuOption.option)
 
-console.info(whatDisplay,"--option")
+
 
     const selectedOption=()=>{
    

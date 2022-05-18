@@ -7,33 +7,42 @@ import { useEffect,useLayoutEffect,useRef,useState } from 'react';
 import { openCloseWindowMessage } from '../redux/Slice/infoWindowSlice';
 import { changeOption } from '../redux/Slice/MenuOptions';
 const PlayerPanel = () => {
-    const [resize,setResize]=useState(true)
+    const [focusOption,setFocusOption]=useState(5)
 const playercomponentRef=useRef()
 const containerRef=useRef()
+const displayRef=useRef()
 const menuOption=useSelector((state)=>state.menuOption)
     const dispatch=useDispatch()
-console.info("panel")
 
-
-const resizeDetec=()=>{
+const checkResize=()=>{
     window.addEventListener("resize",()=>{
         if(window.innerWidth>1100){
             dispatch(changeOption("backpack"))
         }
     })
 }
-
-
 useEffect(()=>{
-    resizeDetec()
+    console.info("render")
+    if(window.innerWidth<1100){
+        dispatch(changeOption("player"))
+     
+    }
+    if(window.innerWidth>1100 && menuOption.option==="default"){
+        dispatch(changeOption("backpack"))
+     }
     if(menuOption.option==="default"){
     dispatch(openCloseWindowMessage("open"))
     }
+   checkResize()
 },[])
+
+
+
     return ( <div ref={containerRef} className={s.containerPlayerPanel}>
-        <div className={s.dashboard}><DashBoardGame/></div>
-        <div ref={playercomponentRef} className={s.player}><Player/></div>
-        <div className={s.displayOption}><DisplayOption/></div>
+    
+         <div ref={playercomponentRef} className={s.player}><Player/></div>
+        <div className={s.dashboard} focus={focusOption}><DashBoardGame/></div>
+        <div ref={displayRef} className={s.displayOption}><DisplayOption/></div>
 
     </div> );
 }

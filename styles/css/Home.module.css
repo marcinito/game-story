@@ -11,11 +11,14 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    overflow: hidden;
+    overflow: scroll;
     background: url("../public/extraImage/background.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+  }
+  .firstPage::-webkit-scrollbar {
+    width: 0px;
   }
   .firstPage .textDiv {
     position: relative;

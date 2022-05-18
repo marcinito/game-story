@@ -1,6 +1,6 @@
 .container {
   position: relative;
-  background-color: black;
+  background: url("../../public/extraImage/background2.png");
   height: 98%;
   width: 98%;
   left: 50%;
@@ -10,43 +10,70 @@
   overflow: hidden;
   -webkit-perspective: 100px;
           perspective: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.container .greetings {
-  color: white;
-  font-size: 5rem;
+.container .one {
   position: absolute;
-  -webkit-animation: up 10s 0.3s  linear forwards;
-          animation: up 10s 0.3s  linear forwards;
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border-top: 5px solid cyan;
+  -webkit-animation: round 1s infinite linear;
+          animation: round 1s infinite linear;
 }
 
-@-webkit-keyframes up {
+.container .two {
+  background-color: green;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border-radius: 50%;
+  border-right: 5px solid orange;
+  background-color: transparent;
+  -webkit-animation: round 1s infinite linear;
+          animation: round 1s infinite linear;
+}
+
+.container .three {
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border-radius: 50%;
+  border-left: 5px solid blue;
+  -webkit-animation: round 1s infinite linear;
+          animation: round 1s infinite linear;
+}
+
+@-webkit-keyframes round {
   0% {
-    -webkit-perspective: 100px;
-            perspective: 100px;
-    -webkit-transform: rotateX(1deg) translateY(0px);
-            transform: rotateX(1deg) translateY(0px);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    -webkit-perspective: 100px;
-            perspective: 100px;
-    -webkit-transform: rotateX(1deg) translateY(-500px);
-            transform: rotateX(1deg) translateY(-500px);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
-@keyframes up {
+@keyframes round {
   0% {
-    -webkit-perspective: 100px;
-            perspective: 100px;
-    -webkit-transform: rotateX(1deg) translateY(0px);
-            transform: rotateX(1deg) translateY(0px);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    -webkit-perspective: 100px;
-            perspective: 100px;
-    -webkit-transform: rotateX(1deg) translateY(-500px);
-            transform: rotateX(1deg) translateY(-500px);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 /*# sourceMappingURL=Default.module.css.map */

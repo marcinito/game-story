@@ -128,8 +128,9 @@ useEffect(()=>{
 const showDetail=(e)=>{
     /*It's fire after mouseover on wear item */
  if(e.target.src){
-infoAboutItemRef.current.style.left=e.target.x +"px"
-infoAboutItemRef.current.style.top=e.target.y +"px"
+   
+infoAboutItemRef.current.style.left=e.clientX +"px"
+infoAboutItemRef.current.style.top=e.clientY +"px"
 infoAboutItemRef.current.style.opacity=1
 infoAboutItemRef.current.style.transform=`scale(1)`
 infoAboutItemRef.current.innerHTML=`<div class="InfoAboutItemPlayerComponent">
@@ -290,8 +291,8 @@ const activeSpell=(whichSpell,costMana)=>{
 </div>
 <div className={s.spells} ref={spellsRef}>
    <button className={s.exura}   onClick={()=>activeSpell("exura",10)}><span ref={exuraRef}></span><h4>Exura</h4></button>
-   <button className={s.exuraVita} disabled={skills.magicLevel.lvl<=2?true:disabledExuraVita} onClick={()=>activeSpell("exura vita",30)}><span ref={exuraVitaRef}></span><h4>Exura Vita</h4></button>
-   <button className={s.exevoVis} disabled={skills.magicLevel.lvl<4?true:disabledExevoVis  || props.disabledSpell} onClick={()=>activeSpell("exevo vis",80)}>
+   <button className={s.exuraVita} disabled={skills.magicLevel.lvl<=1?true:disabledExuraVita} onClick={()=>activeSpell("exura vita",30)}><span ref={exuraVitaRef}></span><h4>Exura Vita</h4></button>
+   <button className={s.exevoVis} disabled={skills.magicLevel.lvl<3?true:disabledExevoVis  || props.disabledSpell} onClick={()=>activeSpell("exevo vis",80)}>
        <span ref={exevoVisRef}></span><h4>Exevo Vis</h4></button>
    <button className={s.exevoMort} disabled={skills.magicLevel.lvl<7?true:disabledExevoMort  || props.disabledSpell} onClick={()=>activeSpell("exevo mort",80)}>
        <span ref={exevoMortRef}></span><h4>Exevo Mort</h4></button>

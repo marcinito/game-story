@@ -11,8 +11,8 @@ const BuyPanel=({tarItem,gold,buy,closeP})=>{
         <div className={s.wallet}>Your money: <span>{gold}</span> <img className={s.imgGold} src={"./ItemsGame/gold.png"}></img></div>
     </div>
     <div className={s.pakBtn}>
-        <button onClick={()=>buy(tarItem)} disabled={tarItem.cost>gold}>Kup</button>
-        <button onClick={()=>closeP()} >Wyjdz</button>
+        <button onClick={()=>buy(tarItem)} disabled={tarItem.cost>gold}>Buy</button>
+        <button onClick={()=>closeP()} >Close</button>
     </div> 
     </>
     )

@@ -36,7 +36,8 @@
     background: url("../../public/stara-kartka-papieru2.png");
     background-origin: center;
     font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Creepster', cursive;
+    -webkit-text-stroke: 0.4px white;
   }
   .container .nav li:hover {
     background: url("../../public/stara-kartka-papieru.png");
@@ -222,7 +223,7 @@
     background: url("../../public/stara-kartka-papieru2.png");
     background-origin: center;
     font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Creepster', cursive;
   }
   .container .nav li:hover {
     background: url("../../public/stara-kartka-papieru.png");
@@ -400,7 +401,7 @@
     background: url("../../public/stara-kartka-papieru2.png");
     background-origin: center;
     font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Creepster', cursive;
   }
   .container .nav li:hover {
     background: url("../../public/stara-kartka-papieru.png");
@@ -578,7 +579,7 @@
     background: url("../../public/stara-kartka-papieru2.png");
     background-origin: center;
     font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Creepster', cursive;
   }
   .container .nav li:hover {
     background: url("../../public/stara-kartka-papieru.png");
