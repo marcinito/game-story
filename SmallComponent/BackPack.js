@@ -36,7 +36,7 @@ useEffect(()=>{
     markWearItemInSellShop(ownItems,containerRef,legs,"bp")
     markWearItemInSellShop(ownItems,containerRef,shoe,"bp")
 
-    console.info("wykonuj sie yo")
+   
     })
 
 
@@ -53,7 +53,7 @@ const wearItem=(el)=>{
 }
 
     const ownedItems=useSelector((state)=>state.ownItems)
-    console.info("REFRESH COMPONENT")
+ 
     return ( <div className={s.container}ref={containerRef}>
 
 {ownedItems.map(el=>{

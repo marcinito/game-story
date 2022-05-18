@@ -22,7 +22,7 @@ const checkResize=()=>{
     })
 }
 useEffect(()=>{
-    console.info("render")
+   
     if(window.innerWidth<1100){
         dispatch(changeOption("player"))
      

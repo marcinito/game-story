@@ -163,9 +163,7 @@ const atakSpell=(costMana,concerningSpan,spell,timeReload,disabled,hitPower)=>{
             },timeReload)
         },1400)
     }
-    else{
-        console.info("Za mało many")
-    }
+ 
 }
 }
 
@@ -190,9 +188,7 @@ const cureSpell=(costMana,might,concerningSpan,disabled,reloadTime,obtainExp)=>{
             },reloadTime)
         },500)
         }
-        else{
-            console.info("Za mało many ziom!")
-        }
+      
     }
 }
 

@@ -159,7 +159,7 @@ const randomActionFunction=()=>{
     }
 }
 
-console.info(skills.strenght.total,"siła totalna")
+
     return ( 
         <div className={s.container}>
            

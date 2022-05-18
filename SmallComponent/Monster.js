@@ -25,16 +25,7 @@ const checkIfMonsterNeededHelpRef=useRef()
 
     
 
-// useEffect(()=>{
-// props.randomActionRef.current=setInterval(()=>{
-// props.randomActionFunction()
 
-// },3000)
-
-// return()=>{
-// clearInterval(props.randomActionRef.current)
-// }
-// },[])
 
 useEffect(()=>{
     if(monsters[0].hpLevel<monsters[0].hpTotal)checkIfMonsterNeededHelpRef.current=true

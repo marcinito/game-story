@@ -28,7 +28,7 @@ const eqShopRef=useRef()
 const panelShopRef=useRef()
 
 useInfoWindow(message[0].shop,windowInfo,"shop")
-console.info(message[0])
+
 useEffect(()=>{
     panelShopRef.current.style.transform=`scale(0)`
 },[])

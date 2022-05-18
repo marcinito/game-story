@@ -10,7 +10,7 @@ import { expireMessage, getMessageFromWordl } from '../redux/Slice/MessageSlice'
 import useInfoWindow from '../Modules/useInfoWindow'
 const Tawerna = () => {
 const [headBack,setHeadBack]=useState(false)
-console.info("TAWERNA")
+
 const message=useSelector((state)=>state.message)
 const windowInfo=useSelector((state)=>state.windowInfo)
 

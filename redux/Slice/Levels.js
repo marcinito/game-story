@@ -42,7 +42,7 @@ const levelSlice = createSlice({
   initialState,
   reducers: {
     getExp(state,action) {
-      console.info(action)
+    
       state.level.exp+=action.payload
       state.level.totalExp+=action.payload
       state.mana.mana+=100
@@ -55,7 +55,7 @@ const levelSlice = createSlice({
     }
     },
     getMagicExp(state,action){
-      console.info(action)
+     
       state.magicLevel.exp+=action.payload
       state.magicLevel.totalExp+=action.payload
      while(state.magicLevel.exp>=state.productExp.magicExp){
@@ -74,7 +74,7 @@ const levelSlice = createSlice({
 
     },
     getAtakFromMonster(state,action){
-      console.info(action)
+     
    if(state.def.defArmor<=action.payload){
     state.hpLevel-=Math.floor(action.payload-state.def.defArmor)
 
