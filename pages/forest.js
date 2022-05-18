@@ -55,6 +55,7 @@ copyOwn=copyOwn.filter((el,i,arr)=>{
 dispatch(lostItems(copyOwn))
 }
 
+
 useEffect(()=>{
 //This code serve as ratio how strong Monster will hit player its random number from own Monster scope//
 

@@ -212,13 +212,13 @@
         border-image-source:url("../../public/ramka-box.png");
         border-image-slice:30;
         border-image-width:5px;
-        background: linear-gradient(45deg, red 23%,darkorange);
+        background: linear-gradient(45deg, black 23%,darkorange);
         transform: scale(0);
        
         .askAboutConfirmFight{
             text-align: center;
             font-family: 'Inconsolata', monospace;
-            font-size:2rem;
+            font-size:3rem;
             -webkit-text-stroke:0.3px white;
         }
         .btnYes{
@@ -228,14 +228,18 @@
             height:50%;
             background: url("../../public/stara-kartka-papieru2.png");
             bottom:0;
+            font-size:3rem;
+            -webkit-text-stroke:1px brown;
         }
         .btnNo{
             position:absolute;
+            font-size:3rem;
             left:50%;
             bottom: 0;
             width:50%;
             height:46%;
             background: url("../../public/stara-kartka-papieru2.png");
+            -webkit-text-stroke:1px brown;
         }
     }
 }

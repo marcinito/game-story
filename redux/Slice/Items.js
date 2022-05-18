@@ -196,7 +196,7 @@ export const initialState = [
     grafika:"./ItemsGame/mana-fluid.png",
     atak:0,
     def:0,
-    cost:200,
+    cost:90,
     id:"potion",
     valueStall:10,
     use:3,

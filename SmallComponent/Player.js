@@ -26,9 +26,9 @@ const [cycleLifeSpell,setCycleLifeSpell]=useState("start")
     const monsters=useSelector((state)=>state.monsters)
     const overall=useSelector((state)=>state.overall)
     const wear=useSelector((state)=>state.wearItems)
-    const ownItems=useSelector((state)=>state.ownItems)
     const facadeCharacter=useSelector((state)=>state.setFacada)
-    const menuOption=useSelector((state)=>state.menuOption.option)
+   
+   
 
     const spellsRef=useRef()
     const hpRef=useRef(null)
@@ -45,7 +45,6 @@ const [cycleLifeSpell,setCycleLifeSpell]=useState("start")
     const img6Ref=useRef()
     const containerRef=useRef()
     const dispatch=useDispatch()
-
     const exevoVisRef=useRef()
     const exevoMortRef=useRef()
     const exuraRef=useRef()
@@ -53,22 +52,6 @@ const [cycleLifeSpell,setCycleLifeSpell]=useState("start")
 
 useCountFromEq("def")
 useCountFromEq("atak")
-
-useEffect(()=>{
-
-
-// if(menuOption==="tawerna"){
-// containerRef.current.style.gridColumn="2/3"
-
-// }
-//  else if(menuOption==="shop"){
-//     containerRef.current.style.gridColumn="2/3"
-    
-//     }
-// else{
-//     containerRef.current.style.gridColumn="2/4"
-// }
-},[menuOption])
 
 useEffect(()=>{
     dispatch(setRateDef(handlePercentages(skills.def.defArmorTotal,skills.def.defArmor)))
@@ -114,12 +97,15 @@ useEffect(()=>{
     document.body.appendChild(infoAboutItem)
 },[])
 
-
 useEffect(()=>{
     //Display panel with spells if you are on battle fields//
     if(router.pathname==="/forest"){
         spellsRef.current.style.opacity=1
         spellsRef.current.style.zIndex=1
+    }
+    if(monsters[0].hpLevel<=0){
+        spellsRef.current.style.opacity=0
+        spellsRef.current.style.zIndex=0
     }
 })
 
@@ -292,9 +278,9 @@ const activeSpell=(whichSpell,costMana)=>{
 <div className={s.spells} ref={spellsRef}>
    <button className={s.exura}   onClick={()=>activeSpell("exura",10)}><span ref={exuraRef}></span><h4>Exura</h4></button>
    <button className={s.exuraVita} disabled={skills.magicLevel.lvl<=1?true:disabledExuraVita} onClick={()=>activeSpell("exura vita",30)}><span ref={exuraVitaRef}></span><h4>Exura Vita</h4></button>
-   <button className={s.exevoVis} disabled={skills.magicLevel.lvl<3?true:disabledExevoVis  || props.disabledSpell} onClick={()=>activeSpell("exevo vis",80)}>
+   <button className={s.exevoVis} disabled={skills.magicLevel.lvl<2?true:disabledExevoVis  || props.disabledSpell} onClick={()=>activeSpell("exevo vis",80)}>
        <span ref={exevoVisRef}></span><h4>Exevo Vis</h4></button>
-   <button className={s.exevoMort} disabled={skills.magicLevel.lvl<7?true:disabledExevoMort  || props.disabledSpell} onClick={()=>activeSpell("exevo mort",80)}>
+   <button className={s.exevoMort} disabled={skills.magicLevel.lvl<5?true:disabledExevoMort  || props.disabledSpell} onClick={()=>activeSpell("exevo mort",80)}>
        <span ref={exevoMortRef}></span><h4>Exevo Mort</h4></button>
 </div>
 <div className={s.pakSkills}>

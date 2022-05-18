@@ -28,7 +28,7 @@ const initialState = {
     },
     hpLevel:200,
     hpTotal:200,
-    howManyHpAddPerLvl:25, 
+    howManyHpAddPerLvl:40, 
     gold:40,
     productExp:{
       magicExp:120,
@@ -45,11 +45,13 @@ const levelSlice = createSlice({
       console.info(action)
       state.level.exp+=action.payload
       state.level.totalExp+=action.payload
+      state.mana.mana+=100
     while(state.level.exp>=state.productExp.levelExp){
       state.level.lvl+=1
       state.level.exp-=state.productExp.levelExp
       state.productExp.levelExp+=state.productExp.product
       state.hpTotal+=state.howManyHpAddPerLvl
+      state.mana.manaTotal+=state.howManyHpAddPerLvl
     }
     },
     getMagicExp(state,action){
